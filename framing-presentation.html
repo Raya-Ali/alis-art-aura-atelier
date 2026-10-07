@@ -1,0 +1,1313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Framing & Presentation | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 12% 18%, rgba(51, 206, 239, 0.15), transparent 28%),
+                radial-gradient(circle at 88% 72%, rgba(255, 102, 196, 0.13), transparent 30%),
+                #000000;
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 85px 30px;
+        }
+
+        /* HERO */
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 85px;
+        }
+
+        .brand {
+            color: #C90DEA;
+            font-size: 17px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 28px;
+        }
+
+        .intro p {
+            max-width: 780px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #dddddd;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto 90px;
+        }
+
+        .section-label {
+            color: #33CEEF;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            max-width: 760px;
+            color: #cccccc;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* PRESENTATION TYPES */
+
+        .presentation-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .presentation-card {
+            padding: 32px;
+            min-height: 250px;
+            background: #050505;
+            border: 1px solid #222222;
+            transition: 0.3s;
+        }
+
+        .presentation-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .presentation-card:nth-child(1) {
+            border-color: #C90DEA;
+        }
+
+        .presentation-card:nth-child(2) {
+            border-color: #33CEEF;
+        }
+
+        .presentation-card:nth-child(3) {
+            border-color: #FF66C4;
+        }
+
+        .presentation-card h3 {
+            font-size: 25px;
+            margin-bottom: 14px;
+        }
+
+        .presentation-card p {
+            color: #cccccc;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* FRAME OPTIONS */
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 14px;
+        }
+
+        .option {
+            padding: 20px;
+            background: #050505;
+            border-left: 2px solid #3533CD;
+            color: #cccccc;
+        }
+
+        /* FRAME COLOURS */
+
+        .colour-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+        }
+
+        .colour {
+            padding: 18px;
+            background: #050505;
+            border: 1px solid #333333;
+            text-align: center;
+        }
+
+        .colour:nth-child(1),
+        .colour:nth-child(5) {
+            border-color: #C90DEA;
+        }
+
+        .colour:nth-child(2),
+        .colour:nth-child(6) {
+            border-color: #33CEEF;
+        }
+
+        .colour:nth-child(3),
+        .colour:nth-child(7) {
+            border-color: #FF66C4;
+        }
+
+        /* PROCESS */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .process-step {
+            padding: 28px 22px;
+            background: #050505;
+            border-top: 1px solid #3533CD;
+        }
+
+        .step-number {
+            color: #FF66C4;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            color: #bbbbbb;
+            line-height: 1.65;
+            font-size: 14px;
+        }
+
+        /* ORDER */
+
+        .order-section {
+            max-width: 900px;
+            margin: 0 auto 90px;
+            padding: 45px;
+            background: #050505;
+            border: 1px solid #3533CD;
+        }
+
+        .order-section h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .order-section > p {
+            color: #bbbbbb;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 9px;
+            font-size: 15px;
+            color: #eeeeee;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background: #000000;
+            border: 1px solid #444444;
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #C90DEA;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .check-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px;
+            border: 1px solid #333333;
+            background: #000000;
+            color: #cccccc;
+        }
+
+        .check-option input {
+            width: auto;
+        }
+
+        /* UPLOAD */
+
+        .upload-box {
+            padding: 25px;
+            border: 1px dashed #C90DEA;
+            background: #000000;
+        }
+
+        .upload-box p {
+            color: #aaaaaa;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .upload-box input[type="file"] {
+            padding: 12px 0;
+            border: none;
+        }
+
+        .upload-note {
+            margin-top: 10px;
+            color: #777777;
+            font-size: 12px;
+        }
+
+        /* ESTIMATE */
+
+        .estimate {
+            margin: 30px 0;
+            padding: 22px;
+            border-top: 1px solid #3533CD;
+            border-bottom: 1px solid #3533CD;
+        }
+
+        .estimate-title {
+            color: #33CEEF;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .estimate-price {
+            font-size: 30px;
+        }
+
+        .order-button {
+            width: 100%;
+            padding: 17px;
+            border: 1px solid white;
+            background: white;
+            color: black;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .order-button:hover {
+            background: #C90DEA;
+            border-color: #C90DEA;
+            color: white;
+        }
+
+        /* PAYMENT */
+
+        .payment-box {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            padding: 35px;
+            border: 1px solid #FF66C4;
+            background: #050505;
+        }
+
+        .payment-box h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .payment-box p {
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .payment-note {
+            color: #FF66C4;
+            font-size: 14px;
+        }
+
+        /* STATEMENT */
+
+        .statement {
+            max-width: 850px;
+            margin: 0 auto 70px;
+            padding: 35px;
+            border-top: 1px solid #3533CD;
+            border-bottom: 1px solid #3533CD;
+            font-size: 28px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 800px) {
+
+            .page {
+                padding: 60px 20px;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+
+            .presentation-grid,
+            .options-grid,
+            .colour-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .order-section {
+                padding: 28px 20px;
+            }
+
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .statement {
+                font-size: 23px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Framing & Presentation
+            </h1>
+
+            <p>
+                The finishing layer that protects, presents and
+                transforms artwork, photographs and meaningful pieces
+                into complete displays.
+            </p>
+
+        </div>
+
+
+        <!-- PRESENTATION -->
+
+        <section class="section">
+
+            <div class="section-label">
+                Presentation
+            </div>
+
+            <h2>
+                How Your Piece Comes Together
+            </h2>
+
+            <p class="section-intro">
+                Presentation is part of the artwork. The right format,
+                frame and finish can change how a piece feels within
+                a room and how it is experienced over time.
+            </p>
+
+
+            <div class="presentation-grid">
+
+                <div class="presentation-card">
+
+                    <h3>
+                        Framed Artwork
+                    </h3>
+
+                    <p>
+                        Artwork presented inside a selected frame,
+                        with options for different sizes, colours,
+                        materials and finishes.
+                    </p>
+
+                </div>
+
+
+                <div class="presentation-card">
+
+                    <h3>
+                        Canvas Presentation
+                    </h3>
+
+                    <p>
+                        Artwork presented on canvas for a softer,
+                        gallery-inspired or statement-wall appearance.
+                    </p>
+
+                </div>
+
+
+                <div class="presentation-card">
+
+                    <h3>
+                        Acrylic Presentation
+                    </h3>
+
+                    <p>
+                        A contemporary presentation option for selected
+                        artwork, photography and visual pieces.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FRAME OPTIONS -->
+
+        <section class="section">
+
+            <div class="section-label">
+                Frame Options
+            </div>
+
+            <h2>
+                Build The Presentation
+            </h2>
+
+            <div class="options-grid">
+
+                <div class="option">
+                    Gold Frames
+                </div>
+
+                <div class="option">
+                    Bronze Frames
+                </div>
+
+                <div class="option">
+                    Cream Frames
+                </div>
+
+                <div class="option">
+                    Grey-Black Frames
+                </div>
+
+                <div class="option">
+                    Black Frames
+                </div>
+
+                <div class="option">
+                    White Frames
+                </div>
+
+                <div class="option">
+                    Burgundy Frames
+                </div>
+
+                <div class="option">
+                    Brown Frames
+                </div>
+
+                <div class="option">
+                    Pearl Finishes
+                </div>
+
+                <div class="option">
+                    Glass Presentation
+                </div>
+
+                <div class="option">
+                    Metal Frames
+                </div>
+
+                <div class="option">
+                    Wood Frames
+                </div>
+
+                <div class="option">
+                    Acrylic Presentation
+                </div>
+
+                <div class="option">
+                    Lighting Features
+                </div>
+
+                <div class="option">
+                    Gallery-Style Presentation
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- FRAME COLOURS -->
+
+        <section class="section">
+
+            <div class="section-label">
+                Visual Direction
+            </div>
+
+            <h2>
+                Frame Colour
+            </h2>
+
+            <div class="colour-grid">
+
+                <div class="colour">
+                    Gold
+                </div>
+
+                <div class="colour">
+                    Bronze
+                </div>
+
+                <div class="colour">
+                    Cream
+                </div>
+
+                <div class="colour">
+                    Grey-Black
+                </div>
+
+                <div class="colour">
+                    Black
+                </div>
+
+                <div class="colour">
+                    White
+                </div>
+
+                <div class="colour">
+                    Burgundy
+                </div>
+
+                <div class="colour">
+                    Brown
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESS -->
+
+        <section class="section">
+
+            <div class="section-label">
+                The Atelier Process
+            </div>
+
+            <h2>
+                From Artwork To Presentation
+            </h2>
+
+
+            <div class="process">
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Submit
+                    </h3>
+
+                    <p>
+                        Provide the artwork, photograph or piece you
+                        want framed or presented.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Select
+                    </h3>
+
+                    <p>
+                        Choose your preferred presentation, size,
+                        frame direction and finish.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Prepare
+                    </h3>
+
+                    <p>
+                        The piece is prepared for its selected
+                        presentation format.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Complete
+                    </h3>
+
+                    <p>
+                        Your finished piece is inspected and prepared
+                        for collection or delivery.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER -->
+
+        <section class="order-section" id="order">
+
+            <div class="section-label">
+                Start Your Project
+            </div>
+
+            <h2>
+                Framing & Presentation Order
+            </h2>
+
+            <p>
+                Tell us what you are presenting, your preferred format
+                and the details you want considered. We will review
+                the project before confirming the final quotation.
+            </p>
+
+
+            <form id="framingForm">
+
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="projectName">
+                        Project Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectName"
+                        placeholder="Optional">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="presentationType">
+                        Presentation Type
+                    </label>
+
+                    <select id="presentationType" required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Framed Artwork">
+                            Framed Artwork
+                        </option>
+
+                        <option value="Canvas">
+                            Canvas
+                        </option>
+
+                        <option value="Acrylic">
+                            Acrylic
+                        </option>
+
+                        <option value="Not Sure">
+                            Not sure
+
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="size">
+                        Preferred Size
+                    </label>
+
+                    <select id="size">
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="4x6">
+                            4 × 6
+                        </option>
+
+                        <option value="5x7">
+                            5 × 7
+                        </option>
+
+                        <option value="6x8">
+                            6 × 8
+                        </option>
+
+                        <option value="8x10">
+                            8 × 10
+                        </option>
+
+                        <option value="10x12">
+                            10 × 12
+                        </option>
+
+                        <option value="11x14">
+                            11 × 14
+                        </option>
+
+                        <option value="12x16">
+                            12 × 16
+                        </option>
+
+                        <option value="14x18">
+                            14 × 18
+                        </option>
+
+                        <option value="16x20">
+                            16 × 20
+                        </option>
+
+                        <option value="Custom">
+                            Custom Size
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="frameColour">
+                        Preferred Frame Colour
+                    </label>
+
+                    <select id="frameColour">
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Gold">
+                            Gold
+                        </option>
+
+                        <option value="Bronze">
+                            Bronze
+                        </option>
+
+                        <option value="Cream">
+                            Cream
+                        </option>
+
+                        <option value="Grey-Black">
+                            Grey-Black
+                        </option>
+
+                        <option value="Black">
+                            Black
+                        </option>
+
+                        <option value="White">
+                            White
+                        </option>
+
+                        <option value="Burgundy">
+                            Burgundy
+                        </option>
+
+                        <option value="Brown">
+                            Brown
+                        </option>
+
+                        <option value="Not Sure">
+                            Not sure
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        Presentation Features
+                    </label>
+
+                    <div class="checkbox-grid">
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Pearl">
+                            Pearl Finish
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Glass">
+                            Glass
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Metal">
+                            Metal
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Wood">
+                            Wood
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Acrylic">
+                            Acrylic
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Lighting">
+                            Lighting
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Gallery">
+                            Gallery Style
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <!-- UPLOAD -->
+
+                <div class="form-group">
+
+                    <label for="referenceFiles">
+                        Upload Artwork or Reference Images
+                    </label>
+
+                    <div class="upload-box">
+
+                        <p>
+                            Upload the artwork, photograph, design,
+                            sketch or reference image you want us
+                            to frame or use for the presentation.
+                        </p>
+
+                        <input
+                            type="file"
+                            id="referenceFiles"
+                            accept="image/*,.pdf"
+                            multiple>
+
+                        <div class="upload-note">
+                            Multiple files can be selected.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="details">
+                        Project Details
+                    </label>
+
+                    <textarea
+                        id="details"
+                        placeholder="Tell us about the piece, desired look, placement or anything else we should know."></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="quantity">
+                        Quantity
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        min="1"
+                        value="1">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="deadline">
+                        Desired Completion Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="deadline">
+
+                </div>
+
+
+                <div class="estimate">
+
+                    <div class="estimate-title">
+                        Project Estimate
+                    </div>
+
+                    <div class="estimate-price">
+                        Custom Quotation
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="order-button">
+
+                    CONTINUE TO ORDER
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- PAYMENT -->
+
+        <section class="payment-box">
+
+            <h2>
+                Payment & Project Confirmation
+            </h2>
+
+            <p>
+                Framing and presentation pricing depends on the selected
+                size, frame, material, finish, presentation method and
+                any additional preparation required.
+            </p>
+
+            <p>
+                Your project will be reviewed and the final quotation
+                confirmed before payment is completed.
+            </p>
+
+            <div class="payment-note">
+                Custom quotations are confirmed before payment is completed.
+            </div>
+
+        </section>
+
+
+        <!-- STATEMENT -->
+
+        <div class="statement">
+
+            The artwork is not finished
+
+            <br>
+
+            until the presentation feels complete.
+
+        </div>
+
+
+        <a
+            href="creative-services.html"
+            class="back-button">
+
+            Back To Creative Services
+
+        </a>
+
+    </main>
+
+
+    <script>
+
+        document
+            .getElementById("framingForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const features =
+                    Array.from(
+                        document.querySelectorAll(
+                            '.check-option input:checked'
+                        )
+                    ).map(function(checkbox) {
+
+                        return checkbox.value;
+
+                    });
+
+
+                const files =
+                    Array.from(
+                        document.getElementById(
+                            "referenceFiles"
+                        ).files
+                    ).map(function(file) {
+
+                        return file.name;
+
+                    });
+
+
+                const order = {
+
+                    type: "Creative Service",
+
+                    service: "Framing & Presentation",
+
+                    customerName:
+                        document.getElementById(
+                            "customerName"
+                        ).value,
+
+                    customerEmail:
+                        document.getElementById(
+                            "customerEmail"
+                        ).value,
+
+                    projectName:
+                        document.getElementById(
+                            "projectName"
+                        ).value,
+
+                    presentationType:
+                        document.getElementById(
+                            "presentationType"
+                        ).value,
+
+                    size:
+                        document.getElementById(
+                            "size"
+                        ).value,
+
+                    frameColour:
+                        document.getElementById(
+                            "frameColour"
+                        ).value,
+
+                    presentationFeatures:
+                        features,
+
+                    referenceFiles:
+                        files,
+
+                    projectDetails:
+                        document.getElementById(
+                            "details"
+                        ).value,
+
+                    quantity:
+                        document.getElementById(
+                            "quantity"
+                        ).value,
+
+                    deadline:
+                        document.getElementById(
+                            "deadline"
+                        ).value,
+
+                    total:
+                        null,
+
+                    status:
+                        "Awaiting Quotation",
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+                localStorage.setItem(
+                    "currentOrder",
+                    JSON.stringify(order)
+                );
+
+
+                window.location.href =
+                    "payment.html";
+
+            });
+
+    </script>
+
+</body>
+
+</html>

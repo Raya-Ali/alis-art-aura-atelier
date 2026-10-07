@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Quote & Word Art | Alis Art & Aura Atelier</title>
+
+<style>
+:root {
+  --purple: #C90DEA;
+  --blue: #33CEEF;
+  --pink: #FF66C4;
+  --black: #080810;
+  --card: #171722;
+  --text: #ffffff;
+  --muted: #c7c7d5;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--black);
+  color: var(--text);
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+header {
+  background: #11111c;
+  border-bottom: 1px solid var(--purple);
+  padding: 18px 14px;
+  text-align: center;
+}
+
+.brand {
+  font-size: 21px;
+  font-weight: bold;
+  color: var(--pink);
+  margin-bottom: 12px;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+nav a:hover {
+  color: var(--blue);
+}
+
+main {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px 14px 50px;
+}
+
+h1, h2, h3 {
+  line-height: 1.3;
+}
+
+h1 {
+  color: var(--pink);
+  font-size: 30px;
+}
+
+h2 {
+  color: var(--blue);
+  font-size: 23px;
+}
+
+.intro {
+  color: var(--muted);
+  max-width: 750px;
+}
+
+.section {
+  margin-top: 35px;
+}
+
+.gallery {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 2px 20px;
+  scroll-snap-type: x mandatory;
+}
+
+.gallery-card {
+  flex: 0 0 230px;
+  background: var(--card);
+  border: 1px solid #39394c;
+  border-radius: 12px;
+  overflow: hidden;
+  scroll-snap-align: start;
+}
+
+.gallery-card img {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background: #101019;
+  display: block;
+}
+
+.gallery-card h3,
+.gallery-card p {
+  padding: 0 12px;
+}
+
+.gallery-card h3 {
+  color: var(--pink);
+}
+
+.gallery-card p {
+  color: var(--muted);
+  font-size: 14px;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid #38384b;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 16px;
+}
+
+.tier {
+  border: 1px solid var(--purple);
+  border-radius: 12px;
+  padding: 15px;
+  margin: 12px 0;
+  background: #11111c;
+}
+
+.tier h3 {
+  color: var(--pink);
+  margin-top: 0;
+}
+
+label {
+  display: block;
+  color: var(--blue);
+  margin-top: 15px;
+  font-weight: bold;
+}
+
+input, select, textarea {
+  width: 100%;
+  margin-top: 7px;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #55556b;
+  background: #0d0d17;
+  color: white;
+  font-size: 16px;
+}
+
+textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+button, .pay-button {
+  display: inline-block;
+  border: none;
+  border-radius: 9px;
+  padding: 13px 20px;
+  background: linear-gradient(120deg, var(--purple), #3533CD);
+  color: white;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-top: 18px;
+}
+
+button:hover, .pay-button:hover {
+  background: linear-gradient(120deg, var(--pink), var(--purple));
+}
+
+.total {
+  color: var(--pink);
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.preview-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  border-bottom: 1px solid #38384b;
+  padding: 9px 0;
+}
+
+.note {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+.hidden {
+  display: none;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: var(--muted);
+  border-top: 1px solid #38384b;
+}
+
+@media (max-width: 600px) {
+  h1 {
+    font-size: 26px;
+  }
+
+  .gallery-card {
+    flex-basis: 78%;
+  }
+
+  nav {
+    gap: 12px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">Alis Art & Aura Atelier</div>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="what-we-create.html">What We Create</a>
+    <a href="custom-orders.html">Custom Orders</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+<section>
+  <h1>Quote & Word Art</h1>
+
+  <p class="intro">
+    Words hold memories, meaning, emotion and possibility.
+    At Alis Art & Aura Atelier, we transform quotes, poems,
+    names, messages and meaningful words into visual artwork
+    created to reflect your story, occasion and style.
+  </p>
+
+  <p class="intro">
+    Explore our galleries, select your creation tier,
+    personalize your design and choose whether you would
+    like a digital copy or a physical artwork.
+  </p>
+</section>
+
+
+<!-- POETRY GALLERY -->
+
+<section class="section">
+  <h2>Poetry Gallery</h2>
+
+  <p class="intro">
+    Poems transformed into expressive visual art.
+  </p>
+
+  <div class="gallery">
+
+    <div class="gallery-card">
+      <img src="images/poetry1.png"
+           alt="Poetry artwork example">
+      <h3>Poetry Design 01</h3>
+      <p>Explore this poetry-inspired design.</p>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/poetry2.png"
+           alt="Poetry artwork example">
+      <h3>Poetry Design 02</h3>
+      <p>Words arranged into a meaningful composition.</p>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/poetry3.png"
+           alt="Poetry artwork example">
+      <h3>Poetry Design 03</h3>
+      <p>Expressive typography and visual storytelling.</p>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/poetry4.png"
+           alt="Poetry artwork example">
+      <h3>Poetry Design 04</h3>
+      <p>A creative presentation of written expression.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- QUOTES GALLERY -->
+
+<section class="section">
+  <h2>Quotes Gallery</h2>
+
+  <p class="intro">
+    Inspirational, personal and meaningful quotes
+    transformed into artwork.
+  </p>
+
+  <div class="gallery">
+
+    <div class="gallery-card">
+      <img src="images/quotes1.png"
+           alt="Quote artwork example">
+      <h3>Quote Design 01</h3>
+      <p>Meaningful words in an artistic format.</p>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/quotes2.png"
+           alt="Quote artwork example">
+      <h3>Quote Design 02</h3>
+      <p>Expressive quote compositions.</p>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/quotes3.png"
+           alt="Quote artwork example">
+      <h3>Quote Design 03</h3>
+      <p>Words designed to make an impression.</p>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/quotes4.png"
+           alt="Quote artwork example">
+      <h3>Quote Design 04</h3>
+      <p>Art inspired by powerful expressions.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- TRANSFORMATIONAL WORDS GALLERY -->
+
+<section class="section">
+  <h2>Transformational Words Gallery</h2>
+
+  <p class="intro">
+    Affirmations, personal expressions, powerful words
+    and meaningful messages transformed into visual art.
+  </p>
+
+  <div class="gallery">
+
+    <div class="gallery-card">
+      <img src="images/words1.png"
+           alt="Transformational words artwork">
+      <h3>Words Design 01</h3>
+      <p>Words presented as expressive artwork.</p>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/words2.png"
+           alt="Transformational words artwork">
+      <h3>Words Design 02</h3>
+      <p>Personal expression through design.</p>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/words3.png"
+           alt="Transformational words artwork">
+      <h3>Words Design 03</h3>
+      <p>Meaningful words with visual impact.</p>
+    </div>
+
+    <div class="gallery-card">
+      <img src="images/words4.png"
+           alt="Transformational words artwork">
+      <h3>Words Design 04</h3>
+      <p>Creative compositions inspired by words.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ORDER FORM -->
+
+<section class="section" id="order">
+  <h2>Create Your Quote & Word Art</h2>
+
+  <p class="intro">
+    Choose your tier, presentation and design details
+    to begin your order.
+  </p>
+
+  <form id="orderForm">
+
+    <label for="tier">Choose Your Creation Tier</label>
+
+    <select id="tier" required>
+      <option value="">Select a tier</option>
+      <option value="Regular">Regular — Existing Design</option>
+      <option value="Signature">Signature — Personalized Design</option>
+      <option value="Premium">Premium — Designed From Scratch</option>
+    </select>
+
+
+    <div class="card">
+      <h3>Regular</h3>
+      <p>
+        Select an established design and have your chosen
+        quote, poem or words transformed into artwork.
+      </p>
+
+      <h3>Signature</h3>
+      <p>
+        Personalize your selected design with names,
+        messages and personal details.
+      </p>
+
+      <h3>Premium</h3>
+      <p>
+        A one-of-one creation developed around your
+        occasion, needs, preferences and personal style.
+      </p>
+    </div>
+
+
+    <label for="category">Type of Word Art</label>
+
+    <select id="category" required>
+      <option value="">Choose a category</option>
+      <option>Poetry</option>
+      <option>Quotes</option>
+      <option>Transformational Words</option>
+      <option>Other Meaningful Words</option>
+    </select>
+
+
+    <label for="design">Choose a Gallery Design</label>
+
+    <select id="design" required>
+      <option value="">Select a design</option>
+      <option>Design 01</option>
+      <option>Design 02</option>
+      <option>Design 03</option>
+      <option>Design 04</option>
+      <option>Custom Design Request</option>
+    </select>
+
+
+    <label for="words">Your Quote, Poem or Words</label>
+
+    <textarea id="words"
+      placeholder="Enter the words you want transformed into artwork..."
+      required></textarea>
+
+
+    <label for="personalization">Names or Personal Message</label>
+
+    <textarea id="personalization"
+      placeholder="Add names, messages or personal details (if applicable)..."></textarea>
+
+
+    <label for="occasion">Occasion or Purpose</label>
+
+    <select id="occasion">
+      <option value="">Select an occasion</option>
+      <option>Personal Use</option>
+      <option>Birthday</option>
+      <option>Anniversary</option>
+      <option>Wedding</option>
+      <option>Memorial</option>
+      <option>Graduation</option>
+      <option>Business or Professional</option>
+      <option>Other</option>
+    </select>
+
+
+    <label for="style">Preferred Style</label>
+
+    <select id="style" required>
+      <option value="">Choose a style</option>
+      <option>Elegant</option>
+      <option>Minimalist</option>
+      <option>Romantic</option>
+      <option>Modern</option>
+      <option>Bold</option>
+      <option>Luxury</option>
+      <option>Artistic / Expressive</option>
+      <option>Custom Style</option>
+    </select>
+
+
+    <label for="background">Background</label>
+
+    <select id="background" required>
+      <option value="">Choose a background</option>
+      <option value="Solid Colour">Full Colour / Solid Background</option>
+      <option value="Gradient">Gradient Background</option>
+      <option value="Custom Background">Custom Background Request</option>
+    </select>
+
+
+    <label for="colour">Preferred Colour</label>
+
+    <select id="colour" required>
+      <option value="">Choose a colour</option>
+      <option>Black</option>
+      <option>White</option>
+      <option>Gold</option>
+      <option>Silver</option>
+      <option>Pink</option>
+      <option>Purple</option>
+      <option>Blue</option>
+      <option>Red</option>
+      <option>Green</option>
+      <option>Neutral / Earth Tones</option>
+      <option>Multiple Colours</option>
+      <option>Custom Colour Request</option>
+    </select>
+
+
+    <label for="edges">Edges and Decorative Elements</label>
+
+    <select id="edges">
+      <option value="">Choose an option</option>
+      <option>Clean / Minimal Edges</option>
+      <option>Decorative Edges</option>
+      <option>Floral Elements</option>
+      <option>Geometric Elements</option>
+      <option>Ornamental Elements</option>
+      <option>Custom Elements</option>
+      <option>No Additional Elements</option>
+    </select>
+
+
+    <label for="format">Choose Your Copy</label>
+
+    <select id="format" required>
+      <option value="">Choose a format</option>
+      <option value="Digital">Digital Copy — Download</option>
+      <option value="Physical">Physical Copy — Atelier Prints</option>
+    </select>
+
+
+    <div id="physicalOptions" class="hidden">
+
+      <label for="size">Physical Print Size</label>
+
+      <select id="size">
+        <option value="">Choose a size</option>
+        <option value="4x6">4 × 6 inches</option>
+        <option value="5x7">5 × 7 inches</option>
+        <option value="6x8">6 × 8 inches</option>
+        <option value="8x10">8 × 10 inches</option>
+        <option value="10x12">10 × 12 inches</option>
+        <option value="11x14">11 × 14 inches</option>
+        <option value="12x16">12 × 16 inches</option>
+      </select>
+
+      <label for="finish">Print Finish</label>
+
+      <select id="finish">
+        <option value="">Choose a finish</option>
+        <option value="Standard">Standard</option>
+        <option value="Matte">Matte</option>
+        <option value="Premium">Premium</option>
+      </select>
+
+    </div>
+
+
+    <label for="quantity">Quantity</label>
+
+    <input type="number" id="quantity"
+      min="1" value="1" required>
+
+
+    <button type="button" onclick="updatePreview()">
+      Update Order Preview
+    </button>
+
+  </form>
+</section>
+
+
+<!-- ORDER PREVIEW -->
+
+<section class="section card" id="preview">
+
+  <h2>Your Order Preview</h2>
+
+  <p class="note">
+    Review your selections and estimated total before
+    proceeding to payment.
+  </p>
+
+  <div id="previewDetails">
+    Your order selections will appear here.
+  </div>
+
+  <div class="preview-line">
+    <strong>Estimated Total</strong>
+    <span class="total" id="total">J$0</span>
+  </div>
+
+  <p class="note">
+    Custom Premium work, delivery and any additional
+    requirements may need confirmation before final pricing.
+  </p>
+
+</section>
+
+
+<!-- CUSTOMER DETAILS -->
+
+<section class="section card">
+
+  <h2>Customer Details</h2>
+
+  <p class="intro">
+    Enter your details so your order can be reviewed
+    and processed.
+  </p>
+
+  <form id="customerForm">
+
+    <label for="customerName">Full Name</label>
+
+    <input type="text" id="customerName"
+      placeholder="Your full name" required>
+
+    <label for="customerEmail">Email Address</label>
+
+    <input type="email" id="customerEmail"
+      placeholder="Your email address" required>
+
+    <label for="customerPhone">Phone Number</label>
+
+    <input type="tel" id="customerPhone"
+      placeholder="Your contact number" required>
+
+    <label for="customerParish">Parish</label>
+
+    <select id="customerParish" required>
+      <option value="">Choose your parish</option>
+      <option>Clarendon</option>
+      <option>Hanover</option>
+      <option>Kingston</option>
+      <option>Manchester</option>
+      <option>Portland</option>
+      <option>Saint Andrew</option>
+      <option>Saint Ann</option>
+      <option>Saint Catherine</option>
+      <option>Saint Elizabeth</option>
+      <option>Saint James</option>
+      <option>Saint Mary</option>
+      <option>Saint Thomas</option>
+      <option>Trelawny</option>
+      <option>Westmoreland</option>
+      <option>Other / International</option>
+    </select>
+
+    <label for="customerAddress">Delivery Address (if physical)</label>
+
+    <textarea id="customerAddress"
+      placeholder="Enter delivery address if applicable"></textarea>
+
+  </form>
+
+  <button type="button" class="pay-button"
+    onclick="proceedToPayment()">
+    Proceed to Payment
+  </button>
+
+  <p class="note">
+    Payment is not connected yet. This button is a
+    placeholder for the future Atelier checkout system.
+  </p>
+
+</section>
+
+</main>
+
+<footer>
+  Alis Art & Aura Atelier<br>
+  Transforming words, emotions and memories into art.
+  <br><br>
+  <a href="index.html" style="color:var(--blue);">
+    Return to Home
+  </a>
+</footer>
+
+
+<script>
+/*
+  EDITABLE STARTING PRICES — JAMAICAN DOLLARS
+
+  These are draft prices for development.
+  Replace them with your confirmed prices later.
+
+  Physical print prices are starting amounts.
+  Premium custom work may require a confirmed quote.
+*/
+
+const prices = {
+  Regular: {
+    Digital: 1500,
+    Physical: 2500
+  },
+
+  Signature: {
+    Digital: 2500,
+    Physical: 4000
+  },
+
+  Premium: {
+    Digital: 5000,
+    Physical: 7500
+  }
+};
+
+const sizePrices = {
+  "4x6": 0,
+  "5x7": 500,
+  "6x8": 1000,
+  "8x10": 2000,
+  "10x12": 3000,
+  "11x14": 4000,
+  "12x16": 5500
+};
+
+const finishPrices = {
+  Standard: 0,
+  Matte: 300,
+  Premium: 500
+};
+
+const backgroundPrices = {
+  "Solid Colour": 0,
+  Gradient: 300,
+  "Custom Background": 700
+};
+
+const edgePrices = {
+  "Clean / Minimal Edges": 0,
+  "Decorative Edges": 300,
+  "Floral Elements": 500,
+  "Geometric Elements": 500,
+  "Ornamental Elements": 700,
+  "Custom Elements": 1000,
+  "No Additional Elements": 0
+};
+
+function value(id) {
+  return document.getElementById(id).value;
+}
+
+function money(amount) {
+  return "J$" + amount.toLocaleString("en-JM");
+}
+
+function calculateTotal() {
+
+  const tier = value("tier");
+  const format = value("format");
+
+  if (!tier || !format) {
+    return 0;
+  }
+
+  let total = prices[tier][format] || 0;
+
+  total += backgroundPrices[value("background")] || 0;
+  total += edgePrices[value("edges")] || 0;
+
+  if (format === "Physical") {
+    total += sizePrices[value("size")] || 0;
+    total += finishPrices[value("finish")] || 0;
+  }
+
+  const quantity = Math.max(
+    1,
+    parseInt(value("quantity")) || 1
+  );
+
+  return total * quantity;
+}
+
+function updatePreview() {
+
+  const tier = value("tier");
+  const format = value("format");
+
+  if (!tier || !format) {
+    alert("Please choose a tier and copy format first.");
+    return;
+  }
+
+  const total = calculateTotal();
+
+  const details = [
+    ["Tier", tier],
+    ["Category", value("category")],
+    ["Gallery Design", value("design")],
+    ["Words", value("words")],
+    ["Personalization", value("personalization") || "None"],
+    ["Occasion", value("occasion") || "Not specified"],
+    ["Style", value("style")],
+    ["Background", value("background")],
+    ["Colour", value("colour")],
+    ["Edges / Elements", value("edges")],
+    ["Copy Format", format],
+    ["Size", format === "Physical" ? value("size") : "Digital"],
+    ["Finish", format === "Physical" ? value("finish") : "Digital"],
+    ["Quantity", value("quantity")]
+  ];
+
+  document.getElementById("previewDetails").innerHTML =
+    details.map(item => `
+      <div class="preview-line">
+        <strong>${escapeHTML(item[0])}</strong>
+        <span>${escapeHTML(String(item[1] || "Not selected"))}</span>
+      </div>
+    `).join("");
+
+  document.getElementById("total").textContent = money(total);
+
+  document.getElementById("preview").scrollIntoView({
+    behavior: "smooth"
+  });
+}
+
+function escapeHTML(text) {
+  return text.replace(/[&<>"']/g, function(char) {
+    return {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#039;"
+    }[char];
+  });
+}
+
+document.getElementById("format").addEventListener("change", function() {
+
+  const physical = this.value === "Physical";
+
+  document.getElementById("physicalOptions")
+    .classList.toggle("hidden", !physical);
+
+  document.getElementById("size").required = physical;
+  document.getElementById("finish").required = physical;
+
+  updatePreview();
+});
+
+function proceedToPayment() {
+
+  const orderForm = document.getElementById("orderForm");
+  const customerForm = document.getElementById("customerForm");
+
+  if (!orderForm.reportValidity()) {
+    return;
+  }
+
+  if (!customerForm.reportValidity()) {
+    return;
+  }
+
+  updatePreview();
+
+  alert(
+    "Your order preview is ready. The Atelier payment system " +
+    "is not connected yet. Your order has not been submitted " +
+    "or paid for."
+  );
+}
+</script>
+
+</body>
+</html>

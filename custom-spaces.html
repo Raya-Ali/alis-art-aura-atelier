@@ -1,0 +1,1630 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Custom Spaces | Alis Art & Aura Atelier</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: white;
+        }
+
+        nav {
+            background: #111;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        nav .logo {
+            font-size: 20px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #C90DEA, #33CEEF, #FF66C4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 12px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #FF66C4;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px 45px;
+            background:
+                radial-gradient(circle at top, #3533CD55, transparent 55%),
+                #080808;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #C90DEA, #33CEEF, #FF66C4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            line-height: 1.7;
+            color: #ddd;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 25px 20px 45px;
+            text-align: center;
+            line-height: 1.7;
+            color: #ccc;
+        }
+
+        .section {
+            padding: 35px 20px 50px;
+        }
+
+        .section h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 10px;
+            color: #FF66C4;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 5px 25px;
+            scroll-behavior: smooth;
+        }
+
+        .gallery::-webkit-scrollbar {
+            height: 7px;
+        }
+
+        .gallery::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, #C90DEA, #33CEEF);
+            border-radius: 20px;
+        }
+
+        .card {
+            min-width: 260px;
+            max-width: 260px;
+            background: #141414;
+            border: 1px solid #333;
+            border-radius: 15px;
+            overflow: hidden;
+            flex-shrink: 0;
+            box-shadow: 0 10px 25px #00000066;
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 18px;
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.5;
+            min-height: 42px;
+        }
+
+        button {
+            width: 100%;
+            border: none;
+            padding: 13px;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #C90DEA, #3533CD);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 8px;
+        }
+
+        button:hover {
+            opacity: 0.88;
+        }
+
+        .builder {
+            display: none;
+            max-width: 950px;
+            margin: 30px auto 70px;
+            padding: 30px 20px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px #00000088;
+        }
+
+        .builder h2 {
+            text-align: center;
+            color: #33CEEF;
+            margin-bottom: 10px;
+        }
+
+        .selected-space {
+            text-align: center;
+            color: #FF66C4;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #eee;
+        }
+
+        select,
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background: #1c1c1c;
+            color: white;
+            outline: none;
+        }
+
+        select:focus,
+        input:focus,
+        textarea:focus {
+            border-color: #C90DEA;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .price-box {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #181818, #25204a);
+            border: 1px solid #444;
+            text-align: center;
+        }
+
+        .price-box h3 {
+            margin: 0 0 8px;
+            color: #FF66C4;
+        }
+
+        .price {
+            font-size: 25px;
+            font-weight: bold;
+            color: #33CEEF;
+        }
+
+        .preview {
+            margin-top: 30px;
+            padding: 20px;
+            background: #0c0c0c;
+            border: 1px solid #333;
+            border-radius: 12px;
+        }
+
+        .preview h3 {
+            color: #C90DEA;
+            margin-top: 0;
+        }
+
+        .preview p {
+            line-height: 1.7;
+            color: #ddd;
+            margin: 5px 0;
+        }
+
+        .delivery-note {
+            margin-top: 20px;
+            padding: 15px;
+            border-left: 3px solid #33CEEF;
+            background: #171717;
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        .payment-section {
+            margin-top: 25px;
+            padding: 20px;
+            background: #161616;
+            border-radius: 12px;
+            border: 1px solid #333;
+        }
+
+        .payment-section h3 {
+            color: #33CEEF;
+            margin-top: 0;
+        }
+
+        .close-button {
+            background: #292929;
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            nav .logo {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Alis Art & Aura Atelier</div>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="what-we-create.html">Create</a>
+            <a href="custom-orders.html">Custom Orders</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Custom Spaces</h1>
+
+        <p>
+            Creative décor concepts shaped around your space, aesthetic,
+            personality and vision.
+        </p>
+    </section>
+
+    <div class="intro">
+        Your space does not have to fit a category.
+        Start with the area you want to transform, explore the possibilities,
+        and choose the pieces that make the space feel like yours.
+    </div>
+
+
+    <!-- BEDROOM -->
+
+    <section class="section">
+
+        <h2>Bedroom Décor</h2>
+
+        <p class="section-description">
+            Build a bedroom atmosphere around the feeling, colours and details you want.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/custom-bedroom-1.png" alt="Bedroom Atmosphere">
+
+                <div class="card-content">
+                    <h3>Bedroom Atmosphere</h3>
+                    <p>Build the overall mood and visual direction of your bedroom.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Bedroom Décor"
+                        data-area="Bedroom Atmosphere">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-bedroom-2.png" alt="Bed and Soft Décor">
+
+                <div class="card-content">
+                    <h3>Bed & Soft Décor</h3>
+                    <p>Coordinate bedding, cushions, pillowcases and soft décor.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Bedroom Décor"
+                        data-area="Bed & Soft Décor">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-bedroom-3.png" alt="Bedside Area">
+
+                <div class="card-content">
+                    <h3>Bedside Area</h3>
+                    <p>Create a personalized bedside atmosphere and display.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Bedroom Décor"
+                        data-area="Bedside Area">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-bedroom-4.png" alt="Dresser and Vanity">
+
+                <div class="card-content">
+                    <h3>Dresser & Vanity</h3>
+                    <p>Design décor and displays specifically around your surface.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Bedroom Décor"
+                        data-area="Dresser & Vanity">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-bedroom-5.png" alt="Shelf and Display Area">
+
+                <div class="card-content">
+                    <h3>Shelf & Display Area</h3>
+                    <p>Turn shelves and display areas into coordinated décor.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Bedroom Décor"
+                        data-area="Shelf & Display Area">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-bedroom-6.png" alt="Complete Bedroom Concept">
+
+                <div class="card-content">
+                    <h3>Complete Bedroom Concept</h3>
+                    <p>Create a coordinated vision for the entire bedroom.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Bedroom Décor"
+                        data-area="Complete Bedroom Concept">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- LIVING SPACE -->
+
+    <section class="section">
+
+        <h2>Living Space Décor</h2>
+
+        <p class="section-description">
+            Create a living environment that reflects your style and atmosphere.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/custom-living-1.png" alt="Living Room">
+
+                <div class="card-content">
+                    <h3>Living Room</h3>
+                    <p>Develop a coordinated decorative direction for your living room.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Living Space Décor"
+                        data-area="Living Room">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-living-2.png" alt="Seating Area">
+
+                <div class="card-content">
+                    <h3>Seating Area</h3>
+                    <p>Coordinate cushions, throws, accents and surrounding décor.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Living Space Décor"
+                        data-area="Seating Area">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-living-3.png" alt="Display Area">
+
+                <div class="card-content">
+                    <h3>Display Area</h3>
+                    <p>Design pieces for shelves, consoles and decorative surfaces.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Living Space Décor"
+                        data-area="Display Area">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-living-4.png" alt="Dining Area">
+
+                <div class="card-content">
+                    <h3>Dining Area</h3>
+                    <p>Bring a coordinated decorative concept into your dining space.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Living Space Décor"
+                        data-area="Dining Area">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-living-5.png" alt="Accent Area">
+
+                <div class="card-content">
+                    <h3>Accent Area</h3>
+                    <p>Transform a smaller area into a deliberate visual feature.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Living Space Décor"
+                        data-area="Accent Area">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-living-6.png" alt="Complete Living Concept">
+
+                <div class="card-content">
+                    <h3>Complete Living Concept</h3>
+                    <p>Build a coordinated decorative direction for the whole space.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Living Space Décor"
+                        data-area="Complete Living Concept">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- OFFICE -->
+
+    <section class="section">
+
+        <h2>Office / Work Space</h2>
+
+        <p class="section-description">
+            Create a workspace that feels intentional, personal and inspiring.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/custom-office-1.png" alt="Desk Space">
+
+                <div class="card-content">
+                    <h3>Desk Space</h3>
+                    <p>Build a personalized setup around your desk.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Office / Work Space"
+                        data-area="Desk Space">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-office-2.png" alt="Home Office">
+
+                <div class="card-content">
+                    <h3>Home Office</h3>
+                    <p>Create a complete decorative direction for your workspace.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Office / Work Space"
+                        data-area="Home Office">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-office-3.png" alt="Creative Workspace">
+
+                <div class="card-content">
+                    <h3>Creative Workspace</h3>
+                    <p>Build an environment around your creative process.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Office / Work Space"
+                        data-area="Creative Workspace">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-office-4.png" alt="Professional Workspace">
+
+                <div class="card-content">
+                    <h3>Professional Workspace</h3>
+                    <p>Create a polished and coordinated work environment.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Office / Work Space"
+                        data-area="Professional Workspace">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-office-5.png" alt="Study Space">
+
+                <div class="card-content">
+                    <h3>Study Space</h3>
+                    <p>Shape a focused and personalized study environment.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Office / Work Space"
+                        data-area="Study Space">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-office-6.png" alt="Workspace Display">
+
+                <div class="card-content">
+                    <h3>Workspace Display</h3>
+                    <p>Design meaningful pieces for your workspace surfaces.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Office / Work Space"
+                        data-area="Workspace Display">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SMALL SPACES -->
+
+    <section class="section">
+
+        <h2>Small Spaces</h2>
+
+        <p class="section-description">
+            Make smaller areas feel intentional without needing to redesign an entire room.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/custom-small-1.png" alt="Bedside Table">
+
+                <div class="card-content">
+                    <h3>Bedside Table</h3>
+                    <p>Create a coordinated decorative setup for a bedside surface.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Small Spaces"
+                        data-area="Bedside Table">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-small-2.png" alt="Dresser Top">
+
+                <div class="card-content">
+                    <h3>Dresser Top</h3>
+                    <p>Turn a dresser surface into a personalized display.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Small Spaces"
+                        data-area="Dresser Top">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-small-3.png" alt="Shelf">
+
+                <div class="card-content">
+                    <h3>Shelf</h3>
+                    <p>Build a decorative concept around your shelf space.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Small Spaces"
+                        data-area="Shelf">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-small-4.png" alt="Desk Corner">
+
+                <div class="card-content">
+                    <h3>Desk Corner</h3>
+                    <p>Transform a small working or creative corner.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Small Spaces"
+                        data-area="Desk Corner">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-small-5.png" alt="Small Display">
+
+                <div class="card-content">
+                    <h3>Small Display</h3>
+                    <p>Create a compact decorative display around your space.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Small Spaces"
+                        data-area="Small Display">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/custom-small-6.png" alt="Personal Corner">
+
+                <div class="card-content">
+                    <h3>Personal Corner</h3>
+                    <p>Give a small personal area its own visual identity.</p>
+
+                    <button type="button"
+                        class="explore-space"
+                        data-space="Small Spaces"
+                        data-area="Personal Corner">
+                        Explore This Space
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- BUILDER -->
+
+    <section class="builder" id="builder">
+
+        <button type="button" class="close-button" id="closeBuilder">
+            Close Builder
+        </button>
+
+        <h2>Build Your Custom Space</h2>
+
+        <div class="selected-space" id="selectedSpace"></div>
+
+
+        <div class="form-grid">
+
+            <div class="form-group full">
+
+                <label for="decorType">
+                    What Are You Creating?
+                </label>
+
+                <select id="decorType">
+                    <option value="">Select a décor option</option>
+                </select>
+
+            </div>
+
+
+            <div class="form-group hidden" id="presentationGroup">
+
+                <label for="presentation">
+                    Presentation
+                </label>
+
+                <select id="presentation">
+
+                    <option value="">
+                        Select presentation
+                    </option>
+
+                    <option value="Frame">
+                        Frame
+                    </option>
+
+                    <option value="Canvas">
+                        Canvas
+                    </option>
+
+                    <option value="Acrylic">
+                        Acrylic
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group hidden" id="sizeGroup">
+
+                <label for="size">
+                    Size
+                </label>
+
+                <select id="size">
+
+                    <option value="">
+                        Select size
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="direction">
+                    Design Direction
+                </label>
+
+                <select id="direction">
+
+                    <option value="">
+                        Select direction
+                    </option>
+
+                    <option>
+                        Personalised Words
+                    </option>
+
+                    <option>
+                        Personal Photo
+                    </option>
+
+                    <option>
+                        Artwork / Illustration
+                    </option>
+
+                    <option>
+                        Colour Palette
+                    </option>
+
+                    <option>
+                        Pattern / Theme
+                    </option>
+
+                    <option>
+                        Coordinated Look
+                    </option>
+
+                    <option>
+                        Fully Custom Concept
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="tier">
+                    Design Tier
+                </label>
+
+                <select id="tier">
+
+                    <option value="">
+                        Select tier
+                    </option>
+
+                    <option>
+                        Regular
+                    </option>
+
+                    <option>
+                        Signature
+                    </option>
+
+                    <option>
+                        Premium
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="quantity">
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    value="1"
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label for="vision">
+                    Tell Us About Your Vision
+                </label>
+
+                <textarea
+                    id="vision"
+                    placeholder="Describe the colours, theme, artwork, feeling, measurements, or anything else you want us to know."
+                ></textarea>
+
+            </div>
+
+
+            <!-- CUSTOMER INFORMATION -->
+
+            <div class="form-group full">
+
+                <h3 style="color:#FF66C4;">
+                    Customer Information
+                </h3>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Your full name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerEmail">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="customerEmail"
+                    placeholder="Your email"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerPhone">
+                    Phone / WhatsApp
+                </label>
+
+                <input
+                    type="text"
+                    id="customerPhone"
+                    placeholder="Your phone or WhatsApp"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerAddress">
+                    Delivery Address
+                </label>
+
+                <input
+                    type="text"
+                    id="customerAddress"
+                    placeholder="Delivery address"
+                >
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label for="instructions">
+                    Special Instructions
+                </label>
+
+                <textarea
+                    id="instructions"
+                    placeholder="Anything else we should know about your order?"
+                ></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRICE -->
+
+        <div class="price-box">
+
+            <h3>Estimated Total</h3>
+
+            <div class="price" id="totalPrice">
+                Price To Be Calculated
+            </div>
+
+        </div>
+
+
+        <!-- ORDER PREVIEW -->
+
+        <div class="preview">
+
+            <h3>Order Preview</h3>
+
+            <p id="previewSpace">
+                Space: —
+            </p>
+
+            <p id="previewArea">
+                Area: —
+            </p>
+
+            <p id="previewDecor">
+                Décor: —
+            </p>
+
+            <p id="previewPresentation">
+                Presentation: —
+            </p>
+
+            <p id="previewSize">
+                Size: —
+            </p>
+
+            <p id="previewDirection">
+                Design Direction: —
+            </p>
+
+            <p id="previewTier">
+                Tier: —
+            </p>
+
+            <p id="previewQuantity">
+                Quantity: 1
+            </p>
+
+            <p id="previewCustomer">
+                Customer: —
+            </p>
+
+            <p id="previewContact">
+                Contact: —
+            </p>
+
+            <p id="previewTotal">
+                Total: Price To Be Calculated
+            </p>
+
+        </div>
+
+
+        <div class="delivery-note">
+
+            Delivery is calculated separately based on the order,
+            location and delivery requirements.
+
+        </div>
+
+
+        <!-- PAYMENT -->
+
+        <div class="payment-section">
+
+            <h3>Payment</h3>
+
+            <p>
+                Once your order details are confirmed,
+                continue to payment to complete your order.
+            </p>
+
+            <button type="button" id="paymentButton">
+                Continue To Payment
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        /* =========================
+           CUSTOM SPACE BUILDER
+        ========================= */
+
+        let currentSpace = "";
+        let currentArea = "";
+
+
+        const decorOptions = {
+
+            "Bedroom Décor": [
+
+                "Bedding",
+                "Pillowcases",
+                "Bed Cushions",
+                "Bed Throws / Blankets",
+                "Curtains",
+                "Bedside Décor",
+                "Dresser / Vanity Décor",
+                "Shelf Décor",
+                "Small Display Artwork",
+                "Bedroom Accent Piece",
+                "Coordinated Bedroom Concept"
+
+            ],
+
+
+            "Living Space Décor": [
+
+                "Cushions",
+                "Throws / Blankets",
+                "Curtains",
+                "Coffee Table Décor",
+                "Console / Table Décor",
+                "Shelf Décor",
+                "Small Display Artwork",
+                "Accent Piece",
+                "Coordinated Living Concept"
+
+            ],
+
+
+            "Office / Work Space": [
+
+                "Desk Décor",
+                "Desk Mat",
+                "Notebook / Journal",
+                "Mouse Pad",
+                "Workspace Organizer",
+                "Shelf Décor",
+                "Small Display Artwork",
+                "Inspirational Workspace Piece",
+                "Coordinated Workspace Concept"
+
+            ],
+
+
+            "Small Spaces": [
+
+                "Dresser-Top Décor",
+                "Bedside-Table Décor",
+                "Shelf Décor",
+                "Desk / Corner Décor",
+                "Small Display Artwork",
+                "Decorative Accent Piece",
+                "Coordinated Small-Space Concept"
+
+            ]
+
+        };
+
+
+        const builder = document.getElementById("builder");
+        const decorType = document.getElementById("decorType");
+        const presentation = document.getElementById("presentation");
+        const size = document.getElementById("size");
+
+        const presentationGroup =
+            document.getElementById("presentationGroup");
+
+        const sizeGroup =
+            document.getElementById("sizeGroup");
+
+
+        /* =========================
+           EXPLORE BUTTONS
+        ========================= */
+
+        document.querySelectorAll(".explore-space").forEach(function(button) {
+
+            button.addEventListener("click", function() {
+
+                currentSpace = this.dataset.space;
+                currentArea = this.dataset.area;
+
+
+                document.getElementById("selectedSpace").innerHTML =
+                    "<strong>Space:</strong> " +
+                    currentSpace +
+                    "<br>" +
+                    "<strong>Area:</strong> " +
+                    currentArea;
+
+
+                populateDecorOptions();
+
+
+                builder.style.display = "block";
+
+
+                builder.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+
+                updateBuilder();
+
+            });
+
+        });
+
+
+        /* =========================
+           CLOSE BUILDER
+        ========================= */
+
+        document.getElementById("closeBuilder")
+            .addEventListener("click", function() {
+
+                builder.style.display = "none";
+
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+
+            });
+
+
+        /* =========================
+           POPULATE DÉCOR OPTIONS
+        ========================= */
+
+        function populateDecorOptions() {
+
+            decorType.innerHTML =
+                '<option value="">Select a décor option</option>';
+
+
+            if (!decorOptions[currentSpace]) {
+                return;
+            }
+
+
+            decorOptions[currentSpace].forEach(function(option) {
+
+                const newOption =
+                    document.createElement("option");
+
+                newOption.value = option;
+                newOption.textContent = option;
+
+                decorType.appendChild(newOption);
+
+            });
+
+        }
+
+
+        /* =========================
+           CHECK FOR ARTWORK
+        ========================= */
+
+        function isArtwork() {
+
+            return decorType.value === "Small Display Artwork";
+
+        }
+
+
+        /* =========================
+           POPULATE ARTWORK SIZES
+        ========================= */
+
+        function populateSizes() {
+
+            size.innerHTML =
+                '<option value="">Select size</option>';
+
+
+            if (presentation.value === "") {
+                return;
+            }
+
+
+            const sizes = [
+
+                "4x6",
+                "5x7",
+                "6x8",
+                "8x10",
+                "10x12",
+                "11x14",
+                "12x16"
+
+            ];
+
+
+            sizes.forEach(function(item) {
+
+                const option =
+                    document.createElement("option");
+
+                option.value = item;
+                option.textContent = item;
+
+                size.appendChild(option);
+
+            });
+
+        }
+
+
+        /* =========================
+           UPDATE BUILDER
+        ========================= */
+
+        function updateBuilder() {
+
+            if (isArtwork()) {
+
+                presentationGroup.style.display = "flex";
+                sizeGroup.style.display = "flex";
+
+                if (presentation.value !== "") {
+                    populateSizes();
+                }
+
+            } else {
+
+                presentationGroup.style.display = "none";
+                sizeGroup.style.display = "none";
+
+                presentation.value = "";
+                size.value = "";
+
+            }
+
+
+            updatePreview();
+
+        }
+
+
+        /* =========================
+           PRESENTATION CHANGE
+        ========================= */
+
+        presentation.addEventListener("change", function() {
+
+            populateSizes();
+
+            updatePreview();
+
+        });
+
+
+        /* =========================
+           ALL FORM CHANGES
+        ========================= */
+
+        document.querySelectorAll(
+            "#decorType, #size, #direction, #tier, #quantity, #vision, #customerName, #customerEmail, #customerPhone, #customerAddress, #instructions"
+        ).forEach(function(element) {
+
+            element.addEventListener("input", updatePreview);
+            element.addEventListener("change", updatePreview);
+
+        });
+
+
+        decorType.addEventListener("change", function() {
+
+            updateBuilder();
+
+        });
+
+
+        /* =========================
+           PREVIEW
+        ========================= */
+
+        function updatePreview() {
+
+            const quantity =
+                parseInt(
+                    document.getElementById("quantity").value
+                ) || 1;
+
+
+            document.getElementById("previewSpace").innerHTML =
+                "<strong>Space:</strong> " +
+                (currentSpace || "—");
+
+
+            document.getElementById("previewArea").innerHTML =
+                "<strong>Area:</strong> " +
+                (currentArea || "—");
+
+
+            document.getElementById("previewDecor").innerHTML =
+                "<strong>Décor:</strong> " +
+                (decorType.value || "—");
+
+
+            document.getElementById("previewPresentation").innerHTML =
+                "<strong>Presentation:</strong> " +
+                (presentation.value || "—");
+
+
+            document.getElementById("previewSize").innerHTML =
+                "<strong>Size:</strong> " +
+                (size.value || "—");
+
+
+            document.getElementById("previewDirection").innerHTML =
+                "<strong>Design Direction:</strong> " +
+                (document.getElementById("direction").value || "—");
+
+
+            document.getElementById("previewTier").innerHTML =
+                "<strong>Tier:</strong> " +
+                (document.getElementById("tier").value || "—");
+
+
+            document.getElementById("previewQuantity").innerHTML =
+                "<strong>Quantity:</strong> " +
+                quantity;
+
+
+            const customerName =
+                document.getElementById("customerName").value;
+
+            const customerPhone =
+                document.getElementById("customerPhone").value;
+
+
+            document.getElementById("previewCustomer").innerHTML =
+                "<strong>Customer:</strong> " +
+                (customerName || "—");
+
+
+            document.getElementById("previewContact").innerHTML =
+                "<strong>Contact:</strong> " +
+                (customerPhone || "—");
+
+
+            document.getElementById("totalPrice").textContent =
+                "Price To Be Calculated";
+
+
+            document.getElementById("previewTotal").innerHTML =
+                "<strong>Total:</strong> Price To Be Calculated";
+
+        }
+
+
+        /* =========================
+           PAYMENT
+        ========================= */
+
+        document.getElementById("paymentButton")
+            .addEventListener("click", function() {
+
+                const order = {
+
+                    space: currentSpace,
+
+                    area: currentArea,
+
+                    decor:
+                        decorType.value,
+
+                    presentation:
+                        presentation.value,
+
+                    size:
+                        size.value,
+
+                    direction:
+                        document.getElementById("direction").value,
+
+                    tier:
+                        document.getElementById("tier").value,
+
+                    quantity:
+                        document.getElementById("quantity").value,
+
+                    vision:
+                        document.getElementById("vision").value,
+
+                    customerName:
+                        document.getElementById("customerName").value,
+
+                    customerEmail:
+                        document.getElementById("customerEmail").value,
+
+                    customerPhone:
+                        document.getElementById("customerPhone").value,
+
+                    customerAddress:
+                        document.getElementById("customerAddress").value,
+
+                    instructions:
+                        document.getElementById("instructions").value
+
+                };
+
+
+                localStorage.setItem(
+                    "customSpaceOrder",
+                    JSON.stringify(order)
+                );
+
+
+                window.location.href =
+                    "payment.html";
+
+            });
+
+
+        /* =========================
+           INITIAL STATE
+        ========================= */
+
+        updatePreview();
+
+    </script>
+
+</body>
+
+</html>

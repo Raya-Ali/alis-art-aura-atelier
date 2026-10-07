@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personalized Words | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #000000;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 35px 20px;
+            margin: 25px auto 35px;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 32px;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .hero-description {
+            margin: 0 auto !important;
+            max-width: 600px !important;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .words-gallery {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 20px 30px;
+            scroll-behavior: smooth;
+        }
+
+        .words-gallery::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .words-gallery::-webkit-scrollbar-thumb {
+            background: #3533CD;
+            border-radius: 10px;
+        }
+
+        .word-card {
+            min-width: 260px;
+            max-width: 260px;
+            flex-shrink: 0;
+            background: #111111;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .word-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .word-card-content {
+            padding: 18px;
+        }
+
+        .word-card h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .word-card p {
+            margin: 0 0 16px;
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border: 1px solid #C90DEA;
+            border-radius: 25px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            background: #C90DEA;
+            box-shadow: 0 0 15px rgba(201, 13, 234, 0.5);
+        }
+
+        .order-section {
+            max-width: 700px;
+            margin: 45px auto;
+            padding: 25px 20px;
+            box-sizing: border-box;
+        }
+
+        .order-section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 26px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #dddddd;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            background: #111111;
+            color: #ffffff;
+            border: 1px solid #444444;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .total-box {
+            margin: 25px 0;
+            padding: 18px;
+            background: #111111;
+            border: 1px solid #3533CD;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .total-box span {
+            color: #FF66C4;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .order-preview {
+            margin-top: 20px;
+            padding: 15px;
+            background: #0d0d0d;
+            border-left: 3px solid #C90DEA;
+            color: #cccccc;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .payment-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 7px;
+            background: linear-gradient(90deg, #C90DEA, #3533CD);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .payment-btn:hover {
+            box-shadow: 0 0 18px rgba(201, 13, 234, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="who-we-are.html">Who We Are</a>
+            <a href="what-we-create.html">What We Create</a>
+            <a href="custom-orders.html">Custom Orders</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+
+    <section class="hero">
+
+        <h1>Personalized Words</h1>
+
+        <p class="hero-description">
+            Your words, memories and meanings
+            <br>
+            transformed into something uniquely yours.
+        </p>
+
+    </section>
+
+
+    <section class="words-gallery">
+
+        <div class="word-card">
+
+            <img
+                src="images/personalized-words-1.png"
+                alt="Personalized Words I"
+            >
+
+            <div class="word-card-content">
+
+                <h2>Personalized Words I</h2>
+
+                <p>
+                    A personal message transformed into
+                    an artistic written expression.
+                </p>
+
+                <a href="#order" class="explore-btn">
+                    Explore →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <img
+                src="images/personalized-words-2.png"
+                alt="Personalized Words II"
+            >
+
+            <div class="word-card-content">
+
+                <h2>Personalized Words II</h2>
+
+                <p>
+                    Meaningful words shaped into a
+                    creative piece made for you.
+                </p>
+
+                <a href="#order" class="explore-btn">
+                    Explore →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <img
+                src="images/personalized-words-3.png"
+                alt="Personalized Words III"
+            >
+
+            <div class="word-card-content">
+
+                <h2>Personalized Words III</h2>
+
+                <p>
+                    Your memories and ideas expressed
+                    through carefully crafted words.
+                </p>
+
+                <a href="#order" class="explore-btn">
+                    Explore →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <img
+                src="images/personalized-words-4.png"
+                alt="Personalized Words IV"
+            >
+
+            <div class="word-card-content">
+
+                <h2>Personalized Words IV</h2>
+
+                <p>
+                    A personal expression transformed
+                    into a meaningful keepsake.
+                </p>
+
+                <a href="#order" class="explore-btn">
+                    Explore →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <img
+                src="images/personalized-words-5.png"
+                alt="Personalized Words V"
+            >
+
+            <div class="word-card-content">
+
+                <h2>Personalized Words V</h2>
+
+                <p>
+                    Your message reimagined through
+                    artistic language and expression.
+                </p>
+
+                <a href="#order" class="explore-btn">
+                    Explore →
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="word-card">
+
+            <img
+                src="images/personalized-words-6.png"
+                alt="Personalized Words VI"
+            >
+
+            <div class="word-card-content">
+
+                <h2>Personalized Words VI</h2>
+
+                <p>
+                    A unique written expression created
+                    around your meaning and story.
+                </p>
+
+                <a href="#order" class="explore-btn">
+                    Explore →
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="order-section" id="order">
+
+        <h2>Create Your Personalized Words</h2>
+
+
+        <div class="form-group">
+
+            <label for="style">
+                Choose a Style
+            </label>
+
+            <select id="style" onchange="updateOrder()">
+
+                <option value="">
+                    Choose a style
+                </option>
+
+                <option value="Poetic">
+                    Poetic
+                </option>
+
+                <option value="Expressive">
+                    Expressive
+                </option>
+
+                <option value="Reflective">
+                    Reflective
+                </option>
+
+                <option value="Minimal">
+                    Minimal
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="presentation">
+                Presentation
+            </label>
+
+            <select id="presentation" onchange="updateOrder()">
+
+                <option value="">
+                    Choose presentation
+                </option>
+
+                <option value="Digital">
+                    Digital
+                </option>
+
+                <option value="Print">
+                    Print
+                </option>
+
+                <option value="Framed">
+                    Framed
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="words">
+                Your Words, Idea or Meaning
+            </label>
+
+            <textarea
+                id="words"
+                placeholder="Share the words, idea, memory or meaning you want transformed..."
+            ></textarea>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="quantity">
+                Quantity
+            </label>
+
+            <input
+                type="number"
+                id="quantity"
+                min="1"
+                value="1"
+                onchange="updateOrder()"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="fullName">
+                Full Name
+            </label>
+
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Your full name"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="email">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your email address"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="phone">
+                Phone
+            </label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Your phone number"
+            >
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label for="address">
+                Address
+            </label>
+
+            <textarea
+                id="address"
+                placeholder="Delivery address"
+            ></textarea>
+
+        </div>
+
+
+        <div class="total-box">
+
+            Total:
+            <span id="total">JMD 0</span>
+
+        </div>
+
+
+        <div class="order-preview" id="orderPreview">
+
+            Choose a style and presentation to see your order.
+
+        </div>
+
+
+        <button
+            class="payment-btn"
+            onclick="continueToPayment()"
+        >
+            Continue to Payment
+        </button>
+
+    </section>
+
+
+    <script>
+
+        const prices = {
+
+            "Poetic": {
+                "Digital": 1500,
+                "Print": 2500,
+                "Framed": 4500
+            },
+
+            "Expressive": {
+                "Digital": 1800,
+                "Print": 2800,
+                "Framed": 4800
+            },
+
+            "Reflective": {
+                "Digital": 2000,
+                "Print": 3000,
+                "Framed": 5000
+            },
+
+            "Minimal": {
+                "Digital": 1200,
+                "Print": 2200,
+                "Framed": 4200
+            }
+
+        };
+
+
+        function updateOrder() {
+
+            const style =
+                document.getElementById("style").value;
+
+            const presentation =
+                document.getElementById("presentation").value;
+
+            const quantity =
+                parseInt(
+                    document.getElementById("quantity").value
+                ) || 1;
+
+            const totalElement =
+                document.getElementById("total");
+
+            const preview =
+                document.getElementById("orderPreview");
+
+
+            if (!style || !presentation) {
+
+                totalElement.textContent = "JMD 0";
+
+                preview.textContent =
+                    "Choose a style and presentation to see your order.";
+
+                return;
+            }
+
+
+            const unitPrice =
+                prices[style][presentation];
+
+            const total =
+                unitPrice * quantity;
+
+
+            totalElement.textContent =
+                "JMD " + total.toLocaleString();
+
+
+            preview.innerHTML =
+                "<strong>Order Preview</strong><br>" +
+                "Style: " + style +
+                "<br>" +
+                "Presentation: " + presentation +
+                "<br>" +
+                "Quantity: " + quantity +
+                "<br>" +
+                "Unit Price: JMD " +
+                unitPrice.toLocaleString() +
+                "<br>" +
+                "Total: JMD " +
+                total.toLocaleString();
+
+        }
+
+
+        function continueToPayment() {
+
+            const style =
+                document.getElementById("style").value;
+
+            const presentation =
+                document.getElementById("presentation").value;
+
+            const words =
+                document.getElementById("words").value.trim();
+
+            const quantity =
+                parseInt(
+                    document.getElementById("quantity").value
+                ) || 1;
+
+            const fullName =
+                document.getElementById("fullName").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const phone =
+                document.getElementById("phone").value.trim();
+
+            const address =
+                document.getElementById("address").value.trim();
+
+
+            if (
+                !style ||
+                !presentation ||
+                !words ||
+                !fullName ||
+                !email
+            ) {
+
+                alert(
+                    "Please choose your style and presentation and provide your words, name and email."
+                );
+
+                return;
+            }
+
+
+            const unitPrice =
+                prices[style][presentation];
+
+            const total =
+                unitPrice * quantity;
+
+
+            const order = {
+
+                category: "Personalized Words",
+
+                style: style,
+
+                presentation: presentation,
+
+                words: words,
+
+                quantity: quantity,
+
+                unitPrice: unitPrice,
+
+                total: total,
+
+                fullName: fullName,
+
+                email: email,
+
+                phone: phone,
+
+                address: address
+
+            };
+
+
+            localStorage.setItem(
+                "personalizedWordsOrder",
+                JSON.stringify(order)
+            );
+
+
+            window.location.href =
+                "payment.html";
+
+        }
+
+    </script>
+
+</body>
+
+</html>

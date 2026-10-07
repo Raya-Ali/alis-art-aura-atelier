@@ -1,0 +1,1209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bring It To Life | Alis Art & Aura Atelier</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #000;
+            border-bottom: 1px solid rgba(201, 13, 234, 0.25);
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-brand {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #C90DEA;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 7%;
+
+            background:
+                radial-gradient(
+                    circle at 20% 30%,
+                    rgba(201, 13, 234, 0.18),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(51, 206, 239, 0.15),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #000000,
+                    #080812,
+                    #000000
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .brand {
+            color: #FF66C4;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            margin-bottom: 25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #FF66C4,
+                    #C90DEA,
+                    #33CEEF
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #ddd;
+            font-size: 1.1rem;
+        }
+
+        /* INTRO */
+        .intro {
+            padding: 80px 7%;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            max-width: 760px;
+            margin: auto;
+            color: #bbb;
+        }
+
+        /* IDEA TYPES */
+        .idea-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px 7% 80px;
+        }
+
+        .idea-card {
+            padding: 30px 22px;
+
+            border: 1px solid rgba(201, 13, 234, 0.35);
+            border-radius: 18px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(201, 13, 234, 0.08),
+                    rgba(51, 206, 239, 0.04)
+                );
+        }
+
+        .idea-card h3 {
+            color: #FF66C4;
+            margin-bottom: 12px;
+        }
+
+        .idea-card p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        /* PROCESS */
+        .process {
+            padding: 80px 7%;
+            background: #050509;
+            text-align: center;
+        }
+
+        .process h2 {
+            font-size: 2.3rem;
+            margin-bottom: 45px;
+        }
+
+        .process-grid {
+            max-width: 950px;
+            margin: auto;
+
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .process-card {
+            padding: 30px 20px;
+
+            border: 1px solid #292929;
+            border-radius: 16px;
+
+            background: #0c0c11;
+        }
+
+        .process-number {
+            display: inline-flex;
+
+            width: 42px;
+            height: 42px;
+
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 50%;
+
+            margin-bottom: 15px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #C90DEA,
+                    #33CEEF
+                );
+
+            font-weight: bold;
+        }
+
+        .process-card h3 {
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+
+        /* ORDER */
+        .order-section {
+            padding: 90px 7%;
+        }
+
+        .order-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .order-container h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+        }
+
+        .order-intro {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 45px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #eee;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+
+            padding: 14px 16px;
+
+            border-radius: 10px;
+
+            border: 1px solid #333;
+
+            background: #101014;
+
+            color: #fff;
+
+            font-size: 1rem;
+
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #C90DEA;
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+
+            padding: 12px;
+
+            background: #101014;
+
+            border-radius: 10px;
+
+            border: 1px solid #292929;
+        }
+
+        .checkbox-item input {
+            width: auto;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .upload-box {
+            border: 1px dashed #C90DEA;
+
+            padding: 25px;
+
+            border-radius: 14px;
+
+            background:
+                rgba(201, 13, 234, 0.05);
+        }
+
+        .upload-box p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .submit-btn {
+            width: 100%;
+
+            padding: 16px;
+
+            border: none;
+
+            border-radius: 12px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #C90DEA,
+                    #33CEEF
+                );
+
+            color: #fff;
+
+            font-size: 1rem;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .quote-note {
+            margin-top: 25px;
+
+            padding: 20px;
+
+            border-left: 3px solid #FF66C4;
+
+            background:
+                rgba(255, 102, 196, 0.05);
+
+            color: #bbb;
+        }
+
+        /* BACK */
+        .back-section {
+            text-align: center;
+            padding: 50px 7%;
+        }
+
+        .back-btn {
+            display: inline-block;
+
+            color: #33CEEF;
+
+            text-decoration: none;
+
+            border: 1px solid #33CEEF;
+
+            padding: 12px 25px;
+
+            border-radius: 30px;
+
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #33CEEF;
+            color: #000;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .idea-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .idea-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <a
+        href="index.html"
+        class="nav-brand"
+    >
+        Alis Art & Aura Atelier
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="who-we-are.html">
+            Who We Are
+        </a>
+
+        <a href="what-we-create.html">
+            What We Create
+        </a>
+
+        <a href="custom-orders.html">
+            Custom Orders
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="brand">
+            Alis Art & Aura Atelier
+        </div>
+
+        <h1>
+            Bring It To Life
+        </h1>
+
+        <p>
+            You do not have to know exactly what to make.
+            Bring us the idea, feeling, vision, memory, or dream —
+            and let the Atelier help shape it into something real.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+    <h2>
+        Start With What You Have
+    </h2>
+
+    <p>
+        Maybe you have a thought you cannot quite explain.
+        Maybe you imagined something that does not exist yet.
+        Maybe you simply know how you want someone to feel.
+        This is where you can start.
+    </p>
+
+</section>
+
+
+<!-- IDEA TYPES -->
+
+<section class="idea-grid">
+
+    <div class="idea-card">
+
+        <h3>
+            A Feeling
+        </h3>
+
+        <p>
+            Tell us what you want the creation to feel like —
+            meaningful, powerful, romantic, peaceful, bold,
+            nostalgic, mysterious, or anything else.
+        </p>
+
+    </div>
+
+
+    <div class="idea-card">
+
+        <h3>
+            A Memory
+        </h3>
+
+        <p>
+            Give us the story behind a person, place,
+            experience, photograph, or moment you want
+            preserved in a creative form.
+        </p>
+
+    </div>
+
+
+    <div class="idea-card">
+
+        <h3>
+            A Dream
+        </h3>
+
+        <p>
+            Describe something you have imagined,
+            even if you do not know what materials,
+            format, or design would bring it together.
+        </p>
+
+    </div>
+
+
+    <div class="idea-card">
+
+        <h3>
+            Something New
+        </h3>
+
+        <p>
+            Bring us a completely original concept
+            and let us explore how it could become
+            an actual creation.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- PROCESS -->
+
+<section class="process">
+
+    <h2>
+        From Idea To Creation
+    </h2>
+
+    <div class="process-grid">
+
+        <div class="process-card">
+
+            <div class="process-number">
+                1
+            </div>
+
+            <h3>
+                You Share
+            </h3>
+
+            <p>
+                Tell us what you are imagining,
+                what inspired it, and what you want
+                it to communicate.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">
+                2
+            </div>
+
+            <h3>
+                We Explore
+            </h3>
+
+            <p>
+                The Atelier reviews your concept,
+                references, possibilities, materials,
+                and creative direction.
+            </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+            <div class="process-number">
+                3
+            </div>
+
+            <h3>
+                We Build
+            </h3>
+
+            <p>
+                Once the direction is established,
+                your concept can become a real
+                custom creation.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ORDER -->
+
+<section class="order-section">
+
+    <div class="order-container">
+
+        <h2>
+            Tell Us Your Idea
+        </h2>
+
+        <p class="order-intro">
+            You do not need to have all the answers.
+            Give us what you know and we will explore the rest.
+        </p>
+
+
+        <form id="bringToLifeForm">
+
+
+            <div class="form-group">
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="projectName">
+                    What Would You Call Your Idea?
+                </label>
+
+                <input
+                    type="text"
+                    id="projectName"
+                    placeholder="A name, phrase, or simple description"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="idea">
+                    Tell Us Your Idea
+                </label>
+
+                <textarea
+                    id="idea"
+                    placeholder="Describe whatever you are imagining. It does not have to be perfectly explained."
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    What Is The Idea Based On?
+                </label>
+
+                <div class="checkbox-grid">
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="inspiration"
+                            value="A Feeling"
+                            id="feeling"
+                        >
+
+                        <label for="feeling">
+                            A Feeling
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="inspiration"
+                            value="A Memory"
+                            id="memory"
+                        >
+
+                        <label for="memory">
+                            A Memory
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="inspiration"
+                            value="A Person"
+                            id="person"
+                        >
+
+                        <label for="person">
+                            A Person
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="inspiration"
+                            value="A Place"
+                            id="place"
+                        >
+
+                        <label for="place">
+                            A Place
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="inspiration"
+                            value="A Dream"
+                            id="dream"
+                        >
+
+                        <label for="dream">
+                            A Dream
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="inspiration"
+                            value="An Existing Concept"
+                            id="concept"
+                        >
+
+                        <label for="concept">
+                            Existing Concept
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="inspiration"
+                            value="Something Completely New"
+                            id="new"
+                        >
+
+                        <label for="new">
+                            Something New
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="inspiration"
+                            value="Other"
+                            id="other"
+                        >
+
+                        <label for="other">
+                            Other
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="creationType">
+                    Do You Have An Idea Of What It Should Become?
+                </label>
+
+                <select id="creationType">
+
+                    <option value="">
+                        Not sure yet
+                    </option>
+
+                    <option>
+                        Artwork
+                    </option>
+
+                    <option>
+                        Gift
+                    </option>
+
+                    <option>
+                        Home Décor
+                    </option>
+
+                    <option>
+                        Fashion / Wearable
+                    </option>
+
+                    <option>
+                        Digital Creation
+                    </option>
+
+                    <option>
+                        Printed Creation
+                    </option>
+
+                    <option>
+                        Written / Literary Work
+                    </option>
+
+                    <option>
+                        Something Else
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="feeling">
+                    How Should The Final Creation Feel?
+                </label>
+
+                <input
+                    type="text"
+                    id="finalFeeling"
+                    placeholder="Example: emotional, luxurious, mysterious, playful"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="colours">
+                    Colours You Imagine
+                </label>
+
+                <input
+                    type="text"
+                    id="colours"
+                    placeholder="Any colours, combinations, or no preference"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Reference Files
+                </label>
+
+                <div class="upload-box">
+
+                    <p>
+                        Upload photographs, sketches, screenshots,
+                        artwork, documents, inspiration, or anything
+                        that helps communicate your idea.
+                    </p>
+
+                    <input
+                        type="file"
+                        id="referenceFiles"
+                        multiple
+                        accept="image/*,.pdf,.svg,.ai,.psd"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="deadline">
+                    Desired Completion Date
+                </label>
+
+                <input
+                    type="date"
+                    id="deadline"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="notes">
+                    Anything Else?
+                </label>
+
+                <textarea
+                    id="notes"
+                    placeholder="Anything else you want us to understand about your vision..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="quote-note">
+
+                <strong>
+                    Custom Quotation
+                </strong>
+
+                <p>
+                    Because this service begins with an idea rather
+                    than a fixed product, the Atelier will review the
+                    concept before determining the appropriate creative
+                    direction, materials, production requirements,
+                    and quotation.
+                </p>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Bring My Idea To Life
+            </button>
+
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- BACK -->
+
+<section class="back-section">
+
+    <a
+        href="custom-creations.html"
+        class="back-btn"
+    >
+        ← Back To Custom Creations
+    </a>
+
+</section>
+
+
+<script>
+
+document
+    .getElementById("bringToLifeForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const inspiration = [];
+
+        document
+            .querySelectorAll(
+                'input[name="inspiration"]:checked'
+            )
+            .forEach(item => {
+
+                inspiration.push(item.value);
+
+            });
+
+
+        const files =
+            document.getElementById(
+                "referenceFiles"
+            ).files;
+
+
+        const uploadedFiles = [];
+
+
+        for (
+            let i = 0;
+            i < files.length;
+            i++
+        ) {
+
+            uploadedFiles.push({
+
+                name: files[i].name,
+
+                type: files[i].type,
+
+                size: files[i].size
+
+            });
+
+        }
+
+
+        const order = {
+
+            serviceCategory:
+                "Custom Creations",
+
+            service:
+                "Bring It To Life",
+
+            name:
+                document.getElementById(
+                    "name"
+                ).value,
+
+            email:
+                document.getElementById(
+                    "email"
+                ).value,
+
+            projectName:
+                document.getElementById(
+                    "projectName"
+                ).value,
+
+            idea:
+                document.getElementById(
+                    "idea"
+                ).value,
+
+            inspiration:
+                inspiration,
+
+            possibleCreation:
+                document.getElementById(
+                    "creationType"
+                ).value,
+
+            desiredFeeling:
+                document.getElementById(
+                    "finalFeeling"
+                ).value,
+
+            colours:
+                document.getElementById(
+                    "colours"
+                ).value,
+
+            deadline:
+                document.getElementById(
+                    "deadline"
+                ).value,
+
+            additionalNotes:
+                document.getElementById(
+                    "notes"
+                ).value,
+
+            uploadedFiles:
+                uploadedFiles,
+
+            pricingType:
+                "Custom Quotation",
+
+            status:
+                "Awaiting Project Review",
+
+            createdAt:
+                new Date().toISOString()
+
+        };
+
+
+        localStorage.setItem(
+            "currentOrder",
+            JSON.stringify(order)
+        );
+
+
+        window.location.href =
+            "payment.html";
+
+    });
+
+</script>
+
+</body>
+</html>

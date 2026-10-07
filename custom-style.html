@@ -1,0 +1,2098 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Custom Style | Alis Art & Aura Atelier</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#000;
+    color:#fff;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+
+/* NAVIGATION */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 6%;
+    background:#080808;
+    border-bottom:1px solid #33CEEF;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.brand{
+    font-size:20px;
+    font-weight:bold;
+    color:#FF66C4;
+}
+
+.nav-links{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:#33CEEF;
+}
+
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:75px 20px;
+    background:
+    radial-gradient(
+        circle,
+        #3533CD 0%,
+        #08000c 45%,
+        #000 75%
+    );
+}
+
+.hero h1{
+    margin:0 0 15px;
+    font-size:clamp(38px,7vw,72px);
+    color:#FF66C4;
+}
+
+.hero p{
+    max-width:850px;
+    margin:auto;
+    color:#ddd;
+    line-height:1.8;
+}
+
+
+/* INTRO */
+
+.intro{
+    max-width:850px;
+    margin:auto;
+    padding:55px 20px 20px;
+    text-align:center;
+}
+
+.intro h2{
+    color:#33CEEF;
+}
+
+.intro p{
+    color:#bbb;
+    line-height:1.7;
+}
+
+
+/* ONE INSPIRATION GALLERY */
+
+.gallery-section{
+    padding:45px 6% 65px;
+}
+
+.gallery-title{
+    text-align:center;
+    color:#33CEEF;
+    font-size:32px;
+}
+
+.gallery-description{
+    max-width:750px;
+    margin:0 auto 30px;
+    text-align:center;
+    color:#aaa;
+    line-height:1.6;
+}
+
+.gallery{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    padding:15px 3px 25px;
+}
+
+.card{
+    min-width:260px;
+    max-width:290px;
+    flex-shrink:0;
+    background:#101010;
+    border:1px solid #3533CD;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+.card img{
+    width:100%;
+    height:280px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-content{
+    padding:18px;
+}
+
+.card h3{
+    color:#FF66C4;
+}
+
+.card p{
+    color:#bbb;
+    font-size:14px;
+    line-height:1.5;
+    min-height:65px;
+}
+
+.explore-btn{
+    border:0;
+    padding:12px 18px;
+    border-radius:8px;
+    background:linear-gradient(
+        90deg,
+        #C90DEA,
+        #33CEEF
+    );
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+
+/* BUILDER */
+
+.builder{
+    padding:70px 6%;
+    background:#070707;
+}
+
+.builder-box{
+    max-width:1050px;
+    margin:auto;
+    padding:30px;
+    border:1px solid #C90DEA;
+    border-radius:18px;
+    background:#0c0c0c;
+}
+
+.builder-box h2{
+    text-align:center;
+    color:#FF66C4;
+    margin-bottom:10px;
+}
+
+.builder-intro{
+    text-align:center;
+    color:#aaa;
+    line-height:1.6;
+    max-width:750px;
+    margin:0 auto 30px;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+label{
+    color:#33CEEF;
+    font-weight:bold;
+    font-size:14px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px;
+    border-radius:7px;
+    border:1px solid #444;
+    background:#151515;
+    color:#fff;
+}
+
+select{
+    cursor:pointer;
+}
+
+textarea{
+    min-height:120px;
+    resize:vertical;
+}
+
+
+/* PIECE CHECKBOXES */
+
+.piece-options{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:10px;
+}
+
+.piece-option{
+    padding:12px;
+    background:#151515;
+    border:1px solid #333;
+    border-radius:8px;
+}
+
+.piece-option label{
+    color:#fff;
+    font-weight:normal;
+    cursor:pointer;
+}
+
+.piece-option input{
+    width:auto;
+    margin-right:8px;
+}
+
+
+/* PHOTO */
+
+.photo-preview{
+    display:none;
+    max-width:240px;
+    max-height:240px;
+    margin-top:10px;
+    border:1px solid #33CEEF;
+    border-radius:10px;
+}
+
+
+/* PRICE */
+
+.price-box{
+    margin-top:28px;
+    padding:22px;
+    border-radius:12px;
+    background:#101010;
+    border:1px solid #33CEEF;
+    text-align:center;
+}
+
+.price-box h3{
+    color:#33CEEF;
+}
+
+#totalPrice{
+    color:#FF66C4;
+    font-size:32px;
+    font-weight:bold;
+}
+
+
+/* PREVIEW */
+
+.preview-box{
+    margin-top:25px;
+    padding:20px;
+    border-radius:12px;
+    background:#101010;
+    border:1px solid #3533CD;
+}
+
+.preview-box h3{
+    color:#C90DEA;
+}
+
+.preview-line{
+    padding:9px 0;
+    border-bottom:1px solid #222;
+    line-height:1.5;
+}
+
+.preview-line strong{
+    color:#33CEEF;
+}
+
+
+/* BUTTONS */
+
+.actions{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.save-btn,
+.payment-btn{
+    border:0;
+    padding:13px 20px;
+    border-radius:8px;
+    background:linear-gradient(
+        90deg,
+        #C90DEA,
+        #33CEEF
+    );
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.note{
+    color:#888;
+    font-size:13px;
+}
+
+
+@media(max-width:700px){
+
+    .navbar{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .piece-options{
+        grid-template-columns:1fr;
+    }
+
+    .builder-box{
+        padding:20px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+<div class="brand">
+<a href="index.html">
+Alis Art & Aura Atelier
+</a>
+</div>
+
+<div class="nav-links">
+
+<a href="index.html">Home</a>
+
+<a href="who-we-are.html">Who We Are</a>
+
+<a href="what-we-create.html">What We Create</a>
+
+<a href="custom-orders.html">Custom Orders</a>
+
+<a href="contact.html">Contact</a>
+
+</div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>
+Custom Style
+</h1>
+
+<p>
+Your style. Your vision. Your combination.
+Create a personalized style concept built around the way you want to look, feel and express yourself.
+</p>
+
+</section>
+
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+<h2>
+Create Your Own Style
+</h2>
+
+<p>
+Custom Style is not about choosing one product.
+It is about bringing your clothing, accessories, colours,
+materials and personal details together into one style concept created around you.
+</p>
+
+</section>
+
+
+
+<!-- ONE INSPIRATION GALLERY -->
+
+<section class="gallery-section">
+
+<h2 class="gallery-title">
+Style Inspiration
+</h2>
+
+<p class="gallery-description">
+Use these concepts for inspiration, then personalize the style into something that is your own.
+</p>
+
+
+<div class="gallery">
+
+
+<div class="card">
+
+<img
+src="images/custom-style-1.png"
+alt="Personal Style Concept 1">
+
+<div class="card-content">
+
+<h3>
+Everyday Expression
+</h3>
+
+<p>
+A personalized everyday style combining comfort, colour and individuality.
+</p>
+
+<button
+class="explore-btn"
+data-inspiration="Everyday Expression">
+
+Explore →
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/custom-style-2.png"
+alt="Personal Style Concept 2">
+
+<div class="card-content">
+
+<h3>
+Statement Style
+</h3>
+
+<p>
+A stronger visual style built around distinctive pieces and details.
+</p>
+
+<button
+class="explore-btn"
+data-inspiration="Statement Style">
+
+Explore →
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/custom-style-3.png"
+alt="Personal Style Concept 3">
+
+<div class="card-content">
+
+<h3>
+Elegant Style
+</h3>
+
+<p>
+A refined personal style developed around silhouette, colour and finish.
+</p>
+
+<button
+class="explore-btn"
+data-inspiration="Elegant Style">
+
+Explore →
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/custom-style-4.png"
+alt="Personal Style Concept 4">
+
+<div class="card-content">
+
+<h3>
+Creative Identity
+</h3>
+
+<p>
+A more expressive concept designed around originality and personality.
+</p>
+
+<button
+class="explore-btn"
+data-inspiration="Creative Identity">
+
+Explore →
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/custom-style-5.png"
+alt="Personal Style Concept 5">
+
+<div class="card-content">
+
+<h3>
+Occasion Style
+</h3>
+
+<p>
+A complete look created around a special event or occasion.
+</p>
+
+<button
+class="explore-btn"
+data-inspiration="Occasion Style">
+
+Explore →
+
+</button>
+
+</div>
+
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/custom-style-6.png"
+alt="Personal Style Concept 6">
+
+<div class="card-content">
+
+<h3>
+Fully Personal
+</h3>
+
+<p>
+Start with your own idea and let the entire concept develop around you.
+</p>
+
+<button
+class="explore-btn"
+data-inspiration="Fully Personal">
+
+Explore →
+
+</button>
+
+</div>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- BUILDER -->
+
+<section class="builder" id="style-builder">
+
+<div class="builder-box">
+
+<h2>
+Build Your Personal Style
+</h2>
+
+<p class="builder-intro">
+Choose the elements you want, combine them however you like,
+and use the instructions section to tell us what your finished style should feel like.
+</p>
+
+
+<div class="form-grid">
+
+
+<!-- STYLE DIRECTION -->
+
+<div class="field">
+
+<label for="styleDirection">
+Style Direction
+</label>
+
+<select id="styleDirection">
+
+<option value="">
+Select Style Direction
+</option>
+
+<option>Everyday Expression</option>
+<option>Statement Style</option>
+<option>Elegant Style</option>
+<option>Creative Identity</option>
+<option>Occasion Style</option>
+<option>Fully Personal</option>
+
+</select>
+
+</div>
+
+
+
+<!-- OCCASION -->
+
+<div class="field">
+
+<label for="occasion">
+Occasion / Purpose
+</label>
+
+<select id="occasion">
+
+<option value="">
+Select Occasion
+</option>
+
+<option>Everyday</option>
+<option>Work</option>
+<option>School</option>
+<option>Date / Evening</option>
+<option>Party</option>
+<option>Formal Event</option>
+<option>Vacation</option>
+<option>Photoshoot</option>
+<option>Special Celebration</option>
+<option>Other</option>
+
+</select>
+
+</div>
+
+
+
+<!-- STYLE AESTHETIC -->
+
+<div class="field">
+
+<label for="aesthetic">
+Style Aesthetic
+</label>
+
+<select id="aesthetic">
+
+<option value="">
+Select Aesthetic
+</option>
+
+<option>Minimal</option>
+<option>Classic</option>
+<option>Elegant</option>
+<option>Romantic</option>
+<option>Streetwear</option>
+<option>Edgy</option>
+<option>Bohemian</option>
+<option>Sporty</option>
+<option>Creative</option>
+<option>Luxury</option>
+<option>Eclectic</option>
+<option>Fully Custom</option>
+
+</select>
+
+</div>
+
+
+
+<!-- FIT -->
+
+<div class="field">
+
+<label for="fit">
+Preferred Fit
+</label>
+
+<select id="fit">
+
+<option value="">
+Select Fit
+</option>
+
+<option>Relaxed</option>
+<option>Regular</option>
+<option>Fitted</option>
+<option>Oversized</option>
+<option>Structured</option>
+<option>Flowing</option>
+<option>Mixed Fit</option>
+<option>Custom</option>
+
+</select>
+
+</div>
+
+
+
+<!-- COLOUR PALETTE -->
+
+<div class="field">
+
+<label for="colourPalette">
+Colour Palette
+</label>
+
+<select id="colourPalette">
+
+<option value="">
+Select Colour Palette
+</option>
+
+<option>Black & White</option>
+<option>Neutrals</option>
+<option>Earth Tones</option>
+<option>Pastels</option>
+<option>Bright Colours</option>
+<option>Jewel Tones</option>
+<option>Monochrome</option>
+<option>Black + Accent Colour</option>
+<option>Multi-Colour</option>
+<option>Custom Palette</option>
+
+</select>
+
+</div>
+
+
+
+<!-- MATERIAL -->
+
+<div class="field">
+
+<label for="material">
+Preferred Material
+</label>
+
+<select id="material">
+
+<option value="">
+Select Material
+</option>
+
+<option>Cotton</option>
+<option>Linen</option>
+<option>Denim</option>
+<option>Satin</option>
+<option>Silk</option>
+<option>Chiffon</option>
+<option>Velvet</option>
+<option>Leather / Faux Leather</option>
+<option>Mixed Materials</option>
+<option>Custom Material</option>
+
+</select>
+
+</div>
+
+
+
+<!-- MAIN GARMENT -->
+
+<div class="field full">
+
+<label>
+Clothing Pieces
+</label>
+
+<div class="piece-options">
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Top">
+Top
+</label>
+</div>
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Bottom">
+Bottom
+</label>
+</div>
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Dress">
+Dress
+</label>
+</div>
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Jacket">
+Jacket / Outerwear
+</label>
+</div>
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Set">
+Coordinated Set
+</label>
+</div>
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Custom Garment">
+Custom Garment
+</label>
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- ACCESSORIES -->
+
+<div class="field full">
+
+<label>
+Accessories
+</label>
+
+<div class="piece-options">
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Bag">
+Bag
+</label>
+</div>
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Jewelry">
+Jewelry
+</label>
+</div>
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Belt">
+Belt
+</label>
+</div>
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Scarf">
+Scarf / Wrap
+</label>
+</div>
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Hair Accessory">
+Hair Accessory
+</label>
+</div>
+
+
+<div class="piece-option">
+<label>
+<input type="checkbox" value="Headwear">
+Headwear
+</label>
+</div>
+
+</div>
+
+</div>
+
+
+
+<!-- SIZE -->
+
+<div class="field">
+
+<label for="size">
+General Size
+</label>
+
+<select id="size">
+
+<option value="">
+Select Size
+</option>
+
+<option>XS</option>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>2XL</option>
+<option>3XL</option>
+<option>4XL</option>
+<option>Custom Measurements</option>
+
+</select>
+
+</div>
+
+
+
+<!-- FINISH -->
+
+<div class="field">
+
+<label for="finish">
+Overall Finish
+</label>
+
+<select id="finish">
+
+<option value="">
+Select Finish
+</option>
+
+<option>Standard</option>
+<option>Signature</option>
+<option>Premium</option>
+<option>Fully Custom</option>
+
+</select>
+
+</div>
+
+
+
+<!-- PERSONALIZATION -->
+
+<div class="field full">
+
+<label for="personalization">
+Personalization / Style Instructions
+</label>
+
+<textarea
+id="personalization"
+placeholder="Describe exactly what you want your style to look and feel like...">
+</textarea>
+
+</div>
+
+
+
+<!-- REFERENCE -->
+
+<div class="field full">
+
+<label for="referenceImage">
+Reference Images
+</label>
+
+<input
+type="file"
+id="referenceImage"
+accept="image/*">
+
+<img
+id="photoPreview"
+class="photo-preview"
+alt="Style reference preview">
+
+</div>
+
+
+
+<!-- QUANTITY -->
+
+<div class="field">
+
+<label for="quantity">
+Number of Style Concepts
+</label>
+
+<input
+type="number"
+id="quantity"
+min="1"
+value="1">
+
+</div>
+
+
+
+<!-- NAME -->
+
+<div class="field">
+
+<label for="fullName">
+Full Name
+</label>
+
+<input
+type="text"
+id="fullName"
+placeholder="Your full name">
+
+</div>
+
+
+
+<!-- EMAIL -->
+
+<div class="field">
+
+<label for="email">
+Email
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="Your email">
+
+</div>
+
+
+
+<!-- PHONE -->
+
+<div class="field">
+
+<label for="phone">
+Phone / WhatsApp
+</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="Your phone or WhatsApp">
+
+</div>
+
+
+
+<!-- ADDRESS -->
+
+<div class="field full">
+
+<label for="address">
+Delivery Address
+</label>
+
+<textarea
+id="address"
+placeholder="Where should your order be delivered?">
+</textarea>
+
+</div>
+
+</div>
+
+
+
+<!-- PRICE -->
+
+<div class="price-box">
+
+<h3>
+Current Order Total
+</h3>
+
+<div id="totalPrice">
+J$0
+</div>
+
+<p class="note">
+Temporary prices are being used. Final custom pricing may be confirmed before production.
+</p>
+
+</div>
+
+
+
+<!-- PREVIEW -->
+
+<div class="preview-box">
+
+<h3>
+Style Concept Preview
+</h3>
+
+<div id="orderPreview">
+Start building your personal style to see your concept here.
+</div>
+
+</div>
+
+
+
+<!-- ACTIONS -->
+
+<div class="actions">
+
+<button
+type="button"
+class="save-btn"
+id="saveOrder">
+
+Save Style Concept
+
+</button>
+
+
+<button
+type="button"
+class="payment-btn"
+id="paymentButton">
+
+Continue to Payment →
+
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<script>
+
+
+/* =========================================================
+TEMPORARY PRICES
+========================================================= */
+
+const prices={
+
+styleDirection:{
+
+"Everyday Expression":3000,
+"Statement Style":4000,
+"Elegant Style":4000,
+"Creative Identity":4500,
+"Occasion Style":5000,
+"Fully Personal":6000
+
+},
+
+occasion:{
+
+"Everyday":0,
+"Work":500,
+"School":0,
+"Date / Evening":700,
+"Party":800,
+"Formal Event":1200,
+"Vacation":700,
+"Photoshoot":1200,
+"Special Celebration":1000,
+"Other":500
+
+},
+
+aesthetic:{
+
+"Minimal":0,
+"Classic":0,
+"Elegant":500,
+"Romantic":500,
+"Streetwear":500,
+"Edgy":500,
+"Bohemian":500,
+"Sporty":300,
+"Creative":700,
+"Luxury":1000,
+"Eclectic":800,
+"Fully Custom":1500
+
+},
+
+fit:{
+
+"Relaxed":0,
+"Regular":0,
+"Fitted":300,
+"Oversized":300,
+"Structured":500,
+"Flowing":500,
+"Mixed Fit":700,
+"Custom":1000
+
+},
+
+colourPalette:{
+
+"Black & White":0,
+"Neutrals":0,
+"Earth Tones":200,
+"Pastels":200,
+"Bright Colours":300,
+"Jewel Tones":400,
+"Monochrome":200,
+"Black + Accent Colour":300,
+"Multi-Colour":500,
+"Custom Palette":700
+
+},
+
+material:{
+
+"Cotton":0,
+"Linen":500,
+"Denim":700,
+"Satin":1000,
+"Silk":2000,
+"Chiffon":1000,
+"Velvet":1500,
+"Leather / Faux Leather":2500,
+"Mixed Materials":1200,
+"Custom Material":2000
+
+},
+
+size:{
+
+"XS":0,
+"S":0,
+"M":0,
+"L":0,
+"XL":300,
+"2XL":500,
+"3XL":700,
+"4XL":900,
+"Custom Measurements":1500
+
+},
+
+finish:{
+
+"Standard":0,
+"Signature":1000,
+"Premium":2500,
+"Fully Custom":4000
+
+},
+
+clothing:{
+
+"Top":2000,
+"Bottom":2500,
+"Dress":4000,
+"Jacket":4500,
+"Set":5000,
+"Custom Garment":6000
+
+},
+
+accessories:{
+
+"Bag":1500,
+"Jewelry":1000,
+"Belt":700,
+"Scarf":700,
+"Hair Accessory":500,
+"Headwear":1000
+
+}
+
+};
+
+
+/* =========================================================
+ELEMENTS
+========================================================= */
+
+const styleDirection=
+document.getElementById("styleDirection");
+
+const occasion=
+document.getElementById("occasion");
+
+const aesthetic=
+document.getElementById("aesthetic");
+
+const fit=
+document.getElementById("fit");
+
+const colourPalette=
+document.getElementById("colourPalette");
+
+const material=
+document.getElementById("material");
+
+const size=
+document.getElementById("size");
+
+const finish=
+document.getElementById("finish");
+
+const quantity=
+document.getElementById("quantity");
+
+const totalPrice=
+document.getElementById("totalPrice");
+
+const orderPreview=
+document.getElementById("orderPreview");
+
+let uploadedPhotoData="";
+
+
+/* =========================================================
+SELECTED PIECES
+========================================================= */
+
+function getSelectedPieces(){
+
+const checked=
+document.querySelectorAll(
+'.piece-option input:checked'
+);
+
+return Array.from(checked)
+.map(input=>input.value);
+
+}
+
+
+/* =========================================================
+TOTAL
+========================================================= */
+
+function updateTotal(){
+
+let amount=0;
+
+
+amount+=
+prices.styleDirection[
+styleDirection.value
+] || 0;
+
+
+amount+=
+prices.occasion[
+occasion.value
+] || 0;
+
+
+amount+=
+prices.aesthetic[
+aesthetic.value
+] || 0;
+
+
+amount+=
+prices.fit[
+fit.value
+] || 0;
+
+
+amount+=
+prices.colourPalette[
+colourPalette.value
+] || 0;
+
+
+amount+=
+prices.material[
+material.value
+] || 0;
+
+
+amount+=
+prices.size[
+size.value
+] || 0;
+
+
+amount+=
+prices.finish[
+finish.value
+] || 0;
+
+
+const pieces=
+getSelectedPieces();
+
+
+pieces.forEach(piece=>{
+
+if(prices.clothing[piece]){
+
+amount+=
+prices.clothing[piece];
+
+}
+
+if(prices.accessories[piece]){
+
+amount+=
+prices.accessories[piece];
+
+}
+
+});
+
+
+let qty=
+parseInt(quantity.value)||1;
+
+if(qty<1){
+
+qty=1;
+quantity.value=1;
+
+}
+
+
+amount*=qty;
+
+
+totalPrice.textContent=
+"J$"+amount.toLocaleString();
+
+
+updatePreview();
+
+}
+
+
+/* =========================================================
+PREVIEW
+========================================================= */
+
+function updatePreview(){
+
+const pieces=
+getSelectedPieces();
+
+const personalization=
+document.getElementById(
+"personalization"
+).value;
+
+const name=
+document.getElementById(
+"fullName"
+).value;
+
+const email=
+document.getElementById(
+"email"
+).value;
+
+const phone=
+document.getElementById(
+"phone"
+).value;
+
+const address=
+document.getElementById(
+"address"
+).value;
+
+
+orderPreview.innerHTML=`
+
+<div class="preview-line">
+
+<strong>Style Direction:</strong>
+
+${styleDirection.value||"Not selected"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Occasion:</strong>
+
+${occasion.value||"Not selected"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Aesthetic:</strong>
+
+${aesthetic.value||"Not selected"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Fit:</strong>
+
+${fit.value||"Not selected"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Colour Palette:</strong>
+
+${colourPalette.value||"Not selected"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Material:</strong>
+
+${material.value||"Not selected"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Clothing / Accessories:</strong>
+
+${pieces.length
+?pieces.join(", ")
+:"None selected"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Size:</strong>
+
+${size.value||"Not selected"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Finish:</strong>
+
+${finish.value||"Not selected"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Quantity:</strong>
+
+${quantity.value||1}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Personalization:</strong>
+
+${personalization||"None provided"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Customer:</strong>
+
+${name||"Not provided"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Email:</strong>
+
+${email||"Not provided"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Phone / WhatsApp:</strong>
+
+${phone||"Not provided"}
+
+</div>
+
+
+<div class="preview-line">
+
+<strong>Delivery Address:</strong>
+
+${address||"Not provided"}
+
+</div>
+
+`;
+
+}
+
+
+/* =========================================================
+EVENTS
+========================================================= */
+
+[
+styleDirection,
+occasion,
+aesthetic,
+fit,
+colourPalette,
+material,
+size,
+finish,
+quantity
+].forEach(element=>{
+
+element.addEventListener(
+"change",
+updateTotal
+);
+
+element.addEventListener(
+"input",
+updateTotal
+);
+
+});
+
+
+document
+.querySelectorAll(
+'.piece-option input'
+)
+.forEach(input=>{
+
+input.addEventListener(
+"change",
+updateTotal
+);
+
+});
+
+
+[
+"personalization",
+"fullName",
+"email",
+"phone",
+"address"
+].forEach(id=>{
+
+document
+.getElementById(id)
+.addEventListener(
+"input",
+updatePreview
+);
+
+});
+
+
+/* =========================================================
+REFERENCE IMAGE
+========================================================= */
+
+document
+.getElementById("referenceImage")
+.addEventListener(
+"change",
+function(){
+
+const file=
+this.files[0];
+
+if(!file){
+
+uploadedPhotoData="";
+
+document
+.getElementById("photoPreview")
+.style.display="none";
+
+return;
+
+}
+
+
+const reader=
+new FileReader();
+
+
+reader.onload=
+function(event){
+
+uploadedPhotoData=
+event.target.result;
+
+
+const image=
+document.getElementById(
+"photoPreview"
+);
+
+image.src=
+uploadedPhotoData;
+
+image.style.display=
+"block";
+
+};
+
+
+reader.readAsDataURL(file);
+
+}
+);
+
+
+/* =========================================================
+EXPLORE
+========================================================= */
+
+document
+.querySelectorAll(".explore-btn")
+.forEach(button=>{
+
+button.addEventListener(
+"click",
+function(){
+
+styleDirection.value=
+this.dataset.inspiration;
+
+updateTotal();
+
+document
+.getElementById("style-builder")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+);
+
+});
+
+
+/* =========================================================
+COLLECT ORDER
+========================================================= */
+
+function collectOrder(){
+
+let unitPrice=0;
+
+
+unitPrice+=
+prices.styleDirection[
+styleDirection.value
+] || 0;
+
+
+unitPrice+=
+prices.occasion[
+occasion.value
+] || 0;
+
+
+unitPrice+=
+prices.aesthetic[
+aesthetic.value
+] || 0;
+
+
+unitPrice+=
+prices.fit[
+fit.value
+] || 0;
+
+
+unitPrice+=
+prices.colourPalette[
+colourPalette.value
+] || 0;
+
+
+unitPrice+=
+prices.material[
+material.value
+] || 0;
+
+
+unitPrice+=
+prices.size[
+size.value
+] || 0;
+
+
+unitPrice+=
+prices.finish[
+finish.value
+] || 0;
+
+
+const pieces=
+getSelectedPieces();
+
+
+pieces.forEach(piece=>{
+
+unitPrice+=
+prices.clothing[piece] || 0;
+
+unitPrice+=
+prices.accessories[piece] || 0;
+
+});
+
+
+const qty=
+parseInt(quantity.value)||1;
+
+
+return{
+
+styleDirection:
+styleDirection.value,
+
+occasion:
+occasion.value,
+
+aesthetic:
+aesthetic.value,
+
+fit:
+fit.value,
+
+colourPalette:
+colourPalette.value,
+
+material:
+material.value,
+
+pieces:
+
+pieces,
+
+size:
+size.value,
+
+finish:
+finish.value,
+
+quantity:
+qty,
+
+unitPrice:
+unitPrice,
+
+totalPrice:
+unitPrice*qty,
+
+personalization:
+document.getElementById(
+"personalization"
+).value,
+
+customer:{
+
+fullName:
+document.getElementById(
+"fullName"
+).value,
+
+email:
+document.getElementById(
+"email"
+).value,
+
+phone:
+document.getElementById(
+"phone"
+).value,
+
+address:
+document.getElementById(
+"address"
+).value
+
+},
+
+photoData:
+uploadedPhotoData,
+
+currency:
+"JMD",
+
+createdAt:
+new Date().toISOString()
+
+};
+
+}
+
+
+/* =========================================================
+SAVE
+========================================================= */
+
+document
+.getElementById("saveOrder")
+.addEventListener(
+"click",
+function(){
+
+const order=
+collectOrder();
+
+localStorage.setItem(
+"customStyleOrder",
+JSON.stringify(order)
+);
+
+alert(
+"Custom style concept saved."
+);
+
+}
+);
+
+
+/* =========================================================
+PAYMENT
+========================================================= */
+
+document
+.getElementById("paymentButton")
+.addEventListener(
+"click",
+function(){
+
+const order=
+collectOrder();
+
+localStorage.setItem(
+"customStyleOrder",
+JSON.stringify(order)
+);
+
+window.location.href=
+"payment.html";
+
+}
+);
+
+
+/* =========================================================
+INITIALIZE
+========================================================= */
+
+updatePreview();
+
+updateTotal();
+
+</script>
+
+</body>
+</html>

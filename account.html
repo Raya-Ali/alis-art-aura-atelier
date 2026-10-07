@@ -1,0 +1,1317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>My Account | Alis Art & Aura Atelier</title>
+
+<style>
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 850px;
+    margin: auto;
+}
+
+/* HEADER */
+
+.header {
+    text-align: center;
+    padding: 30px 15px;
+    margin-bottom: 25px;
+}
+
+.header h1 {
+    color: #C90DEA;
+    font-size: 2rem;
+    margin-bottom: 10px;
+
+    text-shadow:
+        0 0 8px #C90DEA,
+        0 0 18px #33CEEF;
+}
+
+.header p {
+    color: #ccc;
+    line-height: 1.6;
+}
+
+
+/* CARDS */
+
+.card {
+    background: #090909;
+    border: 1px solid #3533CD;
+    border-radius: 18px;
+    padding: 25px;
+    margin-bottom: 20px;
+
+    box-shadow:
+        0 0 15px rgba(201, 13, 234, 0.12);
+}
+
+.card h2 {
+    color: #33CEEF;
+    margin-bottom: 20px;
+    font-size: 1.3rem;
+}
+
+
+/* FORMS */
+
+.form {
+    display: grid;
+    gap: 15px;
+}
+
+label {
+    color: #ccc;
+    font-size: 0.9rem;
+}
+
+input {
+    width: 100%;
+    margin-top: 7px;
+    padding: 14px;
+
+    border-radius: 10px;
+    border: 1px solid #3533CD;
+
+    background: #050505;
+    color: #fff;
+
+    outline: none;
+}
+
+input:focus {
+    border-color: #C90DEA;
+
+    box-shadow:
+        0 0 8px rgba(201, 13, 234, 0.25);
+}
+
+
+/* BUTTONS */
+
+button,
+.back-btn {
+    width: 100%;
+    border: none;
+    border-radius: 12px;
+
+    padding: 15px;
+
+    font-size: 1rem;
+    font-weight: bold;
+
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+}
+
+.primary-btn {
+    background:
+        linear-gradient(90deg, #C90DEA, #3533CD);
+
+    color: #fff;
+}
+
+.primary-btn:hover {
+    box-shadow:
+        0 0 18px rgba(201, 13, 234, 0.4);
+}
+
+.secondary-btn {
+    background: #080808;
+
+    border: 1px solid #3533CD;
+
+    color: #ccc;
+}
+
+.secondary-btn:hover {
+    border-color: #C90DEA;
+}
+
+.back-btn {
+    display: block;
+
+    background: #080808;
+
+    border: 1px solid #3533CD;
+
+    color: #ccc;
+}
+
+.back-btn:hover {
+    border-color: #C90DEA;
+}
+
+
+/* MESSAGES */
+
+.message {
+    margin-top: 15px;
+
+    color: #FF66C4;
+
+    line-height: 1.6;
+}
+
+.success {
+    color: #33CEEF;
+}
+
+.error {
+    color: #FF66C4;
+}
+
+.note {
+    color: #999;
+
+    font-size: 0.88rem;
+
+    line-height: 1.6;
+
+    margin-top: 12px;
+}
+
+
+/* ACCOUNT INFORMATION */
+
+.account-info {
+    display: grid;
+    gap: 12px;
+
+    margin-bottom: 20px;
+}
+
+.info-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #222;
+}
+
+.info-label {
+    color: #999;
+}
+
+.info-value {
+    color: #fff;
+
+    text-align: right;
+
+    word-break: break-word;
+}
+
+
+/* ACCOUNT STATUS */
+
+.account-status {
+    padding: 15px;
+
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+
+    border: 1px solid #3533CD;
+
+    background: rgba(51, 51, 205, 0.08);
+
+    color: #33CEEF;
+
+    line-height: 1.6;
+}
+
+
+/* BUTTON GROUP */
+
+.buttons {
+    display: grid;
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+
+/* HIDDEN */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 600px) {
+
+    .info-row {
+        flex-direction: column;
+    }
+
+    .info-value {
+        text-align: left;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="container">
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <h1>
+        My Account
+    </h1>
+
+    <p>
+        Manage your Alis Art & Aura Atelier account and orders.
+    </p>
+
+</header>
+
+
+<!-- CREATE ACCOUNT -->
+
+<section
+    class="card"
+    id="createAccountCard"
+>
+
+    <h2>
+        Create Account
+    </h2>
+
+
+    <div class="form">
+
+
+        <label>
+
+            Full Name
+
+            <input
+                type="text"
+                id="signupName"
+                autocomplete="name"
+                placeholder="Your full name"
+            >
+
+        </label>
+
+
+        <label>
+
+            Email
+
+            <input
+                type="email"
+                id="signupEmail"
+                autocomplete="email"
+                placeholder="Your email address"
+            >
+
+        </label>
+
+
+        <label>
+
+            Phone / WhatsApp
+
+            <input
+                type="tel"
+                id="signupPhone"
+                autocomplete="tel"
+                placeholder="Your phone number"
+            >
+
+        </label>
+
+
+        <label>
+
+            Password
+
+            <input
+                type="password"
+                id="signupPassword"
+                autocomplete="new-password"
+                placeholder="Create a password"
+            >
+
+        </label>
+
+
+        <label>
+
+            Confirm Password
+
+            <input
+                type="password"
+                id="signupConfirmPassword"
+                autocomplete="new-password"
+                placeholder="Confirm your password"
+            >
+
+        </label>
+
+
+        <label>
+
+            Address
+
+            <input
+                type="text"
+                id="signupAddress"
+                autocomplete="street-address"
+                placeholder="Delivery address"
+            >
+
+        </label>
+
+
+        <label>
+
+            Parish
+
+            <input
+                type="text"
+                id="signupParish"
+                autocomplete="address-level1"
+                placeholder="Parish"
+            >
+
+        </label>
+
+
+        <button
+            type="button"
+            class="primary-btn"
+            onclick="createAccount()"
+        >
+            Create Account
+        </button>
+
+
+    </div>
+
+
+    <p
+        id="signupMessage"
+        class="message"
+    ></p>
+
+
+    <p class="note">
+
+        Your account information is stored on this device for
+        the current test-site version. Real Supabase authentication
+        will replace this local test account before live customer use.
+
+    </p>
+
+</section>
+
+
+
+<!-- LOGIN -->
+
+<section
+    class="card"
+    id="loginCard"
+>
+
+    <h2>
+        Log In
+    </h2>
+
+
+    <div class="form">
+
+
+        <label>
+
+            Email
+
+            <input
+                type="email"
+                id="loginEmail"
+                autocomplete="email"
+                placeholder="Your email address"
+            >
+
+        </label>
+
+
+        <label>
+
+            Password
+
+            <input
+                type="password"
+                id="loginPassword"
+                autocomplete="current-password"
+                placeholder="Your password"
+            >
+
+        </label>
+
+
+        <button
+            type="button"
+            class="primary-btn"
+            onclick="login()"
+        >
+            Log In
+        </button>
+
+
+    </div>
+
+
+    <p
+        id="loginMessage"
+        class="message"
+    ></p>
+
+</section>
+
+
+
+<!-- CUSTOMER ACCOUNT -->
+
+<section
+    class="card hidden"
+    id="accountCard"
+>
+
+    <h2>
+        Welcome to Your Atelier Account
+    </h2>
+
+
+    <div class="account-status">
+
+        You are currently signed in on this device.
+
+    </div>
+
+
+    <div class="account-info">
+
+
+        <div class="info-row">
+
+            <span class="info-label">
+                Full Name
+            </span>
+
+            <span
+                class="info-value"
+                id="accountName"
+            ></span>
+
+        </div>
+
+
+        <div class="info-row">
+
+            <span class="info-label">
+                Email
+            </span>
+
+            <span
+                class="info-value"
+                id="accountEmail"
+            ></span>
+
+        </div>
+
+
+        <div class="info-row">
+
+            <span class="info-label">
+                Phone
+            </span>
+
+            <span
+                class="info-value"
+                id="accountPhone"
+            ></span>
+
+        </div>
+
+
+        <div class="info-row">
+
+            <span class="info-label">
+                Address
+            </span>
+
+            <span
+                class="info-value"
+                id="accountAddress"
+            ></span>
+
+        </div>
+
+
+        <div class="info-row">
+
+            <span class="info-label">
+                Parish
+            </span>
+
+            <span
+                class="info-value"
+                id="accountParish"
+            ></span>
+
+        </div>
+
+
+    </div>
+
+
+    <div class="buttons">
+
+
+        <button
+            type="button"
+            class="primary-btn"
+            onclick="goToPayment()"
+        >
+            Continue to Payment
+        </button>
+
+
+        <button
+            type="button"
+            class="secondary-btn"
+            onclick="goToHome()"
+        >
+            Return to Atelier
+        </button>
+
+
+        <button
+            type="button"
+            class="secondary-btn"
+            onclick="logout()"
+        >
+            Log Out
+        </button>
+
+
+    </div>
+
+
+    <p
+        id="accountMessage"
+        class="message"
+    ></p>
+
+</section>
+
+
+
+</div>
+
+
+
+<script>
+
+/*
+=========================================================
+ALIS ART & AURA ATELIER
+CUSTOMER ACCOUNT — TEST VERSION
+=========================================================
+
+IMPORTANT:
+
+This is the complete front-end account system for the
+current test website.
+
+It uses localStorage temporarily.
+
+It does NOT claim that Supabase authentication has happened.
+
+The real Supabase authentication connection will be
+connected after this page is confirmed working.
+*/
+
+
+const ACCOUNT_STORAGE_KEY =
+    "alisAtelierCustomerAccount";
+
+
+const SESSION_STORAGE_KEY =
+    "alisAtelierCustomerSession";
+
+
+
+/* ======================================================
+   PAGE START
+====================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    function () {
+
+        loadExistingSession();
+
+    }
+);
+
+
+
+/* ======================================================
+   CREATE ACCOUNT
+====================================================== */
+
+function createAccount() {
+
+
+    const name =
+        document
+            .getElementById("signupName")
+            .value
+            .trim();
+
+
+    const email =
+        document
+            .getElementById("signupEmail")
+            .value
+            .trim()
+            .toLowerCase();
+
+
+    const phone =
+        document
+            .getElementById("signupPhone")
+            .value
+            .trim();
+
+
+    const password =
+        document
+            .getElementById("signupPassword")
+            .value;
+
+
+    const confirmPassword =
+        document
+            .getElementById("signupConfirmPassword")
+            .value;
+
+
+    const address =
+        document
+            .getElementById("signupAddress")
+            .value
+            .trim();
+
+
+    const parish =
+        document
+            .getElementById("signupParish")
+            .value
+            .trim();
+
+
+    const message =
+        document.getElementById(
+            "signupMessage"
+        );
+
+
+    clearMessage(message);
+
+
+
+    /* REQUIRED FIELDS */
+
+    if (!name) {
+
+        showError(
+            message,
+            "Please enter your full name."
+        );
+
+        return;
+
+    }
+
+
+    if (!email) {
+
+        showError(
+            message,
+            "Please enter your email address."
+        );
+
+        return;
+
+    }
+
+
+    if (!isValidEmail(email)) {
+
+        showError(
+            message,
+            "Please enter a valid email address."
+        );
+
+        return;
+
+    }
+
+
+    if (!password) {
+
+        showError(
+            message,
+            "Please create a password."
+        );
+
+        return;
+
+    }
+
+
+    if (password.length < 6) {
+
+        showError(
+            message,
+            "Password must be at least 6 characters."
+        );
+
+        return;
+
+    }
+
+
+    if (password !== confirmPassword) {
+
+        showError(
+            message,
+            "Passwords do not match."
+        );
+
+        return;
+
+    }
+
+
+
+    /* CHECK EXISTING ACCOUNT */
+
+    const existingAccount =
+        getStoredAccount();
+
+
+    if (
+        existingAccount &&
+        existingAccount.email === email
+    ) {
+
+        showError(
+            message,
+            "An account with this email already exists. Please log in."
+        );
+
+        return;
+
+    }
+
+
+
+    /* CREATE TEST ACCOUNT */
+
+    const account = {
+
+        full_name: name,
+
+        email: email,
+
+        phone: phone,
+
+        address: address,
+
+        parish: parish,
+
+        /*
+           This password is only for the temporary
+           local test account.
+
+           Do not use this version for real customers.
+        */
+
+        password: password,
+
+        created_at:
+            new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        ACCOUNT_STORAGE_KEY,
+        JSON.stringify(account)
+    );
+
+
+    localStorage.setItem(
+        SESSION_STORAGE_KEY,
+        "true"
+    );
+
+
+    showSuccess(
+        message,
+        "Account created successfully."
+    );
+
+
+    showAccount(account);
+
+
+}
+
+
+
+/* ======================================================
+   LOGIN
+====================================================== */
+
+function login() {
+
+
+    const email =
+        document
+            .getElementById("loginEmail")
+            .value
+            .trim()
+            .toLowerCase();
+
+
+    const password =
+        document
+            .getElementById("loginPassword")
+            .value;
+
+
+    const message =
+        document.getElementById(
+            "loginMessage"
+        );
+
+
+    clearMessage(message);
+
+
+
+    if (!email) {
+
+        showError(
+            message,
+            "Please enter your email address."
+        );
+
+        return;
+
+    }
+
+
+    if (!password) {
+
+        showError(
+            message,
+            "Please enter your password."
+        );
+
+        return;
+
+    }
+
+
+
+    const account =
+        getStoredAccount();
+
+
+    if (!account) {
+
+        showError(
+            message,
+            "No account exists on this device. Please create an account first."
+        );
+
+        return;
+
+    }
+
+
+    if (account.email !== email) {
+
+        showError(
+            message,
+            "Email or password is incorrect."
+        );
+
+        return;
+
+    }
+
+
+    if (account.password !== password) {
+
+        showError(
+            message,
+            "Email or password is incorrect."
+        );
+
+        return;
+
+    }
+
+
+
+    localStorage.setItem(
+        SESSION_STORAGE_KEY,
+        "true"
+    );
+
+
+    showSuccess(
+        message,
+        "Login successful."
+    );
+
+
+    showAccount(account);
+
+}
+
+
+
+/* ======================================================
+   LOAD EXISTING SESSION
+====================================================== */
+
+function loadExistingSession() {
+
+
+    const session =
+        localStorage.getItem(
+            SESSION_STORAGE_KEY
+        );
+
+
+    const account =
+        getStoredAccount();
+
+
+    if (
+        session === "true" &&
+        account
+    ) {
+
+        showAccount(account);
+
+    }
+
+}
+
+
+
+/* ======================================================
+   SHOW ACCOUNT
+====================================================== */
+
+function showAccount(account) {
+
+
+    document
+        .getElementById("createAccountCard")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("loginCard")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("accountCard")
+        .classList
+        .remove("hidden");
+
+
+
+    document
+        .getElementById("accountName")
+        .textContent =
+            account.full_name || "—";
+
+
+    document
+        .getElementById("accountEmail")
+        .textContent =
+            account.email || "—";
+
+
+    document
+        .getElementById("accountPhone")
+        .textContent =
+            account.phone || "—";
+
+
+    document
+        .getElementById("accountAddress")
+        .textContent =
+            account.address || "—";
+
+
+    document
+        .getElementById("accountParish")
+        .textContent =
+            account.parish || "—";
+
+}
+
+
+
+/* ======================================================
+   LOG OUT
+====================================================== */
+
+function logout() {
+
+
+    localStorage.removeItem(
+        SESSION_STORAGE_KEY
+    );
+
+
+    document
+        .getElementById("accountCard")
+        .classList
+        .add("hidden");
+
+
+    document
+        .getElementById("createAccountCard")
+        .classList
+        .remove("hidden");
+
+
+    document
+        .getElementById("loginCard")
+        .classList
+        .remove("hidden");
+
+
+    document
+        .getElementById("loginEmail")
+        .value = "";
+
+
+    document
+        .getElementById("loginPassword")
+        .value = "";
+
+
+    const message =
+        document.getElementById(
+            "accountMessage"
+        );
+
+
+    showSuccess(
+        message,
+        "You have been logged out."
+    );
+
+}
+
+
+
+/* ======================================================
+   NAVIGATION
+====================================================== */
+
+function goToPayment() {
+
+    window.location.href =
+        "payment.html";
+
+}
+
+
+function goToHome() {
+
+    window.location.href =
+        "index.html";
+
+}
+
+
+
+/* ======================================================
+   GET STORED ACCOUNT
+====================================================== */
+
+function getStoredAccount() {
+
+
+    const saved =
+        localStorage.getItem(
+            ACCOUNT_STORAGE_KEY
+        );
+
+
+    if (!saved) {
+
+        return null;
+
+    }
+
+
+    try {
+
+        const account =
+            JSON.parse(saved);
+
+
+        if (
+            account &&
+            typeof account === "object"
+        ) {
+
+            return account;
+
+        }
+
+
+    } catch (error) {
+
+        console.error(
+            "Could not read stored account:",
+            error
+        );
+
+    }
+
+
+    return null;
+
+}
+
+
+
+/* ======================================================
+   EMAIL VALIDATION
+====================================================== */
+
+function isValidEmail(email) {
+
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+        .test(email);
+
+}
+
+
+
+/* ======================================================
+   MESSAGE HELPERS
+====================================================== */
+
+function clearMessage(element) {
+
+    element.textContent = "";
+
+    element.classList.remove(
+        "success",
+        "error"
+    );
+
+}
+
+
+function showError(
+    element,
+    message
+) {
+
+    element.textContent =
+        message;
+
+    element.classList.remove(
+        "success"
+    );
+
+    element.classList.add(
+        "error"
+    );
+
+}
+
+
+function showSuccess(
+    element,
+    message
+) {
+
+    element.textContent =
+        message;
+
+    element.classList.remove(
+        "error"
+    );
+
+    element.classList.add(
+        "success"
+    );
+
+}
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,1824 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Designs | Alis Art & Aura Atelier</title>
+
+<style>
+*{box-sizing:border-box}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#000;
+    color:#fff;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 6%;
+    background:#080808;
+    border-bottom:1px solid #33CEEF;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.brand{
+    font-size:20px;
+    font-weight:bold;
+    color:#FF66C4;
+}
+
+.nav-links{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:#33CEEF;
+}
+
+.hero{
+    text-align:center;
+    padding:70px 20px;
+    background:radial-gradient(circle,#3533CD 0%,#08000c 45%,#000 75%);
+}
+
+.hero h1{
+    margin:0 0 15px;
+    font-size:clamp(38px,7vw,72px);
+    color:#FF66C4;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    line-height:1.7;
+    color:#ddd;
+}
+
+.section{
+    padding:55px 6%;
+}
+
+.section-title{
+    text-align:center;
+    color:#33CEEF;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.section-description{
+    max-width:750px;
+    margin:0 auto 30px;
+    text-align:center;
+    color:#bbb;
+    line-height:1.6;
+}
+
+.gallery{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    padding:15px 3px 25px;
+}
+
+.card{
+    min-width:250px;
+    max-width:280px;
+    flex-shrink:0;
+    overflow:hidden;
+    background:#101010;
+    border:1px solid #3533CD;
+    border-radius:14px;
+}
+
+.card img{
+    width:100%;
+    height:270px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-content{
+    padding:18px;
+}
+
+.card h3{
+    color:#FF66C4;
+}
+
+.card p{
+    color:#bbb;
+    line-height:1.5;
+    font-size:14px;
+    min-height:65px;
+}
+
+button{
+    cursor:pointer;
+}
+
+.explore-btn,
+.payment-btn,
+.save-btn{
+    border:0;
+    padding:12px 18px;
+    border-radius:8px;
+    background:linear-gradient(90deg,#C90DEA,#33CEEF);
+    color:#fff;
+    font-weight:bold;
+}
+
+.builder{
+    padding:70px 6%;
+    background:#070707;
+}
+
+.builder-box{
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+    border:1px solid #C90DEA;
+    border-radius:18px;
+    background:#0c0c0c;
+}
+
+.builder-box h2{
+    text-align:center;
+    color:#FF66C4;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+label{
+    color:#33CEEF;
+    font-weight:bold;
+    font-size:14px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px;
+    border-radius:7px;
+    border:1px solid #444;
+    background:#151515;
+    color:#fff;
+}
+
+select{
+    cursor:pointer;
+}
+
+textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.photo-preview{
+    display:none;
+    max-width:220px;
+    max-height:220px;
+    margin-top:10px;
+    border:1px solid #33CEEF;
+    border-radius:10px;
+}
+
+.price-box,
+.preview-box{
+    margin-top:25px;
+    padding:20px;
+    border-radius:12px;
+    background:#101010;
+}
+
+.price-box{
+    text-align:center;
+    border:1px solid #33CEEF;
+}
+
+.price-box h3{
+    color:#33CEEF;
+}
+
+#totalPrice{
+    color:#FF66C4;
+    font-size:30px;
+    font-weight:bold;
+}
+
+.preview-box{
+    border:1px solid #3533CD;
+}
+
+.preview-box h3{
+    color:#C90DEA;
+}
+
+.preview-line{
+    padding:8px 0;
+    border-bottom:1px solid #222;
+}
+
+.preview-line strong{
+    color:#33CEEF;
+}
+
+.actions{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.note{
+    color:#999;
+    font-size:13px;
+}
+
+@media(max-width:700px){
+    .navbar{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .builder-box{
+        padding:20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <div class="brand">
+        <a href="index.html">Alis Art & Aura Atelier</a>
+    </div>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="who-we-are.html">Who We Are</a>
+        <a href="what-we-create.html">What We Create</a>
+        <a href="custom-orders.html">Custom Orders</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+
+<section class="hero">
+    <h1>Fashion Designs</h1>
+
+    <p>
+        Creative fashion concepts shaped around originality,
+        personality and visual expression.
+    </p>
+</section>
+
+
+<!-- DRESSES -->
+<section class="section">
+
+<h2 class="section-title">Dresses</h2>
+
+<p class="section-description">
+Creative dress concepts built around silhouette, movement and expression.
+</p>
+
+<div class="gallery">
+
+<div class="card">
+<img src="images/fashion-dresses-1.png" alt="Statement Dress">
+<div class="card-content">
+<h3>Statement Dress</h3>
+<p>A distinctive dress designed to become the statement itself.</p>
+<button class="explore-btn"
+data-category="Dresses"
+data-item="Dress"
+data-option="Statement Dress">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-dresses-2.png" alt="Elegant Dress">
+<div class="card-content">
+<h3>Elegant Dress</h3>
+<p>A refined fashion concept focused on graceful form.</p>
+<button class="explore-btn"
+data-category="Dresses"
+data-item="Dress"
+data-option="Elegant Dress">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-dresses-3.png" alt="Artistic Dress">
+<div class="card-content">
+<h3>Artistic Dress</h3>
+<p>A dress where artistic expression becomes part of the garment.</p>
+<button class="explore-btn"
+data-category="Dresses"
+data-item="Dress"
+data-option="Artistic Dress">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-dresses-4.png" alt="Custom Dress">
+<div class="card-content">
+<h3>Custom Dress</h3>
+<p>A dress concept developed around your own vision.</p>
+<button class="explore-btn"
+data-category="Dresses"
+data-item="Dress"
+data-option="Custom Dress">
+Explore →
+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- TOPS -->
+<section class="section">
+
+<h2 class="section-title">Tops</h2>
+
+<p class="section-description">
+Creative tops designed around shape, structure and personal expression.
+</p>
+
+<div class="gallery">
+
+<div class="card">
+<img src="images/fashion-tops-1.png" alt="Blouse">
+<div class="card-content">
+<h3>Blouse Design</h3>
+<p>A creative blouse concept combining shape and detail.</p>
+<button class="explore-btn"
+data-category="Tops"
+data-item="Blouse"
+data-option="Blouse Design">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-tops-2.png" alt="Structured Top">
+<div class="card-content">
+<h3>Structured Top</h3>
+<p>A stronger structured fashion top with distinctive form.</p>
+<button class="explore-btn"
+data-category="Tops"
+data-item="Structured Top"
+data-option="Structured Top">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-tops-3.png" alt="Crop Top">
+<div class="card-content">
+<h3>Crop Top Design</h3>
+<p>A modern crop-top concept with artistic details.</p>
+<button class="explore-btn"
+data-category="Tops"
+data-item="Crop Top"
+data-option="Crop Top Design">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-tops-4.png" alt="Custom Top">
+<div class="card-content">
+<h3>Custom Top</h3>
+<p>A personalized top developed around your fashion idea.</p>
+<button class="explore-btn"
+data-category="Tops"
+data-item="Custom Top"
+data-option="Custom Top">
+Explore →
+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- BOTTOMS -->
+<section class="section">
+
+<h2 class="section-title">Bottoms</h2>
+
+<p class="section-description">
+Skirts, trousers and shorts designed as creative fashion pieces.
+</p>
+
+<div class="gallery">
+
+<div class="card">
+<img src="images/fashion-bottoms-1.png" alt="Skirt">
+<div class="card-content">
+<h3>Skirt Design</h3>
+<p>A creative skirt concept designed around movement.</p>
+<button class="explore-btn"
+data-category="Bottoms"
+data-item="Skirt"
+data-option="Skirt Design">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-bottoms-2.png" alt="Trousers">
+<div class="card-content">
+<h3>Trousers Design</h3>
+<p>Creative trousers designed around silhouette and individuality.</p>
+<button class="explore-btn"
+data-category="Bottoms"
+data-item="Trousers"
+data-option="Trousers Design">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-bottoms-3.png" alt="Shorts">
+<div class="card-content">
+<h3>Shorts Design</h3>
+<p>A creative shorts concept with artistic details.</p>
+<button class="explore-btn"
+data-category="Bottoms"
+data-item="Shorts"
+data-option="Shorts Design">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-bottoms-4.png" alt="Custom Bottom">
+<div class="card-content">
+<h3>Custom Bottom</h3>
+<p>A personalized bottom design created from your concept.</p>
+<button class="explore-btn"
+data-category="Bottoms"
+data-item="Custom Bottom"
+data-option="Custom Bottom Design">
+Explore →
+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- OUTERWEAR -->
+<section class="section">
+
+<h2 class="section-title">Outerwear</h2>
+
+<p class="section-description">
+Jackets and coats designed to become part of the fashion expression.
+</p>
+
+<div class="gallery">
+
+<div class="card">
+<img src="images/fashion-outerwear-1.png" alt="Fashion Jacket">
+<div class="card-content">
+<h3>Fashion Jacket</h3>
+<p>A creative jacket concept combining fashion and visual character.</p>
+<button class="explore-btn"
+data-category="Outerwear"
+data-item="Jacket"
+data-option="Fashion Jacket">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-outerwear-2.png" alt="Statement Jacket">
+<div class="card-content">
+<h3>Statement Jacket</h3>
+<p>A distinctive jacket designed to stand out.</p>
+<button class="explore-btn"
+data-category="Outerwear"
+data-item="Jacket"
+data-option="Statement Jacket">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-outerwear-3.png" alt="Coat">
+<div class="card-content">
+<h3>Coat Design</h3>
+<p>A creative coat concept balancing form and function.</p>
+<button class="explore-btn"
+data-category="Outerwear"
+data-item="Coat"
+data-option="Coat Design">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-outerwear-4.png" alt="Custom Outerwear">
+<div class="card-content">
+<h3>Custom Outerwear</h3>
+<p>A personalized outerwear concept created around your vision.</p>
+<button class="explore-btn"
+data-category="Outerwear"
+data-item="Custom Outerwear"
+data-option="Custom Outerwear">
+Explore →
+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- SETS -->
+<section class="section">
+
+<h2 class="section-title">Coordinated Sets</h2>
+
+<p class="section-description">
+Multiple fashion pieces designed to work together as one complete look.
+</p>
+
+<div class="gallery">
+
+<div class="card">
+<img src="images/fashion-sets-1.png" alt="Top and Skirt Set">
+<div class="card-content">
+<h3>Top & Skirt Set</h3>
+<p>A coordinated two-piece concept with a unified direction.</p>
+<button class="explore-btn"
+data-category="Coordinated Sets"
+data-item="Top & Skirt Set"
+data-option="Top & Skirt Set">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-sets-2.png" alt="Top and Trousers Set">
+<div class="card-content">
+<h3>Top & Trousers Set</h3>
+<p>A coordinated top and trousers concept.</p>
+<button class="explore-btn"
+data-category="Coordinated Sets"
+data-item="Top & Trousers Set"
+data-option="Top & Trousers Set">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-sets-3.png" alt="Shorts Set">
+<div class="card-content">
+<h3>Shorts Set</h3>
+<p>A coordinated shorts outfit developed around one style.</p>
+<button class="explore-btn"
+data-category="Coordinated Sets"
+data-item="Shorts Set"
+data-option="Shorts Set">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-sets-4.png" alt="Custom Fashion Set">
+<div class="card-content">
+<h3>Custom Fashion Set</h3>
+<p>A coordinated fashion concept built around your vision.</p>
+<button class="explore-btn"
+data-category="Coordinated Sets"
+data-item="Custom Fashion Set"
+data-option="Custom Fashion Set">
+Explore →
+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- CUSTOM -->
+<section class="section">
+
+<h2 class="section-title">Custom Fashion Concepts</h2>
+
+<p class="section-description">
+Fashion created from your own idea, identity, occasion or complete concept.
+</p>
+
+<div class="gallery">
+
+<div class="card">
+<img src="images/fashion-custom-1.png" alt="Personal Fashion Concept">
+<div class="card-content">
+<h3>Personal Fashion Concept</h3>
+<p>A fashion piece developed around your personal style.</p>
+<button class="explore-btn"
+data-category="Custom Fashion Concepts"
+data-item="Custom Fashion Piece"
+data-option="Personal Fashion Concept">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-custom-2.png" alt="Occasion Fashion">
+<div class="card-content">
+<h3>Occasion Fashion</h3>
+<p>A custom fashion concept created around an occasion.</p>
+<button class="explore-btn"
+data-category="Custom Fashion Concepts"
+data-item="Occasion Fashion"
+data-option="Occasion Fashion">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-custom-3.png" alt="Identity Fashion">
+<div class="card-content">
+<h3>Identity Fashion</h3>
+<p>A fashion concept shaped around personality and expression.</p>
+<button class="explore-btn"
+data-category="Custom Fashion Concepts"
+data-item="Identity Fashion"
+data-option="Identity Fashion">
+Explore →
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="images/fashion-custom-4.png" alt="Fully Custom Fashion">
+<div class="card-content">
+<h3>Fully Custom Fashion</h3>
+<p>A complete fashion concept built from your own vision.</p>
+<button class="explore-btn"
+data-category="Custom Fashion Concepts"
+data-item="Fully Custom Fashion"
+data-option="Fully Custom Fashion">
+Explore →
+</button>
+</div>
+</div>
+
+</div>
+</section>
+
+
+<!-- BUILDER -->
+<section class="builder" id="fashion-builder">
+
+<div class="builder-box">
+
+<h2>Build Your Fashion Design</h2>
+
+<div class="form-grid">
+
+<div class="field">
+<label for="fashionCategory">Fashion Category</label>
+<select id="fashionCategory">
+<option value="">Select Category</option>
+<option>Dresses</option>
+<option>Tops</option>
+<option>Bottoms</option>
+<option>Outerwear</option>
+<option>Coordinated Sets</option>
+<option>Custom Fashion Concepts</option>
+</select>
+</div>
+
+
+<div class="field">
+<label for="fashionItem">Fashion Piece</label>
+<select id="fashionItem">
+<option value="">Select Fashion Piece</option>
+</select>
+</div>
+
+
+<div class="field">
+<label for="designDirection">Design Direction</label>
+<select id="designDirection">
+<option value="">Select Design Direction</option>
+</select>
+</div>
+
+
+<div class="field">
+<label for="designOption">Specific Design</label>
+<select id="designOption">
+<option value="">Select Design</option>
+</select>
+</div>
+
+
+<div class="field">
+<label for="size">Size</label>
+<select id="size">
+<option value="">Select Size</option>
+</select>
+</div>
+
+
+<div class="field">
+<label for="colour">Colour</label>
+<select id="colour">
+<option value="">Select Colour</option>
+</select>
+</div>
+
+
+<div class="field">
+<label for="fabric">Fabric / Material</label>
+<select id="fabric">
+<option value="">Select Fabric / Material</option>
+</select>
+</div>
+
+
+<div class="field">
+<label for="finish">Finish</label>
+<select id="finish">
+<option value="">Select Finish</option>
+</select>
+</div>
+
+
+<div class="field full">
+<label for="instructions">Personalization / Design Instructions</label>
+<textarea id="instructions"
+placeholder="Describe colours, details, measurements or other ideas..."></textarea>
+</div>
+
+
+<div class="field full">
+<label for="referenceImage">Reference Image</label>
+<input type="file" id="referenceImage" accept="image/*">
+<img id="photoPreview" class="photo-preview" alt="Reference preview">
+</div>
+
+
+<div class="field">
+<label for="quantity">Quantity</label>
+<input type="number" id="quantity" min="1" value="1">
+</div>
+
+
+<div class="field">
+<label for="fullName">Full Name</label>
+<input type="text" id="fullName" placeholder="Your full name">
+</div>
+
+
+<div class="field">
+<label for="email">Email</label>
+<input type="email" id="email" placeholder="Your email">
+</div>
+
+
+<div class="field">
+<label for="phone">Phone / WhatsApp</label>
+<input type="tel" id="phone" placeholder="Your phone or WhatsApp">
+</div>
+
+
+<div class="field full">
+<label for="address">Delivery Address</label>
+<textarea id="address"
+placeholder="Where should the order be delivered?"></textarea>
+</div>
+
+</div>
+
+
+<div class="price-box">
+
+<h3>Current Order Total</h3>
+
+<div id="totalPrice">J$0</div>
+
+<p class="note">
+Temporary prices are being used. Final custom pricing can be confirmed before production.
+</p>
+
+</div>
+
+
+<div class="preview-box">
+
+<h3>Order Preview</h3>
+
+<div id="orderPreview">
+Select your fashion design to see your order.
+</div>
+
+</div>
+
+
+<div class="actions">
+
+<button class="save-btn" type="button" id="saveOrder">
+Save Order
+</button>
+
+<button class="payment-btn" type="button" id="paymentButton">
+Continue to Payment →
+</button>
+
+</div>
+
+</div>
+</section>
+
+
+<script>
+
+/* =========================================================
+   TEMPORARY PRICES
+   ========================================================= */
+
+const prices = {
+
+fashionItem:{
+"Dress":5000,
+
+"Blouse":3000,
+"Structured Top":3500,
+"Crop Top":2800,
+"Custom Top":4000,
+
+"Skirt":3500,
+"Trousers":4500,
+"Shorts":3000,
+"Custom Bottom":4500,
+
+"Jacket":6500,
+"Coat":8000,
+"Custom Outerwear":9000,
+
+"Top & Skirt Set":6500,
+"Top & Trousers Set":7500,
+"Shorts Set":6000,
+"Custom Fashion Set":9000,
+
+"Custom Fashion Piece":6000,
+"Occasion Fashion":7000,
+"Identity Fashion":7500,
+"Fully Custom Fashion":10000
+},
+
+designOption:{
+"Dresses":{
+"Statement Dress":1000,
+"Elegant Dress":1500,
+"Artistic Dress":2000,
+"Custom Dress":3000
+},
+
+"Tops":{
+"Blouse Design":500,
+"Structured Top":1000,
+"Crop Top Design":500,
+"Custom Top":1500
+},
+
+"Bottoms":{
+"Skirt Design":500,
+"Trousers Design":1000,
+"Shorts Design":500,
+"Custom Bottom Design":1500
+},
+
+"Outerwear":{
+"Fashion Jacket":1000,
+"Statement Jacket":1500,
+"Coat Design":1500,
+"Custom Outerwear":2500
+},
+
+"Coordinated Sets":{
+"Top & Skirt Set":1500,
+"Top & Trousers Set":1800,
+"Shorts Set":1200,
+"Custom Fashion Set":2500
+},
+
+"Custom Fashion Concepts":{
+"Personal Fashion Concept":1500,
+"Occasion Fashion":2000,
+"Identity Fashion":2500,
+"Fully Custom Fashion":4000
+}
+},
+
+size:{
+"XS":0,
+"S":0,
+"M":0,
+"L":0,
+"XL":300,
+"2XL":500,
+"3XL":700,
+"4XL":1000,
+"28":0,
+"30":0,
+"32":0,
+"34":0,
+"36":0,
+"38":300,
+"40":500,
+"42":700,
+"Custom Measurements":1500
+},
+
+colour:{
+"Black":0,
+"White":0,
+"Red":200,
+"Blue":200,
+"Purple":200,
+"Pink":200,
+"Green":200,
+"Yellow":200,
+"Orange":200,
+"Brown":200,
+"Grey":200,
+"Gold":500,
+"Silver":500,
+"Multi-Colour":700,
+"Custom Colour":700
+},
+
+fabric:{
+"Cotton":0,
+"Linen":500,
+"Denim":700,
+"Satin":1000,
+"Silk":2000,
+"Chiffon":1000,
+"Velvet":1500,
+"Polyester":0,
+"Leather / Faux Leather":2500,
+"Custom Material":2000
+},
+
+finish:{
+"Standard":0,
+"Signature":1000,
+"Premium":2500,
+"Fully Custom":4000
+}
+
+};
+
+
+/* =========================================================
+   CATEGORY DATA
+   ========================================================= */
+
+const categoryItems={
+
+"Dresses":[
+"Dress"
+],
+
+"Tops":[
+"Blouse",
+"Structured Top",
+"Crop Top",
+"Custom Top"
+],
+
+"Bottoms":[
+"Skirt",
+"Trousers",
+"Shorts",
+"Custom Bottom"
+],
+
+"Outerwear":[
+"Jacket",
+"Coat",
+"Custom Outerwear"
+],
+
+"Coordinated Sets":[
+"Top & Skirt Set",
+"Top & Trousers Set",
+"Shorts Set",
+"Custom Fashion Set"
+],
+
+"Custom Fashion Concepts":[
+"Custom Fashion Piece",
+"Occasion Fashion",
+"Identity Fashion",
+"Fully Custom Fashion"
+]
+
+};
+
+
+const categoryDirections={
+
+"Dresses":[
+"Silhouette & Form",
+"Artistic Detail",
+"Statement Styling",
+"Custom Concept"
+],
+
+"Tops":[
+"Silhouette & Form",
+"Artistic Detail",
+"Statement Styling",
+"Custom Concept"
+],
+
+"Bottoms":[
+"Silhouette & Form",
+"Artistic Detail",
+"Statement Styling",
+"Custom Concept"
+],
+
+"Outerwear":[
+"Silhouette & Form",
+"Artistic Detail",
+"Statement Styling",
+"Custom Concept"
+],
+
+"Coordinated Sets":[
+"Coordinated Look",
+"Colour Story",
+"Artistic Theme",
+"Custom Concept"
+],
+
+"Custom Fashion Concepts":[
+"Personal Fashion Concept",
+"Occasion Fashion",
+"Identity Fashion",
+"Fully Custom Concept"
+]
+
+};
+
+
+const categoryOptions={
+
+"Dresses":[
+"Statement Dress",
+"Elegant Dress",
+"Artistic Dress",
+"Custom Dress"
+],
+
+"Tops":[
+"Blouse Design",
+"Structured Top",
+"Crop Top Design",
+"Custom Top"
+],
+
+"Bottoms":[
+"Skirt Design",
+"Trousers Design",
+"Shorts Design",
+"Custom Bottom Design"
+],
+
+"Outerwear":[
+"Fashion Jacket",
+"Statement Jacket",
+"Coat Design",
+"Custom Outerwear"
+],
+
+"Coordinated Sets":[
+"Top & Skirt Set",
+"Top & Trousers Set",
+"Shorts Set",
+"Custom Fashion Set"
+],
+
+"Custom Fashion Concepts":[
+"Personal Fashion Concept",
+"Occasion Fashion",
+"Identity Fashion",
+"Fully Custom Fashion"
+]
+
+};
+
+
+/* =========================================================
+   ITEM SIZES
+   ========================================================= */
+
+const itemSizes={
+
+"Dress":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Blouse":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Structured Top":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Crop Top":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Custom Top":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Skirt":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Trousers":[
+"28","30","32","34","36","38","40","42",
+"Custom Measurements"
+],
+
+"Shorts":[
+"28","30","32","34","36","38","40","42",
+"Custom Measurements"
+],
+
+"Custom Bottom":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Jacket":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Coat":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Custom Outerwear":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Top & Skirt Set":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Top & Trousers Set":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Shorts Set":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Custom Fashion Set":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Custom Fashion Piece":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Occasion Fashion":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Identity Fashion":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+],
+
+"Fully Custom Fashion":[
+"XS","S","M","L","XL","2XL","3XL","4XL",
+"Custom Measurements"
+]
+
+};
+
+
+/* =========================================================
+   ELEMENTS
+   ========================================================= */
+
+const category=document.getElementById("fashionCategory");
+const item=document.getElementById("fashionItem");
+const direction=document.getElementById("designDirection");
+const design=document.getElementById("designOption");
+const size=document.getElementById("size");
+const colour=document.getElementById("colour");
+const fabric=document.getElementById("fabric");
+const finish=document.getElementById("finish");
+const quantity=document.getElementById("quantity");
+const total=document.getElementById("totalPrice");
+const preview=document.getElementById("orderPreview");
+
+let uploadedPhotoData="";
+
+
+/* =========================================================
+   SELECT POPULATOR
+   ========================================================= */
+
+function populate(select,values,placeholder){
+
+select.innerHTML="";
+
+const first=document.createElement("option");
+
+first.value="";
+first.textContent=placeholder;
+
+select.appendChild(first);
+
+values.forEach(value=>{
+
+const option=document.createElement("option");
+
+option.value=value;
+option.textContent=value;
+
+select.appendChild(option);
+
+});
+
+}
+
+
+/* =========================================================
+   COLOURS
+   THIS WAS THE MISSING PART
+   ========================================================= */
+
+function loadColours(){
+
+populate(
+colour,
+Object.keys(prices.colour),
+"Select Colour"
+);
+
+}
+
+
+/* =========================================================
+   FABRICS
+   ========================================================= */
+
+function loadFabrics(){
+
+populate(
+fabric,
+Object.keys(prices.fabric),
+"Select Fabric / Material"
+);
+
+}
+
+
+/* =========================================================
+   FINISHES
+   ========================================================= */
+
+function loadFinishes(){
+
+populate(
+finish,
+Object.keys(prices.finish),
+"Select Finish"
+);
+
+}
+
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+function loadCategory(){
+
+const selected=category.value;
+
+populate(
+item,
+categoryItems[selected] || [],
+"Select Fashion Piece"
+);
+
+populate(
+direction,
+categoryDirections[selected] || [],
+"Select Design Direction"
+);
+
+populate(
+design,
+categoryOptions[selected] || [],
+"Select Design"
+);
+
+populate(
+size,
+[],
+"Select Size"
+);
+
+updateTotal();
+
+}
+
+
+/* =========================================================
+   ITEM
+   ========================================================= */
+
+function loadItem(){
+
+const selected=item.value;
+
+populate(
+size,
+itemSizes[selected] || [],
+"Select Size"
+);
+
+updateTotal();
+
+}
+
+
+/* =========================================================
+   TOTAL
+   ========================================================= */
+
+function updateTotal(){
+
+let amount=0;
+
+amount += prices.fashionItem[item.value] || 0;
+
+amount +=
+prices.designOption[category.value]?.[design.value] || 0;
+
+amount += prices.size[size.value] || 0;
+
+amount += prices.colour[colour.value] || 0;
+
+amount += prices.fabric[fabric.value] || 0;
+
+amount += prices.finish[finish.value] || 0;
+
+let qty=parseInt(quantity.value)||1;
+
+if(qty<1){
+qty=1;
+quantity.value=1;
+}
+
+amount*=qty;
+
+total.textContent=
+"J$"+amount.toLocaleString();
+
+updatePreview();
+
+}
+
+
+/* =========================================================
+   PREVIEW
+   ========================================================= */
+
+function updatePreview(){
+
+const instructions=
+document.getElementById("instructions").value;
+
+const name=
+document.getElementById("fullName").value;
+
+const email=
+document.getElementById("email").value;
+
+const phone=
+document.getElementById("phone").value;
+
+const address=
+document.getElementById("address").value;
+
+preview.innerHTML=`
+
+<div class="preview-line">
+<strong>Category:</strong>
+${category.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Fashion Piece:</strong>
+${item.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Design Direction:</strong>
+${direction.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Specific Design:</strong>
+${design.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Size:</strong>
+${size.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Colour:</strong>
+${colour.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Fabric:</strong>
+${fabric.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Finish:</strong>
+${finish.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Quantity:</strong>
+${quantity.value||1}
+</div>
+
+<div class="preview-line">
+<strong>Customer:</strong>
+${name||"Not provided"}
+</div>
+
+<div class="preview-line">
+<strong>Email:</strong>
+${email||"Not provided"}
+</div>
+
+<div class="preview-line">
+<strong>Phone / WhatsApp:</strong>
+${phone||"Not provided"}
+</div>
+
+<div class="preview-line">
+<strong>Delivery Address:</strong>
+${address||"Not provided"}
+</div>
+
+<div class="preview-line">
+<strong>Instructions:</strong>
+${instructions||"None"}
+</div>
+`;
+
+}
+
+
+/* =========================================================
+   EVENTS
+   ========================================================= */
+
+category.addEventListener("change",loadCategory);
+
+item.addEventListener("change",loadItem);
+
+[
+direction,
+design,
+size,
+colour,
+fabric,
+finish,
+quantity
+].forEach(element=>{
+
+element.addEventListener("change",updateTotal);
+element.addEventListener("input",updateTotal);
+
+});
+
+
+[
+"instructions",
+"fullName",
+"email",
+"phone",
+"address"
+].forEach(id=>{
+
+document.getElementById(id)
+.addEventListener("input",updatePreview);
+
+});
+
+
+/* =========================================================
+   PHOTO
+   ========================================================= */
+
+document
+.getElementById("referenceImage")
+.addEventListener("change",function(){
+
+const file=this.files[0];
+
+if(!file){
+uploadedPhotoData="";
+document.getElementById("photoPreview").style.display="none";
+return;
+}
+
+const reader=new FileReader();
+
+reader.onload=function(event){
+
+uploadedPhotoData=event.target.result;
+
+const image=
+document.getElementById("photoPreview");
+
+image.src=uploadedPhotoData;
+image.style.display="block";
+
+};
+
+reader.readAsDataURL(file);
+
+});
+
+
+/* =========================================================
+   EXPLORE BUTTONS
+   ========================================================= */
+
+document
+.querySelectorAll(".explore-btn")
+.forEach(button=>{
+
+button.addEventListener("click",function(){
+
+category.value=this.dataset.category;
+
+loadCategory();
+
+item.value=this.dataset.item;
+
+loadItem();
+
+design.value=this.dataset.option;
+
+updateTotal();
+
+document
+.getElementById("fashion-builder")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+});
+
+});
+
+
+/* =========================================================
+   COLLECT ORDER
+   ========================================================= */
+
+function collectOrder(){
+
+let unitPrice=0;
+
+unitPrice += prices.fashionItem[item.value] || 0;
+
+unitPrice +=
+prices.designOption[category.value]?.[design.value] || 0;
+
+unitPrice += prices.size[size.value] || 0;
+
+unitPrice += prices.colour[colour.value] || 0;
+
+unitPrice += prices.fabric[fabric.value] || 0;
+
+unitPrice += prices.finish[finish.value] || 0;
+
+const qty=parseInt(quantity.value)||1;
+
+return{
+
+category:category.value,
+
+fashionItem:item.value,
+
+designDirection:direction.value,
+
+designOption:design.value,
+
+size:size.value,
+
+colour:colour.value,
+
+fabric:fabric.value,
+
+finish:finish.value,
+
+quantity:qty,
+
+unitPrice:unitPrice,
+
+totalPrice:unitPrice*qty,
+
+instructions:
+document.getElementById("instructions").value,
+
+customer:{
+
+fullName:
+document.getElementById("fullName").value,
+
+email:
+document.getElementById("email").value,
+
+phone:
+document.getElementById("phone").value,
+
+address:
+document.getElementById("address").value
+
+},
+
+photoData:uploadedPhotoData,
+
+currency:"JMD",
+
+createdAt:new Date().toISOString()
+
+};
+
+}
+
+
+/* =========================================================
+   SAVE ORDER
+   ========================================================= */
+
+document
+.getElementById("saveOrder")
+.addEventListener("click",function(){
+
+const order=collectOrder();
+
+localStorage.setItem(
+"fashionDesignOrder",
+JSON.stringify(order)
+);
+
+alert("Fashion design order saved.");
+
+});
+
+
+/* =========================================================
+   PAYMENT
+   ========================================================= */
+
+document
+.getElementById("paymentButton")
+.addEventListener("click",function(){
+
+const order=collectOrder();
+
+localStorage.setItem(
+"fashionDesignOrder",
+JSON.stringify(order)
+);
+
+window.location.href="payment.html";
+
+});
+
+
+/* =========================================================
+   INITIALIZE EVERYTHING
+   ========================================================= */
+
+loadColours();
+loadFabrics();
+loadFinishes();
+
+updatePreview();
+updateTotal();
+
+</script>
+
+</body>
+</html>
+

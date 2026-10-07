@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sentimental Gifts | Alis Art & Aura Atelier</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .service-intro {
+            max-width: 850px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .service-intro h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .service-intro p {
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        .emotion-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 40px auto 70px;
+        }
+
+        .emotion-card {
+            padding: 28px 20px;
+            border: 1px solid rgba(201, 13, 234, 0.35);
+            border-radius: 18px;
+            background: rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+
+        .emotion-card h3 {
+            color: #ff66c4;
+            margin-bottom: 10px;
+        }
+
+        .emotion-card p {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .order-section {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+
+        .order-section h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .order-note {
+            text-align: center;
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .custom-form {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            padding: 35px;
+            border-radius: 22px;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(51, 206, 239, 0.3);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(201, 13, 234, 0.4);
+            background: #111;
+            color: #fff;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 12px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .checkbox-option input {
+            width: auto;
+        }
+
+        .upload-box {
+            padding: 20px;
+            border: 1px dashed rgba(51, 206, 239, 0.5);
+            border-radius: 12px;
+            background: rgba(51, 206, 239, 0.04);
+        }
+
+        .upload-box small {
+            display: block;
+            color: #aaa;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        .quotation-box {
+            padding: 20px;
+            border-left: 3px solid #ff66c4;
+            background: rgba(255, 102, 196, 0.06);
+            line-height: 1.7;
+            color: #ddd;
+        }
+
+        .submit-btn {
+            margin-top: 10px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #c90dea, #33ceef);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 800px) {
+            .emotion-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .emotion-grid,
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .custom-form {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">
+        Alis Art & Aura Atelier
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="who-we-are.html">Who We Are</a>
+        <a href="what-we-create.html">What We Create</a>
+        <a href="custom-orders.html">Custom Orders</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">Gifts & Keepsakes</p>
+        <h1>Sentimental Gifts</h1>
+        <p>
+            Turn the feelings that are sometimes difficult to put into words
+            into something meaningful they can keep.
+        </p>
+    </div>
+</section>
+
+<main>
+
+    <section class="service-intro">
+        <h2>Give The Feeling A Form.</h2>
+
+        <p>
+            Some gifts are about an occasion. Others are about what someone
+            means to you. Tell us the feeling, relationship, memory or message
+            behind your gift and let the Atelier help turn it into something
+            tangible.
+        </p>
+    </section>
+
+    <section class="emotion-grid">
+
+        <div class="emotion-card">
+            <h3>Love</h3>
+            <p>
+                Create something that expresses love, affection and the bond
+                between two people.
+            </p>
+        </div>
+
+        <div class="emotion-card">
+            <h3>Gratitude</h3>
+            <p>
+                Give someone something that communicates appreciation for
+                everything they have done.
+            </p>
+        </div>
+
+        <div class="emotion-card">
+            <h3>Remember</h3>
+            <p>
+                Honour a person, memory, relationship or chapter that still
+                holds meaning.
+            </p>
+        </div>
+
+        <div class="emotion-card">
+            <h3>Encouragement</h3>
+            <p>
+                Create something that reminds someone they are supported,
+                valued and believed in.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="order-section">
+
+        <h2>Tell Us What It Means</h2>
+
+        <p class="order-note">
+            You do not have to know what the final gift should look like.
+            Start with the feeling and the story behind it. We can help
+            determine how to express it creatively.
+        </p>
+
+        <form id="sentimentalGiftForm" class="custom-form">
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="recipient">Who Is The Gift For?</label>
+                <input
+                    type="text"
+                    id="recipient"
+                    placeholder="Their name or who they are to you"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="relationship">What Is Your Relationship?</label>
+                <input
+                    type="text"
+                    id="relationship"
+                    placeholder="Partner, parent, friend, sibling, mentor..."
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="feeling">What Do You Want The Gift To Express?</label>
+
+                <select id="feeling" required>
+                    <option value="">Select a feeling</option>
+                    <option>Love</option>
+                    <option>Gratitude</option>
+                    <option>Appreciation</option>
+                    <option>Remembrance</option>
+                    <option>Encouragement</option>
+                    <option>Comfort</option>
+                    <option>Forgiveness</option>
+                    <option>Friendship</option>
+                    <option>Admiration</option>
+                    <option>Congratulations</option>
+                    <option>Something Difficult To Put Into Words</option>
+                    <option>Something Else</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="story">
+                    Tell Us The Story Behind The Gift
+                </label>
+
+                <textarea
+                    id="story"
+                    placeholder="Tell us about the person, relationship, memory or experience that gives this gift its meaning."
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="message">
+                    Is There Something You Want Them To Know?
+                </label>
+
+                <textarea
+                    id="message"
+                    placeholder="Write the message, words, thoughts or sentiment you want expressed."
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>What Could Help Express The Meaning?</label>
+
+                <div class="checkbox-grid">
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="elements" value="Photographs">
+                        Photographs
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="elements" value="Names">
+                        Names
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="elements" value="Important Dates">
+                        Important Dates
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="elements" value="Quotes">
+                        Quotes / Words
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="elements" value="Handwriting">
+                        Handwriting
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="elements" value="Symbols">
+                        Symbols
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="elements" value="Custom Artwork">
+                        Custom Artwork
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="elements" value="Something Else">
+                        Something Else
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="memories">
+                    Are There Specific Memories Or Details We Should Know?
+                </label>
+
+                <textarea
+                    id="memories"
+                    placeholder="Places, inside jokes, moments, songs, objects, dates, stories or details that matter."
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="direction">
+                    Do You Know What You Want The Gift To Become?
+                </label>
+
+                <select id="direction">
+                    <option value="">Select one</option>
+                    <option>I know exactly what I want</option>
+                    <option>I have a general idea</option>
+                    <option>I have references</option>
+                    <option>I want the Atelier to recommend something</option>
+                    <option>I am not sure yet</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="style">
+                    How Should The Gift Feel?
+                </label>
+
+                <select id="style">
+                    <option value="">Select a direction</option>
+                    <option>Deeply Personal</option>
+                    <option>Romantic</option>
+                    <option>Elegant</option>
+                    <option>Soft & Emotional</option>
+                    <option>Luxury</option>
+                    <option>Bold</option>
+                    <option>Dark & Dramatic</option>
+                    <option>Warm & Comforting</option>
+                    <option>Simple & Meaningful</option>
+                    <option>Not Sure — Interpret It For Me</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="colours">Preferred Colours</label>
+
+                <input
+                    type="text"
+                    id="colours"
+                    placeholder="Any colours connected to the person or memory?"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Approximate Gift Budget</label>
+
+                <select id="budget">
+                    <option value="">Select a range</option>
+                    <option>Under JMD 3,000</option>
+                    <option>JMD 3,000 – 5,000</option>
+                    <option>JMD 5,000 – 10,000</option>
+                    <option>JMD 10,000 – 20,000</option>
+                    <option>JMD 20,000+</option>
+                    <option>I am open to recommendations</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="deadline">When Do You Need The Gift?</label>
+                <input type="date" id="deadline" required>
+            </div>
+
+            <div class="form-group upload-box">
+
+                <label for="referenceFiles">
+                    Photos & Reference Files
+                </label>
+
+                <input
+                    type="file"
+                    id="referenceFiles"
+                    accept="image/*,.pdf"
+                    multiple
+                >
+
+                <small>
+                    Upload photographs, handwritten messages, letters,
+                    screenshots, documents, inspiration or anything that
+                    carries meaning for the project.
+                </small>
+
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Anything Else?</label>
+
+                <textarea
+                    id="notes"
+                    placeholder="Anything else you want us to understand about the meaning behind this gift?"
+                ></textarea>
+            </div>
+
+            <div class="quotation-box">
+                Sentimental gifts are custom-quoted. Your quotation will
+                depend on the creative direction, materials, size,
+                personalization, presentation and amount of work involved.
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Submit Sentimental Gift Request
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+<script>
+document.getElementById("sentimentalGiftForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const elements = Array.from(
+        document.querySelectorAll('input[name="elements"]:checked')
+    ).map(item => item.value);
+
+    const files = Array.from(
+        document.getElementById("referenceFiles").files
+    ).map(file => ({
+        name: file.name,
+        type: file.type,
+        size: file.size
+    }));
+
+    const order = {
+        serviceCategory: "Gifts & Keepsakes",
+        service: "Sentimental Gifts",
+
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+
+        recipient: document.getElementById("recipient").value,
+        relationship: document.getElementById("relationship").value,
+
+        feeling: document.getElementById("feeling").value,
+        story: document.getElementById("story").value,
+        message: document.getElementById("message").value,
+
+        elements: elements,
+
+        memories: document.getElementById("memories").value,
+
+        direction: document.getElementById("direction").value,
+
+        style: document.getElementById("style").value,
+        preferredColours: document.getElementById("colours").value,
+
+        budget: document.getElementById("budget").value,
+
+        deadline: document.getElementById("deadline").value,
+
+        uploadedFiles: files,
+
+        additionalNotes: document.getElementById("notes").value,
+
+        pricingType: "Custom Quotation",
+        status: "Awaiting Sentimental Gift Review",
+
+        createdAt: new Date().toISOString()
+    };
+
+    localStorage.setItem("currentOrder", JSON.stringify(order));
+
+    window.location.href = "payment.html";
+});
+</script>
+
+</body>
+</html>

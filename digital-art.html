@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Art & Prints | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(201, 13, 234, 0.20), transparent 30%),
+                radial-gradient(circle at 80% 75%, rgba(255, 102, 196, 0.18), transparent 30%),
+                linear-gradient(135deg, #000000, #3533CD);
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 80px 30px;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .brand {
+            color: #FF66C4;
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            font-size: 19px;
+            line-height: 1.7;
+            color: #eeeeee;
+        }
+
+        .art-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 28px;
+        }
+
+        .art-card {
+            padding: 25px;
+            min-height: 250px;
+            background: rgba(0, 0, 0, 0.68);
+            transition: 0.3s;
+        }
+
+        .art-card:nth-child(1),
+        .art-card:nth-child(4) {
+            border: 1px solid #FF66C4;
+        }
+
+        .art-card:nth-child(2),
+        .art-card:nth-child(5) {
+            border: 1px solid #33CEEF;
+        }
+
+        .art-card:nth-child(3),
+        .art-card:nth-child(6) {
+            border: 1px solid #C90DEA;
+        }
+
+        .art-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .art-card h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+        }
+
+        .art-card p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #dddddd;
+            margin-bottom: 25px;
+        }
+
+        .view-link {
+            color: #33CEEF;
+            text-decoration: none;
+            letter-spacing: 1px;
+        }
+
+        .view-link:hover {
+            color: #FF66C4;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 60px auto 0;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 900px) {
+            .art-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .art-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .page {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- DIGITAL ART & PRINTS -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Digital Art & Prints
+            </h1>
+
+            <p>
+                Art created digitally for people who want meaningful
+                designs that can be printed, displayed, shared or kept.
+            </p>
+
+        </div>
+
+
+        <div class="art-grid">
+
+            <article class="art-card">
+                <h2>Digital Artwork</h2>
+
+                <p>
+                    Original digital compositions created around
+                    emotion, imagination, identity and expression.
+                </p>
+
+                <a href="digital.html" class="view-link">
+                    Explore →
+                </a>
+            </article>
+
+
+            <article class="art-card">
+                <h2>Printable Art</h2>
+
+                <p>
+                    Artwork prepared for convenient printing so your
+                    chosen piece can become part of your space.
+                </p>
+
+                <a href="physical-prints.html" class="view-link">
+                    Explore →
+                </a>
+            </article>
+
+
+            <article class="art-card">
+                <h2>Artistic Prints</h2>
+
+                <p>
+                    Carefully designed prints that bring artwork,
+                    words and visual expression into physical form.
+                </p>
+
+                <a href="artistic-Prints.html" class="view-link">
+                    Explore →
+                </a>
+            </article>
+
+
+            <article class="art-card">
+                <h2>Quote & Word Art</h2>
+
+                <p>
+                    Meaningful words transformed into visual artwork
+                    for gifting, decorating or personal inspiration.
+                </p>
+
+                <a href="word-art.html" class="view-link">
+                    Explore →
+                </a>
+            </article>
+
+
+            <article class="art-card">
+                <h2>Custom Digital Art</h2>
+
+                <p>
+                    Digital artwork developed around your preferred
+                    colours, message, concept, personality or story.
+                </p>
+
+                <a href="custom-art.html" class="view-link">
+                    Explore →
+                </a>
+            </article>
+
+
+            <article class="art-card">
+                <h2>Digital Collections</h2>
+
+                <p>
+                    Curated groups of digital artworks designed to
+                    work together as a collection.
+                </p>
+
+                <a href="digital-collection.html" class="view-link">
+                    Explore →
+                </a>
+            </article>
+
+        </div>
+
+
+        <a href="what-we-create.html" class="back-button">
+            Back To What We Create
+        </a>
+
+    </main>
+
+</body>
+
+</html>

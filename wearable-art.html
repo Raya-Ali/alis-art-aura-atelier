@@ -1,0 +1,2950 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Wearable Art | Alis Art & Aura Atelier</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        <nav>
+
+    <div class="brand">
+        Alis Art & Aura Atelier
+    </div>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="style-wearables.html">Styles & Wearables</a>
+    </div>
+
+</nav>
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #33CEEF;
+        }
+
+        .brand {
+            color: #FF66C4;
+            font-weight: bold;
+            font-size: 17px;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px;
+            background:
+                radial-gradient(circle at top, #3533CD55, transparent 55%),
+                #000;
+        }
+
+        .hero h1 {
+            color: #C90DEA;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 800px;
+            margin: auto;
+            color: #ddd;
+            font-size: 17px;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: 30px auto;
+            padding: 0 20px;
+            text-align: center;
+            color: #bbb;
+        }
+
+        .gallery-section {
+            padding: 50px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .gallery-section h2 {
+            color: #33CEEF;
+            font-size: 30px;
+            margin-bottom: 8px;
+        }
+
+        .section-description {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding-bottom: 15px;
+            scroll-behavior: smooth;
+        }
+
+        .gallery::-webkit-scrollbar {
+            height: 7px;
+        }
+
+        .gallery::-webkit-scrollbar-thumb {
+            background: #C90DEA;
+            border-radius: 10px;
+        }
+
+        .gallery-card {
+            min-width: 240px;
+            max-width: 240px;
+            background: #101010;
+            border: 1px solid #292929;
+            border-radius: 14px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .gallery-card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-card-content {
+            padding: 18px;
+        }
+
+        .gallery-card h3 {
+            color: #FF66C4;
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .gallery-card p {
+            color: #bbb;
+            font-size: 14px;
+            min-height: 65px;
+        }
+
+        .explore-button {
+            width: 100%;
+            margin-top: 15px;
+            padding: 11px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #C90DEA, #33CEEF);
+            color: #fff;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .explore-button:hover {
+            opacity: 0.85;
+        }
+
+        .builder {
+            max-width: 900px;
+            margin: 50px auto;
+            padding: 30px 20px;
+            background: #0c0c0c;
+            border: 1px solid #C90DEA;
+            border-radius: 18px;
+        }
+
+        .builder h2 {
+            color: #C90DEA;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .builder-intro {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 22px;
+        }
+
+        label {
+            display: block;
+            color: #FF66C4;
+            font-weight: bold;
+            margin-bottom: 7px;
+        }
+
+        select,
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background: #151515;
+            color: #fff;
+            font-size: 15px;
+        }
+
+        select:focus,
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #33CEEF;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .helper {
+            color: #888;
+            font-size: 13px;
+            margin-top: 6px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .photo-preview-box {
+            margin-top: 15px;
+            text-align: center;
+        }
+
+        .photo-preview-box img {
+            max-width: 220px;
+            max-height: 220px;
+            border-radius: 10px;
+            border: 1px solid #33CEEF;
+        }
+
+        .price-box {
+            margin-top: 30px;
+            padding: 22px;
+            border-radius: 12px;
+            background: linear-gradient(
+                135deg,
+                #35104b,
+                #101b38
+            );
+            border: 1px solid #33CEEF;
+            text-align: center;
+        }
+
+        .price-box h3 {
+            color: #33CEEF;
+            margin-bottom: 8px;
+        }
+
+        #totalPrice {
+            font-size: 28px;
+            color: #FF66C4;
+            font-weight: bold;
+        }
+
+        .order-preview {
+            margin-top: 30px;
+            padding: 20px;
+            border-radius: 12px;
+            background: #111;
+            border: 1px solid #333;
+        }
+
+        .order-preview h3 {
+            color: #C90DEA;
+            margin-bottom: 15px;
+        }
+
+        .preview-row {
+            padding: 7px 0;
+            border-bottom: 1px solid #222;
+            color: #ccc;
+        }
+
+        .preview-row strong {
+            color: #fff;
+        }
+
+        #previewPhoto {
+            max-width: 160px;
+            margin-top: 12px;
+            border-radius: 8px;
+        }
+
+        .payment-button {
+            display: block;
+            width: 100%;
+            margin-top: 30px;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #FF66C4, #C90DEA);
+            color: #fff;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .payment-button:hover {
+            opacity: 0.85;
+        }
+
+        footer {
+            margin-top: 60px;
+            padding: 35px 20px;
+            text-align: center;
+            border-top: 1px solid #222;
+            color: #777;
+        }
+
+        @media (max-width: 600px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .gallery-section h2 {
+                font-size: 25px;
+            }
+
+            .gallery-card {
+                min-width: 220px;
+            }
+
+        }
+
+    </style>
+</head>
+
+<body>
+
+<nav>
+
+    <div class="brand">
+        Alis Art & Aura Atelier
+    </div>
+
+    <div>
+        <a href="index.html">Home</a>
+        <a href="style-wearables.html">Styles & Wearables</a>
+    </div>
+
+</nav>
+
+
+<section class="hero">
+
+    <h1>Wearable Art</h1>
+
+    <p>
+        Artistic pieces created to bring imagination,
+        expression and individuality into what you wear.
+    </p>
+
+</section>
+
+
+<div class="intro">
+
+    <p>
+        Here, the artwork or artistic concept is the product.
+        The clothing or accessory is the presentation medium.
+        Choose an artistic direction, then choose the wearable
+        item that brings the design to life.
+    </p>
+
+</div>
+
+
+<!-- =====================================================
+     1. ARTISTIC SHIRTS
+     ===================================================== -->
+
+<section class="gallery-section">
+
+    <h2>Artistic Shirts</h2>
+
+    <p class="section-description">
+        Artistic designs created specifically for shirt-based
+        wearables, from simple graphics to expressive custom pieces.
+    </p>
+
+    <div class="gallery">
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-shirts-1.png"
+                 alt="Illustrated Shirt">
+
+            <div class="gallery-card-content">
+
+                <h3>Illustrated Shirt</h3>
+
+                <p>
+                    Artwork and illustrations transformed into
+                    wearable shirt designs.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Shirts"
+                        data-option="Illustrated Shirt">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-shirts-2.png"
+                 alt="Typography Shirt">
+
+            <div class="gallery-card-content">
+
+                <h3>Typography Shirt</h3>
+
+                <p>
+                    Words, phrases, quotes and expressive lettering
+                    turned into wearable artwork.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Shirts"
+                        data-option="Typography Shirt">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-shirts-3.png"
+                 alt="Patterned Shirt">
+
+            <div class="gallery-card-content">
+
+                <h3>Patterned Shirt</h3>
+
+                <p>
+                    Artistic patterns and visual compositions
+                    designed across the shirt.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Shirts"
+                        data-option="Patterned Shirt">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-shirts-4.png"
+                 alt="Custom Artistic Shirt">
+
+            <div class="gallery-card-content">
+
+                <h3>Custom Artistic Shirt</h3>
+
+                <p>
+                    A personalized shirt artwork developed
+                    around your concept.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Shirts"
+                        data-option="Custom Artistic Shirt">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     2. STATEMENT WEAR
+     ===================================================== -->
+
+<section class="gallery-section">
+
+    <h2>Statement Wear</h2>
+
+    <p class="section-description">
+        Bold wearable concepts designed to make the garment
+        itself part of the artistic expression.
+    </p>
+
+    <div class="gallery">
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-statement-1.png"
+                 alt="Statement Hoodie">
+
+            <div class="gallery-card-content">
+
+                <h3>Statement Hoodie</h3>
+
+                <p>
+                    Expressive hoodie artwork designed to
+                    communicate a strong visual idea.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Statement Wear"
+                        data-option="Statement Hoodie">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-statement-2.png"
+                 alt="Artistic Sweater">
+
+            <div class="gallery-card-content">
+
+                <h3>Artistic Sweater</h3>
+
+                <p>
+                    Creative artwork developed for sweaters
+                    and statement layering pieces.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Statement Wear"
+                        data-option="Artistic Sweater">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-statement-3.png"
+                 alt="Painted Jacket">
+
+            <div class="gallery-card-content">
+
+                <h3>Painted Jacket</h3>
+
+                <p>
+                    A jacket transformed into a wearable
+                    artistic surface.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Statement Wear"
+                        data-option="Painted Jacket">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-statement-4.png"
+                 alt="Concept Wear">
+
+            <div class="gallery-card-content">
+
+                <h3>Concept Wear</h3>
+
+                <p>
+                    A complete statement garment built around
+                    an original artistic concept.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Statement Wear"
+                        data-option="Concept Wear">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     3. ARTISTIC HEADWEAR
+     ===================================================== -->
+
+<section class="gallery-section">
+
+    <h2>Artistic Headwear</h2>
+
+    <p class="section-description">
+        Artistic designs created for caps and bucket hats.
+    </p>
+
+    <div class="gallery">
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-headwear-1.png"
+                 alt="Artistic Cap">
+
+            <div class="gallery-card-content">
+
+                <h3>Artistic Cap</h3>
+
+                <p>
+                    A creative artwork designed specifically
+                    for a cap.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Headwear"
+                        data-option="Artistic Cap">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-headwear-2.png"
+                 alt="Illustrated Cap">
+
+            <div class="gallery-card-content">
+
+                <h3>Illustrated Cap</h3>
+
+                <p>
+                    Character and illustration artwork
+                    adapted for headwear.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Headwear"
+                        data-option="Illustrated Cap">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-headwear-3.png"
+                 alt="Bucket Hat">
+
+            <div class="gallery-card-content">
+
+                <h3>Artistic Bucket Hat</h3>
+
+                <p>
+                    Creative designs wrapped around a
+                    bucket-hat presentation.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Headwear"
+                        data-option="Bucket Hat">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-headwear-4.png"
+                 alt="Custom Headwear">
+
+            <div class="gallery-card-content">
+
+                <h3>Custom Headwear</h3>
+
+                <p>
+                    A personalized artistic concept created
+                    specifically for your headwear.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Headwear"
+                        data-option="Custom Headwear">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     4. ILLUSTRATED WEAR
+     ===================================================== -->
+
+<section class="gallery-section">
+
+    <h2>Illustrated Wear</h2>
+
+    <p class="section-description">
+        Characters, stories and illustrations transformed
+        into wearable artwork.
+    </p>
+
+    <div class="gallery">
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-illustrated-1.png"
+                 alt="Character Wear">
+
+            <div class="gallery-card-content">
+
+                <h3>Character Wear</h3>
+
+                <p>
+                    Original characters transformed into
+                    wearable artwork.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Illustrated Wear"
+                        data-option="Character Wear">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-illustrated-2.png"
+                 alt="Story Wear">
+
+            <div class="gallery-card-content">
+
+                <h3>Story Wear</h3>
+
+                <p>
+                    A visual story expressed through a
+                    wearable design.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Illustrated Wear"
+                        data-option="Story Wear">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-illustrated-3.png"
+                 alt="Illustration Piece">
+
+            <div class="gallery-card-content">
+
+                <h3>Illustration Piece</h3>
+
+                <p>
+                    A standalone illustration adapted
+                    onto a wearable surface.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Illustrated Wear"
+                        data-option="Illustration Piece">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-illustrated-4.png"
+                 alt="Custom Illustration Wear">
+
+            <div class="gallery-card-content">
+
+                <h3>Custom Illustration Wear</h3>
+
+                <p>
+                    A personalized illustrated concept
+                    created around your idea.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Illustrated Wear"
+                        data-option="Custom Illustration Wear">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     5. ARTISTIC TEXTILES
+     ===================================================== -->
+
+<section class="gallery-section">
+
+    <h2>Artistic Textiles</h2>
+
+    <p class="section-description">
+        Patterns, surfaces and textile artwork designed
+        to become part of the wearable piece.
+    </p>
+
+    <div class="gallery">
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-textiles-1.png"
+                 alt="Textile Pattern">
+
+            <div class="gallery-card-content">
+
+                <h3>Textile Pattern</h3>
+
+                <p>
+                    Original visual patterns developed
+                    for wearable surfaces.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Textiles"
+                        data-option="Textile Pattern">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-textiles-2.png"
+                 alt="Printed Textile">
+
+            <div class="gallery-card-content">
+
+                <h3>Printed Textile</h3>
+
+                <p>
+                    Artwork adapted into a repeatable
+                    or placement textile design.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Textiles"
+                        data-option="Printed Textile">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-textiles-3.png"
+                 alt="Artistic Fabric Concept">
+
+            <div class="gallery-card-content">
+
+                <h3>Artistic Fabric Concept</h3>
+
+                <p>
+                    A broader textile concept built around
+                    colour, pattern and artistic direction.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Textiles"
+                        data-option="Artistic Fabric Concept">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-textiles-4.png"
+                 alt="Custom Textile Art">
+
+            <div class="gallery-card-content">
+
+                <h3>Custom Textile Art</h3>
+
+                <p>
+                    A personalized textile artwork created
+                    around your concept.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Artistic Textiles"
+                        data-option="Custom Textile Art">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     6. CUSTOM WEARABLE CONCEPTS
+     ===================================================== -->
+
+<section class="gallery-section">
+
+    <h2>Custom Wearable Concepts</h2>
+
+    <p class="section-description">
+        Fully personalized wearable artwork developed
+        around your own idea, memory, identity or concept.
+    </p>
+
+    <div class="gallery">
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-custom-1.png"
+                 alt="Personal Concept">
+
+            <div class="gallery-card-content">
+
+                <h3>Personal Concept</h3>
+
+                <p>
+                    A wearable artwork based on your
+                    individual idea.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Custom Wearable Concepts"
+                        data-option="Personal Concept">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-custom-2.png"
+                 alt="Memory Inspired Wear">
+
+            <div class="gallery-card-content">
+
+                <h3>Memory-Inspired Wear</h3>
+
+                <p>
+                    A meaningful wearable artwork inspired
+                    by a memory or experience.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Custom Wearable Concepts"
+                        data-option="Memory-Inspired Wear">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-custom-3.png"
+                 alt="Identity Inspired Wear">
+
+            <div class="gallery-card-content">
+
+                <h3>Identity-Inspired Wear</h3>
+
+                <p>
+                    Artwork developed around personal
+                    expression and identity.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Custom Wearable Concepts"
+                        data-option="Identity-Inspired Wear">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="gallery-card">
+
+            <img src="images/wearable-custom-4.png"
+                 alt="Fully Custom Wearable Piece">
+
+            <div class="gallery-card-content">
+
+                <h3>Fully Custom Wearable Piece</h3>
+
+                <p>
+                    A complete wearable artwork developed
+                    from your own concept.
+                </p>
+
+                <button class="explore-button"
+                        type="button"
+                        data-direction="Custom Wearable Concepts"
+                        data-option="Fully Custom Wearable Piece">
+                    Explore →
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =====================================================
+     BUILDER
+     ===================================================== -->
+
+<section class="builder" id="builder">
+
+    <h2>Create Your Wearable Art</h2>
+
+    <p class="builder-intro">
+        Choose the artistic work first, then select how
+        you want it presented.
+    </p>
+
+
+    <!-- WEARABLE ITEM -->
+
+    <div class="form-group">
+
+        <label for="wearableItem">
+            Wearable Item
+        </label>
+
+        <select id="wearableItem">
+
+            <option value="">
+                Select wearable item
+            </option>
+
+            <option>T-Shirt</option>
+            <option>Long-Sleeve Shirt</option>
+            <option>Sweater</option>
+            <option>Hoodie</option>
+            <option>Tank Top</option>
+            <option>Crop Top</option>
+            <option>Shorts</option>
+            <option>Pants</option>
+            <option>Skirt</option>
+            <option>Dress</option>
+            <option>Jacket</option>
+            <option>Cap</option>
+            <option>Bucket Hat</option>
+            <option>Tote Bag</option>
+
+        </select>
+
+        <div class="helper" id="itemHelper">
+            Choose the wearable surface for your artwork.
+        </div>
+
+    </div>
+
+
+    <!-- ARTISTIC DIRECTION -->
+
+    <div class="form-group">
+
+        <label for="artisticDirection">
+            Artistic Direction
+        </label>
+
+        <select id="artisticDirection">
+
+            <option value="">
+                Select wearable item first
+            </option>
+
+        </select>
+
+        <div class="helper">
+            Available artistic directions change according
+            to the wearable item you select.
+        </div>
+
+    </div>
+
+
+    <!-- SPECIFIC OPTION -->
+
+    <div class="form-group"
+         id="directionOptionGroup"
+         style="display:none;">
+
+        <label for="directionOption">
+            Specific Artistic Option
+        </label>
+
+        <select id="directionOption">
+
+            <option value="">
+                Select an option
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- SIZE -->
+
+    <div class="form-group">
+
+        <label for="size">
+            Size
+        </label>
+
+        <select id="size">
+
+            <option value="">
+                Select wearable item first
+            </option>
+
+        </select>
+
+        <div class="helper" id="sizeHelper"></div>
+
+    </div>
+
+
+    <!-- COLOUR -->
+
+    <div class="form-group">
+
+        <label for="colour">
+            Colour
+        </label>
+
+        <select id="colour">
+
+            <option value="">
+                Select wearable item first
+            </option>
+
+        </select>
+
+        <div class="helper" id="colourHelper"></div>
+
+    </div>
+
+
+    <!-- FINISH -->
+
+    <div class="form-group">
+
+        <label for="finish">
+            Finish
+        </label>
+
+        <select id="finish">
+
+            <option value="Standard">
+                Standard — J$0
+            </option>
+
+            <option value="Signature">
+                Signature — J$800
+            </option>
+
+            <option value="Premium">
+                Premium — J$1,500
+            </option>
+
+        </select>
+
+    </div>
+
+
+    <!-- PERSONALIZATION -->
+
+    <div class="form-group">
+
+        <label for="personalization">
+            Personalization
+        </label>
+
+        <textarea
+            id="personalization"
+            placeholder="Tell us about the words, colours, imagery, theme or personal details you want included."
+        ></textarea>
+
+    </div>
+
+
+    <!-- PHOTO -->
+
+    <div class="form-group hidden"
+         id="photoGroup">
+
+        <label for="photoUpload">
+            Upload Your Photo
+        </label>
+
+        <input
+            type="file"
+            id="photoUpload"
+            accept="image/*"
+        >
+
+        <div class="helper">
+            Upload a photo if your wearable artwork
+            includes a personal photograph.
+        </div>
+
+        <div class="photo-preview-box"
+             id="photoPreviewBox"
+             style="display:none;">
+
+            <img
+                id="photoPreview"
+                alt="Uploaded photo preview"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- QUANTITY -->
+
+    <div class="form-group">
+
+        <label for="quantity">
+            Quantity
+        </label>
+
+        <input
+            type="number"
+            id="quantity"
+            min="1"
+            value="1"
+        >
+
+    </div>
+
+
+    <!-- CUSTOMER INFORMATION -->
+
+    <h3 style="color:#33CEEF; margin:35px 0 20px;">
+        Customer Information
+    </h3>
+
+
+    <div class="form-group">
+
+        <label for="customerName">
+            Full Name
+        </label>
+
+        <input
+            type="text"
+            id="customerName"
+            placeholder="Your full name"
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="customerEmail">
+            Email
+        </label>
+
+        <input
+            type="email"
+            id="customerEmail"
+            placeholder="Your email address"
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="customerPhone">
+            Phone / WhatsApp
+        </label>
+
+        <input
+            type="tel"
+            id="customerPhone"
+            placeholder="Your phone or WhatsApp number"
+        >
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="deliveryAddress">
+            Delivery Address
+        </label>
+
+        <textarea
+            id="deliveryAddress"
+            placeholder="Where should your order be delivered?"
+        ></textarea>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="specialInstructions">
+            Special Instructions
+        </label>
+
+        <textarea
+            id="specialInstructions"
+            placeholder="Anything else we should know?"
+        ></textarea>
+
+    </div>
+
+
+    <!-- PRICE -->
+
+    <div class="price-box">
+
+        <h3>
+            Current Order Total
+        </h3>
+
+        <div id="totalPrice">
+            J$0
+        </div>
+
+        <div class="helper">
+            Delivery charges, if applicable, may be calculated separately.
+        </div>
+
+    </div>
+
+
+    <!-- ORDER PREVIEW -->
+
+    <div class="order-preview">
+
+        <h3>
+            Order Preview
+        </h3>
+
+        <div class="preview-row">
+            <strong>Wearable:</strong>
+            <span id="previewItem">—</span>
+        </div>
+
+        <div class="preview-row">
+            <strong>Artistic Direction:</strong>
+            <span id="previewDirection">—</span>
+        </div>
+
+        <div class="preview-row">
+            <strong>Specific Option:</strong>
+            <span id="previewOption">—</span>
+        </div>
+
+        <div class="preview-row">
+            <strong>Size:</strong>
+            <span id="previewSize">—</span>
+        </div>
+
+        <div class="preview-row">
+            <strong>Colour:</strong>
+            <span id="previewColour">—</span>
+        </div>
+
+        <div class="preview-row">
+            <strong>Finish:</strong>
+            <span id="previewFinish">—</span>
+        </div>
+
+        <div class="preview-row">
+            <strong>Quantity:</strong>
+            <span id="previewQuantity">1</span>
+        </div>
+
+        <div class="preview-row">
+            <strong>Personalization:</strong>
+            <span id="previewPersonalization">—</span>
+        </div>
+
+        <div class="preview-row">
+            <strong>Total:</strong>
+            <span id="previewTotal">J$0</span>
+        </div>
+
+        <img
+            id="previewPhoto"
+            style="display:none;"
+            alt="Order photo preview"
+        >
+
+    </div>
+
+
+    <button
+        class="payment-button"
+        type="button"
+        id="paymentButton">
+        Continue to Payment →
+    </button>
+
+</section>
+
+
+<footer>
+
+    Alis Art & Aura Atelier<br>
+    Art • Expression • Meaning • Style
+
+</footer>
+
+
+<script>
+
+/* =====================================================
+   PRICE SYSTEM
+   Change these numbers later when your final prices
+   are ready.
+   ===================================================== */
+
+const prices = {
+
+    wearableItem: {
+
+        "T-Shirt": 2500,
+        "Long-Sleeve Shirt": 3000,
+        "Sweater": 4000,
+        "Hoodie": 5000,
+        "Tank Top": 2200,
+        "Crop Top": 2500,
+        "Shorts": 2800,
+        "Pants": 4000,
+        "Skirt": 3500,
+        "Dress": 5000,
+        "Jacket": 6500,
+        "Cap": 2200,
+        "Bucket Hat": 2500,
+        "Tote Bag": 2500
+
+    },
+
+    artisticDirection: {
+
+        "Artistic Shirts": 1200,
+        "Statement Wear": 1800,
+        "Artistic Headwear": 1000,
+        "Illustrated Wear": 1500,
+        "Artistic Textiles": 1600,
+        "Custom Wearable Concepts": 2500
+
+    },
+
+    directionOption: {
+
+        "Artistic Shirts": {
+
+            "Illustrated Shirt": 500,
+            "Typography Shirt": 350,
+            "Patterned Shirt": 500,
+            "Custom Artistic Shirt": 1200
+
+        },
+
+        "Statement Wear": {
+
+            "Statement Hoodie": 600,
+            "Artistic Sweater": 600,
+            "Painted Jacket": 1200,
+            "Concept Wear": 1500
+
+        },
+
+        "Artistic Headwear": {
+
+            "Artistic Cap": 400,
+            "Illustrated Cap": 500,
+            "Bucket Hat": 500,
+            "Custom Headwear": 900
+
+        },
+
+        "Illustrated Wear": {
+
+            "Character Wear": 700,
+            "Story Wear": 1000,
+            "Illustration Piece": 600,
+            "Custom Illustration Wear": 1200
+
+        },
+
+        "Artistic Textiles": {
+
+            "Textile Pattern": 700,
+            "Printed Textile": 700,
+            "Artistic Fabric Concept": 1000,
+            "Custom Textile Art": 1500
+
+        },
+
+        "Custom Wearable Concepts": {
+
+            "Personal Concept": 800,
+            "Memory-Inspired Wear": 1000,
+            "Identity-Inspired Wear": 1200,
+            "Fully Custom Wearable Piece": 1800
+
+        }
+
+    },
+
+    size: {
+
+        "XS": 0,
+        "S": 0,
+        "M": 0,
+        "L": 300,
+        "XL": 500,
+        "2XL": 800,
+        "3XL": 1000,
+
+        "28": 0,
+        "30": 0,
+        "32": 0,
+        "34": 0,
+        "36": 300,
+        "38": 500,
+        "40": 700,
+        "42": 900,
+        "44": 1100,
+
+        "S/M": 0,
+        "L/XL": 300,
+
+        "Adjustable": 0,
+        "No Size": 0,
+
+        "Custom Measurements": 1500
+
+    },
+
+    colour: {
+
+        "Black": 0,
+        "White": 0,
+        "Grey": 0,
+        "Navy": 0,
+
+        "Red": 150,
+        "Blue": 150,
+        "Green": 150,
+        "Pink": 150,
+        "Purple": 150,
+        "Yellow": 150,
+
+        "Brown": 150,
+        "Beige": 150,
+        "Cream": 150,
+        "Olive": 150,
+        "Burgundy": 200,
+
+        "Natural / Canvas": 0,
+        "Denim Blue": 300,
+
+        "Custom Colour": 500
+
+    },
+
+    finish: {
+
+        "Standard": 0,
+        "Signature": 800,
+        "Premium": 1500
+
+    }
+
+};
+
+
+/* =====================================================
+   WEARABLE ITEM → AVAILABLE ARTISTIC DIRECTIONS
+   ===================================================== */
+
+const itemDirections = {
+
+    "T-Shirt": [
+        "Artistic Shirts",
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Long-Sleeve Shirt": [
+        "Artistic Shirts",
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Sweater": [
+        "Statement Wear",
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Hoodie": [
+        "Statement Wear",
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Tank Top": [
+        "Artistic Shirts",
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Crop Top": [
+        "Artistic Shirts",
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Shorts": [
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Pants": [
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Skirt": [
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Dress": [
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Jacket": [
+        "Statement Wear",
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Cap": [
+        "Artistic Headwear",
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Bucket Hat": [
+        "Artistic Headwear",
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ],
+
+    "Tote Bag": [
+        "Illustrated Wear",
+        "Artistic Textiles",
+        "Custom Wearable Concepts"
+    ]
+
+};
+
+
+/* =====================================================
+   SPECIFIC ARTISTIC OPTIONS
+   ===================================================== */
+
+const directionOptions = {
+
+    "Artistic Shirts": [
+        "Illustrated Shirt",
+        "Typography Shirt",
+        "Patterned Shirt",
+        "Custom Artistic Shirt"
+    ],
+
+    "Statement Wear": [
+        "Statement Hoodie",
+        "Artistic Sweater",
+        "Painted Jacket",
+        "Concept Wear"
+    ],
+
+    "Artistic Headwear": [
+        "Artistic Cap",
+        "Illustrated Cap",
+        "Bucket Hat",
+        "Custom Headwear"
+    ],
+
+    "Illustrated Wear": [
+        "Character Wear",
+        "Story Wear",
+        "Illustration Piece",
+        "Custom Illustration Wear"
+    ],
+
+    "Artistic Textiles": [
+        "Textile Pattern",
+        "Printed Textile",
+        "Artistic Fabric Concept",
+        "Custom Textile Art"
+    ],
+
+    "Custom Wearable Concepts": [
+        "Personal Concept",
+        "Memory-Inspired Wear",
+        "Identity-Inspired Wear",
+        "Fully Custom Wearable Piece"
+    ]
+
+};
+
+
+/* =====================================================
+   ITEM-SPECIFIC SIZES
+   ===================================================== */
+
+const itemSizes = {
+
+    "T-Shirt": [
+        "XS", "S", "M", "L", "XL", "2XL", "3XL",
+        "Custom Measurements"
+    ],
+
+    "Long-Sleeve Shirt": [
+        "XS", "S", "M", "L", "XL", "2XL", "3XL",
+        "Custom Measurements"
+    ],
+
+    "Sweater": [
+        "XS", "S", "M", "L", "XL", "2XL", "3XL",
+        "Custom Measurements"
+    ],
+
+    "Hoodie": [
+        "XS", "S", "M", "L", "XL", "2XL", "3XL",
+        "Custom Measurements"
+    ],
+
+    "Tank Top": [
+        "XS", "S", "M", "L", "XL", "2XL",
+        "Custom Measurements"
+    ],
+
+    "Crop Top": [
+        "XS", "S", "M", "L", "XL", "2XL",
+        "Custom Measurements"
+    ],
+
+    "Shorts": [
+        "28", "30", "32", "34", "36", "38", "40", "42", "44",
+        "Custom Measurements"
+    ],
+
+    "Pants": [
+        "28", "30", "32", "34", "36", "38", "40", "42", "44",
+        "Custom Measurements"
+    ],
+
+    "Skirt": [
+        "XS", "S", "M", "L", "XL", "2XL", "3XL",
+        "Custom Measurements"
+    ],
+
+    "Dress": [
+        "XS", "S", "M", "L", "XL", "2XL", "3XL",
+        "Custom Measurements"
+    ],
+
+    "Jacket": [
+        "XS", "S", "M", "L", "XL", "2XL", "3XL",
+        "Custom Measurements"
+    ],
+
+    "Cap": [
+        "Adjustable",
+        "S/M",
+        "L/XL",
+        "Custom Measurements"
+    ],
+
+    "Bucket Hat": [
+        "S",
+        "M",
+        "L",
+        "XL",
+        "Custom Measurements"
+    ],
+
+    "Tote Bag": [
+        "No Size",
+        "Custom Measurements"
+    ]
+
+};
+
+
+/* =====================================================
+   ITEM-SPECIFIC COLOURS
+   ===================================================== */
+
+const itemColours = {
+
+    "T-Shirt": [
+        "Black",
+        "White",
+        "Grey",
+        "Navy",
+        "Red",
+        "Blue",
+        "Green",
+        "Pink",
+        "Purple",
+        "Yellow",
+        "Brown",
+        "Beige",
+        "Custom Colour"
+    ],
+
+    "Long-Sleeve Shirt": [
+        "Black",
+        "White",
+        "Grey",
+        "Navy",
+        "Red",
+        "Blue",
+        "Green",
+        "Beige",
+        "Brown",
+        "Burgundy",
+        "Custom Colour"
+    ],
+
+    "Sweater": [
+        "Black",
+        "White",
+        "Grey",
+        "Cream",
+        "Navy",
+        "Burgundy",
+        "Brown",
+        "Beige",
+        "Olive",
+        "Custom Colour"
+    ],
+
+    "Hoodie": [
+        "Black",
+        "White",
+        "Grey",
+        "Navy",
+        "Burgundy",
+        "Brown",
+        "Green",
+        "Red",
+        "Beige",
+        "Custom Colour"
+    ],
+
+    "Tank Top": [
+        "Black",
+        "White",
+        "Grey",
+        "Beige",
+        "Pink",
+        "Blue",
+        "Red",
+        "Green",
+        "Custom Colour"
+    ],
+
+    "Crop Top": [
+        "Black",
+        "White",
+        "Grey",
+        "Beige",
+        "Pink",
+        "Blue",
+        "Purple",
+        "Red",
+        "Custom Colour"
+    ],
+
+    "Shorts": [
+        "Black",
+        "White",
+        "Grey",
+        "Navy",
+        "Beige",
+        "Brown",
+        "Green",
+        "Olive",
+        "Custom Colour"
+    ],
+
+    "Pants": [
+        "Black",
+        "Grey",
+        "Navy",
+        "Beige",
+        "Brown",
+        "Olive",
+        "White",
+        "Custom Colour"
+    ],
+
+    "Skirt": [
+        "Black",
+        "White",
+        "Grey",
+        "Navy",
+        "Beige",
+        "Brown",
+        "Burgundy",
+        "Pink",
+        "Custom Colour"
+    ],
+
+    "Dress": [
+        "Black",
+        "White",
+        "Red",
+        "Navy",
+        "Burgundy",
+        "Green",
+        "Pink",
+        "Beige",
+        "Purple",
+        "Custom Colour"
+    ],
+
+    "Jacket": [
+        "Black",
+        "White",
+        "Grey",
+        "Denim Blue",
+        "Brown",
+        "Olive",
+        "Burgundy",
+        "Navy",
+        "Custom Colour"
+    ],
+
+    "Cap": [
+        "Black",
+        "White",
+        "Grey",
+        "Navy",
+        "Red",
+        "Blue",
+        "Green",
+        "Beige",
+        "Brown",
+        "Custom Colour"
+    ],
+
+    "Bucket Hat": [
+        "Black",
+        "White",
+        "Beige",
+        "Brown",
+        "Denim Blue",
+        "Pink",
+        "Green",
+        "Navy",
+        "Custom Colour"
+    ],
+
+    "Tote Bag": [
+        "Natural / Canvas",
+        "Black",
+        "White",
+        "Beige",
+        "Brown",
+        "Navy",
+        "Denim Blue",
+        "Custom Colour"
+    ]
+
+};
+
+
+/* =====================================================
+   DESCRIPTIONS
+   ===================================================== */
+
+const itemDescriptions = {
+
+    "T-Shirt":
+        "A versatile shirt canvas for original artwork, typography and illustration.",
+
+    "Long-Sleeve Shirt":
+        "A longer wearable surface for artwork, graphics and expressive designs.",
+
+    "Sweater":
+        "A larger, softer canvas suited to statement artwork and textile concepts.",
+
+    "Hoodie":
+        "A substantial wearable canvas for expressive artwork and statement concepts.",
+
+    "Tank Top":
+        "A lighter wearable surface for expressive artwork and personal designs.",
+
+    "Crop Top":
+        "A compact fashion canvas for artwork, patterns and personal expression.",
+
+    "Shorts":
+        "Wearable lower-body artwork designed across shorts and textile surfaces.",
+
+    "Pants":
+        "A larger textile canvas for illustrated, patterned and custom artwork.",
+
+    "Skirt":
+        "A fashion-oriented textile surface for artistic and illustrated designs.",
+
+    "Dress":
+        "A complete garment canvas for larger artistic and custom concepts.",
+
+    "Jacket":
+        "A statement garment suited to larger artwork and expressive concepts.",
+
+    "Cap":
+        "A compact headwear canvas for artwork, illustrations and graphic designs.",
+
+    "Bucket Hat":
+        "A flexible headwear surface for artwork, patterns and illustrations.",
+
+    "Tote Bag":
+        "A practical textile canvas for artwork, illustrations and expressive designs."
+
+};
+
+
+/* =====================================================
+   ELEMENTS
+   ===================================================== */
+
+const wearableItem =
+    document.getElementById("wearableItem");
+
+const artisticDirection =
+    document.getElementById("artisticDirection");
+
+const directionOption =
+    document.getElementById("directionOption");
+
+const directionOptionGroup =
+    document.getElementById("directionOptionGroup");
+
+const size =
+    document.getElementById("size");
+
+const colour =
+    document.getElementById("colour");
+
+const finish =
+    document.getElementById("finish");
+
+const quantity =
+    document.getElementById("quantity");
+
+const personalization =
+    document.getElementById("personalization");
+
+const photoGroup =
+    document.getElementById("photoGroup");
+
+const photoUpload =
+    document.getElementById("photoUpload");
+
+const photoPreviewBox =
+    document.getElementById("photoPreviewBox");
+
+const photoPreview =
+    document.getElementById("photoPreview");
+
+const itemHelper =
+    document.getElementById("itemHelper");
+
+const totalPrice =
+    document.getElementById("totalPrice");
+
+const previewItem =
+    document.getElementById("previewItem");
+
+const previewDirection =
+    document.getElementById("previewDirection");
+
+const previewOption =
+    document.getElementById("previewOption");
+
+const previewSize =
+    document.getElementById("previewSize");
+
+const previewColour =
+    document.getElementById("previewColour");
+
+const previewFinish =
+    document.getElementById("previewFinish");
+
+const previewQuantity =
+    document.getElementById("previewQuantity");
+
+const previewPersonalization =
+    document.getElementById("previewPersonalization");
+
+const previewTotal =
+    document.getElementById("previewTotal");
+
+const previewPhoto =
+    document.getElementById("previewPhoto");
+
+const builder =
+    document.getElementById("builder");
+
+const paymentButton =
+    document.getElementById("paymentButton");
+
+
+let uploadedPhotoData = "";
+
+
+/* =====================================================
+   SIZE OPTIONS
+   ===================================================== */
+
+function updateSizeOptions() {
+
+    const item = wearableItem.value;
+
+    size.innerHTML =
+        '<option value="">Select size</option>';
+
+    if (!item || !itemSizes[item]) {
+        return;
+    }
+
+    itemSizes[item].forEach(itemSize => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = itemSize;
+
+        const extra =
+            prices.size[itemSize] || 0;
+
+        option.textContent =
+            extra > 0
+                ? `${itemSize} — +J$${extra.toLocaleString()}`
+                : itemSize;
+
+        size.appendChild(option);
+
+    });
+
+}
+
+
+/* =====================================================
+   COLOUR OPTIONS
+   ===================================================== */
+
+function updateColourOptions() {
+
+    const item = wearableItem.value;
+
+    colour.innerHTML =
+        '<option value="">Select colour</option>';
+
+    if (!item || !itemColours[item]) {
+        return;
+    }
+
+    itemColours[item].forEach(itemColour => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = itemColour;
+
+        const extra =
+            prices.colour[itemColour] || 0;
+
+        option.textContent =
+            extra > 0
+                ? `${itemColour} — +J$${extra.toLocaleString()}`
+                : itemColour;
+
+        colour.appendChild(option);
+
+    });
+
+}
+
+
+/* =====================================================
+   ARTISTIC DIRECTIONS
+   THIS IS THE IMPORTANT FIX.
+   ===================================================== */
+
+function updateArtisticDirections(
+    preserveSelection = false
+) {
+
+    const previousDirection =
+        artisticDirection.value;
+
+    artisticDirection.innerHTML =
+        '<option value="">Select artistic direction</option>';
+
+    const item =
+        wearableItem.value;
+
+    if (!item || !itemDirections[item]) {
+
+        directionOption.innerHTML =
+            '<option value="">Select an option</option>';
+
+        directionOptionGroup.style.display =
+            "none";
+
+        return;
+
+    }
+
+    itemDirections[item].forEach(direction => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = direction;
+
+        option.textContent =
+            direction;
+
+        artisticDirection.appendChild(option);
+
+    });
+
+    if (
+        preserveSelection &&
+        itemDirections[item].includes(
+            previousDirection
+        )
+    ) {
+
+        artisticDirection.value =
+            previousDirection;
+
+    } else {
+
+        artisticDirection.value = "";
+
+        directionOption.innerHTML =
+            '<option value="">Select an option</option>';
+
+        directionOptionGroup.style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   SPECIFIC DIRECTION OPTIONS
+   ===================================================== */
+
+function updateDirectionOptions(
+    preserveSelection = false
+) {
+
+    const direction =
+        artisticDirection.value;
+
+    const previousOption =
+        directionOption.value;
+
+    directionOption.innerHTML =
+        '<option value="">Select an option</option>';
+
+    if (
+        !direction ||
+        !directionOptions[direction]
+    ) {
+
+        directionOptionGroup.style.display =
+            "none";
+
+        return;
+
+    }
+
+    directionOptions[direction].forEach(optionName => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = optionName;
+
+        const extra =
+            prices.directionOption[direction]?.[optionName] || 0;
+
+        option.textContent =
+            extra > 0
+                ? `${optionName} — +J$${extra.toLocaleString()}`
+                : optionName;
+
+        directionOption.appendChild(option);
+
+    });
+
+    directionOptionGroup.style.display =
+        "block";
+
+    if (
+        preserveSelection &&
+        directionOptions[direction].includes(
+            previousOption
+        )
+    ) {
+
+        directionOption.value =
+            previousOption;
+
+    }
+
+}
+
+
+/* =====================================================
+   PHOTO UPLOAD
+   ===================================================== */
+
+function updatePhotoUpload() {
+
+    const direction =
+        artisticDirection.value;
+
+    const option =
+        directionOption.value;
+
+    const needsPhoto =
+        direction === "Custom Wearable Concepts" ||
+        option === "Personal Concept" ||
+        option === "Memory-Inspired Wear" ||
+        option === "Identity-Inspired Wear" ||
+        option === "Fully Custom Wearable Piece";
+
+    if (needsPhoto) {
+
+        photoGroup.classList.remove("hidden");
+
+    } else {
+
+        photoGroup.classList.add("hidden");
+
+        photoUpload.value = "";
+
+        uploadedPhotoData = "";
+
+        photoPreviewBox.style.display =
+            "none";
+
+        previewPhoto.style.display =
+            "none";
+
+    }
+
+}
+
+
+/* =====================================================
+   PRICE CALCULATION
+   ===================================================== */
+
+function calculateTotal() {
+
+    const item =
+        wearableItem.value;
+
+    const direction =
+        artisticDirection.value;
+
+    const option =
+        directionOption.value;
+
+    const selectedSize =
+        size.value;
+
+    const selectedColour =
+        colour.value;
+
+    const selectedFinish =
+        finish.value;
+
+    const qty =
+        Math.max(
+            1,
+            parseInt(quantity.value) || 1
+        );
+
+
+    let unitPrice = 0;
+
+
+    unitPrice +=
+        prices.wearableItem[item] || 0;
+
+
+    unitPrice +=
+        prices.artisticDirection[direction] || 0;
+
+
+    if (
+        direction &&
+        option &&
+        prices.directionOption[direction]
+    ) {
+
+        unitPrice +=
+            prices.directionOption[direction][option] || 0;
+
+    }
+
+
+    unitPrice +=
+        prices.size[selectedSize] || 0;
+
+
+    unitPrice +=
+        prices.colour[selectedColour] || 0;
+
+
+    unitPrice +=
+        prices.finish[selectedFinish] || 0;
+
+
+    return unitPrice * qty;
+
+}
+
+
+/* =====================================================
+   PREVIEW
+   ===================================================== */
+
+function updatePreview() {
+
+    const total =
+        calculateTotal();
+
+    previewItem.textContent =
+        wearableItem.value || "—";
+
+    previewDirection.textContent =
+        artisticDirection.value || "—";
+
+    previewOption.textContent =
+        directionOption.value || "—";
+
+    previewSize.textContent =
+        size.value || "—";
+
+    previewColour.textContent =
+        colour.value || "—";
+
+    previewFinish.textContent =
+        finish.value || "—";
+
+    previewQuantity.textContent =
+        quantity.value || "1";
+
+    previewPersonalization.textContent =
+        personalization.value.trim() || "—";
+
+    totalPrice.textContent =
+        `J$${total.toLocaleString()}`;
+
+    previewTotal.textContent =
+        `J$${total.toLocaleString()}`;
+
+}
+
+
+/* =====================================================
+   WEARABLE ITEM CHANGE
+   ===================================================== */
+
+wearableItem.addEventListener(
+    "change",
+    function () {
+
+        updateSizeOptions();
+
+        updateColourOptions();
+
+        updateArtisticDirections();
+
+        updatePhotoUpload();
+
+        itemHelper.textContent =
+            itemDescriptions[
+                wearableItem.value
+            ] ||
+            "Choose the wearable surface for your artwork.";
+
+        updatePreview();
+
+    }
+);
+
+
+/* =====================================================
+   ARTISTIC DIRECTION CHANGE
+   ===================================================== */
+
+artisticDirection.addEventListener(
+    "change",
+    function () {
+
+        updateDirectionOptions();
+
+        updatePhotoUpload();
+
+        updatePreview();
+
+    }
+);
+
+
+/* =====================================================
+   SPECIFIC OPTION CHANGE
+   ===================================================== */
+
+directionOption.addEventListener(
+    "change",
+    function () {
+
+        updatePhotoUpload();
+
+        updatePreview();
+
+    }
+);
+
+
+/* =====================================================
+   OTHER INPUT CHANGES
+   ===================================================== */
+
+size.addEventListener(
+    "change",
+    updatePreview
+);
+
+colour.addEventListener(
+    "change",
+    updatePreview
+);
+
+finish.addEventListener(
+    "change",
+    updatePreview
+);
+
+quantity.addEventListener(
+    "input",
+    updatePreview
+);
+
+personalization.addEventListener(
+    "input",
+    updatePreview
+);
+
+
+/* =====================================================
+   PHOTO UPLOAD
+   ===================================================== */
+
+photoUpload.addEventListener(
+    "change",
+    function () {
+
+        const file =
+            this.files[0];
+
+        if (!file) {
+            return;
+        }
+
+        const reader =
+            new FileReader();
+
+        reader.onload =
+            function (event) {
+
+                uploadedPhotoData =
+                    event.target.result;
+
+                photoPreview.src =
+                    uploadedPhotoData;
+
+                photoPreviewBox.style.display =
+                    "block";
+
+                previewPhoto.src =
+                    uploadedPhotoData;
+
+                previewPhoto.style.display =
+                    "block";
+
+            };
+
+        reader.readAsDataURL(file);
+
+    }
+);
+
+
+/* =====================================================
+   EXPLORE BUTTONS
+   ===================================================== */
+
+const directionDefaultItem = {
+
+    "Artistic Shirts": "T-Shirt",
+    "Statement Wear": "Hoodie",
+    "Artistic Headwear": "Cap",
+    "Illustrated Wear": "T-Shirt",
+    "Artistic Textiles": "T-Shirt",
+    "Custom Wearable Concepts": "T-Shirt"
+
+};
+
+
+document
+    .querySelectorAll(".explore-button")
+    .forEach(button => {
+
+        button.addEventListener(
+            "click",
+            function () {
+
+                const selectedDirection =
+                    this.dataset.direction;
+
+                const selectedOption =
+                    this.dataset.option;
+
+
+                /*
+                 If the current wearable item cannot
+                 use this artistic direction, select
+                 an appropriate default wearable item.
+                */
+
+                const currentItem =
+                    wearableItem.value;
+
+                const compatible =
+                    itemDirections[currentItem] &&
+                    itemDirections[currentItem]
+                        .includes(selectedDirection);
+
+
+                if (!compatible) {
+
+                    const defaultItem =
+                        directionDefaultItem[
+                            selectedDirection
+                        ];
+
+                    wearableItem.value =
+                        defaultItem;
+
+                    updateSizeOptions();
+
+                    updateColourOptions();
+
+                    updateArtisticDirections();
+
+                }
+
+
+                artisticDirection.value =
+                    selectedDirection;
+
+                updateDirectionOptions();
+
+                directionOption.value =
+                    selectedOption;
+
+                updatePhotoUpload();
+
+                updatePreview();
+
+
+                builder.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+
+            }
+        );
+
+    });
+
+
+/* =====================================================
+   PAYMENT
+   ===================================================== */
+
+paymentButton.addEventListener(
+    "click",
+    function () {
+
+        const order = {
+
+            wearableItem:
+                wearableItem.value,
+
+            artisticDirection:
+                artisticDirection.value,
+
+            directionOption:
+                directionOption.value,
+
+            size:
+                size.value,
+
+            colour:
+                colour.value,
+
+            finish:
+                finish.value,
+
+            quantity:
+                quantity.value,
+
+            personalization:
+                personalization.value,
+
+            customerName:
+                document.getElementById(
+                    "customerName"
+                ).value,
+
+            customerEmail:
+                document.getElementById(
+                    "customerEmail"
+                ).value,
+
+            customerPhone:
+                document.getElementById(
+                    "customerPhone"
+                ).value,
+
+            deliveryAddress:
+                document.getElementById(
+                    "deliveryAddress"
+                ).value,
+
+            specialInstructions:
+                document.getElementById(
+                    "specialInstructions"
+                ).value,
+
+            total:
+                calculateTotal(),
+
+            photoData:
+                uploadedPhotoData
+
+        };
+
+
+        localStorage.setItem(
+            "wearableArtOrder",
+            JSON.stringify(order)
+        );
+
+
+        window.location.href =
+            "payment.html";
+
+    }
+);
+
+
+/* =====================================================
+   INITIAL SETUP
+   ===================================================== */
+
+updateSizeOptions();
+
+updateColourOptions();
+
+updateArtisticDirections();
+
+updateDirectionOptions();
+
+updatePhotoUpload();
+
+updatePreview();
+
+</script>
+
+</body>
+</html>

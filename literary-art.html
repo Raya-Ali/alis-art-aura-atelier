@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Literary Art | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 35px 20px;
+            margin: 25px auto 35px;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 32px;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .hero-description {
+            margin: 0 auto !important;
+            max-width: 600px !important;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .literary-gallery {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 5px 30px;
+            scroll-behavior: smooth;
+        }
+
+        .literary-card {
+            flex: 0 0 250px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(201, 13, 234, 0.25);
+            border-radius: 14px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .literary-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .literary-card h3 {
+            margin: 15px 0 8px;
+            color: #ffffff;
+        }
+
+        .literary-card p {
+            margin: 0;
+            color: #cccccc;
+            line-height: 1.5;
+        }
+
+        .builder {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(51, 206, 239, 0.2);
+            box-sizing: border-box;
+        }
+
+        .builder h2 {
+            margin-top: 0;
+            color: #ffffff;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: #111111;
+            color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #888888;
+        }
+
+        .total-box {
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 10px;
+            background: rgba(201, 13, 234, 0.08);
+            text-align: center;
+        }
+
+        .total-box strong {
+            font-size: 22px;
+            color: #33CEEF;
+        }
+
+        .order-preview {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            color: #cccccc;
+            line-height: 1.7;
+        }
+
+        .payment-button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: linear-gradient(90deg, #C90DEA, #3533CD);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .payment-button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <main>
+
+        <section class="hero">
+
+            <h1>Literary Art</h1>
+
+            <p class="hero-description">
+                Poetry, prose and meaningful language
+                <br>
+                created as artistic works through the written word.
+            </p>
+
+        </section>
+
+
+        <section class="content-section">
+
+            <div class="literary-gallery">
+
+                <article class="literary-card">
+
+                    <img
+                        src="images/literary-art-1.png"
+                        alt="Literary Art I"
+                    >
+
+                    <h3>Literary Art I</h3>
+
+                    <p>
+                        An original literary expression
+                        created as a work of art.
+                    </p>
+
+                </article>
+
+
+                <article class="literary-card">
+
+                    <img
+                        src="images/literary-art-2.png"
+                        alt="Literary Art II"
+                    >
+
+                    <h3>Literary Art II</h3>
+
+                    <p>
+                        Poetry and language shaped
+                        into an expressive literary work.
+                    </p>
+
+                </article>
+
+
+                <article class="literary-card">
+
+                    <img
+                        src="images/literary-art-3.png"
+                        alt="Literary Art III"
+                    >
+
+                    <h3>Literary Art III</h3>
+
+                    <p>
+                        Creative prose where the written
+                        word carries the artistic expression.
+                    </p>
+
+                </article>
+
+
+                <article class="literary-card">
+
+                    <img
+                        src="images/literary-art-4.png"
+                        alt="Literary Art IV"
+                    >
+
+                    <h3>Literary Art IV</h3>
+
+                    <p>
+                        An exploration of ideas, emotions
+                        and meaning through language.
+                    </p>
+
+                </article>
+
+
+                <article class="literary-card">
+
+                    <img
+                        src="images/literary-art-5.png"
+                        alt="Literary Art V"
+                    >
+
+                    <h3>Literary Art V</h3>
+
+                    <p>
+                        Original written expression
+                        presented as literary art.
+                    </p>
+
+                </article>
+
+
+                <article class="literary-card">
+
+                    <img
+                        src="images/literary-art-6.png"
+                        alt="Literary Art VI"
+                    >
+
+                    <h3>Literary Art VI</h3>
+
+                    <p>
+                        Words themselves becoming
+                        the artistic creation.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="builder">
+
+            <h2>Order Literary Art</h2>
+
+
+            <div class="form-group">
+
+                <label for="art">
+                    Literary Artwork
+                </label>
+
+                <select id="art">
+
+                    <option value="">
+                        Select a literary artwork
+                    </option>
+
+                    <option value="Literary Art I">
+                        Literary Art I
+                    </option>
+
+                    <option value="Literary Art II">
+                        Literary Art II
+                    </option>
+
+                    <option value="Literary Art III">
+                        Literary Art III
+                    </option>
+
+                    <option value="Literary Art IV">
+                        Literary Art IV
+                    </option>
+
+                    <option value="Literary Art V">
+                        Literary Art V
+                    </option>
+
+                    <option value="Literary Art VI">
+                        Literary Art VI
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="format">
+                    Format
+                </label>
+
+                <select id="format">
+
+                    <option value="">
+                        Select a format
+                    </option>
+
+                    <option value="Digital">
+                        Digital
+                    </option>
+
+                    <option value="Print">
+                        Print
+                    </option>
+
+                    <option value="Framed">
+                        Framed
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="quantity">
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    value="1"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="fullName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Your full name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your email address"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone">
+                    Phone / WhatsApp
+                </label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Your phone or WhatsApp number"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="address">
+                    Delivery Address
+                </label>
+
+                <textarea
+                    id="address"
+                    rows="3"
+                    placeholder="Your delivery address"
+                ></textarea>
+
+            </div>
+
+
+            <div class="total-box">
+
+                Estimated Total:
+
+                <br>
+
+                <strong id="total">
+                    J$0
+                </strong>
+
+            </div>
+
+
+            <div class="order-preview" id="orderPreview">
+                Select a literary artwork and format
+                to see your order.
+            </div>
+
+
+            <button
+                type="button"
+                class="payment-button"
+                id="paymentButton"
+            >
+                Continue to Payment →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const prices = {
+
+            "Literary Art I": {
+                "Digital": 1500,
+                "Print": 2500,
+                "Framed": 4500
+            },
+
+            "Literary Art II": {
+                "Digital": 1800,
+                "Print": 2800,
+                "Framed": 4800
+            },
+
+            "Literary Art III": {
+                "Digital": 2000,
+                "Print": 3000,
+                "Framed": 5000
+            },
+
+            "Literary Art IV": {
+                "Digital": 2200,
+                "Print": 3200,
+                "Framed": 5200
+            },
+
+            "Literary Art V": {
+                "Digital": 2500,
+                "Print": 3500,
+                "Framed": 5500
+            },
+
+            "Literary Art VI": {
+                "Digital": 2800,
+                "Print": 3800,
+                "Framed": 5800
+            }
+
+        };
+
+
+        const artSelect =
+            document.getElementById("art");
+
+        const formatSelect =
+            document.getElementById("format");
+
+        const quantityInput =
+            document.getElementById("quantity");
+
+        const fullNameInput =
+            document.getElementById("fullName");
+
+        const emailInput =
+            document.getElementById("email");
+
+        const phoneInput =
+            document.getElementById("phone");
+
+        const addressInput =
+            document.getElementById("address");
+
+        const totalDisplay =
+            document.getElementById("total");
+
+        const orderPreview =
+            document.getElementById("orderPreview");
+
+        const paymentButton =
+            document.getElementById("paymentButton");
+
+
+        function updateOrder() {
+
+            const art = artSelect.value;
+            const format = formatSelect.value;
+
+            let quantity =
+                parseInt(quantityInput.value) || 1;
+
+
+            if (quantity < 1) {
+
+                quantity = 1;
+                quantityInput.value = 1;
+
+            }
+
+
+            if (!art || !format) {
+
+                totalDisplay.textContent = "J$0";
+
+                orderPreview.textContent =
+                    "Select a literary artwork and format to see your order.";
+
+                return;
+
+            }
+
+
+            const unitPrice =
+                prices[art][format];
+
+            const total =
+                unitPrice * quantity;
+
+
+            totalDisplay.textContent =
+                "J$" + total.toLocaleString();
+
+
+            orderPreview.innerHTML = `
+
+                <strong>${art}</strong><br>
+
+                Format: ${format}<br>
+
+                Quantity: ${quantity}<br>
+
+                Unit Price:
+                J$${unitPrice.toLocaleString()}<br>
+
+                Estimated Total:
+                J$${total.toLocaleString()}
+
+            `;
+
+        }
+
+
+        artSelect.addEventListener(
+            "change",
+            updateOrder
+        );
+
+
+        formatSelect.addEventListener(
+            "change",
+            updateOrder
+        );
+
+
+        quantityInput.addEventListener(
+            "input",
+            updateOrder
+        );
+
+
+        paymentButton.addEventListener(
+            "click",
+            function () {
+
+                const art = artSelect.value;
+                const format = formatSelect.value;
+
+                const quantity =
+                    parseInt(quantityInput.value) || 1;
+
+                const fullName =
+                    fullNameInput.value.trim();
+
+                const email =
+                    emailInput.value.trim();
+
+                const phone =
+                    phoneInput.value.trim();
+
+                const address =
+                    addressInput.value.trim();
+
+
+                if (!art) {
+
+                    alert(
+                        "Please select a literary artwork."
+                    );
+
+                    return;
+
+                }
+
+
+                if (!format) {
+
+                    alert(
+                        "Please select a format."
+                    );
+
+                    return;
+
+                }
+
+
+                if (!fullName) {
+
+                    alert(
+                        "Please enter your full name."
+                    );
+
+                    return;
+
+                }
+
+
+                if (!email) {
+
+                    alert(
+                        "Please enter your email."
+                    );
+
+                    return;
+
+                }
+
+
+                const unitPrice =
+                    prices[art][format];
+
+                const total =
+                    unitPrice * quantity;
+
+
+                const order = {
+
+                    category: "Literary Art",
+
+                    artwork: art,
+
+                    format: format,
+
+                    quantity: quantity,
+
+                    unitPrice: unitPrice,
+
+                    total: total,
+
+                    fullName: fullName,
+
+                    email: email,
+
+                    phone: phone,
+
+                    address: address
+
+                };
+
+
+                localStorage.setItem(
+                    "literaryArtOrder",
+                    JSON.stringify(order)
+                );
+
+
+                window.location.href =
+                    "payment.html";
+
+            }
+        );
+
+
+        updateOrder();
+
+    </script>
+
+</body>
+
+</html>

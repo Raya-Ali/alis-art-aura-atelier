@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Engraving & Etching | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 12% 18%, rgba(51, 206, 239, 0.15), transparent 28%),
+                radial-gradient(circle at 88% 72%, rgba(255, 102, 196, 0.13), transparent 30%),
+                #000000;
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 85px 30px;
+        }
+
+        /* HERO */
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 85px;
+        }
+
+        .brand {
+            color: #C90DEA;
+            font-size: 17px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 28px;
+        }
+
+        .intro p {
+            max-width: 780px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #dddddd;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto 90px;
+        }
+
+        .section-label {
+            color: #33CEEF;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            max-width: 760px;
+            color: #cccccc;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* SERVICES */
+
+        .engraving-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .engraving-card {
+            padding: 32px;
+            background: #050505;
+            border: 1px solid #222222;
+            transition: 0.3s;
+        }
+
+        .engraving-card:hover {
+            transform: translateY(-5px);
+            border-color: #C90DEA;
+        }
+
+        .engraving-card:nth-child(2n) {
+            border-color: #33CEEF;
+        }
+
+        .engraving-card:nth-child(3n) {
+            border-color: #FF66C4;
+        }
+
+        .engraving-card h3 {
+            font-size: 24px;
+            margin-bottom: 14px;
+        }
+
+        .engraving-card p {
+            color: #cccccc;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* MATERIALS */
+
+        .materials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .material-card {
+            padding: 30px;
+            min-height: 210px;
+            background: #050505;
+            border: 1px solid #333333;
+        }
+
+        .material-card:nth-child(1) {
+            border-color: #C90DEA;
+        }
+
+        .material-card:nth-child(2) {
+            border-color: #33CEEF;
+        }
+
+        .material-card:nth-child(3) {
+            border-color: #FF66C4;
+        }
+
+        .material-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .material-card p {
+            color: #bbbbbb;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* OPTIONS */
+
+        .options-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .option {
+            padding: 20px;
+            background: #050505;
+            border-left: 2px solid #3533CD;
+            color: #cccccc;
+        }
+
+        /* PROCESS */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .process-step {
+            padding: 28px 22px;
+            background: #050505;
+            border-top: 1px solid #3533CD;
+        }
+
+        .step-number {
+            color: #FF66C4;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            color: #bbbbbb;
+            line-height: 1.65;
+            font-size: 14px;
+        }
+
+        /* ORDER */
+
+        .order-section {
+            max-width: 900px;
+            margin: 0 auto 90px;
+            padding: 45px;
+            background: #050505;
+            border: 1px solid #3533CD;
+        }
+
+        .order-section h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .order-section > p {
+            color: #bbbbbb;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 9px;
+            font-size: 15px;
+            color: #eeeeee;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background: #000000;
+            border: 1px solid #444444;
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #C90DEA;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .check-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px;
+            border: 1px solid #333333;
+            background: #000000;
+            color: #cccccc;
+        }
+
+        .check-option input {
+            width: auto;
+        }
+
+        /* UPLOAD */
+
+        .upload-box {
+            padding: 25px;
+            border: 1px dashed #C90DEA;
+            background: #000000;
+        }
+
+        .upload-box p {
+            color: #aaaaaa;
+            line-height: 1.6;
+            font-size: 14px;
+            margin-bottom: 18px;
+        }
+
+        .upload-box input[type="file"] {
+            padding: 12px 0;
+            border: none;
+        }
+
+        .upload-note {
+            margin-top: 10px;
+            color: #777777;
+            font-size: 12px;
+        }
+
+        .estimate {
+            margin: 30px 0;
+            padding: 22px;
+            border-top: 1px solid #3533CD;
+            border-bottom: 1px solid #3533CD;
+        }
+
+        .estimate-title {
+            color: #33CEEF;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .estimate-price {
+            font-size: 30px;
+        }
+
+        .order-button {
+            width: 100%;
+            padding: 17px;
+            border: 1px solid white;
+            background: white;
+            color: black;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .order-button:hover {
+            background: #C90DEA;
+            border-color: #C90DEA;
+            color: white;
+        }
+
+        /* PAYMENT */
+
+        .payment-box {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            padding: 35px;
+            border: 1px solid #FF66C4;
+            background: #050505;
+        }
+
+        .payment-box h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .payment-box p {
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .payment-note {
+            color: #FF66C4;
+            font-size: 14px;
+        }
+
+        /* STATEMENT */
+
+        .statement {
+            max-width: 850px;
+            margin: 0 auto 70px;
+            padding: 35px;
+            border-top: 1px solid #3533CD;
+            border-bottom: 1px solid #3533CD;
+            font-size: 28px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 800px) {
+
+            .page {
+                padding: 60px 20px;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+
+            .engraving-grid,
+            .options-grid,
+            .materials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .order-section {
+                padding: 28px 20px;
+            }
+
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .statement {
+                font-size: 23px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Engraving & Etching
+            </h1>
+
+            <p>
+                Permanent artistic details created through engraved
+                and etched lettering, imagery, symbols and personal
+                designs on suitable surfaces and materials.
+            </p>
+
+        </div>
+
+
+        <!-- SERVICES -->
+
+        <section class="section">
+
+            <div class="section-label">
+                What We Create
+            </div>
+
+            <h2>
+                Detail That Lasts
+            </h2>
+
+            <p class="section-intro">
+                Engraving and etching can turn an ordinary surface
+                into something personal, decorative, commemorative
+                or distinctly artistic.
+            </p>
+
+
+            <div class="engraving-grid">
+
+                <div class="engraving-card">
+
+                    <h3>
+                        Names & Initials
+                    </h3>
+
+                    <p>
+                        Personalized names, initials, monograms and
+                        lettering for gifts, keepsakes and personal pieces.
+                    </p>
+
+                </div>
+
+
+                <div class="engraving-card">
+
+                    <h3>
+                        Messages & Quotes
+                    </h3>
+
+                    <p>
+                        Meaningful messages, quotations, dedications,
+                        dates and short written pieces.
+                    </p>
+
+                </div>
+
+
+                <div class="engraving-card">
+
+                    <h3>
+                        Illustrations
+                    </h3>
+
+                    <p>
+                        Suitable artwork, line illustrations, symbols
+                        and custom imagery can be prepared for engraving
+                        or etching.
+                    </p>
+
+                </div>
+
+
+                <div class="engraving-card">
+
+                    <h3>
+                        Photographic Designs
+                    </h3>
+
+                    <p>
+                        Suitable photographs can be transformed into
+                        an engraving-ready artistic composition where
+                        the material and process allow.
+                    </p>
+
+                </div>
+
+
+                <div class="engraving-card">
+
+                    <h3>
+                        Logos & Branding
+                    </h3>
+
+                    <p>
+                        Business logos, marks and branded details can
+                        be prepared for suitable engraved applications.
+                    </p>
+
+                </div>
+
+
+                <div class="engraving-card">
+
+                    <h3>
+                        Commemorative Pieces
+                    </h3>
+
+                    <p>
+                        Create lasting keepsakes for milestones,
+                        relationships, achievements and memories.
+                    </p>
+
+                </div>
+
+
+                <div class="engraving-card">
+
+                    <h3>
+                        Decorative Details
+                    </h3>
+
+                    <p>
+                        Patterns, borders, symbols and artistic details
+                        can be incorporated into a larger creation.
+                    </p>
+
+                </div>
+
+
+                <div class="engraving-card">
+
+                    <h3>
+                        Custom Engraving
+                    </h3>
+
+                    <p>
+                        Have a specific idea? Submit your concept and
+                        the Atelier can determine how it may be developed.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- MATERIALS -->
+
+        <section class="section">
+
+            <div class="section-label">
+                Materials
+            </div>
+
+            <h2>
+                The Surface Matters
+            </h2>
+
+            <p class="section-intro">
+                Engraving and etching techniques depend on the material,
+                thickness, finish, artwork and intended result. Final
+                suitability is confirmed during quotation.
+            </p>
+
+
+            <div class="materials-grid">
+
+                <div class="material-card">
+
+                    <h3>
+                        Wood
+                    </h3>
+
+                    <p>
+                        Suitable wooden surfaces can carry names,
+                        illustrations, messages, decorative patterns
+                        and other engraved details.
+                    </p>
+
+                </div>
+
+
+                <div class="material-card">
+
+                    <h3>
+                        Acrylic & Glass
+                    </h3>
+
+                    <p>
+                        Suitable acrylic and glass surfaces can be
+                        etched with lettering, imagery and decorative
+                        designs.
+                    </p>
+
+                </div>
+
+
+                <div class="material-card">
+
+                    <h3>
+                        Metal
+                    </h3>
+
+                    <p>
+                        Suitable metal surfaces may be engraved with
+                        lettering, markings, logos and personalized details.
+                    </p>
+
+                </div>
+
+
+                <div class="material-card">
+
+                    <h3>
+                        Other Surfaces
+                    </h3>
+
+                    <p>
+                        If you already have a specific material or object,
+                        submit its details so its suitability can be assessed.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OPTIONS -->
+
+        <section class="section">
+
+            <div class="section-label">
+                Design Options
+            </div>
+
+            <h2>
+                Your Engraving Can Include
+            </h2>
+
+
+            <div class="options-grid">
+
+                <div class="option">
+                    Names
+                </div>
+
+                <div class="option">
+                    Initials & Monograms
+                </div>
+
+                <div class="option">
+                    Dates
+                </div>
+
+                <div class="option">
+                    Messages
+                </div>
+
+                <div class="option">
+                    Quotes
+                </div>
+
+                <div class="option">
+                    Signatures
+                </div>
+
+                <div class="option">
+                    Logos
+                </div>
+
+                <div class="option">
+                    Symbols
+                </div>
+
+                <div class="option">
+                    Line Artwork
+                </div>
+
+                <div class="option">
+                    Photographic Artwork
+                </div>
+
+                <div class="option">
+                    Patterns
+                </div>
+
+                <div class="option">
+                    Custom Artwork
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESS -->
+
+        <section class="section">
+
+            <div class="section-label">
+                The Atelier Process
+            </div>
+
+            <h2>
+                From Reference To Finished Detail
+            </h2>
+
+
+            <div class="process">
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Submit
+                    </h3>
+
+                    <p>
+                        Tell us what you want engraved or etched
+                        and provide your design or reference material.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Prepare
+                    </h3>
+
+                    <p>
+                        The artwork or lettering is assessed and
+                        prepared for the intended surface.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Create
+                    </h3>
+
+                    <p>
+                        The approved design is engraved or etched
+                        according to the selected project.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Complete
+                    </h3>
+
+                    <p>
+                        The finished piece is inspected and prepared
+                        for collection, delivery or final presentation.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER -->
+
+        <section class="order-section" id="order">
+
+            <div class="section-label">
+                Start Your Project
+            </div>
+
+            <h2>
+                Engraving & Etching Order
+            </h2>
+
+            <p>
+                Tell us about the item, surface, design and personal
+                details you want included. Your request will be reviewed
+                before a final quotation is confirmed.
+            </p>
+
+
+            <form id="engravingForm">
+
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="projectName">
+                        Project / Gift Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectName">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="serviceType">
+                        What Do You Need?
+                    </label>
+
+                    <select id="serviceType" required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Engraving">
+                            Engraving
+                        </option>
+
+                        <option value="Etching">
+                            Etching
+                        </option>
+
+                        <option value="Not Sure">
+                            Not sure
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="material">
+                        Material / Surface
+                    </label>
+
+                    <select id="material" required>
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Wood">
+                            Wood
+                        </option>
+
+                        <option value="Acrylic">
+                            Acrylic
+                        </option>
+
+                        <option value="Glass">
+                            Glass
+                        </option>
+
+                        <option value="Metal">
+                            Metal
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                        <option value="Not Sure">
+                            Not sure
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        What Would You Like Included?
+                    </label>
+
+                    <div class="checkbox-grid">
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Name">
+                            Name
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Initials">
+                            Initials
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Message">
+                            Message
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Quote">
+                            Quote
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Date">
+                            Date
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Logo">
+                            Logo
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Symbol">
+                            Symbol
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Artwork">
+                            Artwork
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Photo">
+                            Photo
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Pattern">
+                            Pattern
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="object">
+                        Are You Providing The Item?
+                    </label>
+
+                    <select id="object">
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Yes">
+                            Yes
+                        </option>
+
+                        <option value="No">
+                            No
+                        </option>
+
+                        <option value="Not Sure">
+                            Not sure
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="quantity">
+                        Quantity
+                    </label>
+
+                    <input
+                        type="number"
+                        id="quantity"
+                        min="1"
+                        placeholder="Number of pieces">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="details">
+                        What Should Be Engraved or Etched?
+                    </label>
+
+                    <textarea
+                        id="details"
+                        placeholder="Enter names, wording, dates, symbols or describe the design."></textarea>
+
+                </div>
+
+
+                <!-- VISUAL UPLOAD -->
+
+                <div class="form-group">
+
+                    <label for="referenceFiles">
+                        Upload Reference Images
+                    </label>
+
+                    <div class="upload-box">
+
+                        <p>
+                            Upload photographs, logos, artwork, sketches,
+                            screenshots or other visual references that
+                            help us understand your design.
+                        </p>
+
+                        <input
+                            type="file"
+                            id="referenceFiles"
+                            accept="image/*,.pdf"
+                            multiple>
+
+                        <div class="upload-note">
+                            Multiple files can be selected.
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="style">
+                        Preferred Style or Finish
+                    </label>
+
+                    <textarea
+                        id="style"
+                        placeholder="Describe the look, placement, size or finish you want."></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="deadline">
+                        Desired Completion Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="deadline">
+
+                </div>
+
+
+                <div class="estimate">
+
+                    <div class="estimate-title">
+                        Project Estimate
+                    </div>
+
+                    <div class="estimate-price">
+                        Custom Quotation
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="order-button">
+
+                    CONTINUE TO ORDER
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- PAYMENT -->
+
+        <section class="payment-box">
+
+            <h2>
+                Payment & Project Confirmation
+            </h2>
+
+            <p>
+                Engraving and etching prices depend on the material,
+                size, quantity, artwork preparation, complexity and
+                production requirements.
+            </p>
+
+            <p>
+                Your request will be reviewed and the final quotation
+                confirmed before payment is completed.
+            </p>
+
+            <div class="payment-note">
+                Custom quotations are confirmed before payment is completed.
+            </div>
+
+        </section>
+
+
+        <!-- STATEMENT -->
+
+        <div class="statement">
+
+            Some memories deserve more than a moment.
+
+            <br>
+
+            Give them something permanent.
+
+        </div>
+
+
+        <a
+            href="creative-services.html"
+            class="back-button">
+
+            Back To Creative Services
+
+        </a>
+
+    </main>
+
+
+    <script>
+
+        document
+            .getElementById("engravingForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const selectedDetails =
+                    Array.from(
+                        document.querySelectorAll(
+                            '.check-option input:checked'
+                        )
+                    ).map(function(checkbox) {
+
+                        return checkbox.value;
+
+                    });
+
+
+                const files =
+                    Array.from(
+                        document.getElementById(
+                            "referenceFiles"
+                        ).files
+                    ).map(function(file) {
+
+                        return file.name;
+
+                    });
+
+
+                const order = {
+
+                    type: "Creative Service",
+
+                    service: "Engraving & Etching",
+
+                    customerName:
+                        document.getElementById(
+                            "customerName"
+                        ).value,
+
+                    customerEmail:
+                        document.getElementById(
+                            "customerEmail"
+                        ).value,
+
+                    projectName:
+                        document.getElementById(
+                            "projectName"
+                        ).value,
+
+                    serviceType:
+                        document.getElementById(
+                            "serviceType"
+                        ).value,
+
+                    material:
+                        document.getElementById(
+                            "material"
+                        ).value,
+
+                    engravingDetails:
+                        selectedDetails,
+
+                    customerProvidesItem:
+                        document.getElementById(
+                            "object"
+                        ).value,
+
+                    quantity:
+                        document.getElementById(
+                            "quantity"
+                        ).value,
+
+                    textOrDesign:
+                        document.getElementById(
+                            "details"
+                        ).value,
+
+                    referenceFiles:
+                        files,
+
+                    preferredStyle:
+                        document.getElementById(
+                            "style"
+                        ).value,
+
+                    deadline:
+                        document.getElementById(
+                            "deadline"
+                        ).value,
+
+                    total:
+                        null,
+
+                    status:
+                        "Awaiting Quotation",
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+                localStorage.setItem(
+                    "currentOrder",
+                    JSON.stringify(order)
+                );
+
+
+                window.location.href =
+                    "payment.html";
+
+            });
+
+    </script>
+
+</body>
+
+</html>

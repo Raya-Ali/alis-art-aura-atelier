@@ -1,0 +1,370 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Physical Prints | Alis Art & Aura Atelier</title><style>
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #000;
+    color: #fff;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #3533CD;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #FF66C4;
+}
+
+.container {
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 40px 0;
+}
+
+h1,
+h2 {
+    background: linear-gradient(90deg, #C90DEA, #33CEEF, #FF66C4);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+}
+
+h1 {
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.intro {
+    text-align: center;
+    max-width: 750px;
+    margin: 0 auto 40px;
+    line-height: 1.7;
+    color: #ddd;
+}
+
+/* GALLERY */
+
+.gallery-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 15px;
+    padding-bottom: 12px;
+}
+
+.gallery-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 430px;
+    object-fit: contain;
+    border-radius: 18px;
+    border: 1px solid #C90DEA;
+    background: #080808;
+}
+
+/* PRODUCT SECTION */
+
+.product-section {
+    margin-top: 50px;
+    padding: 30px;
+    border: 1px solid #3533CD;
+    border-radius: 20px;
+    background: #080808;
+}
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 7px;
+    font-weight: bold;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 13px;
+    border-radius: 8px;
+    border: 1px solid #555;
+    background: #111;
+    color: #fff;
+    font-size: 15px;
+}
+
+.price-box {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #151515, #090909);
+    border: 1px solid #C90DEA;
+}
+
+.total {
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #FF66C4;
+}
+
+.summary {
+    margin-top: 25px;
+    line-height: 1.8;
+    color: #ddd;
+}
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    background: linear-gradient(90deg, #C90DEA, #3533CD);
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+.payment {
+    display: none;
+    margin-top: 35px;
+    padding-top: 25px;
+    border-top: 1px solid #3533CD;
+}
+
+.back-link {
+    display: inline-block;
+    margin-top: 35px;
+    color: #33CEEF;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .gallery-slide img {
+        height: 300px;
+    }
+
+    .product-section {
+        padding: 20px;
+    }
+}
+</style></head><body><header>
+<nav>
+    <a href="index.html">Home</a>
+    <a href="what-we-create.html">What We Create</a>
+    <a href="custom-orders.html">Custom Orders</a>
+    <a href="contact.html">Contact</a>
+</nav>
+</header><div class="container"><h1>Physical Prints</h1><p class="intro">
+Turn artwork into something tangible with carefully produced physical prints.
+Choose your size, format, quantity and print finish to create a finished piece
+ready to display, gift or preserve.
+</p><!-- HORIZONTAL GALLERY --><div class="gallery-track"><div class="gallery-slide">
+    <img src="images/mockup1.png" alt="Physical Art Print">
+</div>
+
+<div class="gallery-slide">
+    <img src="images/digital-print2.png" alt="Printed Artwork">
+</div>
+
+<div class="gallery-slide">
+    <img src="images/digital-print3.png" alt="Physical Art Print Example">
+</div>
+
+<div class="gallery-slide">
+    <img src="images/digital-print4.png" alt="Printed Artwork Example">
+</div>
+
+<div class="gallery-slide">
+    <img src="images/digital-print5.png" alt="Physical Print Example">
+</div>
+
+<div class="gallery-slide">
+    <img src="images/digital-print6.png" alt="Printed Artwork">
+</div>
+
+</div><section class="product-section"><h2>Choose Your Print</h2><p>
+Select the physical print specifications that suit your artwork and space.
+Artwork/design pricing may vary depending on the artwork selected.
+</p><label for="size">Print Size</label>
+
+<select id="size">
+    <option value="">Select a size</option>
+    <option value="800">4×6 / 6×4 — J$800</option>
+    <option value="1000">5×7 / 7×5 — J$1,000</option>
+    <option value="1200">6×8 / 8×6 — J$1,200</option>
+    <option value="1500">8×8 — J$1,500</option>
+    <option value="1800">8×10 / 10×8 — J$1,800</option>
+    <option value="2200">10×10 — J$2,200</option>
+    <option value="2500">10×12 / 12×10 — J$2,500</option>
+    <option value="2800">11×14 / 14×11 — J$2,800</option>
+    <option value="3200">12×12 — J$3,200</option>
+    <option value="3500">12×16 / 16×12 — J$3,500</option>
+    <option value="4000">14×14 — J$4,000</option>
+    <option value="4500">14×18 / 18×14 — J$4,500</option>
+    <option value="5000">16×16 — J$5,000</option>
+    <option value="5500">16×20 / 20×16 — J$5,500</option>
+    <option value="6500">18×24 / 24×18 — J$6,500</option>
+    <option value="7000">20×20 — J$7,000</option>
+</select><label for="format">Format</label>
+
+<select id="format">
+    <option value="Portrait">Portrait</option>
+    <option value="Landscape">Landscape</option>
+    <option value="Square">Square</option>
+</select><label for="finish">Print Finish</label>
+
+<select id="finish">
+    <option value="0">Standard Print — +J$0</option>
+    <option value="300">Matte Finish — +J$300</option>
+    <option value="500">Premium Finish — +J$500</option>
+</select><label for="quantity">Quantity</label>
+
+<input
+type="number"
+id="quantity"
+value="1"
+min="1"
+
+«»
+
+<div class="price-box"><strong>Estimated Total</strong>
+
+<div class="total" id="total">
+J$0
+</div><div class="summary" id="summary">
+Select your print options to see your order summary.
+</div></div><button onclick="continueToPayment()">
+Continue to Payment
+</button><div class="payment" id="payment"><h2>Payment Details</h2><label for="name">Name</label>
+<input type="text" id="name" placeholder="Your name">
+
+<label for="email">Email</label>
+<input type="email" id="email" placeholder="Your email">
+
+<label for="paymentMethod">Payment Method</label>
+
+<select id="paymentMethod">
+    <option value="">Select payment method</option>
+    <option>Bank Transfer</option>
+    <option>Direct Deposit</option>
+    <option>Other</option>
+</select><button onclick="submitPayment()">
+Submit Order
+</button></div></section><a href="what-we-create.html" class="back-link">
+← Back to What We Create
+</a></div><script>
+
+const size = document.getElementById("size");
+const format = document.getElementById("format");
+const finish = document.getElementById("finish");
+const quantity = document.getElementById("quantity");
+
+const total = document.getElementById("total");
+const summary = document.getElementById("summary");
+
+function updateTotal() {
+
+    const sizePrice = Number(size.value) || 0;
+    const finishPrice = Number(finish.value) || 0;
+    const qty = Number(quantity.value) || 1;
+
+    const finalTotal = (sizePrice + finishPrice) * qty;
+
+    total.textContent = "J$" + finalTotal.toLocaleString();
+
+    if (!size.value) {
+        summary.textContent =
+            "Select your print options to see your order summary.";
+        return;
+    }
+
+    const sizeText =
+        size.options[size.selectedIndex].text.split(" — ")[0];
+
+    const finishText =
+        finish.options[finish.selectedIndex].text.split(" — ")[0];
+
+    summary.innerHTML =
+        "<strong>Product:</strong> Physical Print<br>" +
+        "<strong>Size:</strong> " + sizeText + "<br>" +
+        "<strong>Format:</strong> " + format.value + "<br>" +
+        "<strong>Finish:</strong> " + finishText + "<br>" +
+        "<strong>Quantity:</strong> " + qty + "<br>" +
+        "<strong>Total:</strong> J$" +
+        finalTotal.toLocaleString();
+}
+
+size.addEventListener("change", updateTotal);
+format.addEventListener("change", updateTotal);
+finish.addEventListener("change", updateTotal);
+quantity.addEventListener("input", updateTotal);
+
+function continueToPayment() {
+
+    if (!size.value) {
+        alert("Please select a print size first.");
+        return;
+    }
+
+    document.getElementById("payment").style.display = "block";
+
+    document.getElementById("payment").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function submitPayment() {
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const paymentMethod =
+        document.getElementById("paymentMethod").value;
+
+    if (!name || !email || !paymentMethod) {
+        alert("Please complete your payment details.");
+        return;
+    }
+
+    alert(
+        "Your physical print order has been prepared. " +
+        "Payment instructions will be provided after confirmation."
+    );
+}
+
+updateTotal();
+
+</script></body>
+</html>

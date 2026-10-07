@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meaningful Gifts | Alis Art & Aura Atelier</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #000;
+            border-bottom: 1px solid rgba(201, 13, 234, 0.25);
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-brand {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #C90DEA;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 7%;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(201, 13, 234, 0.18), transparent 35%),
+                radial-gradient(circle at 80% 70%, rgba(51, 206, 239, 0.15), transparent 35%),
+                linear-gradient(135deg, #000000, #080812, #000000);
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .brand {
+            color: #FF66C4;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            margin-bottom: 25px;
+            background: linear-gradient(90deg, #FF66C4, #C90DEA, #33CEEF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #ddd;
+            font-size: 1.1rem;
+        }
+
+        /* INTRO */
+        .intro {
+            padding: 80px 7%;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            max-width: 750px;
+            margin: auto;
+            color: #bbb;
+        }
+
+        /* GIFT IDEAS */
+        .gift-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px 7% 80px;
+        }
+
+        .gift-card {
+            padding: 30px 22px;
+            border: 1px solid rgba(201, 13, 234, 0.35);
+            border-radius: 18px;
+            background: linear-gradient(
+                145deg,
+                rgba(201, 13, 234, 0.08),
+                rgba(51, 206, 239, 0.04)
+            );
+        }
+
+        .gift-card h3 {
+            color: #FF66C4;
+            margin-bottom: 12px;
+        }
+
+        .gift-card p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        /* FORM SECTION */
+        .order-section {
+            padding: 90px 7%;
+            background: #050509;
+        }
+
+        .order-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .order-container h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+        }
+
+        .order-intro {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 45px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #eee;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #101014;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #C90DEA;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: #101014;
+            border-radius: 10px;
+            border: 1px solid #292929;
+        }
+
+        .checkbox-item input {
+            width: auto;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .upload-box {
+            border: 1px dashed #C90DEA;
+            padding: 25px;
+            border-radius: 14px;
+            background: rgba(201, 13, 234, 0.05);
+        }
+
+        .upload-box p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #C90DEA, #33CEEF);
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .quote-note {
+            margin-top: 25px;
+            padding: 20px;
+            border-left: 3px solid #FF66C4;
+            background: rgba(255, 102, 196, 0.05);
+            color: #bbb;
+        }
+
+        /* BACK BUTTON */
+        .back-section {
+            text-align: center;
+            padding: 50px 7%;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: #33CEEF;
+            text-decoration: none;
+            border: 1px solid #33CEEF;
+            padding: 12px 25px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #33CEEF;
+            color: #000;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .gift-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .gift-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">
+        Alis Art & Aura Atelier
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="who-we-are.html">Who We Are</a>
+        <a href="what-we-create.html">What We Create</a>
+        <a href="custom-orders.html">Custom Orders</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+    <div class="hero-content">
+
+        <div class="brand">
+            Alis Art & Aura Atelier
+        </div>
+
+        <h1>Meaningful Gifts</h1>
+
+        <p>
+            A gift does not have to be expensive to matter.
+            Sometimes the most meaningful gift is one that carries
+            a memory, a message, a person, or a piece of your story.
+        </p>
+
+    </div>
+</section>
+
+
+<!-- INTRO -->
+<section class="intro">
+
+    <h2>Created For Someone Special</h2>
+
+    <p>
+        Tell us about the person, the occasion, and what you want
+        the gift to mean. We transform your ideas into a personalized
+        creation designed specifically for them.
+    </p>
+
+</section>
+
+
+<!-- GIFT DIRECTIONS -->
+<section class="gift-grid">
+
+    <div class="gift-card">
+        <h3>For Someone You Love</h3>
+        <p>
+            Celebrate a partner, family member, friend, or someone
+            who holds an important place in your life.
+        </p>
+    </div>
+
+    <div class="gift-card">
+        <h3>For A Special Moment</h3>
+        <p>
+            Birthdays, anniversaries, graduations, weddings,
+            achievements, milestones, and other important moments.
+        </p>
+    </div>
+
+    <div class="gift-card">
+        <h3>For A Memory</h3>
+        <p>
+            Turn a meaningful photograph, place, experience,
+            message, or shared memory into something tangible.
+        </p>
+    </div>
+
+    <div class="gift-card">
+        <h3>Just Because</h3>
+        <p>
+            No occasion required. Create something simply because
+            someone deserves to know they are appreciated.
+        </p>
+    </div>
+
+</section>
+
+
+<!-- CUSTOM ORDER -->
+<section class="order-section">
+
+    <div class="order-container">
+
+        <h2>Build Their Gift</h2>
+
+        <p class="order-intro">
+            Give us the details and we will develop the creation around your story.
+        </p>
+
+        <form id="giftForm">
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+
+
+            <div class="form-group">
+                <label for="recipient">Who Is The Gift For?</label>
+                <input
+                    type="text"
+                    id="recipient"
+                    placeholder="Example: My mother, partner, sister, friend"
+                    required
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="relationship">Your Relationship</label>
+
+                <select id="relationship" required>
+                    <option value="">Choose one</option>
+                    <option>Partner</option>
+                    <option>Parent</option>
+                    <option>Child</option>
+                    <option>Sibling</option>
+                    <option>Friend</option>
+                    <option>Grandparent</option>
+                    <option>Other Family Member</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="occasion">What Is The Occasion?</label>
+
+                <select id="occasion" required>
+                    <option value="">Choose one</option>
+                    <option>Birthday</option>
+                    <option>Anniversary</option>
+                    <option>Wedding</option>
+                    <option>Graduation</option>
+                    <option>Achievement</option>
+                    <option>Holiday</option>
+                    <option>Memorial</option>
+                    <option>Just Because</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="story">
+                    What Makes This Person Or Moment Meaningful?
+                </label>
+
+                <textarea
+                    id="story"
+                    placeholder="Tell us the story behind the gift..."
+                    required
+                ></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label>What Would You Like Included?</label>
+
+                <div class="checkbox-grid">
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="elements" value="Names" id="names">
+                        <label for="names">Names</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="elements" value="Message" id="message">
+                        <label for="message">Personal Message</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="elements" value="Photographs" id="photos">
+                        <label for="photos">Photographs</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="elements" value="Dates" id="dates">
+                        <label for="dates">Important Dates</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="elements" value="Quotes" id="quotes">
+                        <label for="quotes">Quotes / Words</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="elements" value="Symbols" id="symbols">
+                        <label for="symbols">Symbols</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="elements" value="Artwork" id="artwork">
+                        <label for="artwork">Custom Artwork</label>
+                    </div>
+
+                    <div class="checkbox-item">
+                        <input type="checkbox" name="elements" value="Other" id="other">
+                        <label for="other">Something Else</label>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label for="style">Preferred Artistic Style</label>
+
+                <select id="style">
+
+                    <option value="">Choose one</option>
+                    <option>Minimal & Elegant</option>
+                    <option>Romantic</option>
+                    <option>Bold</option>
+                    <option>Colourful</option>
+                    <option>Dark & Dramatic</option>
+                    <option>Soft & Emotional</option>
+                    <option>Luxury</option>
+                    <option>Playful</option>
+                    <option>Not Sure — Interpret It For Me</option>
+
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="preferences">
+                    Their Personality, Interests & Preferences
+                </label>
+
+                <textarea
+                    id="preferences"
+                    placeholder="Favourite colours, hobbies, personality, things they love, etc."
+                ></textarea>
+            </div>
+
+
+            <div class="form-group">
+                <label for="colours">Preferred Colours</label>
+
+                <input
+                    type="text"
+                    id="colours"
+                    placeholder="Example: Black, pink and gold"
+                >
+            </div>
+
+
+            <div class="form-group">
+
+                <label>Reference Files</label>
+
+                <div class="upload-box">
+
+                    <p>
+                        Upload photographs, screenshots, artwork, documents,
+                        inspiration, or anything that helps us understand
+                        the gift you have in mind.
+                    </p>
+
+                    <input
+                        type="file"
+                        id="referenceFiles"
+                        multiple
+                        accept="image/*,.pdf"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+                <label for="deadline">When Do You Need The Gift?</label>
+
+                <input type="date" id="deadline">
+            </div>
+
+
+            <div class="form-group">
+                <label for="notes">Anything Else We Should Know?</label>
+
+                <textarea
+                    id="notes"
+                    placeholder="Add any other details, ideas or requests..."
+                ></textarea>
+            </div>
+
+
+            <div class="quote-note">
+
+                <strong>Custom Quotation</strong>
+
+                <p>
+                    Because every meaningful gift is created differently,
+                    the final price depends on the design, materials,
+                    size, personalization, presentation, and level of
+                    customization required.
+                </p>
+
+            </div>
+
+
+            <button type="submit" class="submit-btn">
+                Submit Gift Request
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- BACK -->
+<section class="back-section">
+
+    <a href="custom-creations.html" class="back-btn">
+        ← Back To Custom Creations
+    </a>
+
+</section>
+
+
+<script>
+
+document.getElementById("giftForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const elements = [];
+
+    document.querySelectorAll('input[name="elements"]:checked')
+        .forEach(item => {
+            elements.push(item.value);
+        });
+
+    const files = document.getElementById("referenceFiles").files;
+
+    const uploadedFiles = [];
+
+    for (let i = 0; i < files.length; i++) {
+        uploadedFiles.push({
+            name: files[i].name,
+            type: files[i].type,
+            size: files[i].size
+        });
+    }
+
+    const order = {
+
+        serviceCategory: "Custom Creations",
+
+        service: "Meaningful Gifts",
+
+        name: document.getElementById("name").value,
+
+        email: document.getElementById("email").value,
+
+        recipient: document.getElementById("recipient").value,
+
+        relationship: document.getElementById("relationship").value,
+
+        occasion: document.getElementById("occasion").value,
+
+        story: document.getElementById("story").value,
+
+        elements: elements,
+
+        artisticStyle: document.getElementById("style").value,
+
+        personalityPreferences:
+            document.getElementById("preferences").value,
+
+        preferredColours:
+            document.getElementById("colours").value,
+
+        deadline:
+            document.getElementById("deadline").value,
+
+        additionalNotes:
+            document.getElementById("notes").value,
+
+        uploadedFiles: uploadedFiles,
+
+        pricingType: "Custom Quotation",
+
+        status: "Awaiting Project Review",
+
+        createdAt: new Date().toISOString()
+
+    };
+
+
+    localStorage.setItem(
+        "currentOrder",
+        JSON.stringify(order)
+    );
+
+
+    window.location.href = "payment.html";
+
+});
+
+</script>
+
+</body>
+</html>

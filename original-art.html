@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Original Art | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #000000, #3533CD);
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 80px 30px;
+        }
+
+        .intro {
+            max-width: 800px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .brand {
+            color: #C90DEA;
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            font-size: 19px;
+            line-height: 1.7;
+            color: #eeeeee;
+        }
+
+        .art-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .art-card {
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid #C90DEA;
+            padding: 20px;
+            transition: 0.3s;
+        }
+
+        .art-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 0 20px rgba(201, 13, 234, 0.35);
+        }
+
+        .art-image {
+            height: 250px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #111111;
+            border: 1px solid #3533CD;
+            margin-bottom: 20px;
+            color: #888888;
+            text-align: center;
+        }
+
+        .art-card h2 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .art-card p {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #dddddd;
+            margin-bottom: 20px;
+        }
+
+        .details {
+            color: #33CEEF;
+            text-decoration: none;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .details:hover {
+            color: #FF66C4;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 60px auto 0;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 900px) {
+            .art-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .art-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .page {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- ORIGINAL ART -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Original Art
+            </h1>
+
+            <p>
+                Original works created to carry emotion, expression,
+                imagination and meaning into something tangible.
+            </p>
+
+        </div>
+
+
+        <div class="art-grid">
+
+            <article class="art-card">
+
+                <div class="art-image">
+                    Artwork Image
+                </div>
+
+                <h2>
+                    Original Piece I
+                </h2>
+
+                <p>
+                    An original artwork created to express a story,
+                    feeling or idea.
+                </p>
+
+                <a href="original-one.html" class="details">
+                    View Details →
+                </a>
+
+            </article>
+
+
+            <article class="art-card">
+
+                <div class="art-image">
+                    Artwork Image
+                </div>
+
+                <h2>
+                    Original Piece II
+                </h2>
+
+                <p>
+                    A one-of-a-kind piece designed to bring personality
+                    and artistic expression into a space.
+                </p>
+
+                <a href="original-two.html" class="details">
+                    View Details →
+                </a>
+
+            </article>
+
+
+            <article class="art-card">
+
+                <div class="art-image">
+                    Artwork Image
+                </div>
+
+                <h2>
+                    Original Piece III
+                </h2>
+
+                <p>
+                    Artwork created with intention, emotion and
+                    individuality.
+                </p>
+
+                <a href="original-three.html" class="details">
+                    View Details →
+                </a>
+
+            </article>
+
+
+            <article class="art-card">
+
+                <div class="art-image">
+                    Artwork Image
+                </div>
+
+                <h2>
+                    Original Piece IV
+                </h2>
+
+                <p>
+                    A creative expression made to become part of
+                    someone's story.
+                </p>
+
+                <a href="original-four.html" class="details">
+                    View Details →
+                </a>
+
+            </article>
+
+
+            <article class="art-card">
+
+                <div class="art-image">
+                    Artwork Image
+                </div>
+
+                <h2>
+                    Original Piece V
+                </h2>
+
+                <p>
+                    A distinctive artwork made for people who want
+                    something beyond the ordinary.
+                </p>
+
+                <a href="original-five.html" class="details">
+                    View Details →
+                </a>
+
+            </article>
+
+
+            <article class="art-card">
+
+                <div class="art-image">
+                    Artwork Image
+                </div>
+
+                <h2>
+                    Original Piece VI
+                </h2>
+
+                <p>
+                    A meaningful original created to be appreciated,
+                    remembered and kept.
+                </p>
+
+                <a href="original-six.html" class="details">
+                    View Details →
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <a href="what-we-create.html" class="back-button">
+            Back To What We Create
+        </a>
+
+    </main>
+
+</body>
+
+</html>

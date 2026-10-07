@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Custom Creations | Alis Art & Aura Atelier</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #000;
+            border-bottom: 1px solid rgba(201, 13, 234, 0.25);
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-brand {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #C90DEA;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 7%;
+
+            background:
+                radial-gradient(
+                    circle at 20% 30%,
+                    rgba(201, 13, 234, 0.18),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(51, 206, 239, 0.15),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #000000,
+                    #080812,
+                    #000000
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .brand {
+            color: #FF66C4;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            margin-bottom: 25px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #FF66C4,
+                    #C90DEA,
+                    #33CEEF
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            color: #ddd;
+            font-size: 1.1rem;
+        }
+
+        /* INTRO */
+        .intro {
+            padding: 80px 7%;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2.3rem;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            max-width: 760px;
+            margin: auto;
+            color: #bbb;
+            font-size: 1.05rem;
+        }
+
+        /* CUSTOM CREATIONS */
+        .creations-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            padding: 20px 7% 80px;
+        }
+
+        .creation-card {
+            display: block;
+            padding: 40px 30px;
+
+            min-height: 260px;
+
+            border: 1px solid rgba(201, 13, 234, 0.35);
+            border-radius: 20px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(201, 13, 234, 0.08),
+                    rgba(51, 206, 239, 0.04)
+                );
+
+            color: #fff;
+            text-decoration: none;
+
+            transition:
+                transform 0.3s ease,
+                border-color 0.3s ease,
+                background 0.3s ease;
+        }
+
+        .creation-card:hover {
+            transform: translateY(-6px);
+
+            border-color: #C90DEA;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(201, 13, 234, 0.15),
+                    rgba(51, 206, 239, 0.08)
+                );
+        }
+
+        .creation-number {
+            color: #33CEEF;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .creation-card h3 {
+            font-size: 1.7rem;
+            color: #FF66C4;
+            margin-bottom: 15px;
+        }
+
+        .creation-card p {
+            color: #aaa;
+            max-width: 550px;
+        }
+
+        .explore {
+            display: inline-block;
+            margin-top: 25px;
+            color: #33CEEF;
+            font-weight: bold;
+        }
+
+        /* STATEMENT */
+        .statement {
+            padding: 90px 7%;
+            text-align: center;
+            background: #050509;
+        }
+
+        .statement p {
+            max-width: 850px;
+            margin: auto;
+
+            font-size: clamp(
+                1.5rem,
+                4vw,
+                2.5rem
+            );
+
+            font-weight: bold;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #FF66C4,
+                    #C90DEA,
+                    #33CEEF
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* BACK */
+        .back-section {
+            text-align: center;
+            padding: 50px 7%;
+        }
+
+        .back-btn {
+            display: inline-block;
+
+            color: #33CEEF;
+
+            text-decoration: none;
+
+            border: 1px solid #33CEEF;
+
+            padding: 12px 25px;
+
+            border-radius: 30px;
+
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #33CEEF;
+            color: #000;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .creations-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .hero {
+                min-height: 60vh;
+                padding: 60px 6%;
+            }
+
+            .creation-card {
+                padding: 30px 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+    <a
+        href="index.html"
+        class="nav-brand"
+    >
+        Alis Art & Aura Atelier
+    </a>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="who-we-are.html">
+            Who We Are
+        </a>
+
+        <a href="what-we-create.html">
+            What We Create
+        </a>
+
+        <a href="custom-orders.html">
+            Custom Orders
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="brand">
+            Alis Art & Aura Atelier
+        </div>
+
+        <h1>
+            Made Around Your Vision.
+        </h1>
+
+        <p>
+            Some creations begin with a product.
+            Others begin with a person, a memory, a feeling,
+            a message, or an idea that does not exist yet.
+            This is where we bring those visions together.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+
+<section class="intro">
+
+    <h2>
+        Create Something That Means Something.
+    </h2>
+
+    <p>
+        Choose the direction that feels closest to your idea.
+        Each path leads to its own custom experience,
+        where your story and vision become part of the creation.
+    </p>
+
+</section>
+
+
+<!-- CUSTOM CREATION OPTIONS -->
+
+<section class="creations-grid">
+
+
+    <!-- 1. PERSONALIZED ART -->
+
+    <a
+        href="personalized-art.html"
+        class="creation-card"
+    >
+
+        <div class="creation-number">
+            01 / PERSONALIZED
+        </div>
+
+        <h3>
+            Personalized Art
+        </h3>
+
+        <p>
+            Turn memories, people, places, words,
+            emotions, photographs, or personal stories
+            into artwork created around you.
+        </p>
+
+        <span class="explore">
+            Explore →
+        </span>
+
+    </a>
+
+
+    <!-- 2. MEANINGFUL GIFTS -->
+
+    <a
+        href="meaningful-gifts.html"
+        class="creation-card"
+    >
+
+        <div class="creation-number">
+            02 / MEANINGFUL
+        </div>
+
+        <h3>
+            Meaningful Gifts
+        </h3>
+
+        <p>
+            Create something personal for someone special.
+            Birthdays, anniversaries, milestones, memories,
+            appreciation, or simply because they matter.
+        </p>
+
+        <span class="explore">
+            Explore →
+        </span>
+
+    </a>
+
+
+    <!-- 3. CUSTOM DESIGNS -->
+
+    <a
+        href="custom-designs.html"
+        class="creation-card"
+    >
+
+        <div class="creation-number">
+            03 / DESIGNED
+        </div>
+
+        <h3>
+            Custom Designs
+        </h3>
+
+        <p>
+            Bring us your concept, sketch, reference,
+            existing design, or creative direction
+            and let the Atelier develop it into something real.
+        </p>
+
+        <span class="explore">
+            Explore →
+        </span>
+
+    </a>
+
+
+    <!-- 4. BRING IT TO LIFE -->
+
+    <a
+        href="bring-it-to-life.html"
+        class="creation-card"
+    >
+
+        <div class="creation-number">
+            04 / UNDEFINED
+        </div>
+
+        <h3>
+            Bring It To Life
+        </h3>
+
+        <p>
+            Have an idea but do not know exactly what
+            it should become? Start with the thought,
+            feeling, dream, or vision and let us explore
+            the possibilities with you.
+        </p>
+
+        <span class="explore">
+            Explore →
+        </span>
+
+    </a>
+
+
+</section>
+
+
+<!-- STATEMENT -->
+
+<section class="statement">
+
+    <p>
+        You do not always have to know what to buy.
+        Sometimes you only need to know what you want it to mean.
+    </p>
+
+</section>
+
+
+<!-- BACK -->
+
+<section class="back-section">
+
+    <a
+        href="what-we-create.html"
+        class="back-btn"
+    >
+        ← Back To What We Create
+    </a>
+
+</section>
+
+
+</body>
+</html>

@@ -1,0 +1,1639 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment | Alis Art & Aura Atelier</title>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: Arial, sans-serif;
+        background: #000;
+        color: #fff;
+        min-height: 100vh;
+        padding: 20px;
+    }
+
+    .container {
+        width: 100%;
+        max-width: 850px;
+        margin: auto;
+    }
+
+    .header {
+        text-align: center;
+        padding: 30px 15px;
+        margin-bottom: 25px;
+    }
+
+    .header h1 {
+        color: #C90DEA;
+        font-size: 2rem;
+        margin-bottom: 10px;
+        text-shadow:
+            0 0 8px #C90DEA,
+            0 0 18px #33CEEF;
+    }
+
+    .header p {
+        color: #ccc;
+        line-height: 1.6;
+    }
+
+    .card {
+        background: #090909;
+        border: 1px solid #3533CD;
+        border-radius: 18px;
+        padding: 22px;
+        margin-bottom: 20px;
+        box-shadow: 0 0 15px rgba(201, 13, 234, 0.12);
+    }
+
+    .card h2 {
+        color: #33CEEF;
+        margin-bottom: 18px;
+        font-size: 1.25rem;
+    }
+
+    .order-summary {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .row {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+        padding: 10px 0;
+        border-bottom: 1px solid #222;
+    }
+
+    .row:last-child {
+        border-bottom: none;
+    }
+
+    .label {
+        color: #999;
+    }
+
+    .value {
+        color: #fff;
+        text-align: right;
+        word-break: break-word;
+    }
+
+    .total-box {
+        margin-top: 18px;
+        padding: 18px;
+        border: 1px solid #C90DEA;
+        border-radius: 14px;
+        text-align: center;
+        background: rgba(201, 13, 234, 0.06);
+    }
+
+    .total-label {
+        color: #aaa;
+        font-size: 0.9rem;
+        margin-bottom: 7px;
+    }
+
+    .total {
+        color: #FF66C4;
+        font-size: 1.8rem;
+        font-weight: bold;
+        text-shadow: 0 0 10px rgba(255, 102, 196, 0.5);
+    }
+
+    .quote-status {
+        color: #33CEEF;
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .payment-options {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    .payment-option {
+        border: 1px solid #3533CD;
+        border-radius: 15px;
+        padding: 20px;
+        cursor: pointer;
+        transition: 0.2s ease;
+        background: #050505;
+    }
+
+    .payment-option:hover {
+        border-color: #C90DEA;
+        box-shadow: 0 0 15px rgba(201, 13, 234, 0.25);
+    }
+
+    .payment-option.selected {
+        border-color: #FF66C4;
+        box-shadow:
+            0 0 10px rgba(255, 102, 196, 0.3),
+            inset 0 0 10px rgba(201, 13, 234, 0.08);
+    }
+
+    .payment-option h3 {
+        color: #fff;
+        margin-bottom: 8px;
+    }
+
+    .payment-option p {
+        color: #aaa;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+
+    .payment-details {
+        display: none;
+        margin-top: 20px;
+        padding: 18px;
+        border-radius: 14px;
+        border: 1px solid #33CEEF;
+        background: rgba(51, 206, 239, 0.04);
+    }
+
+    .payment-details.active {
+        display: block;
+    }
+
+    .payment-details h3 {
+        color: #33CEEF;
+        margin-bottom: 12px;
+    }
+
+    .payment-details p {
+        color: #ddd;
+        line-height: 1.7;
+        margin-bottom: 8px;
+    }
+
+    .important {
+        color: #FF66C4;
+        font-weight: bold;
+    }
+
+    .placeholder {
+        color: #FF66C4;
+        font-weight: bold;
+    }
+
+    .customer-form {
+        display: grid;
+        gap: 14px;
+    }
+
+    .customer-form label {
+        color: #ccc;
+        font-size: 0.9rem;
+    }
+
+    .customer-form input,
+    .customer-form textarea {
+        width: 100%;
+        margin-top: 6px;
+        padding: 13px;
+        border-radius: 10px;
+        border: 1px solid #3533CD;
+        background: #050505;
+        color: #fff;
+        outline: none;
+    }
+
+    .customer-form input:focus,
+    .customer-form textarea:focus {
+        border-color: #C90DEA;
+        box-shadow: 0 0 8px rgba(201, 13, 234, 0.25);
+    }
+
+    .customer-form textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    .buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 20px;
+    }
+
+    button,
+    .back-btn {
+        width: 100%;
+        border: none;
+        border-radius: 12px;
+        padding: 15px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .submit-btn {
+        background: linear-gradient(90deg, #C90DEA, #3533CD);
+        color: #fff;
+    }
+
+    .submit-btn:hover {
+        box-shadow: 0 0 18px rgba(201, 13, 234, 0.4);
+    }
+
+    .submit-btn:disabled {
+        opacity: 0.6;
+        cursor: not-allowed;
+    }
+
+    .back-btn {
+        display: block;
+        border: 1px solid #3533CD;
+        color: #ccc;
+        background: #080808;
+    }
+
+    .notice {
+        color: #aaa;
+        font-size: 0.88rem;
+        line-height: 1.6;
+        margin-top: 12px;
+    }
+
+    .empty-state {
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .empty-state h2 {
+        color: #FF66C4;
+        margin-bottom: 12px;
+    }
+
+    .hidden {
+        display: none !important;
+    }
+
+    @media (max-width: 650px) {
+        .payment-options {
+            grid-template-columns: 1fr;
+        }
+
+        .row {
+            flex-direction: column;
+        }
+
+        .value {
+            text-align: left;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <header class="header">
+        <h1>Payment</h1>
+        <p>
+            Complete your order with Alis Art & Aura Atelier.
+        </p>
+    </header>
+
+
+    <!-- ORDER SUMMARY -->
+    <section class="card" id="orderCard">
+
+        <h2>Order Summary</h2>
+
+        <div id="orderSummary" class="order-summary">
+            <!-- Order information appears here -->
+        </div>
+
+        <div id="totalBox" class="total-box">
+            <!-- Total or quotation status appears here -->
+        </div>
+
+    </section>
+
+
+    <!-- CUSTOMER INFORMATION -->
+    <section class="card">
+
+        <h2>Customer Information</h2>
+
+        <div class="customer-form">
+
+            <label>
+                Full Name
+                <input type="text" id="customerName" required>
+            </label>
+
+            <label>
+                Email
+                <input type="email" id="customerEmail" required>
+            </label>
+
+            <label>
+                Phone / WhatsApp
+                <input type="tel" id="customerPhone">
+            </label>
+
+            <label>
+                Delivery Address
+                <textarea id="customerAddress"></textarea>
+            </label>
+
+        </div>
+
+    </section>
+
+
+    <!-- PAYMENT METHOD -->
+    <section class="card">
+
+        <h2>Choose Payment Method</h2>
+
+        <div class="payment-options">
+
+            <div
+                class="payment-option"
+                id="bankOption"
+                onclick="selectPayment('bank')"
+            >
+                <h3>🏦 Bank Transfer</h3>
+                <p>
+                    Pay directly to the Atelier's bank account.
+                </p>
+            </div>
+
+            <div
+                class="payment-option"
+                id="paypalOption"
+                onclick="selectPayment('paypal')"
+            >
+                <h3>💳 PayPal</h3>
+                <p>
+                    Pay securely through PayPal.
+                </p>
+            </div>
+
+        </div>
+
+
+        <!-- BANK DETAILS -->
+        <div id="bankDetails" class="payment-details">
+
+            <h3>Bank Transfer Instructions</h3>
+
+            <p>
+                <strong>Bank:</strong>
+                <span class="placeholder">ADD YOUR BANK NAME</span>
+            </p>
+
+            <p>
+                <strong>Account Name:</strong>
+                <span class="placeholder">ADD YOUR ACCOUNT NAME</span>
+            </p>
+
+            <p>
+                <strong>Account Number:</strong>
+                <span class="placeholder">ADD YOUR ACCOUNT NUMBER</span>
+            </p>
+
+            <p>
+                <strong>Branch:</strong>
+                <span class="placeholder">ADD YOUR BRANCH</span>
+            </p>
+
+            <p class="notice">
+                After making the transfer, keep your payment confirmation.
+                Your order will be reviewed and confirmed by the Atelier.
+            </p>
+
+        </div>
+
+
+        <!-- PAYPAL DETAILS -->
+        <div id="paypalDetails" class="payment-details">
+
+            <h3>PayPal</h3>
+
+            <p>
+                PayPal account:
+                <span class="placeholder">ADD YOUR PAYPAL EMAIL</span>
+            </p>
+
+            <p class="notice">
+                Your PayPal payment information will be matched with your
+                Atelier order before the order is confirmed.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- FINAL SUBMISSION -->
+    <section class="card">
+
+        <h2>Confirm Order</h2>
+
+        <p class="notice">
+            By submitting this order, you are confirming the information
+            provided above. Payment confirmation and order approval will
+            be handled by the Atelier.
+        </p>
+
+        <div class="buttons">
+
+            <button
+                type="button"
+                class="submit-btn"
+                id="submitButton"
+                onclick="submitOrder()"
+            >
+                Submit Order
+            </button>
+
+            <a href="javascript:history.back()" class="back-btn">
+                ← Back
+            </a>
+
+        </div>
+
+        <p id="submitMessage" class="notice"></p>
+
+    </section>
+
+</div>
+
+
+<script>
+
+/* =========================================================
+   UNIVERSAL PAYMENT PAGE
+   ========================================================= */
+
+
+/*
+   BACKEND CONNECTION
+*/
+
+const BACKEND_URL =
+    "https://alis-art-aura-backend.onrender.com";
+
+
+/*
+   These are the order keys currently used by the Atelier.
+
+   Some pages use currentOrder.
+   Others have their own dedicated key.
+*/
+
+const ORDER_KEYS = [
+    "currentOrder",
+
+    "wearableArtOrder",
+    "creativePublicationsOrder",
+    "personalizedWordsOrder",
+    "meaningfulDecorOrder",
+    "literaryArtOrder",
+    "fashionDesignOrder",
+    "customStyleOrder",
+    "customSpaceOrder",
+    "accessoryOrder",
+    "artisticDisplayOrder",
+    "booksWrittenWorksOrder"
+];
+
+
+/* ---------------------------------------------------------
+   FIND THE ACTIVE ORDER
+--------------------------------------------------------- */
+
+function getActiveOrder() {
+
+    for (const key of ORDER_KEYS) {
+
+        const saved = localStorage.getItem(key);
+
+        if (!saved) continue;
+
+        try {
+
+            const order = JSON.parse(saved);
+
+            if (order && typeof order === "object") {
+
+                return {
+                    key: key,
+                    order: order
+                };
+
+            }
+
+        } catch (error) {
+
+            console.warn("Could not read order:", key, error);
+
+        }
+
+    }
+
+    return null;
+}
+
+
+const activeOrderData = getActiveOrder();
+
+let activeOrder = activeOrderData
+    ? activeOrderData.order
+    : null;
+
+let activeOrderKey = activeOrderData
+    ? activeOrderData.key
+    : null;
+
+let selectedPayment = "";
+
+
+/* ---------------------------------------------------------
+   PAGE START
+--------------------------------------------------------- */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    if (!activeOrder) {
+
+        showEmptyState();
+
+        return;
+
+    }
+
+    displayOrder(activeOrder);
+
+    fillCustomerInformation(activeOrder);
+
+});
+
+
+/* ---------------------------------------------------------
+   EMPTY ORDER
+--------------------------------------------------------- */
+
+function showEmptyState() {
+
+    document.getElementById("orderCard").innerHTML = `
+        <div class="empty-state">
+            <h2>No Order Found</h2>
+
+            <p>
+                We couldn't find an active order.
+                Please return to the product or service page
+                and begin your order again.
+            </p>
+
+            <div class="buttons">
+                <a href="index.html" class="back-btn">
+                    Return to Atelier
+                </a>
+            </div>
+        </div>
+    `;
+
+}
+
+
+/* ---------------------------------------------------------
+   GET SERVICE / PRODUCT NAME
+--------------------------------------------------------- */
+
+function getOrderName(order) {
+
+    return (
+        order.service ||
+        order.product ||
+        order.category ||
+        order.fashionItem ||
+        order.accessory ||
+        order.work ||
+        order.publication ||
+        order.artwork ||
+        order.illustration ||
+        order.portrait ||
+        order.projectName ||
+        "Atelier Order"
+    );
+
+}
+
+
+/* ---------------------------------------------------------
+   GET CUSTOMER
+--------------------------------------------------------- */
+
+function getCustomerName(order) {
+
+    return (
+        order.customerName ||
+        order.fullName ||
+        order.name ||
+        (order.customer && order.customer.fullName) ||
+        ""
+    );
+
+}
+
+
+function getCustomerEmail(order) {
+
+    return (
+        order.customerEmail ||
+        order.email ||
+        (order.customer && order.customer.email) ||
+        ""
+    );
+
+}
+
+
+function getCustomerPhone(order) {
+
+    return (
+        order.customerPhone ||
+        order.phone ||
+        (order.customer && order.customer.phone) ||
+        ""
+    );
+
+}
+
+
+function getCustomerAddress(order) {
+
+    return (
+        order.customerAddress ||
+        order.address ||
+        order.deliveryAddress ||
+        (order.customer && order.customer.address) ||
+        ""
+    );
+
+}
+
+
+/* ---------------------------------------------------------
+   DETERMINE PRICE TYPE
+--------------------------------------------------------- */
+
+function getPriceType(order) {
+
+    const pricingType =
+        String(order.pricingType || "").toLowerCase();
+
+    const status =
+        String(order.status || "").toLowerCase();
+
+    const total = order.total;
+
+    const totalPrice = order.totalPrice;
+
+    const hasCustomPricing =
+        pricingType.includes("custom quotation") ||
+        pricingType.includes("quotation") ||
+        status.includes("awaiting quotation") ||
+        status.includes("awaiting project review") ||
+        status.includes("awaiting gift") ||
+        status.includes("awaiting premium") ||
+        status.includes("awaiting review");
+
+    if (hasCustomPricing) {
+
+        return "quote";
+
+    }
+
+
+    if (
+        typeof total === "string" &&
+        total.toLowerCase().includes("price to be calculated")
+    ) {
+
+        return "calculate";
+
+    }
+
+
+    if (
+        typeof totalPrice === "string" &&
+        totalPrice.toLowerCase().includes("price to be calculated")
+    ) {
+
+        return "calculate";
+
+    }
+
+
+    if (
+        typeof total === "number" &&
+        total > 0
+    ) {
+
+        return "fixed";
+
+    }
+
+
+    if (
+        typeof totalPrice === "number" &&
+        totalPrice > 0
+    ) {
+
+        return "fixed";
+
+    }
+
+
+    /*
+       Some fixed-price orders may use unitPrice.
+       If quantity exists, calculate the total.
+    */
+
+    if (
+        typeof order.unitPrice === "number" &&
+        order.unitPrice > 0
+    ) {
+
+        return "fixed";
+
+    }
+
+
+    return "quote";
+
+}
+
+
+/* ---------------------------------------------------------
+   GET NUMERIC TOTAL
+--------------------------------------------------------- */
+
+function getNumericTotal(order) {
+
+    if (
+        typeof order.total === "number" &&
+        order.total > 0
+    ) {
+
+        return order.total;
+
+    }
+
+
+    if (
+        typeof order.totalPrice === "number" &&
+        order.totalPrice > 0
+    ) {
+
+        return order.totalPrice;
+
+    }
+
+
+    if (
+        typeof order.unitPrice === "number" &&
+        order.unitPrice > 0
+    ) {
+
+        const quantity =
+            Number(order.quantity) || 1;
+
+        return order.unitPrice * quantity;
+
+    }
+
+
+    return null;
+
+}
+
+
+/* ---------------------------------------------------------
+   FORMAT MONEY
+--------------------------------------------------------- */
+
+function formatMoney(amount) {
+
+    return "JMD $" + Number(amount).toLocaleString();
+
+}
+
+
+/* ---------------------------------------------------------
+   DISPLAY ORDER
+--------------------------------------------------------- */
+
+function displayOrder(order) {
+
+    const summary =
+        document.getElementById("orderSummary");
+
+    const name =
+        getOrderName(order);
+
+    const priceType =
+        getPriceType(order);
+
+    let html = "";
+
+
+    addRow(
+        "Order",
+        name,
+        value => {
+            html += value;
+        }
+    );
+
+
+    if (order.category) {
+
+        html += `
+            <div class="row">
+                <span class="label">Category</span>
+                <span class="value">
+                    ${escapeHTML(order.category)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.service && order.service !== name) {
+
+        html += `
+            <div class="row">
+                <span class="label">Service</span>
+                <span class="value">
+                    ${escapeHTML(order.service)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.package) {
+
+        html += `
+            <div class="row">
+                <span class="label">Package</span>
+                <span class="value">
+                    ${escapeHTML(order.package)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.format) {
+
+        html += `
+            <div class="row">
+                <span class="label">Format</span>
+                <span class="value">
+                    ${escapeHTML(order.format)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.size) {
+
+        html += `
+            <div class="row">
+                <span class="label">Size</span>
+                <span class="value">
+                    ${escapeHTML(order.size)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.quantity) {
+
+        html += `
+            <div class="row">
+                <span class="label">Quantity</span>
+                <span class="value">
+                    ${escapeHTML(String(order.quantity))}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.designDirection) {
+
+        html += `
+            <div class="row">
+                <span class="label">Design Direction</span>
+                <span class="value">
+                    ${escapeHTML(order.designDirection)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.finish) {
+
+        html += `
+            <div class="row">
+                <span class="label">Finish</span>
+                <span class="value">
+                    ${escapeHTML(order.finish)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.colour) {
+
+        html += `
+            <div class="row">
+                <span class="label">Colour</span>
+                <span class="value">
+                    ${escapeHTML(order.colour)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.material) {
+
+        html += `
+            <div class="row">
+                <span class="label">Material</span>
+                <span class="value">
+                    ${escapeHTML(order.material)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.presentation) {
+
+        html += `
+            <div class="row">
+                <span class="label">Presentation</span>
+                <span class="value">
+                    ${escapeHTML(order.presentation)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.tier) {
+
+        html += `
+            <div class="row">
+                <span class="label">Tier</span>
+                <span class="value">
+                    ${escapeHTML(order.tier)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    if (order.status) {
+
+        html += `
+            <div class="row">
+                <span class="label">Order Status</span>
+                <span class="value">
+                    ${escapeHTML(order.status)}
+                </span>
+            </div>
+        `;
+
+    }
+
+
+    summary.innerHTML = html;
+
+
+    /* TOTAL */
+
+    const totalBox =
+        document.getElementById("totalBox");
+
+    if (priceType === "fixed") {
+
+        const total =
+            getNumericTotal(order);
+
+        if (total !== null) {
+
+            totalBox.innerHTML = `
+                <div class="total-label">
+                    Order Total
+                </div>
+
+                <div class="total">
+                    ${formatMoney(total)}
+                </div>
+            `;
+
+        }
+
+    }
+    else if (priceType === "calculate") {
+
+        totalBox.innerHTML = `
+            <div class="total-label">
+                Pricing Status
+            </div>
+
+            <div class="quote-status">
+                Price To Be Calculated
+            </div>
+
+            <p class="notice">
+                The Atelier will review your order and confirm
+                the final price before production.
+            </p>
+        `;
+
+    }
+    else {
+
+        totalBox.innerHTML = `
+            <div class="total-label">
+                Pricing Status
+            </div>
+
+            <div class="quote-status">
+                Custom Quotation
+            </div>
+
+            <p class="notice">
+                Your project requires a custom quotation.
+                The Atelier will review your request and
+                confirm the final price.
+            </p>
+        `;
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SMALL HELPER
+--------------------------------------------------------- */
+
+function addRow(label, value, callback) {
+
+    callback(`
+        <div class="row">
+            <span class="label">
+                ${escapeHTML(label)}
+            </span>
+
+            <span class="value">
+                ${escapeHTML(value)}
+            </span>
+        </div>
+    `);
+
+}
+
+
+/* ---------------------------------------------------------
+   CUSTOMER INFORMATION
+--------------------------------------------------------- */
+
+function fillCustomerInformation(order) {
+
+    document.getElementById("customerName").value =
+        getCustomerName(order);
+
+    document.getElementById("customerEmail").value =
+        getCustomerEmail(order);
+
+    document.getElementById("customerPhone").value =
+        getCustomerPhone(order);
+
+    document.getElementById("customerAddress").value =
+        getCustomerAddress(order);
+
+}
+
+
+/* ---------------------------------------------------------
+   PAYMENT SELECTION
+--------------------------------------------------------- */
+
+function selectPayment(method) {
+
+    selectedPayment = method;
+
+
+    document
+        .getElementById("bankOption")
+        .classList.remove("selected");
+
+    document
+        .getElementById("paypalOption")
+        .classList.remove("selected");
+
+
+    document
+        .getElementById("bankDetails")
+        .classList.remove("active");
+
+    document
+        .getElementById("paypalDetails")
+        .classList.remove("active");
+
+
+    if (method === "bank") {
+
+        document
+            .getElementById("bankOption")
+            .classList.add("selected");
+
+        document
+            .getElementById("bankDetails")
+            .classList.add("active");
+
+    }
+
+
+    if (method === "paypal") {
+
+        document
+            .getElementById("paypalOption")
+            .classList.add("selected");
+
+        document
+            .getElementById("paypalDetails")
+            .classList.add("active");
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   CREATE ORDER TYPE
+--------------------------------------------------------- */
+
+function getBackendOrderType(order) {
+
+    const priceType = getPriceType(order);
+
+    if (priceType === "quote") {
+        return "custom_quotation";
+    }
+
+    if (priceType === "calculate") {
+        return "price_to_be_calculated";
+    }
+
+    return (
+        order.orderType ||
+        order.order_type ||
+        "standard"
+    );
+
+}
+
+
+/* ---------------------------------------------------------
+   CREATE ORDER ITEMS
+--------------------------------------------------------- */
+
+function getBackendItems(order) {
+
+    const total =
+        getNumericTotal(order);
+
+    const quantity =
+        Number(order.quantity) || 1;
+
+    return [
+        {
+            product_name: getOrderName(order),
+            product_category:
+                order.category ||
+                order.service ||
+                "Atelier",
+            quantity: quantity,
+            unit_price:
+                typeof order.unitPrice === "number"
+                    ? order.unitPrice
+                    : (
+                        total !== null
+                            ? total / quantity
+                            : null
+                    ),
+            total_price: total,
+            options: {
+                package: order.package || null,
+                format: order.format || null,
+                size: order.size || null,
+                designDirection:
+                    order.designDirection || null,
+                finish: order.finish || null,
+                colour: order.colour || null,
+                material: order.material || null,
+                presentation:
+                    order.presentation || null,
+                tier: order.tier || null
+            }
+        }
+    ];
+
+}
+
+
+/* ---------------------------------------------------------
+   CREATE CUSTOMER NOTES
+--------------------------------------------------------- */
+
+function getCustomerNotes(order) {
+
+    const notes = {
+        source: "payment.html",
+        originalOrderKey: activeOrderKey,
+        orderName: getOrderName(order),
+        originalOrder: order
+    };
+
+    return JSON.stringify(notes);
+
+}
+
+
+/* ---------------------------------------------------------
+   SUBMIT ORDER
+--------------------------------------------------------- */
+
+async function submitOrder() {
+
+    const name =
+        document.getElementById("customerName").value.trim();
+
+    const email =
+        document.getElementById("customerEmail").value.trim();
+
+    const phone =
+        document.getElementById("customerPhone").value.trim();
+
+    const address =
+        document.getElementById("customerAddress").value.trim();
+
+    const message =
+        document.getElementById("submitMessage");
+
+    const submitButton =
+        document.getElementById("submitButton");
+
+
+    message.textContent = "";
+
+
+    if (!activeOrder) {
+
+        message.textContent =
+            "No active order was found.";
+
+        return;
+
+    }
+
+
+    if (!name) {
+
+        message.textContent =
+            "Please enter your full name.";
+
+        return;
+
+    }
+
+
+    if (!email) {
+
+        message.textContent =
+            "Please enter your email address.";
+
+        return;
+
+    }
+
+
+    if (!selectedPayment) {
+
+        message.textContent =
+            "Please select Bank Transfer or PayPal.";
+
+        return;
+
+    }
+
+
+    /*
+       Add/refresh customer information.
+    */
+
+    activeOrder.paymentMethod =
+        selectedPayment === "bank"
+            ? "Bank Transfer"
+            : "PayPal";
+
+    activeOrder.paymentStatus =
+        "Payment Method Selected";
+
+    activeOrder.customerName =
+        name;
+
+    activeOrder.customerEmail =
+        email;
+
+    activeOrder.customerPhone =
+        phone;
+
+    activeOrder.customerAddress =
+        address;
+
+    activeOrder.paymentPageCompleted =
+        true;
+
+    activeOrder.paymentSubmittedAt =
+        new Date().toISOString();
+
+
+    /*
+       Save locally first.
+    */
+
+    localStorage.setItem(
+        activeOrderKey,
+        JSON.stringify(activeOrder)
+    );
+
+
+    /*
+       Prevent duplicate submissions.
+    */
+
+    submitButton.disabled = true;
+
+    submitButton.textContent =
+        "Submitting Order...";
+
+
+    /*
+       Prepare backend data.
+    */
+
+    const numericTotal =
+        getNumericTotal(activeOrder);
+
+    const orderType =
+        getBackendOrderType(activeOrder);
+
+    const payload = {
+
+        full_name: name,
+
+        email: email,
+
+        phone: phone || null,
+
+        address: address || null,
+
+        order_type: orderType,
+
+        total_amount:
+            numericTotal !== null
+                ? numericTotal
+                : null,
+
+        currency: "JMD",
+
+        payment_method:
+            activeOrder.paymentMethod,
+
+        customer_notes:
+            getCustomerNotes(activeOrder),
+
+        items:
+            getBackendItems(activeOrder)
+
+    };
+
+
+    try {
+
+        const response =
+            await fetch(
+                `${BACKEND_URL}/api/orders/guest`,
+                {
+                    method: "POST",
+
+                    headers: {
+                        "Content-Type":
+                            "application/json"
+                    },
+
+                    body:
+                        JSON.stringify(payload)
+                }
+            );
+
+
+        let result = null;
+
+        try {
+
+            result =
+                await response.json();
+
+        } catch (jsonError) {
+
+            result = null;
+
+        }
+
+
+        if (!response.ok || !result || !result.success) {
+
+            const backendError =
+                result && result.error
+                    ? result.error
+                    : `Server returned status ${response.status}.`;
+
+            throw new Error(backendError);
+
+        }
+
+
+        /*
+           Save backend order information locally.
+        */
+
+        if (result.order) {
+
+            activeOrder.backendOrderId =
+                result.order.id || null;
+
+            activeOrder.orderNumber =
+                result.order.order_number || null;
+
+            activeOrder.backendSubmitted =
+                true;
+
+            activeOrder.backendSubmittedAt =
+                new Date().toISOString();
+
+            localStorage.setItem(
+                activeOrderKey,
+                JSON.stringify(activeOrder)
+            );
+
+        }
+
+
+        /*
+           SUCCESS MESSAGE
+        */
+
+        const orderNumber =
+            result.order &&
+            result.order.order_number
+                ? result.order.order_number
+                : "Your order";
+
+
+        if (selectedPayment === "bank") {
+
+            message.innerHTML = `
+                <span class="important">
+                    Order submitted successfully.
+                </span>
+                <br><br>
+                <strong>Order Number:</strong>
+                ${escapeHTML(orderNumber)}
+                <br><br>
+                Please complete your bank transfer using
+                the bank information above. Keep your
+                payment confirmation for order verification.
+            `;
+
+        }
+        else {
+
+            message.innerHTML = `
+                <span class="important">
+                    Order submitted successfully.
+                </span>
+                <br><br>
+                <strong>Order Number:</strong>
+                ${escapeHTML(orderNumber)}
+                <br><br>
+                PayPal has been selected. The actual PayPal
+                payment connection will be activated once
+                the PayPal account/integration is added.
+            `;
+
+        }
+
+
+        submitButton.textContent =
+            "Order Submitted";
+
+    }
+    catch (error) {
+
+        console.error(
+            "Backend order submission error:",
+            error
+        );
+
+
+        message.innerHTML = `
+            <span class="important">
+                Your order could not be submitted yet.
+            </span>
+            <br><br>
+            ${escapeHTML(error.message)}
+            <br><br>
+            Your order information is still saved on
+            this device. Please try submitting again.
+        `;
+
+
+        submitButton.disabled = false;
+
+        submitButton.textContent =
+            "Submit Order";
+
+    }
+
+}
+
+
+/* ---------------------------------------------------------
+   SECURITY / DISPLAY HELPER
+--------------------------------------------------------- */
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+</script>
+
+</body>
+</html>

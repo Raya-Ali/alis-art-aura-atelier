@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Creative Publications | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #000000;
+            color: #ffffff;
+            margin: 0;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 35px 20px;
+            margin: 25px auto 35px;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 32px;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .hero-description {
+            margin: 0 auto !important;
+            max-width: 600px !important;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .publication-gallery {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 20px 30px;
+            scroll-behavior: smooth;
+        }
+
+        .publication-gallery::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .publication-gallery::-webkit-scrollbar-thumb {
+            background: #3533CD;
+            border-radius: 10px;
+        }
+
+        .publication-card {
+            min-width: 260px;
+            max-width: 260px;
+            flex-shrink: 0;
+            background: #111111;
+            border: 1px solid #333333;
+            border-radius: 12px;
+            overflow: hidden;
+            box-sizing: border-box;
+        }
+
+        .publication-card img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .publication-card-content {
+            padding: 18px;
+        }
+
+        .publication-card h2 {
+            margin: 0 0 10px;
+            font-size: 20px;
+            color: #ffffff;
+        }
+
+        .publication-card p {
+            margin: 0 0 16px;
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .explore-btn {
+            display: inline-block;
+            padding: 10px 18px;
+            border: 1px solid #C90DEA;
+            border-radius: 25px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            transition: 0.3s ease;
+        }
+
+        .explore-btn:hover {
+            background: #C90DEA;
+            box-shadow: 0 0 15px rgba(201, 13, 234, 0.5);
+        }
+
+        .order-section {
+            max-width: 700px;
+            margin: 45px auto;
+            padding: 25px 20px;
+            box-sizing: border-box;
+        }
+
+        .order-section h2 {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 26px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            color: #dddddd;
+            font-size: 14px;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            box-sizing: border-box;
+            background: #111111;
+            color: #ffffff;
+            border: 1px solid #444444;
+            border-radius: 6px;
+            font-size: 15px;
+        }
+
+        .form-group textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        .total-box {
+            margin: 25px 0;
+            padding: 18px;
+            background: #111111;
+            border: 1px solid #3533CD;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .total-box span {
+            color: #FF66C4;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .order-preview {
+            margin-top: 20px;
+            padding: 15px;
+            background: #0d0d0d;
+            border-left: 3px solid #C90DEA;
+            color: #cccccc;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        .payment-btn {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 7px;
+            background: linear-gradient(90deg, #C90DEA, #3533CD);
+            color: #ffffff;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+
+        .payment-btn:hover {
+            box-shadow: 0 0 18px rgba(201, 13, 234, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="who-we-are.html">Who We Are</a>
+            <a href="what-we-create.html">What We Create</a>
+            <a href="custom-orders.html">Custom Orders</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+
+    <section class="hero">
+        <h1>Creative Publications</h1>
+
+        <p class="hero-description">
+            Curated creative works, collections and publications
+            <br>
+            created to bring ideas, expression and artistry together.
+        </p>
+    </section>
+
+
+    <section class="publication-gallery">
+
+        <div class="publication-card">
+            <img src="images/creative-publication-1.png" alt="Creative Publication I">
+
+            <div class="publication-card-content">
+                <h2>Creative Publication I</h2>
+
+                <p>
+                    A curated creative publication bringing together
+                    original ideas, expression and artistic perspective.
+                </p>
+
+                <a href="#order" class="explore-btn">Explore →</a>
+            </div>
+        </div>
+
+
+        <div class="publication-card">
+            <img src="images/creative-publication-2.png" alt="Creative Publication II">
+
+            <div class="publication-card-content">
+                <h2>Creative Publication II</h2>
+
+                <p>
+                    A collection created around a distinct creative
+                    theme, presented as an artistic publication.
+                </p>
+
+                <a href="#order" class="explore-btn">Explore →</a>
+            </div>
+        </div>
+
+
+        <div class="publication-card">
+            <img src="images/creative-publication-3.png" alt="Creative Publication III">
+
+            <div class="publication-card-content">
+                <h2>Creative Publication III</h2>
+
+                <p>
+                    Original creative material gathered into a
+                    finished publication for reading and keeping.
+                </p>
+
+                <a href="#order" class="explore-btn">Explore →</a>
+            </div>
+        </div>
+
+
+        <div class="publication-card">
+            <img src="images/creative-publication-4.png" alt="Creative Publication IV">
+
+            <div class="publication-card-content">
+                <h2>Creative Publication IV</h2>
+
+                <p>
+                    A carefully presented creative collection
+                    combining ideas, words and artistic expression.
+                </p>
+
+                <a href="#order" class="explore-btn">Explore →</a>
+            </div>
+        </div>
+
+
+        <div class="publication-card">
+            <img src="images/creative-publication-5.png" alt="Creative Publication V">
+
+            <div class="publication-card-content">
+                <h2>Creative Publication V</h2>
+
+                <p>
+                    A special publication designed around an
+                    original creative concept.
+                </p>
+
+                <a href="#order" class="explore-btn">Explore →</a>
+            </div>
+        </div>
+
+
+        <div class="publication-card">
+            <img src="images/creative-publication-6.png" alt="Creative Publication VI">
+
+            <div class="publication-card-content">
+                <h2>Creative Publication VI</h2>
+
+                <p>
+                    An original collection presented as a finished
+                    creative publication.
+                </p>
+
+                <a href="#order" class="explore-btn">Explore →</a>
+            </div>
+        </div>
+
+    </section>
+
+
+    <section class="order-section" id="order">
+
+        <h2>Order a Creative Publication</h2>
+
+        <div class="form-group">
+            <label for="publication">Select Publication</label>
+
+            <select id="publication" onchange="updateOrder()">
+                <option value="">Choose a publication</option>
+                <option value="Creative Publication I">Creative Publication I</option>
+                <option value="Creative Publication II">Creative Publication II</option>
+                <option value="Creative Publication III">Creative Publication III</option>
+                <option value="Creative Publication IV">Creative Publication IV</option>
+                <option value="Creative Publication V">Creative Publication V</option>
+                <option value="Creative Publication VI">Creative Publication VI</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="format">Format</label>
+
+            <select id="format" onchange="updateOrder()">
+                <option value="">Choose a format</option>
+                <option value="Digital">Digital</option>
+                <option value="Print">Print</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <label for="quantity">Quantity</label>
+
+            <input
+                type="number"
+                id="quantity"
+                min="1"
+                value="1"
+                onchange="updateOrder()"
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label for="fullName">Full Name</label>
+
+            <input
+                type="text"
+                id="fullName"
+                placeholder="Your full name"
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label for="email">Email</label>
+
+            <input
+                type="email"
+                id="email"
+                placeholder="Your email address"
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label for="phone">Phone</label>
+
+            <input
+                type="tel"
+                id="phone"
+                placeholder="Your phone number"
+            >
+        </div>
+
+
+        <div class="form-group">
+            <label for="address">Address</label>
+
+            <textarea
+                id="address"
+                placeholder="Delivery address"
+            ></textarea>
+        </div>
+
+
+        <div class="total-box">
+            Total:
+            <span id="total">JMD 0</span>
+        </div>
+
+
+        <div class="order-preview" id="orderPreview">
+            Select a publication and format to see your order.
+        </div>
+
+
+        <button class="payment-btn" onclick="continueToPayment()">
+            Continue to Payment
+        </button>
+
+    </section>
+
+
+    <script>
+        const prices = {
+            "Creative Publication I": {
+                "Digital": 2000,
+                "Print": 3000
+            },
+
+            "Creative Publication II": {
+                "Digital": 2500,
+                "Print": 3500
+            },
+
+            "Creative Publication III": {
+                "Digital": 3000,
+                "Print": 4000
+            },
+
+            "Creative Publication IV": {
+                "Digital": 3500,
+                "Print": 4500
+            },
+
+            "Creative Publication V": {
+                "Digital": 4000,
+                "Print": 5000
+            },
+
+            "Creative Publication VI": {
+                "Digital": 4500,
+                "Print": 5500
+            }
+        };
+
+
+        function updateOrder() {
+
+            const publication =
+                document.getElementById("publication").value;
+
+            const format =
+                document.getElementById("format").value;
+
+            const quantity =
+                parseInt(document.getElementById("quantity").value) || 1;
+
+            const totalElement =
+                document.getElementById("total");
+
+            const preview =
+                document.getElementById("orderPreview");
+
+
+            if (!publication || !format) {
+
+                totalElement.textContent = "JMD 0";
+
+                preview.textContent =
+                    "Select a publication and format to see your order.";
+
+                return;
+            }
+
+
+            const unitPrice =
+                prices[publication][format];
+
+            const total =
+                unitPrice * quantity;
+
+
+            totalElement.textContent =
+                "JMD " + total.toLocaleString();
+
+
+            preview.innerHTML =
+                "<strong>Order Preview</strong><br>" +
+                publication +
+                "<br>" +
+                format +
+                "<br>" +
+                "Quantity: " + quantity +
+                "<br>" +
+                "Unit Price: JMD " +
+                unitPrice.toLocaleString() +
+                "<br>" +
+                "Total: JMD " +
+                total.toLocaleString();
+        }
+
+
+        function continueToPayment() {
+
+            const publication =
+                document.getElementById("publication").value;
+
+            const format =
+                document.getElementById("format").value;
+
+            const quantity =
+                parseInt(document.getElementById("quantity").value) || 1;
+
+            const fullName =
+                document.getElementById("fullName").value.trim();
+
+            const email =
+                document.getElementById("email").value.trim();
+
+            const phone =
+                document.getElementById("phone").value.trim();
+
+            const address =
+                document.getElementById("address").value.trim();
+
+
+            if (
+                !publication ||
+                !format ||
+                !fullName ||
+                !email
+            ) {
+                alert(
+                    "Please select a publication and format and enter your name and email."
+                );
+
+                return;
+            }
+
+
+            const unitPrice =
+                prices[publication][format];
+
+            const total =
+                unitPrice * quantity;
+
+
+            const order = {
+
+                category: "Creative Publications",
+
+                publication: publication,
+
+                format: format,
+
+                quantity: quantity,
+
+                unitPrice: unitPrice,
+
+                total: total,
+
+                fullName: fullName,
+
+                email: email,
+
+                phone: phone,
+
+                address: address
+
+            };
+
+
+            localStorage.setItem(
+                "creativePublicationsOrder",
+                JSON.stringify(order)
+            );
+
+
+            window.location.href = "payment.html";
+        }
+    </script>
+
+</body>
+
+</html>

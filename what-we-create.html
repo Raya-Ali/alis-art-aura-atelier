@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>What We Create | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(201, 13, 234, 0.25), transparent 30%),
+                radial-gradient(circle at 85% 70%, rgba(51, 206, 239, 0.20), transparent 30%),
+                linear-gradient(135deg, #000000, #3533CD);
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            min-height: calc(100vh - 70px);
+            padding: 80px 30px;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: 0 auto 60px;
+            text-align: center;
+        }
+
+        .brand {
+            color: #C90DEA;
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            font-size: 19px;
+            line-height: 1.7;
+            color: #f1f1f1;
+        }
+
+        .categories {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .category-button {
+            min-height: 180px;
+            padding: 35px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            font-size: 24px;
+            letter-spacing: 1px;
+            background: rgba(0, 0, 0, 0.65);
+            transition: 0.3s;
+        }
+
+        .category-button:nth-child(1) {
+            border: 1px solid #C90DEA;
+            box-shadow: 0 0 15px rgba(201, 13, 234, 0.35);
+        }
+
+        .category-button:nth-child(2) {
+            border: 1px solid #33CEEF;
+            box-shadow: 0 0 15px rgba(51, 206, 239, 0.35);
+        }
+
+        .category-button:nth-child(3) {
+            border: 1px solid #FF66C4;
+            box-shadow: 0 0 15px rgba(255, 102, 196, 0.30);
+        }
+
+        .category-button:nth-child(4) {
+            border: 1px solid #C90DEA;
+            box-shadow: 0 0 15px rgba(201, 13, 234, 0.35);
+        }
+
+        .category-button:nth-child(5) {
+            border: 1px solid #33CEEF;
+            box-shadow: 0 0 15px rgba(51, 206, 239, 0.35);
+        }
+
+        .category-button:nth-child(6) {
+            border: 1px solid #FF66C4;
+            box-shadow: 0 0 15px rgba(255, 102, 196, 0.30);
+        }
+
+        .category-button:nth-child(7) {
+            border: 1px solid #C90DEA;
+            box-shadow: 0 0 15px rgba(201, 13, 234, 0.35);
+        }
+
+        .category-button:nth-child(8) {
+            border: 1px solid #33CEEF;
+            box-shadow: 0 0 15px rgba(51, 206, 239, 0.35);
+        }
+
+        .category-button:hover {
+            transform: translateY(-5px);
+            background: rgba(0, 0, 0, 0.9);
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 55px auto 0;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 700px) {
+
+            .categories {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .page {
+                padding: 60px 20px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- WHAT WE CREATE -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                What We Create
+            </h1>
+
+            <p>
+                From original artwork to meaningful gifts, beautiful spaces,
+                wearable art and custom creations, the Atelier brings
+                imagination, emotion and expression into tangible form.
+            </p>
+
+        </div>
+
+
+        <div class="categories">
+
+            <a href="original-art.html" class="category-button">
+                Original Art
+            </a>
+
+            <a href="digital-art.html" class="category-button">
+                Digital Art & Prints
+            </a>
+
+            <a href="gifts-keepsakes.html" class="category-button">
+                Gifts & Keepsakes
+            </a>
+
+            <a href="home-decor.html" class="category-button">
+                Home & Décor
+            </a>
+
+            <a href="style-wearables.html" class="category-button">
+                Style & Wearables
+            </a>
+
+            <a href="literature-publications.html" class="category-button">
+                Literature & Publications
+            </a>
+
+            <a href="custom-creations.html" class="category-button">
+                Custom Creations
+            </a>
+
+            <a href="creative-services.html" class="category-button">
+                Creative Services
+            </a>
+
+        </div>
+
+
+        <a href="index.html" class="back-button">
+            Back Home
+        </a>
+
+    </main>
+
+</body>
+
+</html>

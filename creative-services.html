@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Creative Services | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(51, 206, 239, 0.16), transparent 28%),
+                radial-gradient(circle at 85% 80%, rgba(255, 102, 196, 0.14), transparent 30%),
+                #000000;
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 85px 30px;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 75px;
+        }
+
+        .brand {
+            color: #C90DEA;
+            font-size: 17px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 28px;
+        }
+
+        .intro p {
+            max-width: 760px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #dddddd;
+        }
+
+        .services-grid {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.1fr 0.9fr 1fr;
+            gap: 22px;
+            align-items: stretch;
+        }
+
+        .service-card {
+            padding: 32px;
+            background: #050505;
+            transition: 0.3s;
+        }
+
+        .service-card:nth-child(1) {
+            grid-column: span 2;
+            min-height: 300px;
+            border: 1px solid #C90DEA;
+        }
+
+        .service-card:nth-child(2) {
+            min-height: 360px;
+            margin-top: 35px;
+            border: 1px solid #33CEEF;
+        }
+
+        .service-card:nth-child(3) {
+            min-height: 340px;
+            border: 1px solid #FF66C4;
+        }
+
+        .service-card:nth-child(4) {
+            grid-column: span 2;
+            min-height: 300px;
+            margin-top: -30px;
+            border: 1px solid #C90DEA;
+        }
+
+        .service-card:nth-child(5) {
+            min-height: 290px;
+            border: 1px solid #33CEEF;
+        }
+
+        .service-card:nth-child(6) {
+            min-height: 320px;
+            margin-top: 25px;
+            border: 1px solid #FF66C4;
+        }
+
+        .service-card:nth-child(7) {
+            min-height: 280px;
+            border: 1px solid #C90DEA;
+        }
+
+        .service-card:nth-child(8) {
+            grid-column: span 2;
+            min-height: 330px;
+            margin-top: -20px;
+            border: 1px solid #33CEEF;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .service-card h2 {
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            line-height: 1.75;
+            color: #d5d5d5;
+        }
+
+        .service-link {
+            display: inline-block;
+            margin-top: 22px;
+            color: #33CEEF;
+            text-decoration: none;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .service-link:hover {
+            color: #FF66C4;
+        }
+
+        .statement {
+            max-width: 850px;
+            margin: 90px auto 0;
+            padding: 35px;
+            border-top: 1px solid #3533CD;
+            border-bottom: 1px solid #3533CD;
+            font-size: 28px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 60px auto 0;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 800px) {
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .service-card:nth-child(1),
+            .service-card:nth-child(4),
+            .service-card:nth-child(8) {
+                grid-column: span 1;
+            }
+
+            .service-card:nth-child(2),
+            .service-card:nth-child(4),
+            .service-card:nth-child(6),
+            .service-card:nth-child(8) {
+                margin-top: 0;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+
+            .page {
+                padding: 60px 20px;
+            }
+
+            .statement {
+                font-size: 23px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- CREATIVE SERVICES -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Creative Services
+            </h1>
+
+            <p>
+                Creative support for ideas that need to become something
+                real — visual, digital, personal, polished and ready
+                to be experienced.
+            </p>
+
+        </div>
+
+
+        <div class="services-grid">
+
+            <article class="service-card">
+
+                <h2>
+                    Brand & Visual Identity
+                </h2>
+
+                <p>
+                    Creative visual direction for brands, businesses
+                    and personal projects that need a distinctive identity.
+                </p>
+
+                <a href="brand-visual-identity.html" class="service-link">
+                    Explore →
+                </a>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <h2>
+                    Website & Digital Design
+                </h2>
+
+                <p>
+                    Creative digital experiences designed to communicate
+                    ideas clearly while maintaining personality and style.
+                </p>
+
+                <a href="website-digital-design.html" class="service-link">
+                    Explore →
+                </a>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <h2>
+                    Graphic Design
+                </h2>
+
+                <p>
+                    Visual designs for promotional materials,
+                    publications, presentations and creative projects.
+                </p>
+
+                <a href="graphic-design.html" class="service-link">
+                    Explore →
+                </a>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <h2>
+                    Creative Direction
+                </h2>
+
+                <p>
+                    Helping shape the visual concept, mood, presentation
+                    and creative direction behind an idea.
+                </p>
+
+                <a href="creative-direction.html" class="service-link">
+                    Explore →
+                </a>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <h2>
+                    Personalization
+                </h2>
+
+                <p>
+                    Adding names, messages, artwork and meaningful
+                    details to make a creation distinctly yours.
+                </p>
+
+                <a href="personalization.html" class="service-link">
+                    Explore →
+                </a>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <h2>
+                    Engraving & Etching
+                </h2>
+
+                <p>
+                    Artistic lettering, imagery and personalized
+                    details created through engraving and etching.
+                </p>
+
+                <a href="engraving-etching.html" class="service-link">
+                    Explore →
+                </a>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <h2>
+                    Framing & Presentation
+                </h2>
+
+                <p>
+                    Thoughtful framing and presentation designed to
+                    protect, elevate and complete your artwork.
+                </p>
+
+                <a href="framing-presentation.html" class="service-link">
+                    Explore →
+                </a>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <h2>
+                    Restoration & Aftercare
+                </h2>
+
+                <p>
+                    Support for preserving, restoring and caring for
+                    meaningful pieces so they can continue to be enjoyed.
+                </p>
+
+                <a href="restoration-aftercare.html" class="service-link">
+                    Explore →
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <div class="statement">
+            An idea can begin as a thought.
+            <br>
+            We help give it form.
+        </div>
+
+
+        <a href="what-we-create.html" class="back-button">
+            Back To What We Create
+        </a>
+
+    </main>
+
+</body>
+
+</html>

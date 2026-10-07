@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gift Sets & Baskets | Alis Art & Aura Atelier</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .service-intro {
+            max-width: 850px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .service-intro h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .service-intro p {
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        .idea-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 40px auto 70px;
+        }
+
+        .idea-card {
+            padding: 28px 20px;
+            border: 1px solid rgba(201, 13, 234, 0.35);
+            border-radius: 18px;
+            background: rgba(0, 0, 0, 0.35);
+            text-align: center;
+        }
+
+        .idea-card h3 {
+            color: #ff66c4;
+            margin-bottom: 10px;
+        }
+
+        .idea-card p {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .order-section {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+
+        .order-section h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .order-note {
+            text-align: center;
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .custom-form {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            padding: 35px;
+            border-radius: 22px;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(51, 206, 239, 0.3);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(201, 13, 234, 0.4);
+            background: #111;
+            color: #fff;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 12px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .checkbox-option input {
+            width: auto;
+        }
+
+        .upload-box {
+            padding: 20px;
+            border: 1px dashed rgba(51, 206, 239, 0.5);
+            border-radius: 12px;
+            background: rgba(51, 206, 239, 0.04);
+        }
+
+        .upload-box small {
+            display: block;
+            color: #aaa;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        .quotation-box {
+            padding: 20px;
+            border-left: 3px solid #ff66c4;
+            background: rgba(255, 102, 196, 0.06);
+            line-height: 1.7;
+            color: #ddd;
+        }
+
+        .submit-btn {
+            margin-top: 10px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #c90dea, #33ceef);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 800px) {
+            .idea-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .idea-grid,
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .custom-form {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">
+        Alis Art & Aura Atelier
+    </a>
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="who-we-are.html">Who We Are</a>
+        <a href="what-we-create.html">What We Create</a>
+        <a href="custom-orders.html">Custom Orders</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">Gifts & Keepsakes</p>
+        <h1>Gift Sets & Baskets</h1>
+        <p>
+            Bring several thoughtful pieces together into one beautifully
+            curated gift experience.
+        </p>
+    </div>
+</section>
+
+<main>
+
+    <section class="service-intro">
+        <h2>More Than One Gift.</h2>
+
+        <p>
+            Sometimes one item is not enough to express the thought behind
+            the occasion. Build a collection around a person, celebration,
+            feeling, theme or experience and let the Atelier bring the pieces
+            together.
+        </p>
+    </section>
+
+    <section class="idea-grid">
+
+        <div class="idea-card">
+            <h3>For Someone</h3>
+            <p>
+                Build a collection around someone's personality, interests,
+                favourite things and style.
+            </p>
+        </div>
+
+        <div class="idea-card">
+            <h3>For An Occasion</h3>
+            <p>
+                Create a coordinated collection for birthdays, graduations,
+                anniversaries, holidays and milestones.
+            </p>
+        </div>
+
+        <div class="idea-card">
+            <h3>For A Feeling</h3>
+            <p>
+                Curate a collection around love, appreciation, comfort,
+                celebration or encouragement.
+            </p>
+        </div>
+
+        <div class="idea-card">
+            <h3>For An Experience</h3>
+            <p>
+                Combine different pieces to create something the recipient
+                can open, enjoy, display and remember.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="order-section">
+
+        <h2>Build Your Gift Collection</h2>
+
+        <p class="order-note">
+            You can tell us exactly what you want included, give us a theme,
+            or simply tell us about the person and let the Atelier curate
+            the collection with you.
+        </p>
+
+        <form id="giftSetForm" class="custom-form">
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input type="email" id="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="recipient">Who Is The Gift Set For?</label>
+                <input
+                    type="text"
+                    id="recipient"
+                    placeholder="Their name or who they are to you"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="relationship">Your Relationship To Them</label>
+                <input
+                    type="text"
+                    id="relationship"
+                    placeholder="Partner, parent, friend, sibling, colleague..."
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="occasion">What Is The Gift For?</label>
+
+                <select id="occasion" required>
+                    <option value="">Select one</option>
+                    <option>Birthday</option>
+                    <option>Graduation</option>
+                    <option>Anniversary</option>
+                    <option>Wedding / Engagement</option>
+                    <option>Baby Shower</option>
+                    <option>Holiday</option>
+                    <option>Thank You</option>
+                    <option>Congratulations</option>
+                    <option>Get Well / Comfort</option>
+                    <option>Corporate / Professional Gift</option>
+                    <option>Personal Celebration</option>
+                    <option>Just Because</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="theme">What Should The Collection Be About?</label>
+
+                <textarea
+                    id="theme"
+                    placeholder="Describe the theme, feeling, person, celebration or idea behind the collection."
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>What Would You Like Included?</label>
+
+                <div class="checkbox-grid">
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="items" value="Artwork">
+                        Artwork
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="items" value="Framed Design">
+                        Framed Design
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="items" value="Home Décor">
+                        Home Décor
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="items" value="Wearable / Fashion">
+                        Wearable / Fashion
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="items" value="Accessories">
+                        Accessories
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="items" value="Printed Items">
+                        Printed Items
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="items" value="Personalized Pieces">
+                        Personalized Pieces
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input type="checkbox" name="items" value="Something Else">
+                        Something Else
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="mustInclude">
+                    Is There Anything You Definitely Want Included?
+                </label>
+
+                <textarea
+                    id="mustInclude"
+                    placeholder="Specific items, products, messages, colours, brands, treats, themes or other requests."
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="personality">
+                    Tell Us About The Recipient
+                </label>
+
+                <textarea
+                    id="personality"
+                    placeholder="Their personality, interests, hobbies, favourite things, style or anything that would help us curate the set."
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="curation">
+                    How Would You Like The Set Curated?
+                </label>
+
+                <select id="curation">
+                    <option value="">Select one</option>
+                    <option>I know exactly what I want</option>
+                    <option>I know some of the items</option>
+                    <option>I have a theme but need recommendations</option>
+                    <option>I want the Atelier to curate everything</option>
+                    <option>I am not sure yet</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="presentation">
+                    How Should The Finished Gift Feel?
+                </label>
+
+                <select id="presentation">
+                    <option value="">Select a direction</option>
+                    <option>Elegant</option>
+                    <option>Luxury</option>
+                    <option>Romantic</option>
+                    <option>Fun & Playful</option>
+                    <option>Colourful</option>
+                    <option>Soft & Emotional</option>
+                    <option>Bold</option>
+                    <option>Dark & Dramatic</option>
+                    <option>Minimal</option>
+                    <option>Not Sure — Interpret It For Me</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="colours">Preferred Colours</label>
+
+                <input
+                    type="text"
+                    id="colours"
+                    placeholder="Any colours you would like included?"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="budget">Approximate Budget</label>
+
+                <select id="budget">
+                    <option value="">Select a range</option>
+                    <option>Under JMD 5,000</option>
+                    <option>JMD 5,000 – 10,000</option>
+                    <option>JMD 10,000 – 20,000</option>
+                    <option>JMD 20,000 – 35,000</option>
+                    <option>JMD 35,000+</option>
+                    <option>I am open to recommendations</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Number Of Gift Sets</label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    value="1"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="deadline">When Do You Need The Gift Set?</label>
+
+                <input type="date" id="deadline" required>
+            </div>
+
+            <div class="form-group upload-box">
+
+                <label for="referenceFiles">
+                    Reference Files
+                </label>
+
+                <input
+                    type="file"
+                    id="referenceFiles"
+                    accept="image/*,.pdf"
+                    multiple
+                >
+
+                <small>
+                    Upload photographs, inspiration, invitations, colour
+                    references, handwritten messages or anything else that
+                    could help us understand the collection.
+                </small>
+
+            </div>
+
+            <div class="form-group">
+                <label for="notes">Anything Else?</label>
+
+                <textarea
+                    id="notes"
+                    placeholder="Anything else you want us to know?"
+                ></textarea>
+            </div>
+
+            <div class="quotation-box">
+                Gift sets and baskets are custom-quoted. Pricing depends on
+                the number and type of pieces, personalization, materials,
+                packaging, presentation and overall creative direction.
+            </div>
+
+            <button type="submit" class="submit-btn">
+                Submit Gift Set Request
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+<script>
+document.getElementById("giftSetForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const items = Array.from(
+        document.querySelectorAll('input[name="items"]:checked')
+    ).map(item => item.value);
+
+    const files = Array.from(
+        document.getElementById("referenceFiles").files
+    ).map(file => ({
+        name: file.name,
+        type: file.type,
+        size: file.size
+    }));
+
+    const order = {
+        serviceCategory: "Gifts & Keepsakes",
+        service: "Gift Sets & Baskets",
+
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+
+        recipient: document.getElementById("recipient").value,
+        relationship: document.getElementById("relationship").value,
+
+        occasion: document.getElementById("occasion").value,
+        theme: document.getElementById("theme").value,
+
+        requestedItems: items,
+        mustInclude: document.getElementById("mustInclude").value,
+
+        recipientDetails: document.getElementById("personality").value,
+
+        curation: document.getElementById("curation").value,
+        presentation: document.getElementById("presentation").value,
+
+        preferredColours: document.getElementById("colours").value,
+
+        budget: document.getElementById("budget").value,
+
+        quantity: document.getElementById("quantity").value,
+        deadline: document.getElementById("deadline").value,
+
+        uploadedFiles: files,
+
+        additionalNotes: document.getElementById("notes").value,
+
+        pricingType: "Custom Quotation",
+        status: "Awaiting Gift Set Review",
+
+        createdAt: new Date().toISOString()
+    };
+
+    localStorage.setItem("currentOrder", JSON.stringify(order));
+
+    window.location.href = "payment.html";
+});
+</script>
+
+</body>
+</html>

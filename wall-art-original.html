@@ -1,0 +1,3198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>
+Wall Art | Alis Art & Aura Atelier
+</title>
+
+
+<style>
+
+/* =====================================================
+   BASIC RESET
+===================================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #000;
+
+    color: #fff;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+nav {
+
+    background: #000;
+
+    padding: 15px 18px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    border-bottom: 1px solid #3533CD;
+
+}
+
+
+.logo {
+
+    color: #FF66C4;
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+
+nav a {
+
+    color: #fff;
+
+    text-decoration: none;
+
+    margin-left: 12px;
+
+    font-size: 13px;
+
+}
+
+
+nav a:hover {
+
+    color: #33CEEF;
+
+}
+
+
+/* =====================================================
+   PAGE HEADER
+===================================================== */
+
+.page-header {
+
+    text-align: center;
+
+    padding: 45px 20px 35px;
+
+    background:
+    linear-gradient(
+        135deg,
+        #000000,
+        #3533CD
+    );
+
+}
+
+
+.page-header h1 {
+
+    font-size: 40px;
+
+    color: #FF66C4;
+
+    margin-bottom: 12px;
+
+}
+
+
+.page-header p {
+
+    max-width: 760px;
+
+    margin: auto;
+
+    color: #eee;
+
+}
+
+
+/* =====================================================
+   DESIGN GALLERY
+===================================================== */
+
+.gallery {
+
+    background: #050505;
+
+    padding: 30px 0;
+
+}
+
+
+.gallery h2 {
+
+    text-align: center;
+
+    color: #33CEEF;
+
+    margin-bottom: 20px;
+
+}
+
+
+.gallery-track {
+
+    display: flex;
+
+    width: 100%;
+
+    overflow-x: scroll;
+
+    overflow-y: hidden;
+
+    scroll-snap-type: x mandatory;
+
+    scroll-behavior: smooth;
+
+    -webkit-overflow-scrolling: touch;
+
+    scrollbar-width: none;
+
+}
+
+
+.gallery-track::-webkit-scrollbar {
+
+    display: none;
+
+}
+
+
+.gallery-slide {
+
+    flex: 0 0 100%;
+
+    min-width: 100%;
+
+    width: 100%;
+
+    scroll-snap-align: center;
+
+    scroll-snap-stop: always;
+
+    padding: 0 15px;
+
+    text-align: center;
+
+}
+
+
+.gallery-slide img {
+
+    display: block;
+
+    width: 100%;
+
+    height: 420px;
+
+    object-fit: contain;
+
+    background: #111;
+
+    border: 1px solid #3533CD;
+
+    border-radius: 12px;
+
+    margin: auto;
+
+}
+
+
+.gallery-slide p {
+
+    margin-top: 10px;
+
+    color: #FF66C4;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   PRODUCT INFORMATION
+===================================================== */
+
+.product-info {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 40px 20px;
+
+}
+
+
+.product-info h2 {
+
+    color: #FF66C4;
+
+    margin-bottom: 12px;
+
+}
+
+
+.product-info > p {
+
+    color: #ddd;
+
+    margin-bottom: 25px;
+
+}
+
+
+.tiers {
+
+    display: grid;
+
+    gap: 15px;
+
+}
+
+
+.tier {
+
+    background: #0d0d0d;
+
+    border: 1px solid #3533CD;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+}
+
+
+.tier h3 {
+
+    color: #33CEEF;
+
+    margin-bottom: 6px;
+
+}
+
+
+.tier p {
+
+    color: #ccc;
+
+}
+
+
+/* =====================================================
+   BUILDER
+===================================================== */
+
+.order-section {
+
+    max-width: 850px;
+
+    margin: auto;
+
+    padding: 20px 20px 60px;
+
+}
+
+
+.order-section h2 {
+
+    text-align: center;
+
+    color: #FF66C4;
+
+    margin-bottom: 30px;
+
+}
+
+
+.form-group {
+
+    margin-bottom: 22px;
+
+}
+
+
+.form-group label {
+
+    display: block;
+
+    color: #33CEEF;
+
+    font-weight: bold;
+
+    margin-bottom: 8px;
+
+}
+
+
+select,
+textarea,
+input[type="number"],
+input[type="text"],
+input[type="email"],
+input[type="file"] {
+
+    width: 100%;
+
+    padding: 13px;
+
+    background: #111;
+
+    color: #fff;
+
+    border: 1px solid #3533CD;
+
+    border-radius: 8px;
+
+    font-size: 15px;
+
+}
+
+
+textarea {
+
+    min-height: 120px;
+
+    resize: vertical;
+
+}
+
+
+select:focus,
+textarea:focus,
+input:focus {
+
+    outline: none;
+
+    border-color: #FF66C4;
+
+}
+
+
+/* =====================================================
+   PRESENTATION BOX
+===================================================== */
+
+.presentation-box {
+
+    display: none;
+
+    background: #090909;
+
+    border: 1px solid #3533CD;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.presentation-box h3 {
+
+    color: #FF66C4;
+
+    margin-bottom: 18px;
+
+}
+
+
+/* =====================================================
+   OPTIONS
+===================================================== */
+
+.option-description {
+
+    color: #999;
+
+    font-size: 13px;
+
+    margin-top: 6px;
+
+}
+
+
+.option-price {
+
+    color: #FF66C4;
+
+    font-size: 12px;
+
+    margin-top: 4px;
+
+}
+
+
+/* =====================================================
+   PRICE BOX
+===================================================== */
+
+.price-box {
+
+    background:
+    linear-gradient(
+        135deg,
+        #000000,
+        #3533CD
+    );
+
+    border: 1px solid #FF66C4;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    text-align: center;
+
+    margin: 28px 0;
+
+}
+
+
+.price-label {
+
+    color: #bbb;
+
+    font-size: 14px;
+
+}
+
+
+#price {
+
+    color: #FF66C4;
+
+    font-size: 32px;
+
+    font-weight: bold;
+
+    margin-top: 5px;
+
+}
+
+
+.price-note {
+
+    color: #aaa;
+
+    font-size: 12px;
+
+    margin-top: 5px;
+
+}
+
+
+/* =====================================================
+   ORDER SUMMARY
+===================================================== */
+
+.summary-box {
+
+    display: none;
+
+    background: #090909;
+
+    border: 1px solid #33CEEF;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    margin: 25px 0;
+
+}
+
+
+.summary-box h3 {
+
+    color: #33CEEF;
+
+    margin-bottom: 15px;
+
+}
+
+
+.summary-row {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 7px 0;
+
+    border-bottom: 1px solid #222;
+
+}
+
+
+.summary-row span:first-child {
+
+    color: #aaa;
+
+}
+
+
+.summary-row span:last-child {
+
+    text-align: right;
+
+    color: #fff;
+
+}
+
+
+/* =====================================================
+   BUTTONS
+===================================================== */
+
+.order-button,
+.payment-button {
+
+    width: 100%;
+
+    padding: 16px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background:
+    linear-gradient(
+        90deg,
+        #C90DEA,
+        #FF66C4
+    );
+
+    color: #fff;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+}
+
+
+.order-button:hover,
+.payment-button:hover {
+
+    opacity: .9;
+
+}
+
+
+.back-button {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: 1px solid #3533CD;
+
+    border-radius: 10px;
+
+    background: #090909;
+
+    color: #fff;
+
+    margin-top: 10px;
+
+    cursor: pointer;
+
+}
+
+
+/* =====================================================
+   PAYMENT SECTION
+===================================================== */
+
+#paymentSection {
+
+    display: none;
+
+    max-width: 850px;
+
+    margin: 30px auto 70px;
+
+    padding: 25px 20px;
+
+}
+
+
+.payment-card {
+
+    background: #090909;
+
+    border: 1px solid #FF66C4;
+
+    border-radius: 15px;
+
+    padding: 25px;
+
+}
+
+
+.payment-card h2 {
+
+    color: #FF66C4;
+
+    text-align: center;
+
+    margin-bottom: 10px;
+
+}
+
+
+.payment-card > p {
+
+    text-align: center;
+
+    color: #bbb;
+
+    margin-bottom: 25px;
+
+}
+
+
+.payment-total {
+
+    text-align: center;
+
+    padding: 18px;
+
+    background: #111;
+
+    border-radius: 10px;
+
+    margin-bottom: 25px;
+
+}
+
+
+.payment-total span {
+
+    display: block;
+
+    color: #aaa;
+
+    font-size: 13px;
+
+}
+
+
+#paymentTotal {
+
+    color: #FF66C4;
+
+    font-size: 30px;
+
+    font-weight: bold;
+
+}
+
+
+/* =====================================================
+   DELIVERY
+===================================================== */
+
+.delivery-note {
+
+    text-align: center;
+
+    color: #aaa;
+
+    font-size: 14px;
+
+    margin: 15px 0 25px;
+
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 700px) {
+
+    nav {
+
+        flex-direction: column;
+
+    }
+
+
+    nav a {
+
+        margin-left: 5px;
+
+        margin-right: 5px;
+
+    }
+
+
+    .page-header h1 {
+
+        font-size: 34px;
+
+    }
+
+
+    .gallery-slide img {
+
+        height: 350px;
+
+    }
+
+
+    .summary-row {
+
+        flex-direction: column;
+
+        gap: 2px;
+
+    }
+
+
+    .summary-row span:last-child {
+
+        text-align: left;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<nav>
+
+    <div class="logo">
+        Alis Art & Aura Atelier
+    </div>
+
+    <div>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="what-we-create.html">
+            Create
+        </a>
+
+        <a href="custom-orders.html">
+            Custom Orders
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="page-header">
+
+    <h1>
+        Wall Art
+    </h1>
+
+    <p>
+        Transform words, memories, emotions and meaningful
+        moments into personalized artwork designed for your space.
+        Choose your design, customize it to your vision and select
+        how you want it presented.
+    </p>
+
+</header>
+
+
+
+<!-- =====================================================
+     DESIGN GALLERY
+===================================================== -->
+
+<section class="gallery">
+
+    <h2>
+        Explore Our Designs
+    </h2>
+
+
+    <div class="gallery-track">
+
+
+        <div class="gallery-slide">
+
+            <img
+                src="images/wallart1.png"
+                alt="Wall Art Design 1"
+            >
+
+            <p>
+                Design 1
+            </p>
+
+        </div>
+
+
+        <div class="gallery-slide">
+
+            <img
+                src="images/wallart2.png"
+                alt="Wall Art Design 2"
+            >
+
+            <p>
+                Design 2
+            </p>
+
+        </div>
+
+
+        <div class="gallery-slide">
+
+            <img
+                src="images/wallart3.png"
+                alt="Wall Art Design 3"
+            >
+
+            <p>
+                Design 3
+            </p>
+
+        </div>
+
+
+        <div class="gallery-slide">
+
+            <img
+                src="images/wallart4.png"
+                alt="Wall Art Design 4"
+            >
+
+            <p>
+                Design 4
+            </p>
+
+        </div>
+
+
+        <div class="gallery-slide">
+
+            <img
+                src="images/wallart5.png"
+                alt="Wall Art Design 5"
+            >
+
+            <p>
+                Design 5
+            </p>
+
+        </div>
+
+
+        <div class="gallery-slide">
+
+            <img
+                src="images/wallart6.png"
+                alt="Wall Art Design 6"
+            >
+
+            <p>
+                Design 6
+            </p>
+
+        </div>
+
+
+        <div class="gallery-slide">
+
+            <img
+                src="images/wallart7.png"
+                alt="Wall Art Design 7"
+            >
+
+            <p>
+                Design 7
+            </p>
+
+        </div>
+
+
+        <div class="gallery-slide">
+
+            <img
+                src="images/wallart8.png"
+                alt="Wall Art Design 8"
+            >
+
+            <p>
+                Design 8
+            </p>
+
+        </div>
+
+
+        <div class="gallery-slide">
+
+            <img
+                src="images/wallart9.png"
+                alt="Wall Art Design 9"
+            >
+
+            <p>
+                Design 9
+            </p>
+
+        </div>
+
+
+        <div class="gallery-slide">
+
+            <img
+                src="images/wallart10.png"
+                alt="Wall Art Design 10"
+            >
+
+            <p>
+                Design 10
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PRODUCT INFORMATION
+===================================================== -->
+
+<section class="product-info">
+
+    <h2>
+        Personalized Wall Art
+    </h2>
+
+    <p>
+        The design is the heart of every piece. Choose an artwork,
+        select your design tier, choose a presentation and then
+        personalize it with your own words, images and details.
+    </p>
+
+
+    <div class="tiers">
+
+
+        <div class="tier">
+
+            <h3>
+                Regular
+            </h3>
+
+            <p>
+                A clean personalized version of the selected design
+                using your chosen words, message or details.
+            </p>
+
+        </div>
+
+
+        <div class="tier">
+
+            <h3>
+                Signature
+            </h3>
+
+            <p>
+                A more developed personalized design with enhanced
+                colours, backgrounds, imagery and visual styling.
+            </p>
+
+        </div>
+
+
+        <div class="tier">
+
+            <h3>
+                Premium
+            </h3>
+
+            <p>
+                An extensively customized artwork developed around
+                your story, vision, preferences and desired aesthetic.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =====================================================
+     WALL ART BUILDER
+===================================================== -->
+
+<section class="order-section">
+
+    <h2>
+        Create Your Wall Art
+    </h2>
+
+
+
+    <!-- DESIGN -->
+
+    <div class="form-group">
+
+        <label for="design">
+            1. Choose Your Design
+        </label>
+
+        <select id="design">
+
+            <option value="">
+                Select a design
+            </option>
+
+            <option value="Design 1">
+                Design 1
+            </option>
+
+            <option value="Design 2">
+                Design 2
+            </option>
+
+            <option value="Design 3">
+                Design 3
+            </option>
+
+            <option value="Design 4">
+                Design 4
+            </option>
+
+            <option value="Design 5">
+                Design 5
+            </option>
+
+            <option value="Design 6">
+                Design 6
+            </option>
+
+            <option value="Design 7">
+                Design 7
+            </option>
+
+            <option value="Design 8">
+                Design 8
+            </option>
+
+            <option value="Design 9">
+                Design 9
+            </option>
+
+            <option value="Design 10">
+                Design 10
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <!-- TIER -->
+
+    <div class="form-group">
+
+        <label for="tier">
+            2. Choose Your Design Tier
+        </label>
+
+        <select id="tier">
+
+            <option value="Regular">
+                Regular
+            </option>
+
+            <option value="Signature">
+                Signature
+            </option>
+
+            <option value="Premium">
+                Premium
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <!-- PRESENTATION -->
+
+    <div class="form-group">
+
+        <label for="presentation">
+            3. Choose Your Presentation
+        </label>
+
+        <select id="presentation">
+
+            <option value="">
+                Select presentation
+            </option>
+
+            <option value="Frame">
+                Frame
+            </option>
+
+            <option value="Canvas">
+                Canvas
+            </option>
+
+            <option value="Acrylic">
+                Acrylic
+            </option>
+
+        </select>
+
+    </div>
+
+
+
+    <!-- =================================================
+         PRESENTATION OPTIONS
+    ================================================= -->
+
+    <div
+        id="presentationBox"
+        class="presentation-box"
+    >
+
+
+        <h3 id="presentationTitle">
+            Presentation Options
+        </h3>
+
+
+
+        <!-- SIZE -->
+
+        <div class="form-group">
+
+            <label for="size">
+                4. Choose Size
+            </label>
+
+            <select id="size">
+
+                <option value="">
+                    Select a size
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FRAME OPTIONS
+        ================================================= -->
+
+        <div id="frameOptions"
+             style="display:none;">
+
+
+            <div class="form-group">
+
+                <label for="frameStyle">
+                    Frame Style
+                </label>
+
+                <select id="frameStyle">
+
+                    <option value="Classic">
+                        Classic
+                    </option>
+
+                    <option value="Modern">
+                        Modern
+                    </option>
+
+                    <option value="Gallery">
+                        Gallery
+                    </option>
+
+                    <option value="Ornate">
+                        Ornate
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="frameColour">
+                    Frame Colour
+                </label>
+
+                <select id="frameColour">
+
+                    <option value="Black">
+                        Black
+                    </option>
+
+                    <option value="White">
+                        White
+                    </option>
+
+                    <option value="Gold">
+                        Gold
+                    </option>
+
+                    <option value="Bronze">
+                        Bronze
+                    </option>
+
+                    <option value="Cream">
+                        Cream
+                    </option>
+
+                    <option value="Grey">
+                        Grey
+                    </option>
+
+                    <option value="Black/Grey">
+                        Black / Grey
+                    </option>
+
+                    <option value="Burgundy">
+                        Burgundy
+                    </option>
+
+                    <option value="Brown">
+                        Brown
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="framePresentation">
+                    Frame Presentation
+                </label>
+
+                <select id="framePresentation">
+
+                    <option value="Standard">
+                        Standard — Included
+                    </option>
+
+                    <option value="Glass">
+                        Glass — +J$500
+                    </option>
+
+                    <option value="Pearl">
+                        Pearl — +J$800
+                    </option>
+
+                    <option value="Acrylic">
+                        Acrylic — +J$1,000
+                    </option>
+
+                    <option value="LED">
+                        LED Lighting — +J$2,000
+                    </option>
+
+                    <option value="Pearl + LED">
+                        Pearl + LED — +J$2,800
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <p class="option-description">
+
+                Frame options may vary according to size,
+                availability and selected design.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             CANVAS OPTIONS
+        ================================================= -->
+
+        <div id="canvasOptions"
+             style="display:none;">
+
+
+            <div class="form-group">
+
+                <label for="canvasFormat">
+                    Canvas Format
+                </label>
+
+                <select id="canvasFormat">
+
+                    <option value="Traditional">
+                        Traditional
+                    </option>
+
+                    <option value="Modern">
+                        Modern
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="canvasEdge">
+                    Canvas Edge
+                </label>
+
+                <select id="canvasEdge">
+
+                    <option value="Standard">
+                        Standard Edge
+                    </option>
+
+                    <option value="Gallery">
+                        Gallery Wrap
+                    </option>
+
+                    <option value="Mirrored">
+                        Mirrored Edge
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="canvasFinish">
+                    Canvas Finish
+                </label>
+
+                <select id="canvasFinish">
+
+                    <option value="Standard">
+                        Standard — Included
+                    </option>
+
+                    <option value="Matte">
+                        Matte — +J$500
+                    </option>
+
+                    <option value="Premium">
+                        Premium Finish — +J$1,000
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <p class="option-description">
+
+                Traditional and modern proportions are available
+                depending on the selected size.
+
+            </p>
+
+        </div>
+
+
+
+        <!-- =================================================
+             ACRYLIC OPTIONS
+        ================================================= -->
+
+        <div id="acrylicOptions"
+             style="display:none;">
+
+
+            <div class="form-group">
+
+                <label for="acrylicFinish">
+                    Acrylic Finish
+                </label>
+
+                <select id="acrylicFinish">
+
+                    <option value="Standard">
+                        Standard — Included
+                    </option>
+
+                    <option value="Gloss">
+                        Gloss — +J$750
+                    </option>
+
+                    <option value="Frosted">
+                        Frosted — +J$1,000
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="mounting">
+                    Mounting
+                </label>
+
+                <select id="mounting">
+
+                    <option value="Standard">
+                        Standard Mount — Included
+                    </option>
+
+                    <option value="Floating">
+                        Floating Mount — +J$1,500
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="shape">
+                    Shape
+                </label>
+
+                <select id="shape">
+
+                    <option value="Rectangle">
+                        Rectangle
+                    </option>
+
+                    <option value="Square">
+                        Square
+                    </option>
+
+                </select>
+
+            </div>
+
+
+
+            <div class="form-group">
+
+                <label for="acrylicLighting">
+                    Lighting
+                </label>
+
+                <select id="acrylicLighting">
+
+                    <option value="None">
+                        No Lighting — Included
+                    </option>
+
+                    <option value="LED">
+                        LED Lighting — +J$2,500
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <p class="option-description">
+
+                Acrylic options depend on the supplier,
+                available materials and selected design.
+
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- =================================================
+         PERSONALIZATION
+    ================================================= -->
+
+    <div class="form-group">
+
+        <label for="message">
+            5. Your Words / Message
+        </label>
+
+        <textarea
+            id="message"
+            placeholder="Tell us the words, quote, names, message, memory or idea you want incorporated into your artwork."
+        ></textarea>
+
+    </div>
+
+
+
+    <!-- IMAGE -->
+
+    <div class="form-group">
+
+        <label for="image">
+            6. Add an Image
+        </label>
+
+        <input
+            type="file"
+            id="image"
+            accept="image/*"
+        >
+
+    </div>
+
+
+
+    <!-- QUANTITY -->
+
+    <div class="form-group">
+
+        <label for="quantity">
+            7. Quantity
+        </label>
+
+        <input
+            type="number"
+            id="quantity"
+            value="1"
+            min="1"
+        >
+
+    </div>
+
+
+
+    <!-- =================================================
+         LIVE PRICE
+    ================================================= -->
+
+    <div class="price-box">
+
+        <div class="price-label">
+            Current Total
+        </div>
+
+        <div id="price">
+            Select your presentation and size
+        </div>
+
+        <div class="price-note">
+            Your total updates automatically as you customize.
+        </div>
+
+    </div>
+
+
+
+    <!-- =================================================
+         ORDER SUMMARY
+    ================================================= -->
+
+    <div
+        id="summaryBox"
+        class="summary-box"
+    >
+
+        <h3>
+            Your Wall Art
+        </h3>
+
+
+        <div class="summary-row">
+
+            <span>
+                Design
+            </span>
+
+            <span id="summaryDesign">
+                —
+            </span>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>
+                Tier
+            </span>
+
+            <span id="summaryTier">
+                —
+            </span>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>
+                Presentation
+            </span>
+
+            <span id="summaryPresentation">
+                —
+            </span>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>
+                Size
+            </span>
+
+            <span id="summarySize">
+                —
+            </span>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>
+                Style / Options
+            </span>
+
+            <span id="summaryOptions">
+                —
+            </span>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>
+                Quantity
+            </span>
+
+            <span id="summaryQuantity">
+                1
+            </span>
+
+        </div>
+
+
+        <div class="summary-row">
+
+            <span>
+                Total
+            </span>
+
+            <span id="summaryTotal">
+                —
+            </span>
+
+        </div>
+
+    </div>
+
+
+
+    <div class="delivery-note">
+
+        Delivery is calculated separately.
+
+        Turnaround depends on the design,
+        presentation and order requirements.
+
+    </div>
+
+
+
+    <!-- =================================================
+         CONTINUE TO PAYMENT
+    ================================================= -->
+
+    <button
+        class="order-button"
+        type="button"
+        onclick="continueToPayment()"
+    >
+
+        Continue to Payment
+
+    </button>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     PAYMENT SECTION
+===================================================== -->
+
+<section id="paymentSection">
+
+
+    <div class="payment-card">
+
+
+        <h2>
+            Payment
+        </h2>
+
+
+        <p>
+            Review your Wall Art selection before completing
+            your payment.
+        </p>
+
+
+
+        <!-- PAYMENT TOTAL -->
+
+        <div class="payment-total">
+
+            <span>
+                Amount Due
+            </span>
+
+            <div id="paymentTotal">
+                J$0
+            </div>
+
+        </div>
+
+
+
+        <!-- CUSTOMER INFORMATION -->
+
+        <div class="form-group">
+
+            <label for="customerName">
+                Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Your name"
+            >
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label for="customerEmail">
+                Email
+            </label>
+
+            <input
+                type="email"
+                id="customerEmail"
+                placeholder="Your email"
+            >
+
+        </div>
+
+
+
+        <div class="form-group">
+
+            <label for="paymentMethod">
+                Payment Method
+            </label>
+
+            <select id="paymentMethod">
+
+                <option value="">
+                    Select payment method
+                </option>
+
+                <option value="Bank Transfer">
+                    Bank Transfer
+                </option>
+
+                <option value="Cash">
+                    Cash
+                </option>
+
+                <option value="Other">
+                    Other / Discuss With Atelier
+                </option>
+
+            </select>
+
+        </div>
+
+
+
+        <!-- FINAL ORDER SUMMARY -->
+
+        <div
+            id="finalSummary"
+            class="summary-box"
+            style="display:block;"
+        >
+
+            <h3>
+                Order Summary
+            </h3>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Design
+                </span>
+
+                <span id="finalDesign">
+                    —
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Tier
+                </span>
+
+                <span id="finalTier">
+                    —
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Presentation
+                </span>
+
+                <span id="finalPresentation">
+                    —
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Size
+                </span>
+
+                <span id="finalSize">
+                    —
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Options
+                </span>
+
+                <span id="finalOptions">
+                    —
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Quantity
+                </span>
+
+                <span id="finalQuantity">
+                    —
+                </span>
+
+            </div>
+
+
+            <div class="summary-row">
+
+                <span>
+                    Total
+                </span>
+
+                <span id="finalTotal">
+                    —
+                </span>
+
+            </div>
+
+        </div>
+
+
+
+        <button
+            class="payment-button"
+            type="button"
+            onclick="completePayment()"
+        >
+
+            Proceed With Payment
+
+        </button>
+
+
+        <button
+            class="back-button"
+            type="button"
+            onclick="backToBuilder()"
+        >
+
+            Back to Customize
+
+        </button>
+
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+/* =====================================================
+   WALL ART BASE PRICES
+
+   [Regular, Signature, Premium]
+===================================================== */
+
+const prices = {
+
+
+    /* ================= FRAME ================= */
+
+    Frame: {
+
+        "8x10": [3400,3900,4400],
+
+        "10x12": [3900,4400,4900],
+
+        "11x14": [4400,4900,5400],
+
+        "12x16": [5900,6900,7400],
+
+        "14x18": [7900,8900,9900],
+
+        "16x20": [10900,11400,12400]
+
+    },
+
+
+    /* ================= CANVAS ================= */
+
+    Canvas: {
+
+        "8x8": [4000,5000,6000],
+
+        "8x10": [5000,6000,7000],
+
+        "10x8": [5000,6000,7000],
+
+        "10x10": [6000,7000,8000],
+
+        "10x12": [7000,8000,9000],
+
+        "12x10": [7000,8000,9000],
+
+        "11x14": [8000,9000,10000],
+
+        "14x11": [8000,9000,10000],
+
+        "12x12": [9500,11000,12500],
+
+        "12x16": [11000,12500,14000],
+
+        "16x12": [11000,12500,14000],
+
+        "14x14": [12500,14000,15500],
+
+        "14x18": [14000,15500,17000],
+
+        "18x14": [14000,15500,17000],
+
+        "16x16": [15500,17000,18500],
+
+        "16x20": [17000,18500,20000],
+
+        "20x16": [17000,18500,20000],
+
+        "20x20": [18500,20000,21500]
+
+    },
+
+
+    /* ================= ACRYLIC ================= */
+
+    Acrylic: {
+
+        "8x10": [6000,7500,9000],
+
+        "10x8": [6000,7500,9000],
+
+        "10x10": [7000,8500,10000],
+
+        "10x12": [8000,9500,11000],
+
+        "12x10": [8000,9500,11000],
+
+        "11x14": [9000,10500,12000],
+
+        "14x11": [9000,10500,12000],
+
+        "12x12": [10500,12000,13500],
+
+        "12x16": [12500,14000,15500],
+
+        "16x12": [12500,14000,15500],
+
+        "14x14": [14000,15500,17000],
+
+        "14x18": [16000,17500,19000],
+
+        "18x14": [16000,17500,19000],
+
+        "16x16": [17500,19000,20500],
+
+        "16x20": [19500,21000,22500],
+
+        "20x16": [19500,21000,22500],
+
+        "18x24": [22500,24000,25500],
+
+        "24x18": [22500,24000,25500],
+
+        "20x20": [24000,25500,27000],
+
+        "20x30": [27000,28500,30000],
+
+        "30x20": [27000,28500,30000]
+
+    }
+
+};
+
+
+
+/* =====================================================
+   ELEMENTS
+===================================================== */
+
+const design =
+    document.getElementById("design");
+
+const tier =
+    document.getElementById("tier");
+
+const presentation =
+    document.getElementById("presentation");
+
+const size =
+    document.getElementById("size");
+
+const quantity =
+    document.getElementById("quantity");
+
+const price =
+    document.getElementById("price");
+
+const presentationBox =
+    document.getElementById("presentationBox");
+
+const frameOptions =
+    document.getElementById("frameOptions");
+
+const canvasOptions =
+    document.getElementById("canvasOptions");
+
+const acrylicOptions =
+    document.getElementById("acrylicOptions");
+
+
+
+/* =====================================================
+   TIER INDEX
+===================================================== */
+
+function tierIndex() {
+
+    if (tier.value === "Regular") {
+
+        return 0;
+
+    }
+
+
+    if (tier.value === "Signature") {
+
+        return 1;
+
+    }
+
+
+    return 2;
+
+}
+
+
+
+/* =====================================================
+   SHOW PRESENTATION OPTIONS
+===================================================== */
+
+presentation.addEventListener(
+    "change",
+    showPresentation
+);
+
+
+function showPresentation() {
+
+
+    const selected =
+        presentation.value;
+
+
+    size.innerHTML =
+        '<option value="">Select a size</option>';
+
+
+    frameOptions.style.display =
+        "none";
+
+    canvasOptions.style.display =
+        "none";
+
+    acrylicOptions.style.display =
+        "none";
+
+
+    if (!selected) {
+
+        presentationBox.style.display =
+            "none";
+
+        price.textContent =
+            "Select your presentation and size";
+
+        return;
+
+    }
+
+
+    presentationBox.style.display =
+        "block";
+
+
+    if (selected === "Frame") {
+
+        document.getElementById(
+            "presentationTitle"
+        ).textContent =
+            "Frame Options";
+
+        frameOptions.style.display =
+            "block";
+
+    }
+
+
+    if (selected === "Canvas") {
+
+        document.getElementById(
+            "presentationTitle"
+        ).textContent =
+            "Canvas Options";
+
+        canvasOptions.style.display =
+            "block";
+
+    }
+
+
+    if (selected === "Acrylic") {
+
+        document.getElementById(
+            "presentationTitle"
+        ).textContent =
+            "Acrylic Options";
+
+        acrylicOptions.style.display =
+            "block";
+
+    }
+
+
+    Object.keys(
+        prices[selected]
+    ).forEach(function(item) {
+
+
+        const option =
+            document.createElement("option");
+
+
+        option.value =
+            item;
+
+
+        const currentPrice =
+            prices[selected][item][
+                tierIndex()
+            ];
+
+
+        option.textContent =
+            item +
+            " — J$" +
+            currentPrice.toLocaleString();
+
+
+        size.appendChild(option);
+
+    });
+
+
+    updatePrice();
+
+}
+
+
+
+/* =====================================================
+   REFRESH SIZE PRICE DISPLAY
+===================================================== */
+
+tier.addEventListener(
+    "change",
+    refreshSizes
+);
+
+
+function refreshSizes() {
+
+
+    if (!presentation.value) {
+
+        updatePrice();
+
+        return;
+
+    }
+
+
+    const selectedSize =
+        size.value;
+
+
+    size.innerHTML =
+        '<option value="">Select a size</option>';
+
+
+    Object.keys(
+        prices[presentation.value]
+    ).forEach(function(item) {
+
+
+        const option =
+            document.createElement("option");
+
+
+        option.value =
+            item;
+
+
+        const currentPrice =
+            prices[presentation.value]
+            [item]
+            [tierIndex()];
+
+
+        option.textContent =
+            item +
+            " — J$" +
+            currentPrice.toLocaleString();
+
+
+        size.appendChild(option);
+
+    });
+
+
+    if (
+        selectedSize &&
+        prices[presentation.value]
+        [selectedSize]
+    ) {
+
+        size.value =
+            selectedSize;
+
+    }
+
+
+    updatePrice();
+
+}
+
+
+
+/* =====================================================
+   GET OPTION UPGRADE COST
+===================================================== */
+
+function getUpgradeCost() {
+
+
+    let extra = 0;
+
+
+    /* FRAME */
+
+    if (presentation.value === "Frame") {
+
+
+        const framePresentation =
+            document.getElementById(
+                "framePresentation"
+            ).value;
+
+
+        if (
+            framePresentation === "Glass"
+        ) {
+
+            extra += 500;
+
+        }
+
+
+        if (
+            framePresentation === "Pearl"
+        ) {
+
+            extra += 800;
+
+        }
+
+
+        if (
+            framePresentation === "Acrylic"
+        ) {
+
+            extra += 1000;
+
+        }
+
+
+        if (
+            framePresentation === "LED"
+        ) {
+
+            extra += 2000;
+
+        }
+
+
+        if (
+            framePresentation ===
+            "Pearl + LED"
+        ) {
+
+            extra += 2800;
+
+        }
+
+    }
+
+
+
+    /* CANVAS */
+
+    if (presentation.value === "Canvas") {
+
+
+        const finish =
+            document.getElementById(
+                "canvasFinish"
+            ).value;
+
+
+        if (finish === "Matte") {
+
+            extra += 500;
+
+        }
+
+
+        if (finish === "Premium") {
+
+            extra += 1000;
+
+        }
+
+    }
+
+
+
+    /* ACRYLIC */
+
+    if (presentation.value === "Acrylic") {
+
+
+        const finish =
+            document.getElementById(
+                "acrylicFinish"
+            ).value;
+
+
+        const mounting =
+            document.getElementById(
+                "mounting"
+            ).value;
+
+
+        const lighting =
+            document.getElementById(
+                "acrylicLighting"
+            ).value;
+
+
+        if (finish === "Gloss") {
+
+            extra += 750;
+
+        }
+
+
+        if (finish === "Frosted") {
+
+            extra += 1000;
+
+        }
+
+
+        if (mounting === "Floating") {
+
+            extra += 1500;
+
+        }
+
+
+        if (lighting === "LED") {
+
+            extra += 2500;
+
+        }
+
+    }
+
+
+    return extra;
+
+}
+
+
+
+/* =====================================================
+   GET OPTION DESCRIPTION
+===================================================== */
+
+function getOptionSummary() {
+
+
+    let options = [];
+
+
+    if (presentation.value === "Frame") {
+
+
+        const style =
+            document.getElementById(
+                "frameStyle"
+            ).value;
+
+
+        const colour =
+            document.getElementById(
+                "frameColour"
+            ).value;
+
+
+        const presentationStyle =
+            document.getElementById(
+                "framePresentation"
+            ).value;
+
+
+        options.push(
+            "Style: " + style
+        );
+
+
+        options.push(
+            "Colour: " + colour
+        );
+
+
+        options.push(
+            "Finish: " +
+            presentationStyle
+        );
+
+    }
+
+
+
+    if (presentation.value === "Canvas") {
+
+
+        const format =
+            document.getElementById(
+                "canvasFormat"
+            ).value;
+
+
+        const edge =
+            document.getElementById(
+                "canvasEdge"
+            ).value;
+
+
+        const finish =
+            document.getElementById(
+                "canvasFinish"
+            ).value;
+
+
+        options.push(
+            "Format: " + format
+        );
+
+
+        options.push(
+            "Edge: " + edge
+        );
+
+
+        options.push(
+            "Finish: " + finish
+        );
+
+    }
+
+
+
+    if (presentation.value === "Acrylic") {
+
+
+        const finish =
+            document.getElementById(
+                "acrylicFinish"
+            ).value;
+
+
+        const mounting =
+            document.getElementById(
+                "mounting"
+            ).value;
+
+
+        const shape =
+            document.getElementById(
+                "shape"
+            ).value;
+
+
+        const lighting =
+            document.getElementById(
+                "acrylicLighting"
+            ).value;
+
+
+        options.push(
+            "Finish: " + finish
+        );
+
+
+        options.push(
+            "Mounting: " + mounting
+        );
+
+
+        options.push(
+            "Shape: " + shape
+        );
+
+
+        options.push(
+            "Lighting: " + lighting
+        );
+
+    }
+
+
+    return options.join(" | ");
+
+}
+
+
+
+/* =====================================================
+   UPDATE TOTAL
+===================================================== */
+
+function updatePrice() {
+
+
+    if (
+        !presentation.value ||
+        !size.value
+    ) {
+
+        price.textContent =
+            "Select your presentation and size";
+
+        return;
+
+    }
+
+
+    const basePrice =
+        prices[presentation.value]
+        [size.value]
+        [tierIndex()];
+
+
+    const upgrades =
+        getUpgradeCost();
+
+
+    const unitPrice =
+        basePrice + upgrades;
+
+
+    const qty =
+        parseInt(
+            quantity.value
+        ) || 1;
+
+
+    const total =
+        unitPrice * qty;
+
+
+    price.textContent =
+        "J$" +
+        total.toLocaleString();
+
+
+    updateSummary(
+        total
+    );
+
+}
+
+
+
+/* =====================================================
+   UPDATE SUMMARY
+===================================================== */
+
+function updateSummary(total) {
+
+
+    if (
+        !design.value ||
+        !presentation.value ||
+        !size.value
+    ) {
+
+        return;
+
+    }
+
+
+    document.getElementById(
+        "summaryBox"
+    ).style.display =
+        "block";
+
+
+    document.getElementById(
+        "summaryDesign"
+    ).textContent =
+        design.value;
+
+
+    document.getElementById(
+        "summaryTier"
+    ).textContent =
+        tier.value;
+
+
+    document.getElementById(
+        "summaryPresentation"
+    ).textContent =
+        presentation.value;
+
+
+    document.getElementById(
+        "summarySize"
+    ).textContent =
+        size.value;
+
+
+    document.getElementById(
+        "summaryOptions"
+    ).textContent =
+        getOptionSummary();
+
+
+    document.getElementById(
+        "summaryQuantity"
+    ).textContent =
+        quantity.value;
+
+
+    document.getElementById(
+        "summaryTotal"
+    ).textContent =
+        "J$" +
+        total.toLocaleString();
+
+}
+
+
+
+/* =====================================================
+   LISTEN FOR OPTION CHANGES
+===================================================== */
+
+size.addEventListener(
+    "change",
+    updatePrice
+);
+
+
+quantity.addEventListener(
+    "input",
+    updatePrice
+);
+
+
+design.addEventListener(
+    "change",
+    updatePrice
+);
+
+
+
+/* FRAME OPTIONS */
+
+document.getElementById(
+    "frameStyle"
+).addEventListener(
+    "change",
+    updatePrice
+);
+
+
+document.getElementById(
+    "frameColour"
+).addEventListener(
+    "change",
+    updatePrice
+);
+
+
+document.getElementById(
+    "framePresentation"
+).addEventListener(
+    "change",
+    updatePrice
+);
+
+
+
+/* CANVAS OPTIONS */
+
+document.getElementById(
+    "canvasFormat"
+).addEventListener(
+    "change",
+    updatePrice
+);
+
+
+document.getElementById(
+    "canvasEdge"
+).addEventListener(
+    "change",
+    updatePrice
+);
+
+
+document.getElementById(
+    "canvasFinish"
+).addEventListener(
+    "change",
+    updatePrice
+);
+
+
+
+/* ACRYLIC OPTIONS */
+
+document.getElementById(
+    "acrylicFinish"
+).addEventListener(
+    "change",
+    updatePrice
+);
+
+
+document.getElementById(
+    "mounting"
+).addEventListener(
+    "change",
+    updatePrice
+);
+
+
+document.getElementById(
+    "shape"
+).addEventListener(
+    "change",
+    updatePrice
+);
+
+
+document.getElementById(
+    "acrylicLighting"
+).addEventListener(
+    "change",
+    updatePrice
+);
+
+
+
+/* =====================================================
+   CONTINUE TO PAYMENT
+===================================================== */
+
+function continueToPayment() {
+
+
+    if (!design.value) {
+
+        alert(
+            "Please choose a design."
+        );
+
+        return;
+
+    }
+
+
+    if (!presentation.value) {
+
+        alert(
+            "Please choose Frame, Canvas or Acrylic."
+        );
+
+        return;
+
+    }
+
+
+    if (!size.value) {
+
+        alert(
+            "Please choose a size."
+        );
+
+        return;
+
+    }
+
+
+    updatePrice();
+
+
+    const totalText =
+        document.getElementById(
+            "summaryTotal"
+        ).textContent;
+
+
+    /* SEND SUMMARY TO PAYMENT */
+
+    document.getElementById(
+        "finalDesign"
+    ).textContent =
+        design.value;
+
+
+    document.getElementById(
+        "finalTier"
+    ).textContent =
+        tier.value;
+
+
+    document.getElementById(
+        "finalPresentation"
+    ).textContent =
+        presentation.value;
+
+
+    document.getElementById(
+        "finalSize"
+    ).textContent =
+        size.value;
+
+
+    document.getElementById(
+        "finalOptions"
+    ).textContent =
+        getOptionSummary();
+
+
+    document.getElementById(
+        "finalQuantity"
+    ).textContent =
+        quantity.value;
+
+
+    document.getElementById(
+        "finalTotal"
+    ).textContent =
+        totalText;
+
+
+    document.getElementById(
+        "paymentTotal"
+    ).textContent =
+        totalText;
+
+
+    /* SHOW PAYMENT */
+
+    const paymentSection =
+        document.getElementById(
+            "paymentSection"
+        );
+
+
+    paymentSection.style.display =
+        "block";
+
+
+    paymentSection.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+    });
+
+}
+
+
+
+/* =====================================================
+   BACK TO BUILDER
+===================================================== */
+
+function backToBuilder() {
+
+
+    document.getElementById(
+        "paymentSection"
+    ).style.display =
+        "none";
+
+
+    document.querySelector(
+        ".order-section"
+    ).scrollIntoView({
+
+        behavior: "smooth",
+
+        block: "start"
+
+    });
+
+}
+
+
+
+/* =====================================================
+   PAYMENT BUTTON
+===================================================== */
+
+function completePayment() {
+
+
+    const name =
+        document.getElementById(
+            "customerName"
+        ).value;
+
+
+    const email =
+        document.getElementById(
+            "customerEmail"
+        ).value;
+
+
+    const method =
+        document.getElementById(
+            "paymentMethod"
+        ).value;
+
+
+    if (!name) {
+
+        alert(
+            "Please enter your name."
+        );
+
+        return;
+
+    }
+
+
+    if (!email) {
+
+        alert(
+            "Please enter your email."
+        );
+
+        return;
+
+    }
+
+
+    if (!method) {
+
+        alert(
+            "Please select a payment method."
+        );
+
+        return;
+
+    }
+
+
+    alert(
+        "Your order details are ready. " +
+        "The next step is connecting this button " +
+        "to your actual payment/order system."
+    );
+
+}
+
+</script>
+
+
+</body>
+
+</html>

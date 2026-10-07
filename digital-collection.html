@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Digital Collections | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(
+                    circle at 20% 20%,
+                    rgba(201, 13, 234, 0.20),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 75%,
+                    rgba(255, 102, 196, 0.18),
+                    transparent 30%
+                ),
+                linear-gradient(
+                    135deg,
+                    #000000,
+                    #3533CD
+                );
+
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+
+        /* =========================
+           NAVIGATION
+        ========================= */
+
+        .navbar {
+            width: 100%;
+            padding: 20px;
+            border-bottom: 1px solid #3533CD;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .nav-brand {
+            text-decoration: none;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #C90DEA,
+                    #33CEEF,
+                    #FF66C4
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            font-size: 24px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 22px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #FF66C4;
+        }
+
+
+        /* =========================
+           MAIN PAGE
+        ========================= */
+
+        .container {
+            width: 92%;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 50px 0 70px;
+        }
+
+
+        h1 {
+            text-align: center;
+
+            font-size: 42px;
+            margin-bottom: 20px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #C90DEA,
+                    #33CEEF,
+                    #FF66C4
+                );
+
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+
+        .intro {
+            max-width: 750px;
+            margin: 0 auto 45px;
+
+            text-align: center;
+
+            color: #eeeeee;
+
+            font-size: 18px;
+            line-height: 1.7;
+        }
+
+
+        /* =========================
+           COLLECTION
+        ========================= */
+
+        .collection {
+            margin-bottom: 50px;
+
+            padding: 28px;
+
+            background: #080808;
+
+            border: 1px solid #3533CD;
+
+            border-radius: 20px;
+        }
+
+
+        .collection h2 {
+            font-size: 26px;
+            margin-bottom: 10px;
+
+            color: #ffffff;
+        }
+
+
+        .collection-description {
+            color: #bbbbbb;
+
+            line-height: 1.6;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* =========================
+           HORIZONTAL GALLERY
+        ========================= */
+
+        .gallery-track {
+            display: flex;
+
+            overflow-x: auto;
+
+            scroll-snap-type: x mandatory;
+
+            gap: 15px;
+
+            padding-bottom: 12px;
+
+            scrollbar-width: thin;
+        }
+
+
+        .gallery-slide {
+            flex: 0 0 82%;
+
+            min-width: 82%;
+
+            scroll-snap-align: center;
+        }
+
+
+        .gallery-slide img {
+            display: block;
+
+            width: 100%;
+
+            height: 360px;
+
+            object-fit: contain;
+
+            background: #080808;
+
+            border: 1px solid #C90DEA;
+
+            border-radius: 18px;
+        }
+
+
+        /* =========================
+           COLLECTION BUTTON
+        ========================= */
+
+        .collection-button {
+            display: block;
+
+            width: 100%;
+
+            margin-top: 20px;
+
+            padding: 14px;
+
+            text-align: center;
+
+            border-radius: 10px;
+
+            background:
+                linear-gradient(
+                    90deg,
+                    #C90DEA,
+                    #3533CD
+                );
+
+            color: #ffffff;
+
+            text-decoration: none;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            transition: 0.3s;
+        }
+
+
+        .collection-button:hover {
+            opacity: 0.9;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* =========================
+           BACK BUTTON
+        ========================= */
+
+        .back-link {
+            display: block;
+
+            width: fit-content;
+
+            margin: 10px auto 0;
+
+            color: #33CEEF;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+        }
+
+
+        .back-link:hover {
+            color: #FF66C4;
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            .navbar {
+                padding: 18px 15px;
+            }
+
+
+            .nav-brand {
+                font-size: 20px;
+            }
+
+
+            .nav-links {
+                gap: 14px;
+            }
+
+
+            .nav-links a {
+                font-size: 14px;
+            }
+
+
+            .container {
+                width: 92%;
+
+                padding:
+                    40px 0
+                    60px;
+            }
+
+
+            h1 {
+                font-size: 32px;
+            }
+
+
+            .intro {
+                font-size: 16px;
+            }
+
+
+            .collection {
+                padding: 20px;
+
+                margin-bottom: 35px;
+            }
+
+
+            .collection h2 {
+                font-size: 23px;
+            }
+
+
+            .gallery-slide {
+                flex: 0 0 92%;
+
+                min-width: 92%;
+            }
+
+
+            .gallery-slide img {
+                height: 300px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         WEBSITE NAVIGATION
+    ========================= -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+
+        <div class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="what-we-create.html">
+                What We Create
+            </a>
+
+            <a href="custom-orders.html">
+                Custom Orders
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================
+         MAIN
+    ========================= -->
+
+    <main class="container">
+
+
+        <h1>
+            Digital Collections
+        </h1>
+
+
+        <p class="intro">
+
+            Explore curated collections of artwork from
+            Alis Art & Aura Atelier.
+
+            Swipe through each collection and choose where
+            you would like to explore or purchase the artwork.
+
+        </p>
+
+
+        <!-- =========================
+             COLLECTION 01
+        ========================= -->
+
+        <section class="collection">
+
+            <h2>
+                Collection 01
+            </h2>
+
+            <p class="collection-description">
+                Explore original digital artwork from the Atelier.
+            </p>
+
+
+            <div class="gallery-track">
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection1-1.png"
+                        alt="Digital Collection 01 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection1-2.png"
+                        alt="Digital Collection 01 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection1-3.png"
+                        alt="Digital Collection 01 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection1-4.png"
+                        alt="Digital Collection 01 artwork">
+                </div>
+
+            </div>
+
+
+            <a
+                href="digital.html"
+                class="collection-button">
+
+                Explore Digital Artwork
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION 02
+        ========================= -->
+
+        <section class="collection">
+
+            <h2>
+                Collection 02
+            </h2>
+
+            <p class="collection-description">
+                Discover another curated selection of Atelier artwork.
+            </p>
+
+
+            <div class="gallery-track">
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection2-1.png"
+                        alt="Digital Collection 02 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection2-2.png"
+                        alt="Digital Collection 02 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection2-3.png"
+                        alt="Digital Collection 02 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection2-4.png"
+                        alt="Digital Collection 02 artwork">
+                </div>
+
+            </div>
+
+
+            <a
+                href="physical-prints.html"
+                class="collection-button">
+
+                Explore Digital Prints
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION 03
+        ========================= -->
+
+        <section class="collection">
+
+            <h2>
+                Collection 03
+            </h2>
+
+            <p class="collection-description">
+                Artwork available to be printed and delivered by the Atelier.
+            </p>
+
+
+            <div class="gallery-track">
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection3-1.png"
+                        alt="Digital Collection 03 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection3-2.png"
+                        alt="Digital Collection 03 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection3-3.png"
+                        alt="Digital Collection 03 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection3-4.png"
+                        alt="Digital Collection 03 artwork">
+                </div>
+
+            </div>
+
+
+            <a
+                href="physical-prints.html"
+                class="collection-button">
+
+                Explore Physical Prints
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION 04
+        ========================= -->
+
+        <section class="collection">
+
+            <h2>
+                Collection 04
+            </h2>
+
+            <p class="collection-description">
+                Reproductions of artist-created works available with appropriate permission.
+            </p>
+
+
+            <div class="gallery-track">
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection4-1.png"
+                        alt="Digital Collection 04 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection4-2.png"
+                        alt="Digital Collection 04 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection4-3.png"
+                        alt="Digital Collection 04 artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection4-4.png"
+                        alt="Digital Collection 04 artwork">
+                </div>
+
+            </div>
+
+
+            <a
+                href="artistic-Prints.html"
+                class="collection-button">
+
+                Explore Artistic Prints
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION 05
+        ========================= -->
+
+        <section class="collection">
+
+            <h2>
+                Collection 05
+            </h2>
+
+            <p class="collection-description">
+                Words, quotes and poetry transformed into visual artwork.
+            </p>
+
+
+            <div class="gallery-track">
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection5-1.png"
+                        alt="Quote and word artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection5-2.png"
+                        alt="Quote and word artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection5-3.png"
+                        alt="Quote and word artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection5-4.png"
+                        alt="Quote and word artwork">
+                </div>
+
+            </div>
+
+
+            <a
+                href="word-art.html"
+                class="collection-button">
+
+                Explore Quote & Word Art
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION 06
+        ========================= -->
+
+        <section class="collection">
+
+            <h2>
+                Collection 06
+            </h2>
+
+            <p class="collection-description">
+                Digital artwork created around a customer's individual vision.
+            </p>
+
+
+            <div class="gallery-track">
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection6-1.png"
+                        alt="Custom digital artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection6-2.png"
+                        alt="Custom digital artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection6-3.png"
+                        alt="Custom digital artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection6-4.png"
+                        alt="Custom digital artwork">
+                </div>
+
+            </div>
+
+
+            <a
+                href="custom-art.html"
+                class="collection-button">
+
+                Create Custom Digital Artwork
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION 07
+        ========================= -->
+
+        <section class="collection">
+
+            <h2>
+                Collection 07
+            </h2>
+
+            <p class="collection-description">
+                Artwork designed for personal expression, identity and imagination.
+            </p>
+
+
+            <div class="gallery-track">
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection7-1.png"
+                        alt="Digital artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection7-2.png"
+                        alt="Digital artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection7-3.png"
+                        alt="Digital artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection7-4.png"
+                        alt="Digital artwork">
+                </div>
+
+            </div>
+
+
+            <a
+                href="digital.html"
+                class="collection-button">
+
+                View Digital Artwork
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION 08
+        ========================= -->
+
+        <section class="collection">
+
+            <h2>
+                Collection 08
+            </h2>
+
+            <p class="collection-description">
+                Artwork that can become a digital file or a physical piece.
+            </p>
+
+
+            <div class="gallery-track">
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection8-1.png"
+                        alt="Atelier artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection8-2.png"
+                        alt="Atelier artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection8-3.png"
+                        alt="Atelier artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection8-4.png"
+                        alt="Atelier artwork">
+                </div>
+
+            </div>
+
+
+            <a
+                href="digital.html"
+                class="collection-button">
+
+                Choose Your Artwork
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION 09
+        ========================= -->
+
+        <section class="collection">
+
+            <h2>
+                Collection 09
+            </h2>
+
+            <p class="collection-description">
+                Explore artwork suitable for digital or printed presentation.
+            </p>
+
+
+            <div class="gallery-track">
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection9-1.png"
+                        alt="Atelier artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection9-2.png"
+                        alt="Atelier artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection9-3.png"
+                        alt="Atelier artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection9-4.png"
+                        alt="Atelier artwork">
+                </div>
+
+            </div>
+
+
+            <a
+                href="physical-prints.html"
+                class="collection-button">
+
+                Print It For Me
+
+            </a>
+
+        </section>
+
+
+        <!-- =========================
+             COLLECTION 10
+        ========================= -->
+
+        <section class="collection">
+
+            <h2>
+                Collection 10
+            </h2>
+
+            <p class="collection-description">
+                Have something completely different in mind?
+                Create something made specifically for you.
+            </p>
+
+
+            <div class="gallery-track">
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection10-1.png"
+                        alt="Custom artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection10-2.png"
+                        alt="Custom artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection10-3.png"
+                        alt="Custom artwork">
+                </div>
+
+                <div class="gallery-slide">
+                    <img
+                        src="images/collection10-4.png"
+                        alt="Custom artwork">
+                </div>
+
+            </div>
+
+
+            <a
+                href="custom-art.html"
+                class="collection-button">
+
+                Create Custom Artwork
+
+            </a>
+
+        </section>
+
+
+        <!-- BACK -->
+
+        <a
+            href="what-we-create.html"
+            class="back-link">
+
+            ← Back to What We Create
+
+        </a>
+
+    </main>
+
+
+</body>
+
+</html>

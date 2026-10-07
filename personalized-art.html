@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personalized Art | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 15% 20%, rgba(255, 102, 196, 0.16), transparent 28%),
+                radial-gradient(circle at 85% 80%, rgba(201, 13, 234, 0.15), transparent 30%),
+                #000000;
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 85px 30px;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 70px;
+        }
+
+        .brand {
+            color: #FF66C4;
+            font-size: 17px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            max-width: 800px;
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 28px;
+        }
+
+        .intro p {
+            max-width: 760px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #dddddd;
+        }
+
+        .section {
+            max-width: 1050px;
+            margin: 0 auto 70px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            color: #cfcfcf;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .idea-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .idea-card {
+            padding: 30px;
+            background: #050505;
+            border: 1px solid #C90DEA;
+            transition: 0.3s;
+        }
+
+        .idea-card:nth-child(2) {
+            border-color: #33CEEF;
+        }
+
+        .idea-card:nth-child(3) {
+            border-color: #FF66C4;
+        }
+
+        .idea-card:nth-child(4) {
+            border-color: #3533CD;
+        }
+
+        .idea-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .idea-card h2 {
+            font-size: 23px;
+            margin-bottom: 12px;
+        }
+
+        .idea-card p {
+            color: #d5d5d5;
+            line-height: 1.75;
+        }
+
+        .form-wrapper {
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 35px;
+            background: #050505;
+            border: 1px solid #C90DEA;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 9px;
+            color: #FF66C4;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px;
+            background: #101010;
+            color: white;
+            border: 1px solid #333333;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            border-radius: 4px;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #33CEEF;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .upload-box {
+            padding: 28px;
+            border: 1px dashed #33CEEF;
+            background: rgba(51, 206, 239, 0.04);
+            margin-bottom: 25px;
+        }
+
+        .upload-box h3 {
+            margin-bottom: 12px;
+            color: #33CEEF;
+        }
+
+        .upload-box p {
+            color: #bdbdbd;
+            line-height: 1.7;
+            margin-bottom: 18px;
+        }
+
+        .upload-box input {
+            border: none;
+            background: transparent;
+            padding: 0;
+        }
+
+        .choice-group {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .choice {
+            border: 1px solid #333;
+            padding: 15px;
+            background: #0c0c0c;
+        }
+
+        .choice label {
+            color: #ddd;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .choice input {
+            width: auto;
+            margin-right: 8px;
+        }
+
+        .quotation-box {
+            margin-top: 30px;
+            padding: 25px;
+            border-top: 1px solid #3533CD;
+            border-bottom: 1px solid #3533CD;
+        }
+
+        .quotation-box h2 {
+            color: #FF66C4;
+            margin-bottom: 12px;
+        }
+
+        .quotation-box p {
+            color: #ccc;
+            line-height: 1.8;
+        }
+
+        .submit-button {
+            width: 100%;
+            margin-top: 25px;
+            padding: 16px;
+            background: linear-gradient(
+                90deg,
+                #C90DEA,
+                #3533CD,
+                #33CEEF
+            );
+            color: white;
+            border: none;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 25px rgba(201, 13, 234, 0.3);
+        }
+
+        .note {
+            color: #888;
+            font-size: 13px;
+            line-height: 1.7;
+            margin-top: 12px;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 60px auto 0;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 700px) {
+
+            .page {
+                padding: 60px 20px;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+
+            .idea-grid,
+            .choice-group {
+                grid-template-columns: 1fr;
+            }
+
+            .form-wrapper {
+                padding: 25px 18px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PERSONALIZED ART -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Personalized Art
+            </h1>
+
+            <p>
+                Your story, memory, words, people, places or feelings can
+                become the foundation for an artwork created specifically
+                around what it means to you.
+            </p>
+
+        </div>
+
+
+        <!-- WHAT CAN BECOME ART -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                What Can Become Personalized Art?
+            </h2>
+
+            <p class="section-intro">
+                There is no single way to personalize a piece. The starting
+                point can be something visual, something written, something
+                remembered or simply something you want to express.
+            </p>
+
+            <div class="idea-grid">
+
+                <article class="idea-card">
+
+                    <h2>
+                        Memories
+                    </h2>
+
+                    <p>
+                        A special moment, place, relationship or experience
+                        transformed into a visual piece.
+                    </p>
+
+                </article>
+
+
+                <article class="idea-card">
+
+                    <h2>
+                        Words & Messages
+                    </h2>
+
+                    <p>
+                        Names, quotes, letters, poems, personal messages or
+                        meaningful words incorporated into the artwork.
+                    </p>
+
+                </article>
+
+
+                <article class="idea-card">
+
+                    <h2>
+                        People & Places
+                    </h2>
+
+                    <p>
+                        Artwork inspired by someone important, a meaningful
+                        location or a combination of both.
+                    </p>
+
+                </article>
+
+
+                <article class="idea-card">
+
+                    <h2>
+                        Your Imagination
+                    </h2>
+
+                    <p>
+                        Bring an idea, feeling or concept and let the Atelier
+                        help translate it into a visual creation.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- CUSTOM ORDER FORM -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                Start Your Personalized Piece
+            </h2>
+
+            <p class="section-intro">
+                Tell us what you want the artwork to represent. The more
+                meaning and direction you provide, the more we can understand
+                the vision behind your piece.
+            </p>
+
+
+            <div class="form-wrapper">
+
+                <form id="personalizedArtForm">
+
+
+                    <div class="form-group">
+
+                        <label for="name">
+                            Your Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="projectName">
+                            Name Your Project
+                        </label>
+
+                        <input
+                            type="text"
+                            id="projectName"
+                            name="projectName"
+                            placeholder="Example: A Mother's Love"
+                            required
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="meaning">
+                            What Would You Like The Art To Represent?
+                        </label>
+
+                        <textarea
+                            id="meaning"
+                            name="meaning"
+                            placeholder="Tell us the story, memory, feeling, person, message or idea behind the piece."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="artDirection">
+                            What Kind Of Direction Do You Have?
+                        </label>
+
+                        <select
+                            id="artDirection"
+                            name="artDirection"
+                            required
+                        >
+
+                            <option value="">
+                                Select one
+                            </option>
+
+                            <option value="I have a clear design">
+                                I have a clear design
+                            </option>
+
+                            <option value="I have a general idea">
+                                I have a general idea
+                            </option>
+
+                            <option value="I have references">
+                                I have references
+                            </option>
+
+                            <option value="I want the Atelier to interpret it">
+                                I want the Atelier to interpret it
+                            </option>
+
+                            <option value="Not sure yet">
+                                I'm not sure yet
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            What Should The Artwork Include?
+                        </label>
+
+                        <div class="choice-group">
+
+                            <div class="choice">
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        name="elements"
+                                        value="Words"
+                                    >
+                                    Words / Quotes
+                                </label>
+                            </div>
+
+                            <div class="choice">
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        name="elements"
+                                        value="Names"
+                                    >
+                                    Names
+                                </label>
+                            </div>
+
+                            <div class="choice">
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        name="elements"
+                                        value="Photographs"
+                                    >
+                                    Photographs
+                                </label>
+                            </div>
+
+                            <div class="choice">
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        name="elements"
+                                        value="Illustration"
+                                    >
+                                    Illustration
+                                </label>
+                            </div>
+
+                            <div class="choice">
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        name="elements"
+                                        value="Symbols"
+                                    >
+                                    Symbols
+                                </label>
+                            </div>
+
+                            <div class="choice">
+                                <label>
+                                    <input
+                                        type="checkbox"
+                                        name="elements"
+                                        value="Other"
+                                    >
+                                    Other Details
+                                </label>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="style">
+                            Preferred Artistic Style
+                        </label>
+
+                        <select
+                            id="style"
+                            name="style"
+                            required
+                        >
+
+                            <option value="">
+                                Select one
+                            </option>
+
+                            <option value="Minimal">
+                                Minimal
+                            </option>
+
+                            <option value="Elegant">
+                                Elegant
+                            </option>
+
+                            <option value="Bold">
+                                Bold
+                            </option>
+
+                            <option value="Romantic">
+                                Romantic
+                            </option>
+
+                            <option value="Dark">
+                                Dark / Dramatic
+                            </option>
+
+                            <option value="Colourful">
+                                Colourful
+                            </option>
+
+                            <option value="Abstract">
+                                Abstract
+                            </option>
+
+                            <option value="Realistic">
+                                Realistic
+                            </option>
+
+                            <option value="Not Sure">
+                                Not Sure
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="colors">
+                            Preferred Colours
+                        </label>
+
+                        <input
+                            type="text"
+                            id="colors"
+                            name="colors"
+                            placeholder="Example: Black, burgundy and gold"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="size">
+                            Preferred Size
+                        </label>
+
+                        <select
+                            id="size"
+                            name="size"
+                        >
+
+                            <option value="">
+                                Select one
+                            </option>
+
+                            <option value="Small">
+                                Small
+                            </option>
+
+                            <option value="Medium">
+                                Medium
+                            </option>
+
+                            <option value="Large">
+                                Large
+                            </option>
+
+                            <option value="Extra Large">
+                                Extra Large
+                            </option>
+
+                            <option value="Not Sure">
+                                Not Sure
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- VISUAL UPLOAD -->
+
+                    <div class="upload-box">
+
+                        <h3>
+                            Upload Your References
+                        </h3>
+
+                        <p>
+                            Upload photographs, sketches, screenshots,
+                            existing artwork, colour references, handwritten
+                            notes or anything else that helps communicate
+                            your vision.
+                        </p>
+
+                        <input
+                            type="file"
+                            id="referenceFiles"
+                            name="referenceFiles"
+                            accept="image/*,.pdf"
+                            multiple
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="deadline">
+                            Desired Completion Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="deadline"
+                            name="deadline"
+                        >
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="additionalNotes">
+                            Anything Else We Should Know?
+                        </label>
+
+                        <textarea
+                            id="additionalNotes"
+                            name="additionalNotes"
+                            placeholder="Add any additional instructions or details."
+                        ></textarea>
+
+                    </div>
+
+
+                    <div class="quotation-box">
+
+                        <h2>
+                            Custom Quotation
+                        </h2>
+
+                        <p>
+                            Personalized Art is individually quoted.
+                            Pricing may depend on the complexity of the
+                            artwork, size, materials, number of design
+                            elements, presentation and level of customization.
+                        </p>
+
+                        <p class="note">
+                            Your request is reviewed before the project,
+                            final design direction and price are confirmed.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+                        Continue To Project Confirmation
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <a
+            href="custom-creations.html"
+            class="back-button"
+        >
+            Back To Custom Creations
+        </a>
+
+    </main>
+
+
+    <script>
+
+        document
+            .getElementById("personalizedArtForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const selectedElements = [];
+
+                document
+                    .querySelectorAll('input[name="elements"]:checked')
+                    .forEach(function(item) {
+
+                        selectedElements.push(item.value);
+
+                    });
+
+
+                const uploadedFiles = [];
+
+                document
+                    .getElementById("referenceFiles")
+                    .files
+                    && Array.from(
+                        document.getElementById("referenceFiles").files
+                    ).forEach(function(file) {
+
+                        uploadedFiles.push({
+
+                            name: file.name,
+
+                            type: file.type,
+
+                            size: file.size
+
+                        });
+
+                    });
+
+
+                const order = {
+
+                    serviceCategory: "Custom Creations",
+
+                    service: "Personalized Art",
+
+                    name:
+                        document.getElementById("name").value,
+
+                    email:
+                        document.getElementById("email").value,
+
+                    projectName:
+                        document.getElementById("projectName").value,
+
+                    meaning:
+                        document.getElementById("meaning").value,
+
+                    artDirection:
+                        document.getElementById("artDirection").value,
+
+                    elements:
+                        selectedElements,
+
+                    style:
+                        document.getElementById("style").value,
+
+                    colors:
+                        document.getElementById("colors").value,
+
+                    size:
+                        document.getElementById("size").value,
+
+                    deadline:
+                        document.getElementById("deadline").value,
+
+                    additionalNotes:
+                        document.getElementById("additionalNotes").value,
+
+                    uploadedFiles:
+                        uploadedFiles,
+
+                    pricingType:
+                        "Custom Quotation",
+
+                    status:
+                        "Awaiting Project Review",
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+                localStorage.setItem(
+                    "currentOrder",
+                    JSON.stringify(order)
+                );
+
+
+                window.location.href = "payment.html";
+
+            });
+
+    </script>
+
+</body>
+
+</html>

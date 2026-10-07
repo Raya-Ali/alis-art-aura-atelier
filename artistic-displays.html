@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Artistic Displays | Alis Art & Aura Atelier</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #000000, #15102a, #3533CD);
+            color: white;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 25px;
+            background: rgba(0, 0, 0, 0.85);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            color: #FF66C4;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 15px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #33CEEF;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 70px 20px 45px;
+        }
+
+        .hero h1 {
+            color: #C90DEA;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            max-width: 750px;
+            margin: auto;
+            line-height: 1.7;
+            color: #eeeeee;
+        }
+
+        .section {
+            padding: 45px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .section h2 {
+            color: #33CEEF;
+            margin-bottom: 8px;
+        }
+
+        .section-intro {
+            color: #dddddd;
+            margin-bottom: 25px;
+        }
+
+        .gallery {
+            display: flex;
+            gap: 18px;
+            overflow-x: auto;
+            padding-bottom: 15px;
+        }
+
+        .gallery::-webkit-scrollbar {
+            height: 8px;
+        }
+
+        .gallery::-webkit-scrollbar-thumb {
+            background: #C90DEA;
+            border-radius: 10px;
+        }
+
+        .card {
+            min-width: 240px;
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            border-radius: 15px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+
+        .card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 15px;
+        }
+
+        .card h3 {
+            margin: 0 0 8px;
+            color: #FF66C4;
+        }
+
+        .card p {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #dddddd;
+        }
+
+        .explore-btn {
+            width: 100%;
+            padding: 11px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #C90DEA, #3533CD);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .explore-btn:hover {
+            opacity: 0.85;
+        }
+
+        .builder {
+            background: rgba(0, 0, 0, 0.45);
+            border-radius: 20px;
+            padding: 30px;
+            margin-top: 30px;
+        }
+
+        .builder h2 {
+            text-align: center;
+            color: #FF66C4;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            color: #33CEEF;
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid #555;
+            background: #111;
+            color: white;
+        }
+
+        textarea {
+            min-height: 110px;
+            resize: vertical;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .photo-preview-box {
+            margin-top: 12px;
+        }
+
+        .preview-photo {
+            max-width: 180px;
+            max-height: 180px;
+            border-radius: 10px;
+            display: none;
+            object-fit: cover;
+        }
+
+        .price-box {
+            margin-top: 25px;
+            padding: 20px;
+            text-align: center;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #15102a, #3533CD);
+            border: 1px solid #C90DEA;
+        }
+
+        .price-box h3 {
+            color: #FF66C4;
+            margin-top: 0;
+        }
+
+        #total {
+            font-size: 25px;
+            font-weight: bold;
+            color: #33CEEF;
+        }
+
+        .order-preview {
+            margin-top: 25px;
+            padding: 20px;
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .order-preview h3 {
+            color: #C90DEA;
+        }
+
+        .order-preview p {
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+
+        .preview-photo-order {
+            max-width: 180px;
+            max-height: 180px;
+            border-radius: 10px;
+            margin-top: 10px;
+        }
+
+        .payment-btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(90deg, #FF66C4, #C90DEA);
+            color: white;
+            font-size: 17px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .payment-btn:hover {
+            opacity: 0.85;
+        }
+
+        .delivery-note {
+            margin-top: 20px;
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            margin-top: 50px;
+            background: rgba(0, 0, 0, 0.7);
+            color: #aaa;
+        }
+
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 34px;
+            }
+
+            nav {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            nav a {
+                margin: 0 7px;
+            }
+
+            .builder {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Alis Art & Aura Atelier</div>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="what-we-create.html">Create</a>
+            <a href="custom-orders.html">Custom Orders</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+
+    <section class="hero">
+
+        <h1>Artistic Displays</h1>
+
+        <p>
+            Turn artwork, words, memories and creative ideas into distinctive
+            displays designed to bring personality and artistic expression into
+            the spaces around you.
+        </p>
+
+    </section>
+
+
+    <!-- TABLETOP DISPLAYS -->
+
+    <section class="section">
+
+        <h2>Tabletop Displays</h2>
+
+        <p class="section-intro">
+            Artistic pieces designed for tables, consoles, counters and other
+            surfaces where your artwork can become part of the environment.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/artistic-tabletop-1.png" alt="Tabletop artistic display">
+                <div class="card-content">
+                    <h3>Tabletop Artwork</h3>
+                    <p>Artwork created to stand beautifully on a surface.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Tabletop Artwork">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-tabletop-2.png" alt="Decorative tabletop display">
+                <div class="card-content">
+                    <h3>Decorative Table Display</h3>
+                    <p>A creative decorative piece designed for your space.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Decorative Table Display">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-tabletop-3.png" alt="Personalised tabletop display">
+                <div class="card-content">
+                    <h3>Personalised Display</h3>
+                    <p>Words, imagery or design created around your idea.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Personalised Display">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-tabletop-4.png" alt="Artistic centerpiece">
+                <div class="card-content">
+                    <h3>Artistic Centrepiece</h3>
+                    <p>A statement display designed to become a focal point.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Artistic Centrepiece">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- SHELF DISPLAYS -->
+
+    <section class="section">
+
+        <h2>Shelf & Surface Displays</h2>
+
+        <p class="section-intro">
+            Creative pieces designed to work with shelves, cabinets, bookcases
+            and other display areas.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/artistic-shelf-1.png" alt="Shelf artwork display">
+                <div class="card-content">
+                    <h3>Shelf Artwork</h3>
+                    <p>Artwork designed to become part of a curated display.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Shelf Artwork">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-shelf-2.png" alt="Decorative shelf display">
+                <div class="card-content">
+                    <h3>Decorative Shelf Piece</h3>
+                    <p>A decorative artistic piece created for your surroundings.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Decorative Shelf Piece">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-shelf-3.png" alt="Personalised shelf display">
+                <div class="card-content">
+                    <h3>Personalised Shelf Display</h3>
+                    <p>A display built around your words, imagery or theme.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Personalised Shelf Display">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-shelf-4.png" alt="Curated artistic display">
+                <div class="card-content">
+                    <h3>Curated Display</h3>
+                    <p>A coordinated artistic arrangement for a chosen space.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Curated Display">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- BEDSIDE & PERSONAL DISPLAYS -->
+
+    <section class="section">
+
+        <h2>Personal & Bedside Displays</h2>
+
+        <p class="section-intro">
+            Smaller artistic displays created for intimate spaces and personal
+            areas.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/artistic-personal-1.png" alt="Bedside artistic display">
+                <div class="card-content">
+                    <h3>Bedside Display</h3>
+                    <p>A small artistic piece created for a personal bedside area.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Bedside Display">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-personal-2.png" alt="Dresser artistic display">
+                <div class="card-content">
+                    <h3>Dresser Display</h3>
+                    <p>A decorative artistic piece for a dresser or vanity area.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Dresser Display">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-personal-3.png" alt="Personal corner display">
+                <div class="card-content">
+                    <h3>Personal Corner Display</h3>
+                    <p>A meaningful artistic element for a small personal space.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Personal Corner Display">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-personal-4.png" alt="Small artistic display">
+                <div class="card-content">
+                    <h3>Small Artistic Display</h3>
+                    <p>A compact display designed around your chosen concept.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Small Artistic Display">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- STATEMENT DISPLAYS -->
+
+    <section class="section">
+
+        <h2>Statement Displays</h2>
+
+        <p class="section-intro">
+            Larger or more expressive displays designed to make the artwork
+            itself part of the atmosphere.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/artistic-statement-1.png" alt="Statement artistic display">
+                <div class="card-content">
+                    <h3>Statement Artwork</h3>
+                    <p>An artistic display designed to command attention.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Statement Artwork">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-statement-2.png" alt="Decorative statement display">
+                <div class="card-content">
+                    <h3>Statement Display</h3>
+                    <p>A distinctive display designed around your chosen space.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Statement Display">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-statement-3.png" alt="Creative display concept">
+                <div class="card-content">
+                    <h3>Creative Display Concept</h3>
+                    <p>A display developed from a specific artistic direction.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Creative Display Concept">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-statement-4.png" alt="Custom statement display">
+                <div class="card-content">
+                    <h3>Custom Statement Piece</h3>
+                    <p>A display developed around your individual vision.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Custom Statement Piece">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- COORDINATED DISPLAYS -->
+
+    <section class="section">
+
+        <h2>Coordinated Artistic Displays</h2>
+
+        <p class="section-intro">
+            Multiple artistic elements brought together to create a cohesive
+            display.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/artistic-coordinated-1.png" alt="Coordinated artistic display">
+                <div class="card-content">
+                    <h3>Coordinated Display</h3>
+                    <p>Multiple elements designed to work together visually.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Coordinated Display">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-coordinated-2.png" alt="Themed artistic display">
+                <div class="card-content">
+                    <h3>Themed Display</h3>
+                    <p>A collection developed around one visual direction.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Themed Display">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-coordinated-3.png" alt="Personalised display collection">
+                <div class="card-content">
+                    <h3>Personalised Collection</h3>
+                    <p>Several pieces created around your personal concept.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Personalised Collection">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-coordinated-4.png" alt="Custom display concept">
+                <div class="card-content">
+                    <h3>Custom Display Concept</h3>
+                    <p>A complete artistic display developed from your vision.</p>
+                    <button class="explore-btn" type="button"
+                        data-display="Custom Display Concept">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- EPOXY & RESIN DISPLAYS -->
+
+    <section class="section">
+
+        <h2>Epoxy & Resin Displays</h2>
+
+        <p class="section-intro">
+            Artistic pieces created through epoxy and resin, combining original
+            artwork, colour, texture, embedded elements and functional design.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/artistic-epoxy-1.png" alt="Epoxy artistic display">
+                <div class="card-content">
+                    <h3>Epoxy Artwork</h3>
+                    <p>
+                        Artistic designs created through epoxy and resin,
+                        developed as original or collaborative pieces.
+                    </p>
+                    <button class="explore-btn" type="button"
+                        data-display="Epoxy Artwork">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-epoxy-2.png" alt="Epoxy decorative display">
+                <div class="card-content">
+                    <h3>Resin Decorative Piece</h3>
+                    <p>
+                        Decorative pieces combining artistic design, colour
+                        and resin.
+                    </p>
+                    <button class="explore-btn" type="button"
+                        data-display="Resin Decorative Piece">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-epoxy-3.png" alt="Epoxy functional art">
+                <div class="card-content">
+                    <h3>Epoxy Functional Art</h3>
+                    <p>
+                        Artistic pieces designed to bring creative expression
+                        into functional objects.
+                    </p>
+                    <button class="explore-btn" type="button"
+                        data-display="Epoxy Functional Art">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="images/artistic-epoxy-4.png" alt="Custom epoxy display">
+                <div class="card-content">
+                    <h3>Custom Epoxy Concept</h3>
+                    <p>
+                        A resin-based artistic concept developed around an
+                        individual creative vision.
+                    </p>
+                    <button class="explore-btn" type="button"
+                        data-display="Custom Epoxy Concept">
+                        Explore This Display
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BUILDER -->
+
+    <section class="section">
+
+        <div class="builder">
+
+            <h2>Create Your Artistic Display</h2>
+
+            <div class="form-group">
+
+                <label for="displayType">Display Type</label>
+
+                <select id="displayType">
+
+                    <option value="">Select a display</option>
+
+                    <option>Tabletop Artwork</option>
+                    <option>Decorative Table Display</option>
+                    <option>Personalised Display</option>
+                    <option>Artistic Centrepiece</option>
+
+                    <option>Shelf Artwork</option>
+                    <option>Decorative Shelf Piece</option>
+                    <option>Personalised Shelf Display</option>
+                    <option>Curated Display</option>
+
+                    <option>Bedside Display</option>
+                    <option>Dresser Display</option>
+                    <option>Personal Corner Display</option>
+                    <option>Small Artistic Display</option>
+
+                    <option>Statement Artwork</option>
+                    <option>Statement Display</option>
+                    <option>Creative Display Concept</option>
+                    <option>Custom Statement Piece</option>
+
+                    <option>Coordinated Display</option>
+                    <option>Themed Display</option>
+                    <option>Personalised Collection</option>
+                    <option>Custom Display Concept</option>
+
+                    <option>Epoxy Artwork</option>
+                    <option>Resin Decorative Piece</option>
+                    <option>Epoxy Functional Art</option>
+                    <option>Custom Epoxy Concept</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="presentation">Presentation / Finish</label>
+
+                <select id="presentation">
+
+                    <option value="">Select presentation</option>
+                    <option>Standard</option>
+                    <option>Signature</option>
+                    <option>Premium</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="size">Size / Format</label>
+
+                <select id="size">
+
+                    <option value="">Select size / format</option>
+                    <option>Small</option>
+                    <option>Medium</option>
+                    <option>Large</option>
+                    <option>Custom Size</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="designDirection">Design Direction</label>
+
+                <select id="designDirection">
+
+                    <option value="">Select a direction</option>
+                    <option>Personalised Words</option>
+                    <option>Personal Photo</option>
+                    <option>Artwork / Illustration</option>
+                    <option>Words + Photo</option>
+                    <option>Colour Palette</option>
+                    <option>Pattern / Theme</option>
+                    <option>Coordinated Look</option>
+                    <option>Fully Custom Concept</option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group hidden" id="photoUploadGroup">
+
+                <label for="photoUpload">Upload Your Photo</label>
+
+                <input
+                    type="file"
+                    id="photoUpload"
+                    accept="image/*"
+                >
+
+                <div class="photo-preview-box">
+
+                    <img
+                        id="photoUploadPreview"
+                        class="preview-photo"
+                        alt="Uploaded photo preview"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="quantity">Quantity</label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    value="1"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="vision">
+                    Tell Us About Your Vision
+                </label>
+
+                <textarea
+                    id="vision"
+                    placeholder="Describe the words, colours, artwork, theme, memories or overall look you want."
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="fullName">Full Name</label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Your full name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your email address"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="phone">Phone / WhatsApp</label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Your phone or WhatsApp number"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="address">Delivery Address</label>
+
+                <textarea
+                    id="address"
+                    placeholder="Where should your order be delivered?"
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="specialInstructions">
+                    Special Instructions
+                </label>
+
+                <textarea
+                    id="specialInstructions"
+                    placeholder="Anything else we should know?"
+                ></textarea>
+
+            </div>
+
+
+            <div class="price-box">
+
+                <h3>Estimated Total</h3>
+
+                <div id="total">
+                    Price To Be Calculated
+                </div>
+
+            </div>
+
+
+            <div class="order-preview">
+
+                <h3>Order Preview</h3>
+
+                <p>
+                    <strong>Display:</strong>
+                    <span id="previewDisplay">Not selected</span>
+                </p>
+
+                <p>
+                    <strong>Presentation:</strong>
+                    <span id="previewPresentation">Not selected</span>
+                </p>
+
+                <p>
+                    <strong>Size / Format:</strong>
+                    <span id="previewSize">Not selected</span>
+                </p>
+
+                <p>
+                    <strong>Design Direction:</strong>
+                    <span id="previewDirection">Not selected</span>
+                </p>
+
+                <p>
+                    <strong>Quantity:</strong>
+                    <span id="previewQuantity">1</span>
+                </p>
+
+                <p>
+                    <strong>Vision:</strong>
+                    <span id="previewVision">Not provided</span>
+                </p>
+
+                <p>
+                    <strong>Name:</strong>
+                    <span id="previewName">Not provided</span>
+                </p>
+
+                <p>
+                    <strong>Email:</strong>
+                    <span id="previewEmail">Not provided</span>
+                </p>
+
+                <p>
+                    <strong>Phone / WhatsApp:</strong>
+                    <span id="previewPhone">Not provided</span>
+                </p>
+
+                <p>
+                    <strong>Delivery Address:</strong>
+                    <span id="previewAddress">Not provided</span>
+                </p>
+
+                <p>
+                    <strong>Special Instructions:</strong>
+                    <span id="previewInstructions">Not provided</span>
+                </p>
+
+                <img
+                    id="uploadedPhoto"
+                    class="preview-photo-order"
+                    style="display:none;"
+                    alt="Uploaded customer photo"
+                >
+
+            </div>
+
+
+            <p class="delivery-note">
+                Delivery arrangements and costs will be confirmed with your order.
+                Custom concepts may require additional consultation before production.
+            </p>
+
+
+            <button
+                type="button"
+                class="payment-btn"
+                id="paymentButton"
+            >
+                Continue To Payment
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <footer>
+        © 2026 Alis Art & Aura Atelier
+    </footer>
+
+
+    <script>
+
+        let uploadedPhotoData = "";
+
+        const displayType =
+            document.getElementById("displayType");
+
+        const presentation =
+            document.getElementById("presentation");
+
+        const size =
+            document.getElementById("size");
+
+        const designDirection =
+            document.getElementById("designDirection");
+
+        const quantity =
+            document.getElementById("quantity");
+
+        const vision =
+            document.getElementById("vision");
+
+        const fullName =
+            document.getElementById("fullName");
+
+        const email =
+            document.getElementById("email");
+
+        const phone =
+            document.getElementById("phone");
+
+        const address =
+            document.getElementById("address");
+
+        const specialInstructions =
+            document.getElementById("specialInstructions");
+
+        const photoUploadGroup =
+            document.getElementById("photoUploadGroup");
+
+        const photoUpload =
+            document.getElementById("photoUpload");
+
+        const photoUploadPreview =
+            document.getElementById("photoUploadPreview");
+
+        const uploadedPhoto =
+            document.getElementById("uploadedPhoto");
+
+
+        function updatePhotoUpload() {
+
+            const direction = designDirection.value;
+
+            if (
+                direction === "Personal Photo" ||
+                direction === "Words + Photo"
+            ) {
+
+                photoUploadGroup.classList.remove("hidden");
+
+            } else {
+
+                photoUploadGroup.classList.add("hidden");
+
+                photoUpload.value = "";
+
+                uploadedPhotoData = "";
+
+                photoUploadPreview.src = "";
+
+                photoUploadPreview.style.display = "none";
+
+                uploadedPhoto.src = "";
+
+                uploadedPhoto.style.display = "none";
+
+            }
+
+        }
+
+
+        photoUpload.addEventListener("change", function () {
+
+            const file = this.files[0];
+
+            if (!file) {
+                return;
+            }
+
+            const reader = new FileReader();
+
+            reader.onload = function (event) {
+
+                uploadedPhotoData = event.target.result;
+
+                photoUploadPreview.src = uploadedPhotoData;
+
+                photoUploadPreview.style.display = "block";
+
+                uploadedPhoto.src = uploadedPhotoData;
+
+                uploadedPhoto.style.display = "block";
+
+            };
+
+            reader.readAsDataURL(file);
+
+        });
+
+
+        function updatePreview() {
+
+            updatePhotoUpload();
+
+            document.getElementById("previewDisplay").textContent =
+                displayType.value || "Not selected";
+
+            document.getElementById("previewPresentation").textContent =
+                presentation.value || "Not selected";
+
+            document.getElementById("previewSize").textContent =
+                size.value || "Not selected";
+
+            document.getElementById("previewDirection").textContent =
+                designDirection.value || "Not selected";
+
+            document.getElementById("previewQuantity").textContent =
+                quantity.value || "1";
+
+            document.getElementById("previewVision").textContent =
+                vision.value || "Not provided";
+
+            document.getElementById("previewName").textContent =
+                fullName.value || "Not provided";
+
+            document.getElementById("previewEmail").textContent =
+                email.value || "Not provided";
+
+            document.getElementById("previewPhone").textContent =
+                phone.value || "Not provided";
+
+            document.getElementById("previewAddress").textContent =
+                address.value || "Not provided";
+
+            document.getElementById("previewInstructions").textContent =
+                specialInstructions.value || "Not provided";
+
+        }
+
+
+        const fields = [
+            displayType,
+            presentation,
+            size,
+            designDirection,
+            quantity,
+            vision,
+            fullName,
+            email,
+            phone,
+            address,
+            specialInstructions
+        ];
+
+
+        fields.forEach(function (field) {
+
+            field.addEventListener("input", updatePreview);
+            field.addEventListener("change", updatePreview);
+
+        });
+
+
+        document.querySelectorAll(".explore-btn").forEach(function (button) {
+
+            button.addEventListener("click", function () {
+
+                const selectedDisplay =
+                    this.dataset.display;
+
+                displayType.value = selectedDisplay;
+
+                updatePreview();
+
+                document.querySelector(".builder").scrollIntoView({
+                    behavior: "smooth"
+                });
+
+            });
+
+        });
+
+
+        document.getElementById("paymentButton")
+            .addEventListener("click", function () {
+
+                const order = {
+
+                    displayType: displayType.value,
+
+                    presentation: presentation.value,
+
+                    size: size.value,
+
+                    designDirection: designDirection.value,
+
+                    quantity: quantity.value,
+
+                    vision: vision.value,
+
+                    fullName: fullName.value,
+
+                    email: email.value,
+
+                    phone: phone.value,
+
+                    address: address.value,
+
+                    specialInstructions:
+                        specialInstructions.value,
+
+                    photoData: uploadedPhotoData,
+
+                    total: "Price To Be Calculated"
+
+                };
+
+
+                localStorage.setItem(
+                    "artisticDisplayOrder",
+                    JSON.stringify(order)
+                );
+
+
+                window.location.href = "payment.html";
+
+            });
+
+
+        updatePreview();
+
+    </script>
+
+</body>
+
+</html>

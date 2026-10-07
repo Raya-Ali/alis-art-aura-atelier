@@ -1,0 +1,691 @@
+<!DOCTYPE html><html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Artistic Prints | Alis Art & Aura Atelier</title><style>
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+    background:
+        radial-gradient(circle at top left, #3533CD, transparent 35%),
+        radial-gradient(circle at bottom right, #C90DEA, transparent 35%),
+        #000;
+}
+
+.page {
+    width: 92%;
+    max-width: 1100px;
+    margin: auto;
+    padding: 30px 0 60px;
+}
+
+/* NAVIGATION */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.brand {
+    font-size: 20px;
+    font-weight: bold;
+    color: #FF66C4;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+nav a:hover {
+    color: #33CEEF;
+}
+
+/* INTRO */
+
+.intro {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.intro h1 {
+    font-size: 38px;
+    margin-bottom: 15px;
+    background: linear-gradient(
+        90deg,
+        #C90DEA,
+        #33CEEF,
+        #FF66C4
+    );
+    background-clip: text;
+    color: transparent;
+}
+
+.intro p {
+    max-width: 750px;
+    margin: auto;
+    line-height: 1.7;
+}
+
+/* GALLERY */
+
+.gallery {
+    margin: 30px 0 45px;
+}
+
+.gallery-track {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    gap: 15px;
+    padding-bottom: 10px;
+}
+
+.gallery-slide {
+    flex: 0 0 100%;
+    min-width: 100%;
+    scroll-snap-align: center;
+    scroll-snap-stop: always;
+}
+
+.gallery-slide img {
+    width: 100%;
+    height: 430px;
+    object-fit: contain;
+    border-radius: 18px;
+    border: 1px solid #C90DEA;
+}
+
+/* PRODUCT */
+
+.product {
+    background: rgba(0,0,0,0.55);
+    border: 1px solid #3533CD;
+    border-radius: 20px;
+    padding: 25px;
+    margin-bottom: 35px;
+}
+
+.product h2 {
+    color: #33CEEF;
+    margin-top: 0;
+}
+
+.product p {
+    line-height: 1.6;
+}
+
+/* FORM */
+
+label {
+    display: block;
+    margin-top: 18px;
+    margin-bottom: 7px;
+    color: #FF66C4;
+    font-weight: bold;
+}
+
+select,
+input {
+    width: 100%;
+    padding: 13px;
+    border-radius: 10px;
+    border: 1px solid #3533CD;
+    background: #111;
+    color: white;
+    font-size: 15px;
+}
+
+option {
+    background: #111;
+    color: white;
+}
+
+/* PRICE */
+
+.price-box {
+    margin-top: 30px;
+    padding: 20px;
+    border-radius: 15px;
+    border: 1px solid #C90DEA;
+    text-align: center;
+}
+
+.price-label {
+    font-size: 14px;
+    color: #FF66C4;
+}
+
+#price {
+    font-size: 32px;
+    font-weight: bold;
+    color: #33CEEF;
+    margin-top: 8px;
+}
+
+/* SUMMARY */
+
+.summary {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(53,51,205,0.15);
+    border-radius: 15px;
+    line-height: 1.8;
+}
+
+/* BUTTON */
+
+button {
+    width: 100%;
+    margin-top: 25px;
+    padding: 15px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(
+        90deg,
+        #C90DEA,
+        #3533CD
+    );
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.85;
+}
+
+/* PAYMENT */
+
+#paymentSection {
+    display: none;
+}
+
+.back-button {
+    display: inline-block;
+    margin-top: 25px;
+    color: #33CEEF;
+    text-decoration: none;
+}
+
+@media (max-width: 600px) {
+
+    .intro h1 {
+        font-size: 30px;
+    }
+
+    .gallery-slide img {
+        height: 300px;
+    }
+
+    .product {
+        padding: 20px;
+    }
+}
+
+</style></head><body><div class="page"><nav>
+    <div class="brand">Alis Art & Aura Atelier</div><a href="index.html">Home</a>
+<a href="what-we-create.html">What We Create</a>
+<a href="custom-orders.html">Custom Orders</a>
+<a href="contact.html">Contact</a>
+
+</nav><section class="intro"><h1>Artistic Prints</h1>
+
+<p>
+    Bring original artwork created by artists into your space
+    through carefully produced physical prints. Explore
+    expressive compositions, meaningful artwork and
+    personalized artistic pieces in a range of sizes and formats.
+</p>
+
+</section><!-- GALLERY --><section class="gallery"><div class="gallery-track">
+
+    <div class="gallery-slide">
+        <img src="images/mockup1.png"
+             alt="Artistic Print artwork">
+    </div>
+
+    <div class="gallery-slide">
+        <img src="images/digital-print2.png"
+             alt="Artistic Print artwork">
+    </div>
+
+    <div class="gallery-slide">
+        <img src="images/digital-print3.png"
+             alt="Artistic Print artwork">
+    </div>
+
+    <div class="gallery-slide">
+        <img src="images/digital-print4.png"
+             alt="Artistic Print artwork">
+    </div>
+
+    <div class="gallery-slide">
+        <img src="images/digital-print5.png"
+             alt="Artistic Print artwork">
+    </div>
+
+    <div class="gallery-slide">
+        <img src="images/digital-print6.png"
+             alt="Artistic Print artwork">
+    </div>
+
+</div>
+
+</section><!-- PRODUCT --><section class="product"><h2>Artist-Created Prints</h2>
+
+<p>
+    Choose from original artwork created through artistic
+    expression, imagination and storytelling. Select your
+    preferred design tier, print size, format and finish to
+    create a physical print that brings the artwork into your space.
+</p>
+
+
+<!-- TIER -->
+
+<label for="tier">Design Tier</label>
+
+<select id="tier" onchange="updatePrice()">
+
+    <option value="0">Choose a tier</option>
+
+    <option value="0">
+        Regular — Artist-created artwork with simple personalization
+    </option>
+
+    <option value="500">
+        Signature — Enhanced artwork with additional customization
+    </option>
+
+    <option value="1000">
+        Premium — More extensively customized artistic composition
+    </option>
+
+</select>
+
+
+<!-- PRODUCT TYPE -->
+
+<label for="type">Print Type</label>
+
+<select id="type" onchange="updatePrice()">
+
+    <option value="0">
+        Choose an option
+    </option>
+
+    <option value="print">
+        Artistic Print
+    </option>
+
+</select>
+
+
+<!-- SIZE -->
+
+<label for="size">Print Size</label>
+
+<select id="size" onchange="updatePrice()">
+
+    <option value="0">
+        Choose a size
+    </option>
+
+    <option value="800">
+        4 × 6 / 6 × 4 — J$800
+    </option>
+
+    <option value="1000">
+        5 × 7 / 7 × 5 — J$1,000
+    </option>
+
+    <option value="1200">
+        6 × 8 / 8 × 6 — J$1,200
+    </option>
+
+    <option value="1500">
+        8 × 8 — J$1,500
+    </option>
+
+    <option value="1800">
+        8 × 10 / 10 × 8 — J$1,800
+    </option>
+
+    <option value="2200">
+        10 × 10 — J$2,200
+    </option>
+
+    <option value="2500">
+        10 × 12 / 12 × 10 — J$2,500
+    </option>
+
+    <option value="2800">
+        11 × 14 / 14 × 11 — J$2,800
+    </option>
+
+    <option value="3200">
+        12 × 12 — J$3,200
+    </option>
+
+    <option value="3500">
+        12 × 16 / 16 × 12 — J$3,500
+    </option>
+
+    <option value="4000">
+        14 × 14 — J$4,000
+    </option>
+
+    <option value="4500">
+        14 × 18 / 18 × 14 — J$4,500
+    </option>
+
+    <option value="5000">
+        16 × 16 — J$5,000
+    </option>
+
+    <option value="5500">
+        16 × 20 / 20 × 16 — J$5,500
+    </option>
+
+    <option value="6500">
+        18 × 24 / 24 × 18 — J$6,500
+    </option>
+
+    <option value="7000">
+        20 × 20 — J$7,000
+    </option>
+
+</select>
+
+
+<!-- ORIENTATION -->
+
+<label for="orientation">Format</label>
+
+<select id="orientation">
+
+    <option>Portrait</option>
+    <option>Landscape</option>
+    <option>Square</option>
+
+</select>
+
+
+<!-- PRINT FINISH -->
+
+<label for="finish">Print Finish</label>
+
+<select id="finish" onchange="updatePrice()">
+
+    <option value="0">
+        Standard Print
+    </option>
+
+    <option value="300">
+        Matte Finish + J$300
+    </option>
+
+    <option value="500">
+        Premium Finish + J$500
+    </option>
+
+</select>
+
+
+<!-- QUANTITY -->
+
+<label for="quantity">Quantity</label>
+
+<input
+    type="number"
+    id="quantity"
+    value="1"
+    min="1"
+    onchange="updatePrice()"
+>
+
+
+<!-- PRICE -->
+
+<div class="price-box">
+
+    <div class="price-label">
+        Current Total
+    </div>
+
+    <div id="price">
+        J$0
+    </div>
+
+</div>
+
+
+<!-- SUMMARY -->
+
+<div class="summary" id="summary">
+
+    Choose your options to see your order summary.
+
+</div>
+
+
+<button onclick="continueToPayment()">
+    Continue to Payment
+</button>
+
+</section><!-- PAYMENT --><section class="product" id="paymentSection"><h2>Payment</h2>
+
+<p>
+    Review your artistic print order before continuing with payment.
+</p>
+
+<div class="summary" id="finalSummary"></div>
+
+<label for="customerName">
+    Name
+</label>
+
+<input
+    type="text"
+    id="customerName"
+    placeholder="Your name"
+>
+
+<label for="customerEmail">
+    Email
+</label>
+
+<input
+    type="email"
+    id="customerEmail"
+    placeholder="Your email"
+>
+
+<label for="paymentMethod">
+    Payment Method
+</label>
+
+<select id="paymentMethod">
+
+    <option value="">
+        Choose payment method
+    </option>
+
+    <option>
+        Bank Transfer
+    </option>
+
+    <option>
+        Direct Deposit
+    </option>
+
+    <option>
+        Other
+    </option>
+
+</select>
+
+<button onclick="completePayment()">
+    Proceed
+</button>
+
+</section><a href="what-we-create.html" class="back-button">
+    ← Back to What We Create
+</a></div><script>
+
+function updatePrice() {
+
+    const tier =
+        Number(document.getElementById("tier").value);
+
+    const sizeSelect =
+        document.getElementById("size");
+
+    const sizePrice =
+        Number(sizeSelect.value);
+
+    const finish =
+        Number(document.getElementById("finish").value);
+
+    const quantity =
+        Number(document.getElementById("quantity").value) || 1;
+
+
+    if (sizePrice === 0) {
+
+        document.getElementById("price").textContent =
+            "J$0";
+
+        document.getElementById("summary").innerHTML =
+            "Choose your options to see your order summary.";
+
+        return;
+    }
+
+
+    let total =
+        (sizePrice + tier + finish) * quantity;
+
+
+    document.getElementById("price").textContent =
+        "J$" + total.toLocaleString();
+
+
+    const sizeText =
+        sizeSelect.options[sizeSelect.selectedIndex].text;
+
+
+    const tierText =
+        document.getElementById("tier")
+        .options[
+            document.getElementById("tier").selectedIndex
+        ].text;
+
+
+    document.getElementById("summary").innerHTML =
+
+        "<strong>Order Summary</strong><br>" +
+
+        "Design Tier: " + tierText + "<br>" +
+
+        "Product: Artistic Print<br>" +
+
+        "Size: " + sizeText + "<br>" +
+
+        "Format: " +
+        document.getElementById("orientation").value +
+        "<br>" +
+
+        "Quantity: " + quantity + "<br>" +
+
+        "<strong>Total: J$" +
+        total.toLocaleString() +
+        "</strong>";
+}
+
+
+function continueToPayment() {
+
+    const size =
+        document.getElementById("size").value;
+
+    const tier =
+        document.getElementById("tier").value;
+
+
+    if (!size || size === "0") {
+
+        alert("Please choose a print size.");
+
+        return;
+    }
+
+
+    if (tier === "0") {
+
+        alert("Please choose a design tier.");
+
+        return;
+    }
+
+
+    document.getElementById("finalSummary").innerHTML =
+        document.getElementById("summary").innerHTML;
+
+
+    document.getElementById("paymentSection").style.display =
+        "block";
+
+
+    document.getElementById("paymentSection")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+}
+
+
+function completePayment() {
+
+    const name =
+        document.getElementById("customerName").value;
+
+    const email =
+        document.getElementById("customerEmail").value;
+
+    const payment =
+        document.getElementById("paymentMethod").value;
+
+
+    if (!name || !email || !payment) {
+
+        alert(
+            "Please complete your name, email and payment method."
+        );
+
+        return;
+    }
+
+
+    alert(
+        "Your order information has been received. Payment processing will be connected here."
+    );
+}
+
+
+updatePrice();
+
+</script></body>
+</html>

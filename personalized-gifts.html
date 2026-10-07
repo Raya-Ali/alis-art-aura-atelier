@@ -1,0 +1,1123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Personalized Gifts | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(51, 206, 239, 0.25), transparent 32%),
+                radial-gradient(circle at 15% 75%, rgba(201, 13, 234, 0.15), transparent 30%),
+                linear-gradient(135deg, #000000, #3533CD);
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 80px 30px;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 65px;
+            text-align: center;
+        }
+
+        .brand {
+            color: #33CEEF;
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #eeeeee;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto 70px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: #dddddd;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .idea-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .idea-card {
+            padding: 28px;
+            min-height: 190px;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid #33CEEF;
+            transition: 0.3s;
+        }
+
+        .idea-card:nth-child(2) {
+            border-color: #C90DEA;
+        }
+
+        .idea-card:nth-child(3) {
+            border-color: #FF66C4;
+        }
+
+        .idea-card:nth-child(4) {
+            border-color: #33CEEF;
+        }
+
+        .idea-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 18px rgba(51, 206, 239, 0.2);
+        }
+
+        .idea-card h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .idea-card p {
+            color: #dddddd;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.72);
+            border: 1px solid rgba(51, 206, 239, 0.55);
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        label,
+        .field-title {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px 15px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            outline: none;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        select option {
+            background: #111111;
+            color: white;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #33CEEF;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .checkbox-item input {
+            width: auto;
+            accent-color: #33CEEF;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-size: 14px;
+            color: #dddddd;
+        }
+
+        .upload-box {
+            padding: 25px;
+            border: 1px dashed #33CEEF;
+            background: rgba(51, 206, 239, 0.04);
+        }
+
+        .upload-box p {
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quotation {
+            padding: 25px;
+            margin-top: 10px;
+            border-left: 3px solid #FF66C4;
+            background: rgba(255, 102, 196, 0.06);
+        }
+
+        .quotation h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .quotation p {
+            color: #dddddd;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            margin-top: 10px;
+            border: 1px solid #33CEEF;
+            background: transparent;
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #33CEEF;
+            color: #000000;
+        }
+
+        .statement {
+            max-width: 750px;
+            margin: 70px auto 0;
+            text-align: center;
+            font-size: 25px;
+            line-height: 1.6;
+            color: #f5f5f5;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 55px auto 0;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 900px) {
+            .idea-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .two-column,
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .idea-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .page {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- PERSONALIZED GIFTS -->
+
+    <main class="page">
+
+
+        <!-- HERO -->
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Personalized Gifts
+            </h1>
+
+            <p>
+                A gift becomes more meaningful when it feels like it
+                could only have been made for that person.
+                Tell us who it is for, what they mean to you,
+                and what you imagine — we will help shape the gift around them.
+            </p>
+
+        </div>
+
+
+        <!-- GIFT POSSIBILITIES -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                Made Personal
+            </h2>
+
+            <p class="section-intro">
+                Personalized gifts can take many forms. Your gift might
+                begin with an existing Atelier creation, a product you already
+                have in mind, or simply an idea that we develop with you.
+            </p>
+
+
+            <div class="idea-grid">
+
+
+                <article class="idea-card">
+
+                    <h2>
+                        Their Story
+                    </h2>
+
+                    <p>
+                        Build the gift around their personality,
+                        interests, memories, achievements or journey.
+                    </p>
+
+                </article>
+
+
+                <article class="idea-card">
+
+                    <h2>
+                        Your Words
+                    </h2>
+
+                    <p>
+                        Add names, messages, quotes, letters,
+                        dates or words that carry meaning.
+                    </p>
+
+                </article>
+
+
+                <article class="idea-card">
+
+                    <h2>
+                        Their Memories
+                    </h2>
+
+                    <p>
+                        Turn photographs, places, moments and
+                        shared memories into something they can keep.
+                    </p>
+
+                </article>
+
+
+                <article class="idea-card">
+
+                    <h2>
+                        Your Idea
+                    </h2>
+
+                    <p>
+                        Already know what you want?
+                        Tell us exactly what you are imagining and we will explore it with you.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- CUSTOM GIFT REQUEST -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                Create Your Gift
+            </h2>
+
+            <p class="section-intro">
+                Start with the person and the meaning behind the gift.
+                You do not need to know the exact product yet.
+            </p>
+
+
+            <div class="form-container">
+
+                <form id="personalizedGiftForm">
+
+
+                    <!-- CUSTOMER -->
+
+                    <div class="two-column">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RECIPIENT -->
+
+                    <div class="two-column">
+
+                        <div class="form-group">
+
+                            <label for="recipient">
+                                Who Is The Gift For?
+                            </label>
+
+                            <input
+                                type="text"
+                                id="recipient"
+                                name="recipient"
+                                placeholder="Name or relationship"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="relationship">
+                                Your Relationship
+                            </label>
+
+                            <select
+                                id="relationship"
+                                name="relationship"
+                            >
+
+                                <option value="">
+                                    Select one
+                                </option>
+
+                                <option>Partner</option>
+                                <option>Parent</option>
+                                <option>Sibling</option>
+                                <option>Child</option>
+                                <option>Friend</option>
+                                <option>Family Member</option>
+                                <option>Colleague</option>
+                                <option>Teacher / Mentor</option>
+                                <option>Other</option>
+
+                            </select>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- OCCASION -->
+
+                    <div class="form-group">
+
+                        <label for="occasion">
+                            What Is The Occasion?
+                        </label>
+
+                        <select
+                            id="occasion"
+                            name="occasion"
+                        >
+
+                            <option value="">
+                                Select an occasion
+                            </option>
+
+                            <option>Birthday</option>
+                            <option>Anniversary</option>
+                            <option>Graduation</option>
+                            <option>Wedding</option>
+                            <option>Engagement</option>
+                            <option>Mother's Day</option>
+                            <option>Father's Day</option>
+                            <option>Christmas</option>
+                            <option>Achievement</option>
+                            <option>Thank You</option>
+                            <option>Appreciation</option>
+                            <option>Just Because</option>
+                            <option>Other</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- GIFT IDEA -->
+
+                    <div class="form-group">
+
+                        <label for="giftIdea">
+                            What Kind Of Gift Are You Imagining?
+                        </label>
+
+                        <select
+                            id="giftIdea"
+                            name="giftIdea"
+                        >
+
+                            <option value="">
+                                I'm not sure yet
+                            </option>
+
+                            <option>Artwork</option>
+                            <option>Framed Design</option>
+                            <option>Home Décor</option>
+                            <option>Wearable / Fashion</option>
+                            <option>Accessories</option>
+                            <option>Digital Creation</option>
+                            <option>Printed Gift</option>
+                            <option>Gift Set / Basket</option>
+                            <option>Something Completely Different</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- PERSONAL MEANING -->
+
+                    <div class="form-group">
+
+                        <label for="meaning">
+                            What Makes This Gift Personal?
+                        </label>
+
+                        <textarea
+                            id="meaning"
+                            name="meaning"
+                            placeholder="Tell us about the person, your relationship, memories, inside jokes, achievements, interests, or anything that makes this gift meaningful."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- PERSONALIZATION -->
+
+                    <div class="form-group">
+
+                        <span class="field-title">
+                            What Would You Like Included?
+                        </span>
+
+
+                        <div class="checkbox-grid">
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="names"
+                                    name="elements"
+                                    value="Names"
+                                >
+
+                                <label for="names">
+                                    Names
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="message"
+                                    name="elements"
+                                    value="Personal Message"
+                                >
+
+                                <label for="message">
+                                    Personal Message
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="photos"
+                                    name="elements"
+                                    value="Photographs"
+                                >
+
+                                <label for="photos">
+                                    Photographs
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="dates"
+                                    name="elements"
+                                    value="Important Dates"
+                                >
+
+                                <label for="dates">
+                                    Important Dates
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="quotes"
+                                    name="elements"
+                                    value="Quotes or Words"
+                                >
+
+                                <label for="quotes">
+                                    Quotes / Words
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="symbols"
+                                    name="elements"
+                                    value="Symbols"
+                                >
+
+                                <label for="symbols">
+                                    Symbols
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="artwork"
+                                    name="elements"
+                                    value="Custom Artwork"
+                                >
+
+                                <label for="artwork">
+                                    Custom Artwork
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="otherElement"
+                                    name="elements"
+                                    value="Other"
+                                >
+
+                                <label for="otherElement">
+                                    Something Else
+                                </label>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PERSONALITY -->
+
+                    <div class="form-group">
+
+                        <label for="personality">
+                            Their Personality, Interests & Preferences
+                        </label>
+
+                        <textarea
+                            id="personality"
+                            name="personality"
+                            placeholder="What do they love? What are their favourite colours, hobbies, styles, places, characters, music, themes or interests?"
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- STYLE -->
+
+                    <div class="two-column">
+
+
+                        <div class="form-group">
+
+                            <label for="style">
+                                Preferred Style
+                            </label>
+
+                            <select
+                                id="style"
+                                name="style"
+                            >
+
+                                <option>Not Sure — Help Me Decide</option>
+                                <option>Minimal & Elegant</option>
+                                <option>Romantic</option>
+                                <option>Bold</option>
+                                <option>Colourful</option>
+                                <option>Dark & Dramatic</option>
+                                <option>Soft & Emotional</option>
+                                <option>Luxury</option>
+                                <option>Playful</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="colours">
+                                Preferred Colours
+                            </label>
+
+                            <input
+                                type="text"
+                                id="colours"
+                                name="colours"
+                                placeholder="Colours they love"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- BUDGET -->
+
+                    <div class="form-group">
+
+                        <label for="budget">
+                            Approximate Gift Budget
+                        </label>
+
+                        <select
+                            id="budget"
+                            name="budget"
+                        >
+
+                            <option value="">
+                                I'm not sure yet
+                            </option>
+
+                            <option>Under JMD $3,000</option>
+                            <option>JMD $3,000 – $5,000</option>
+                            <option>JMD $5,000 – $10,000</option>
+                            <option>JMD $10,000 – $20,000</option>
+                            <option>JMD $20,000+</option>
+                            <option>I'd like recommendations</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- UPLOAD -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Reference Files
+                        </label>
+
+                        <div class="upload-box">
+
+                            <p>
+                                Upload photographs, inspiration images,
+                                screenshots, sketches, documents or other
+                                references that could help us understand the gift.
+                            </p>
+
+                            <input
+                                type="file"
+                                id="files"
+                                name="files"
+                                accept="image/*,.pdf"
+                                multiple
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- DEADLINE -->
+
+                    <div class="two-column">
+
+
+                        <div class="form-group">
+
+                            <label for="deadline">
+                                Desired Completion Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="deadline"
+                                name="deadline"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                type="number"
+                                id="quantity"
+                                name="quantity"
+                                min="1"
+                                value="1"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- NOTES -->
+
+                    <div class="form-group">
+
+                        <label for="additionalNotes">
+                            Anything Else We Should Know?
+                        </label>
+
+                        <textarea
+                            id="additionalNotes"
+                            name="additionalNotes"
+                            placeholder="Add anything else that could help us create the right gift."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- QUOTATION -->
+
+                    <div class="quotation">
+
+                        <h3>
+                            Custom Quotation
+                        </h3>
+
+                        <p>
+                            Personalized gifts can vary depending on the
+                            materials, size, design, personalization,
+                            quantity and presentation. After reviewing
+                            your request, the Atelier will determine the
+                            appropriate options and provide your quotation.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+                        Submit Personalized Gift Request
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATEMENT -->
+
+        <p class="statement">
+
+            The most meaningful gifts are not always the biggest.
+
+            <br>
+
+            Sometimes, they are simply the ones that could only belong to one person.
+
+        </p>
+
+
+        <a
+            href="gifts-keepsakes.html"
+            class="back-button"
+        >
+            Back To Gifts & Keepsakes
+        </a>
+
+
+    </main>
+
+
+    <script>
+
+        document
+            .getElementById("personalizedGiftForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const elements = Array.from(
+                    document.querySelectorAll(
+                        'input[name="elements"]:checked'
+                    )
+                ).map(function(item) {
+                    return item.value;
+                });
+
+
+                const files = Array.from(
+                    document.getElementById("files").files
+                ).map(function(file) {
+                    return {
+                        name: file.name,
+                        type: file.type,
+                        size: file.size
+                    };
+                });
+
+
+                const order = {
+
+                    serviceCategory: "Gifts & Keepsakes",
+
+                    service: "Personalized Gifts",
+
+                    name: document.getElementById("name").value,
+
+                    email: document.getElementById("email").value,
+
+                    recipient: document.getElementById("recipient").value,
+
+                    relationship: document.getElementById("relationship").value,
+
+                    occasion: document.getElementById("occasion").value,
+
+                    giftIdea: document.getElementById("giftIdea").value,
+
+                    meaning: document.getElementById("meaning").value,
+
+                    personalizationElements: elements,
+
+                    personality: document.getElementById("personality").value,
+
+                    style: document.getElementById("style").value,
+
+                    colours: document.getElementById("colours").value,
+
+                    budget: document.getElementById("budget").value,
+
+                    uploadedFiles: files,
+
+                    deadline: document.getElementById("deadline").value,
+
+                    quantity: document.getElementById("quantity").value,
+
+                    additionalNotes:
+                        document.getElementById("additionalNotes").value,
+
+                    pricingType: "Custom Quotation",
+
+                    status: "Awaiting Gift Review",
+
+                    createdAt: new Date().toISOString()
+
+                };
+
+
+                localStorage.setItem(
+                    "currentOrder",
+                    JSON.stringify(order)
+                );
+
+
+                window.location.href = "payment.html";
+
+            });
+
+    </script>
+
+</body>
+
+</html>

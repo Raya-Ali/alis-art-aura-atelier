@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Gifts | Alis Art & Aura Atelier</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .service-intro {
+            max-width: 850px;
+            margin: 0 auto 50px;
+            text-align: center;
+        }
+
+        .service-intro h2 {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .service-intro p {
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        .premium-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            max-width: 1100px;
+            margin: 40px auto 70px;
+        }
+
+        .premium-card {
+            padding: 28px 20px;
+            border: 1px solid rgba(201, 13, 234, 0.4);
+            border-radius: 18px;
+            background: rgba(0, 0, 0, 0.4);
+            text-align: center;
+        }
+
+        .premium-card h3 {
+            color: #ff66c4;
+            margin-bottom: 10px;
+        }
+
+        .premium-card p {
+            color: #ccc;
+            line-height: 1.6;
+            font-size: 0.95rem;
+        }
+
+        .order-section {
+            max-width: 900px;
+            margin: 0 auto 80px;
+        }
+
+        .order-section h2 {
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .order-note {
+            text-align: center;
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .custom-form {
+            display: flex;
+            flex-direction: column;
+            gap: 22px;
+            padding: 35px;
+            border-radius: 22px;
+            background: rgba(0, 0, 0, 0.45);
+            border: 1px solid rgba(51, 206, 239, 0.3);
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .form-group label {
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 13px 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(201, 13, 234, 0.4);
+            background: #111;
+            color: #fff;
+            font-family: inherit;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .checkbox-option {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+            padding: 12px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        .checkbox-option input {
+            width: auto;
+        }
+
+        .upload-box {
+            padding: 20px;
+            border: 1px dashed rgba(51, 206, 239, 0.5);
+            border-radius: 12px;
+            background: rgba(51, 206, 239, 0.04);
+        }
+
+        .upload-box small {
+            display: block;
+            color: #aaa;
+            margin-top: 8px;
+            line-height: 1.5;
+        }
+
+        .quotation-box {
+            padding: 20px;
+            border-left: 3px solid #ff66c4;
+            background: rgba(255, 102, 196, 0.06);
+            line-height: 1.7;
+            color: #ddd;
+        }
+
+        .submit-btn {
+            margin-top: 10px;
+            padding: 15px 25px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(90deg, #c90dea, #33ceef);
+            color: white;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        @media (max-width: 800px) {
+            .premium-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+            .premium-grid,
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .custom-form {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">
+        Alis Art & Aura Atelier
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="who-we-are.html">Who We Are</a>
+        <a href="what-we-create.html">What We Create</a>
+        <a href="custom-orders.html">Custom Orders</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+<section class="hero">
+    <div class="hero-content">
+        <p class="eyebrow">Gifts & Keepsakes</p>
+
+        <h1>Premium Gifts</h1>
+
+        <p>
+            Bespoke gifts created with elevated materials, thoughtful
+            details, refined presentation and a distinctly personal finish.
+        </p>
+    </div>
+</section>
+
+<main>
+
+    <section class="service-intro">
+
+        <h2>Created To Be Exceptional.</h2>
+
+        <p>
+            Premium gifting is not simply about spending more. It is about
+            the experience, craftsmanship, materials, presentation and
+            personal details coming together to create something worthy of
+            the person receiving it.
+        </p>
+
+    </section>
+
+    <section class="premium-grid">
+
+        <div class="premium-card">
+            <h3>Bespoke</h3>
+
+            <p>
+                A gift developed specifically around the recipient,
+                occasion, story and desired experience.
+            </p>
+        </div>
+
+        <div class="premium-card">
+            <h3>Elevated Materials</h3>
+
+            <p>
+                Explore upgraded materials, finishes, presentation options
+                and carefully selected details.
+            </p>
+        </div>
+
+        <div class="premium-card">
+            <h3>Presentation</h3>
+
+            <p>
+                The way a premium gift is revealed matters just as much
+                as what is inside.
+            </p>
+        </div>
+
+        <div class="premium-card">
+            <h3>One Of A Kind</h3>
+
+            <p>
+                Create something distinctive rather than selecting something
+                that feels mass-produced or ordinary.
+            </p>
+        </div>
+
+    </section>
+
+    <section class="order-section">
+
+        <h2>Begin Your Premium Gift</h2>
+
+        <p class="order-note">
+            Tell us about the person, purpose and experience you want to
+            create. You can bring a complete vision or allow the Atelier
+            to develop the premium direction with you.
+        </p>
+
+        <form id="premiumGiftForm" class="custom-form">
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+
+                <input
+                    type="text"
+                    id="name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="recipient">Who Is The Gift For?</label>
+
+                <input
+                    type="text"
+                    id="recipient"
+                    placeholder="Their name or who they are to you"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="relationship">
+                    Your Relationship To Them
+                </label>
+
+                <input
+                    type="text"
+                    id="relationship"
+                    placeholder="Partner, parent, client, executive, friend..."
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="purpose">What Is The Gift For?</label>
+
+                <select id="purpose" required>
+
+                    <option value="">Select one</option>
+
+                    <option>Birthday</option>
+                    <option>Anniversary</option>
+                    <option>Wedding / Engagement</option>
+                    <option>Graduation</option>
+                    <option>Major Achievement</option>
+                    <option>Retirement</option>
+                    <option>Corporate / Professional Gift</option>
+                    <option>Holiday</option>
+                    <option>Personal Milestone</option>
+                    <option>Thank You</option>
+                    <option>Just Because</option>
+                    <option>Other</option>
+
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="vision">
+                    What Would Make This Gift Exceptional?
+                </label>
+
+                <textarea
+                    id="vision"
+                    placeholder="Describe the experience, impression or feeling you want the recipient to have."
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>
+                    What Premium Elements Interest You?
+                </label>
+
+                <div class="checkbox-grid">
+
+                    <label class="checkbox-option">
+                        <input
+                            type="checkbox"
+                            name="premiumElements"
+                            value="Premium Materials"
+                        >
+                        Premium Materials
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input
+                            type="checkbox"
+                            name="premiumElements"
+                            value="Custom Artwork"
+                        >
+                        Custom Artwork
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input
+                            type="checkbox"
+                            name="premiumElements"
+                            value="Luxury Presentation"
+                        >
+                        Luxury Presentation
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input
+                            type="checkbox"
+                            name="premiumElements"
+                            value="Personalization"
+                        >
+                        Personalization
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input
+                            type="checkbox"
+                            name="premiumElements"
+                            value="Engraving"
+                        >
+                        Engraving / Etching
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input
+                            type="checkbox"
+                            name="premiumElements"
+                            value="Special Finishes"
+                        >
+                        Special Finishes
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input
+                            type="checkbox"
+                            name="premiumElements"
+                            value="Gift Set"
+                        >
+                        Curated Gift Set
+                    </label>
+
+                    <label class="checkbox-option">
+                        <input
+                            type="checkbox"
+                            name="premiumElements"
+                            value="Something Else"
+                        >
+                        Something Else
+                    </label>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+
+                <label for="giftType">
+                    Do You Already Know What The Gift Should Be?
+                </label>
+
+                <select id="giftType">
+
+                    <option value="">Select one</option>
+
+                    <option>I know exactly what I want</option>
+                    <option>I have a general idea</option>
+                    <option>I have references</option>
+                    <option>I want the Atelier to develop the concept</option>
+                    <option>I am completely open to recommendations</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="recipientDetails">
+                    Tell Us About The Recipient
+                </label>
+
+                <textarea
+                    id="recipientDetails"
+                    placeholder="Their personality, interests, profession, lifestyle, taste, favourite things or anything else that helps us understand them."
+                ></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="style">
+                    What Should The Gift Feel Like?
+                </label>
+
+                <select id="style">
+
+                    <option value="">Select a direction</option>
+
+                    <option>Luxury & Elegant</option>
+                    <option>Modern & Refined</option>
+                    <option>Bold & Dramatic</option>
+                    <option>Minimal & Sophisticated</option>
+                    <option>Romantic</option>
+                    <option>Artistic</option>
+                    <option>Dark & Exclusive</option>
+                    <option>Warm & Personal</option>
+                    <option>Classic & Timeless</option>
+                    <option>Not Sure — Interpret It For Me</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="materials">
+                    Any Preferred Materials Or Finishes?
+                </label>
+
+                <textarea
+                    id="materials"
+                    placeholder="For example: wood, acrylic, glass, metal, premium paper, special lighting, fabric, or leave it to us."
+                ></textarea>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="colours">
+                    Preferred Colours
+                </label>
+
+                <input
+                    type="text"
+                    id="colours"
+                    placeholder="Colours, tones or palette preferences"
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="budget">
+                    Approximate Investment Range
+                </label>
+
+                <select id="budget">
+
+                    <option value="">Select a range</option>
+
+                    <option>JMD 20,000 – 35,000</option>
+                    <option>JMD 35,000 – 50,000</option>
+                    <option>JMD 50,000 – 75,000</option>
+                    <option>JMD 75,000 – 100,000</option>
+                    <option>JMD 100,000+</option>
+                    <option>I would like a recommendation</option>
+
+                </select>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="quantity">
+                    Number Of Gifts
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    value="1"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="deadline">
+                    When Do You Need The Gift?
+                </label>
+
+                <input
+                    type="date"
+                    id="deadline"
+                    required
+                >
+
+            </div>
+
+            <div class="form-group upload-box">
+
+                <label for="referenceFiles">
+                    Reference Files
+                </label>
+
+                <input
+                    type="file"
+                    id="referenceFiles"
+                    accept="image/*,.pdf,.svg,.ai,.psd"
+                    multiple
+                >
+
+                <small>
+                    Upload photographs, inspiration, logos, documents,
+                    sketches, colour references or anything that should
+                    influence the design.
+                </small>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="notes">
+                    Additional Details
+                </label>
+
+                <textarea
+                    id="notes"
+                    placeholder="Anything else you want the Atelier to know?"
+                ></textarea>
+
+            </div>
+
+            <div class="quotation-box">
+                Premium Gifts are individually quoted. Your quotation may
+                include upgraded materials, specialized craftsmanship,
+                personalization, custom artwork, presentation, packaging,
+                quantity and other project requirements.
+            </div>
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Begin Premium Gift Request
+            </button>
+
+        </form>
+
+    </section>
+
+</main>
+
+<script>
+document.getElementById("premiumGiftForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const premiumElements = Array.from(
+        document.querySelectorAll(
+            'input[name="premiumElements"]:checked'
+        )
+    ).map(item => item.value);
+
+    const files = Array.from(
+        document.getElementById("referenceFiles").files
+    ).map(file => ({
+        name: file.name,
+        type: file.type,
+        size: file.size
+    }));
+
+    const order = {
+
+        serviceCategory: "Gifts & Keepsakes",
+        service: "Premium Gifts",
+
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+
+        recipient: document.getElementById("recipient").value,
+        relationship: document.getElementById("relationship").value,
+
+        purpose: document.getElementById("purpose").value,
+
+        vision: document.getElementById("vision").value,
+
+        premiumElements: premiumElements,
+
+        giftType: document.getElementById("giftType").value,
+
+        recipientDetails:
+            document.getElementById("recipientDetails").value,
+
+        style: document.getElementById("style").value,
+
+        preferredMaterials:
+            document.getElementById("materials").value,
+
+        preferredColours:
+            document.getElementById("colours").value,
+
+        budget:
+            document.getElementById("budget").value,
+
+        quantity:
+            document.getElementById("quantity").value,
+
+        deadline:
+            document.getElementById("deadline").value,
+
+        uploadedFiles: files,
+
+        additionalNotes:
+            document.getElementById("notes").value,
+
+        pricingType: "Custom Quotation",
+
+        status: "Awaiting Premium Gift Review",
+
+        createdAt: new Date().toISOString()
+    };
+
+    localStorage.setItem(
+        "currentOrder",
+        JSON.stringify(order)
+    );
+
+    window.location.href = "payment.html";
+
+});
+</script>
+
+</body>
+</html>

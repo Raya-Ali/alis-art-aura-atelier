@@ -1,0 +1,2973 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Accessories | Alis Art & Aura Atelier</title>
+
+<style>
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:Arial,sans-serif;
+    background:#000;
+    color:#fff;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
+}
+
+/* NAVIGATION */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 6%;
+    background:#080808;
+    border-bottom:1px solid #33CEEF;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.brand{
+    font-size:20px;
+    font-weight:bold;
+    color:#FF66C4;
+}
+
+.nav-links{
+    display:flex;
+    gap:18px;
+    flex-wrap:wrap;
+}
+
+.nav-links a{
+    font-size:14px;
+}
+
+.nav-links a:hover{
+    color:#33CEEF;
+}
+
+
+/* HERO */
+
+.hero{
+    text-align:center;
+    padding:70px 20px;
+    background:
+    radial-gradient(
+        circle,
+        #3533CD 0%,
+        #08000c 45%,
+        #000 75%
+    );
+}
+
+.hero h1{
+    margin:0 0 15px;
+    font-size:clamp(38px,7vw,72px);
+    color:#FF66C4;
+}
+
+.hero p{
+    max-width:800px;
+    margin:auto;
+    color:#ddd;
+    line-height:1.7;
+}
+
+
+/* GALLERY SECTIONS */
+
+.section{
+    padding:55px 6%;
+}
+
+.section-title{
+    text-align:center;
+    color:#33CEEF;
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+.section-description{
+    max-width:750px;
+    margin:0 auto 30px;
+    text-align:center;
+    color:#bbb;
+    line-height:1.6;
+}
+
+.gallery{
+    display:flex;
+    gap:20px;
+    overflow-x:auto;
+    padding:15px 3px 25px;
+}
+
+.card{
+    min-width:250px;
+    max-width:280px;
+    flex-shrink:0;
+    overflow:hidden;
+    background:#101010;
+    border:1px solid #3533CD;
+    border-radius:14px;
+}
+
+.card img{
+    width:100%;
+    height:270px;
+    object-fit:cover;
+    display:block;
+}
+
+.card-content{
+    padding:18px;
+}
+
+.card h3{
+    color:#FF66C4;
+}
+
+.card p{
+    color:#bbb;
+    line-height:1.5;
+    font-size:14px;
+    min-height:65px;
+}
+
+.explore-btn,
+.save-btn,
+.payment-btn{
+    border:0;
+    padding:12px 18px;
+    border-radius:8px;
+    background:linear-gradient(
+        90deg,
+        #C90DEA,
+        #33CEEF
+    );
+    color:#fff;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.explore-btn:hover,
+.save-btn:hover,
+.payment-btn:hover{
+    opacity:.85;
+}
+
+
+/* BUILDER */
+
+.builder{
+    padding:70px 6%;
+    background:#070707;
+}
+
+.builder-box{
+    max-width:1000px;
+    margin:auto;
+    padding:30px;
+    border:1px solid #C90DEA;
+    border-radius:18px;
+    background:#0c0c0c;
+}
+
+.builder-box h2{
+    text-align:center;
+    color:#FF66C4;
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+}
+
+.field{
+    display:flex;
+    flex-direction:column;
+    gap:7px;
+}
+
+.full{
+    grid-column:1/-1;
+}
+
+label{
+    color:#33CEEF;
+    font-weight:bold;
+    font-size:14px;
+}
+
+input,
+select,
+textarea{
+    width:100%;
+    padding:13px;
+    border-radius:7px;
+    border:1px solid #444;
+    background:#151515;
+    color:#fff;
+}
+
+select{
+    cursor:pointer;
+}
+
+textarea{
+    min-height:110px;
+    resize:vertical;
+}
+
+.photo-preview{
+    display:none;
+    max-width:220px;
+    max-height:220px;
+    margin-top:10px;
+    border:1px solid #33CEEF;
+    border-radius:10px;
+}
+
+
+/* PRICE */
+
+.price-box{
+    margin-top:25px;
+    padding:20px;
+    border-radius:12px;
+    background:#101010;
+    border:1px solid #33CEEF;
+    text-align:center;
+}
+
+.price-box h3{
+    color:#33CEEF;
+}
+
+#totalPrice{
+    color:#FF66C4;
+    font-size:30px;
+    font-weight:bold;
+}
+
+
+/* PREVIEW */
+
+.preview-box{
+    margin-top:25px;
+    padding:20px;
+    border-radius:12px;
+    background:#101010;
+    border:1px solid #3533CD;
+}
+
+.preview-box h3{
+    color:#C90DEA;
+}
+
+.preview-line{
+    padding:8px 0;
+    border-bottom:1px solid #222;
+}
+
+.preview-line strong{
+    color:#33CEEF;
+}
+
+
+/* ACTIONS */
+
+.actions{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+    margin-top:25px;
+}
+
+.note{
+    color:#999;
+    font-size:13px;
+}
+
+
+@media(max-width:700px){
+
+    .navbar{
+        flex-direction:column;
+        gap:12px;
+    }
+
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .full{
+        grid-column:auto;
+    }
+
+    .builder-box{
+        padding:20px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<nav class="navbar">
+
+<div class="brand">
+<a href="index.html">
+Alis Art & Aura Atelier
+</a>
+</div>
+
+<div class="nav-links">
+
+<a href="index.html">
+Home
+</a>
+
+<a href="who-we-are.html">
+Who We Are
+</a>
+
+<a href="what-we-create.html">
+What We Create
+</a>
+
+<a href="custom-orders.html">
+Custom Orders
+</a>
+
+<a href="contact.html">
+Contact
+</a>
+
+</div>
+
+</nav>
+
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<h1>
+Accessories
+</h1>
+
+<p>
+Artistic accessories designed to complement your style
+while carrying their own character, expression and visual identity.
+</p>
+
+</section>
+
+
+
+<!-- =====================================================
+BAGS
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-title">
+Bags & Handbags
+</h2>
+
+<p class="section-description">
+Creative bags and handbags designed to combine function,
+style and artistic expression.
+</p>
+
+
+<div class="gallery">
+
+
+<div class="card">
+
+<img
+src="images/accessories-bags-1.png"
+alt="Artistic Handbag">
+
+<div class="card-content">
+
+<h3>
+Artistic Handbag
+</h3>
+
+<p>
+A statement handbag designed around artistic detail and personality.
+</p>
+
+<button
+class="explore-btn"
+data-category="Bags & Handbags"
+data-item="Handbag"
+data-option="Artistic Handbag">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-bags-2.png"
+alt="Tote Bag">
+
+<div class="card-content">
+
+<h3>
+Artistic Tote
+</h3>
+
+<p>
+A creative tote designed for everyday use with visual character.
+</p>
+
+<button
+class="explore-btn"
+data-category="Bags & Handbags"
+data-item="Tote Bag"
+data-option="Artistic Tote">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-bags-3.png"
+alt="Crossbody Bag">
+
+<div class="card-content">
+
+<h3>
+Crossbody Bag
+</h3>
+
+<p>
+A compact artistic bag designed for practical everyday styling.
+</p>
+
+<button
+class="explore-btn"
+data-category="Bags & Handbags"
+data-item="Crossbody Bag"
+data-option="Artistic Crossbody">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-bags-4.png"
+alt="Custom Bag">
+
+<div class="card-content">
+
+<h3>
+Custom Bag
+</h3>
+
+<p>
+A personalized bag developed around your own creative direction.
+</p>
+
+<button
+class="explore-btn"
+data-category="Bags & Handbags"
+data-item="Custom Bag"
+data-option="Custom Bag Concept">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+JEWELRY
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-title">
+Jewelry
+</h2>
+
+<p class="section-description">
+Artistic jewelry designed as wearable details with their own
+character and visual identity.
+</p>
+
+
+<div class="gallery">
+
+
+<div class="card">
+
+<img
+src="images/accessories-jewelry-1.png"
+alt="Necklace">
+
+<div class="card-content">
+
+<h3>
+Necklaces
+</h3>
+
+<p>
+Artistic necklaces designed around shape, detail and expression.
+</p>
+
+<button
+class="explore-btn"
+data-category="Jewelry"
+data-item="Necklace"
+data-option="Artistic Necklace">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-jewelry-2.png"
+alt="Bracelet">
+
+<div class="card-content">
+
+<h3>
+Bracelets
+</h3>
+
+<p>
+Creative bracelets designed as distinctive personal accessories.
+</p>
+
+<button
+class="explore-btn"
+data-category="Jewelry"
+data-item="Bracelet"
+data-option="Artistic Bracelet">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-jewelry-3.png"
+alt="Earrings">
+
+<div class="card-content">
+
+<h3>
+Earrings
+</h3>
+
+<p>
+Artistic earrings designed to add character to a look.
+</p>
+
+<button
+class="explore-btn"
+data-category="Jewelry"
+data-item="Earrings"
+data-option="Artistic Earrings">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-jewelry-4.png"
+alt="Custom Jewelry">
+
+<div class="card-content">
+
+<h3>
+Custom Jewelry
+</h3>
+
+<p>
+A personalized jewelry concept created around your idea.
+</p>
+
+<button
+class="explore-btn"
+data-category="Jewelry"
+data-item="Custom Jewelry"
+data-option="Custom Jewelry Concept">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+BELTS
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-title">
+Belts
+</h2>
+
+<p class="section-description">
+Belts designed as both functional accessories and visual
+elements of a complete style.
+</p>
+
+
+<div class="gallery">
+
+
+<div class="card">
+
+<img
+src="images/accessories-belts-1.png"
+alt="Statement Belt">
+
+<div class="card-content">
+
+<h3>
+Statement Belt
+</h3>
+
+<p>
+A bold belt designed to become part of the overall look.
+</p>
+
+<button
+class="explore-btn"
+data-category="Belts"
+data-item="Statement Belt"
+data-option="Statement Belt">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-belts-2.png"
+alt="Decorative Belt">
+
+<div class="card-content">
+
+<h3>
+Decorative Belt
+</h3>
+
+<p>
+A belt featuring artistic details and decorative elements.
+</p>
+
+<button
+class="explore-btn"
+data-category="Belts"
+data-item="Decorative Belt"
+data-option="Decorative Belt">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-belts-3.png"
+alt="Waist Belt">
+
+<div class="card-content">
+
+<h3>
+Waist Belt
+</h3>
+
+<p>
+A creative waist accessory designed around shape and styling.
+</p>
+
+<button
+class="explore-btn"
+data-category="Belts"
+data-item="Waist Belt"
+data-option="Artistic Waist Belt">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-belts-4.png"
+alt="Custom Belt">
+
+<div class="card-content">
+
+<h3>
+Custom Belt
+</h3>
+
+<p>
+A personalized belt created around your preferred style.
+</p>
+
+<button
+class="explore-btn"
+data-category="Belts"
+data-item="Custom Belt"
+data-option="Custom Belt Concept">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+SCARVES
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-title">
+Scarves & Wraps
+</h2>
+
+<p class="section-description">
+Artistic scarves and wraps designed to add colour,
+pattern and movement to a look.
+</p>
+
+
+<div class="gallery">
+
+
+<div class="card">
+
+<img
+src="images/accessories-scarves-1.png"
+alt="Artistic Scarf">
+
+<div class="card-content">
+
+<h3>
+Artistic Scarf
+</h3>
+
+<p>
+A scarf featuring an artistic visual concept.
+</p>
+
+<button
+class="explore-btn"
+data-category="Scarves & Wraps"
+data-item="Scarf"
+data-option="Artistic Scarf">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-scarves-2.png"
+alt="Printed Scarf">
+
+<div class="card-content">
+
+<h3>
+Printed Scarf
+</h3>
+
+<p>
+A creative scarf built around an original pattern or artwork.
+</p>
+
+<button
+class="explore-btn"
+data-category="Scarves & Wraps"
+data-item="Printed Scarf"
+data-option="Artistic Print Scarf">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-scarves-3.png"
+alt="Wrap">
+
+<div class="card-content">
+
+<h3>
+Artistic Wrap
+</h3>
+
+<p>
+A larger wrap designed for versatile styling and expression.
+</p>
+
+<button
+class="explore-btn"
+data-category="Scarves & Wraps"
+data-item="Wrap"
+data-option="Artistic Wrap">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-scarves-4.png"
+alt="Custom Scarf">
+
+<div class="card-content">
+
+<h3>
+Custom Scarf
+</h3>
+
+<p>
+A personalized scarf concept developed around your idea.
+</p>
+
+<button
+class="explore-btn"
+data-category="Scarves & Wraps"
+data-item="Custom Scarf"
+data-option="Custom Scarf Concept">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+HAIR ACCESSORIES
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-title">
+Hair Accessories
+</h2>
+
+<p class="section-description">
+Creative pieces designed to complement hairstyles and personal style.
+</p>
+
+
+<div class="gallery">
+
+
+<div class="card">
+
+<img
+src="images/accessories-hair-1.png"
+alt="Hair Clip">
+
+<div class="card-content">
+
+<h3>
+Hair Clips
+</h3>
+
+<p>
+Decorative hair clips designed with artistic details.
+</p>
+
+<button
+class="explore-btn"
+data-category="Hair Accessories"
+data-item="Hair Clip"
+data-option="Artistic Hair Clip">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-hair-2.png"
+alt="Hair Bow">
+
+<div class="card-content">
+
+<h3>
+Hair Bows
+</h3>
+
+<p>
+Creative bows designed to add a distinctive finishing detail.
+</p>
+
+<button
+class="explore-btn"
+data-category="Hair Accessories"
+data-item="Hair Bow"
+data-option="Artistic Hair Bow">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-hair-3.png"
+alt="Headband">
+
+<div class="card-content">
+
+<h3>
+Headbands
+</h3>
+
+<p>
+Artistic headbands designed around colour, pattern and detail.
+</p>
+
+<button
+class="explore-btn"
+data-category="Hair Accessories"
+data-item="Headband"
+data-option="Artistic Headband">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-hair-4.png"
+alt="Custom Hair Accessory">
+
+<div class="card-content">
+
+<h3>
+Custom Hair Piece
+</h3>
+
+<p>
+A personalized hair accessory developed around your concept.
+</p>
+
+<button
+class="explore-btn"
+data-category="Hair Accessories"
+data-item="Custom Hair Piece"
+data-option="Custom Hair Concept">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+HEADWEAR
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-title">
+Headwear Accessories
+</h2>
+
+<p class="section-description">
+Creative hats and headwear designed as expressive accessories.
+</p>
+
+
+<div class="gallery">
+
+
+<div class="card">
+
+<img
+src="images/accessories-headwear-1.png"
+alt="Decorative Hat">
+
+<div class="card-content">
+
+<h3>
+Decorative Hat
+</h3>
+
+<p>
+A creative hat designed around visual character and detail.
+</p>
+
+<button
+class="explore-btn"
+data-category="Headwear Accessories"
+data-item="Decorative Hat"
+data-option="Artistic Hat">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-headwear-2.png"
+alt="Artistic Cap">
+
+<div class="card-content">
+
+<h3>
+Artistic Cap
+</h3>
+
+<p>
+A cap featuring an artistic concept or decorative treatment.
+</p>
+
+<button
+class="explore-btn"
+data-category="Headwear Accessories"
+data-item="Artistic Cap"
+data-option="Artistic Cap">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-headwear-3.png"
+alt="Bucket Hat">
+
+<div class="card-content">
+
+<h3>
+Artistic Bucket Hat
+</h3>
+
+<p>
+A bucket hat designed around colour, pattern and expression.
+</p>
+
+<button
+class="explore-btn"
+data-category="Headwear Accessories"
+data-item="Bucket Hat"
+data-option="Artistic Bucket Hat">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-headwear-4.png"
+alt="Custom Headwear">
+
+<div class="card-content">
+
+<h3>
+Custom Headwear
+</h3>
+
+<p>
+A personalized headwear concept created around your vision.
+</p>
+
+<button
+class="explore-btn"
+data-category="Headwear Accessories"
+data-item="Custom Headwear"
+data-option="Custom Headwear Concept">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+CUSTOM ACCESSORIES
+===================================================== -->
+
+<section class="section">
+
+<h2 class="section-title">
+Custom Accessories
+</h2>
+
+<p class="section-description">
+Have an accessory idea that does not fit one category?
+Build something completely your own.
+</p>
+
+
+<div class="gallery">
+
+
+<div class="card">
+
+<img
+src="images/accessories-custom-1.png"
+alt="Custom Accessory">
+
+<div class="card-content">
+
+<h3>
+Personal Accessory
+</h3>
+
+<p>
+An accessory developed around your personal style.
+</p>
+
+<button
+class="explore-btn"
+data-category="Custom Accessories"
+data-item="Custom Accessory"
+data-option="Personal Accessory">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-custom-2.png"
+alt="Occasion Accessory">
+
+<div class="card-content">
+
+<h3>
+Occasion Accessory
+</h3>
+
+<p>
+A custom accessory created for a specific occasion.
+</p>
+
+<button
+class="explore-btn"
+data-category="Custom Accessories"
+data-item="Occasion Accessory"
+data-option="Occasion Accessory">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-custom-3.png"
+alt="Statement Accessory">
+
+<div class="card-content">
+
+<h3>
+Statement Accessory
+</h3>
+
+<p>
+A distinctive accessory designed to become part of the look.
+</p>
+
+<button
+class="explore-btn"
+data-category="Custom Accessories"
+data-item="Statement Accessory"
+data-option="Statement Accessory">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+
+<div class="card">
+
+<img
+src="images/accessories-custom-4.png"
+alt="Fully Custom Accessory">
+
+<div class="card-content">
+
+<h3>
+Fully Custom Accessory
+</h3>
+
+<p>
+A completely custom accessory developed from your own concept.
+</p>
+
+<button
+class="explore-btn"
+data-category="Custom Accessories"
+data-item="Fully Custom Accessory"
+data-option="Fully Custom Accessory">
+
+Explore →
+
+</button>
+
+</div>
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+BUILDER
+===================================================== -->
+
+<section class="builder" id="accessory-builder">
+
+<div class="builder-box">
+
+<h2>
+Build Your Accessory
+</h2>
+
+
+<div class="form-grid">
+
+
+<div class="field">
+
+<label for="accessoryCategory">
+Accessory Category
+</label>
+
+<select id="accessoryCategory">
+
+<option value="">
+Select Category
+</option>
+
+<option>
+Bags & Handbags
+</option>
+
+<option>
+Jewelry
+</option>
+
+<option>
+Belts
+</option>
+
+<option>
+Scarves & Wraps
+</option>
+
+<option>
+Hair Accessories
+</option>
+
+<option>
+Headwear Accessories
+</option>
+
+<option>
+Custom Accessories
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="accessoryItem">
+Accessory Type
+</label>
+
+<select id="accessoryItem">
+
+<option value="">
+Select Accessory
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="designDirection">
+Design Direction
+</label>
+
+<select id="designDirection">
+
+<option value="">
+Select Design Direction
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="designOption">
+Specific Design
+</label>
+
+<select id="designOption">
+
+<option value="">
+Select Design
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="size">
+Size / Format
+</label>
+
+<select id="size">
+
+<option value="">
+Select Size
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="colour">
+Colour
+</label>
+
+<select id="colour">
+
+<option value="">
+Select Colour
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="material">
+Material
+</label>
+
+<select id="material">
+
+<option value="">
+Select Material
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field">
+
+<label for="finish">
+Finish
+</label>
+
+<select id="finish">
+
+<option value="">
+Select Finish
+</option>
+
+</select>
+
+</div>
+
+
+
+<div class="field full">
+
+<label for="instructions">
+Personalization / Design Instructions
+</label>
+
+<textarea
+id="instructions"
+placeholder="Describe colours, details, measurements or other ideas...">
+</textarea>
+
+</div>
+
+
+
+<div class="field full">
+
+<label for="referenceImage">
+Reference Image
+</label>
+
+<input
+type="file"
+id="referenceImage"
+accept="image/*">
+
+<img
+id="photoPreview"
+class="photo-preview"
+alt="Reference preview">
+
+</div>
+
+
+
+<div class="field">
+
+<label for="quantity">
+Quantity
+</label>
+
+<input
+type="number"
+id="quantity"
+min="1"
+value="1">
+
+</div>
+
+
+
+<div class="field">
+
+<label for="fullName">
+Full Name
+</label>
+
+<input
+type="text"
+id="fullName"
+placeholder="Your full name">
+
+</div>
+
+
+
+<div class="field">
+
+<label for="email">
+Email
+</label>
+
+<input
+type="email"
+id="email"
+placeholder="Your email">
+
+</div>
+
+
+
+<div class="field">
+
+<label for="phone">
+Phone / WhatsApp
+</label>
+
+<input
+type="tel"
+id="phone"
+placeholder="Your phone or WhatsApp">
+
+</div>
+
+
+
+<div class="field full">
+
+<label for="address">
+Delivery Address
+</label>
+
+<textarea
+id="address"
+placeholder="Where should the order be delivered?">
+</textarea>
+
+</div>
+
+</div>
+
+
+
+<!-- PRICE -->
+
+<div class="price-box">
+
+<h3>
+Current Order Total
+</h3>
+
+<div id="totalPrice">
+J$0
+</div>
+
+<p class="note">
+Temporary prices are being used. Final custom pricing may be confirmed before production.
+</p>
+
+</div>
+
+
+
+<!-- ORDER PREVIEW -->
+
+<div class="preview-box">
+
+<h3>
+Order Preview
+</h3>
+
+<div id="orderPreview">
+Select an accessory to see your order.
+</div>
+
+</div>
+
+
+
+<div class="actions">
+
+<button
+class="save-btn"
+type="button"
+id="saveOrder">
+
+Save Order
+
+</button>
+
+
+<button
+class="payment-btn"
+type="button"
+id="paymentButton">
+
+Continue to Payment →
+
+</button>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<script>
+
+
+/* =========================================================
+TEMPORARY PRICES
+========================================================= */
+
+const prices={
+
+
+accessoryItem:{
+
+"Handbag":5000,
+"Tote Bag":3500,
+"Crossbody Bag":4000,
+"Custom Bag":6000,
+
+"Necklace":2500,
+"Bracelet":1800,
+"Earrings":1800,
+"Custom Jewelry":4000,
+
+"Statement Belt":2500,
+"Decorative Belt":2800,
+"Waist Belt":2200,
+"Custom Belt":3500,
+
+"Scarf":2000,
+"Printed Scarf":2500,
+"Wrap":3000,
+"Custom Scarf":4000,
+
+"Hair Clip":800,
+"Hair Bow":1000,
+"Headband":1500,
+"Custom Hair Piece":2500,
+
+"Decorative Hat":3500,
+"Artistic Cap":3000,
+"Bucket Hat":3500,
+"Custom Headwear":5000,
+
+"Custom Accessory":4000,
+"Occasion Accessory":5000,
+"Statement Accessory":5000,
+"Fully Custom Accessory":7000
+
+},
+
+
+designOption:{
+
+"Bags & Handbags":{
+
+"Artistic Handbag":1000,
+"Artistic Tote":700,
+"Artistic Crossbody":800,
+"Custom Bag Concept":2000
+
+},
+
+"Jewelry":{
+
+"Artistic Necklace":700,
+"Artistic Bracelet":500,
+"Artistic Earrings":500,
+"Custom Jewelry Concept":1500
+
+},
+
+"Belts":{
+
+"Statement Belt":500,
+"Decorative Belt":600,
+"Artistic Waist Belt":500,
+"Custom Belt Concept":1200
+
+},
+
+"Scarves & Wraps":{
+
+"Artistic Scarf":500,
+"Artistic Print Scarf":700,
+"Artistic Wrap":800,
+"Custom Scarf Concept":1200
+
+},
+
+"Hair Accessories":{
+
+"Artistic Hair Clip":200,
+"Artistic Hair Bow":250,
+"Artistic Headband":300,
+"Custom Hair Concept":800
+
+},
+
+"Headwear Accessories":{
+
+"Artistic Hat":700,
+"Artistic Cap":500,
+"Artistic Bucket Hat":700,
+"Custom Headwear Concept":1200
+
+},
+
+"Custom Accessories":{
+
+"Personal Accessory":800,
+"Occasion Accessory":1000,
+"Statement Accessory":1200,
+"Fully Custom Accessory":2000
+
+}
+
+},
+
+
+size:{
+
+"Mini":0,
+"Small":0,
+"Medium":0,
+"Large":500,
+"Extra Large":800,
+"Adjustable":300,
+"One Size":0,
+"Custom Size":1000
+},
+
+
+colour:{
+
+"Black":0,
+"White":0,
+"Red":200,
+"Blue":200,
+"Purple":200,
+"Pink":200,
+"Green":200,
+"Yellow":200,
+"Orange":200,
+"Brown":200,
+"Grey":200,
+"Gold":500,
+"Silver":500,
+"Multi-Colour":700,
+"Custom Colour":700
+
+},
+
+
+material:{
+
+"Cotton":0,
+"Canvas":300,
+"Denim":500,
+"Linen":500,
+"Satin":700,
+"Silk":1200,
+"Leather / Faux Leather":1500,
+"Wood":500,
+"Metal":700,
+"Resin":1000,
+"Acrylic":1000,
+"Beads":700,
+"Mixed Material":1200,
+"Custom Material":1500
+
+},
+
+
+finish:{
+
+"Standard":0,
+"Signature":700,
+"Premium":1500,
+"Fully Custom":2500
+
+}
+
+};
+
+
+/* =========================================================
+CATEGORY ITEMS
+========================================================= */
+
+const categoryItems={
+
+"Bags & Handbags":[
+"Handbag",
+"Tote Bag",
+"Crossbody Bag",
+"Custom Bag"
+],
+
+"Jewelry":[
+"Necklace",
+"Bracelet",
+"Earrings",
+"Custom Jewelry"
+],
+
+"Belts":[
+"Statement Belt",
+"Decorative Belt",
+"Waist Belt",
+"Custom Belt"
+],
+
+"Scarves & Wraps":[
+"Scarf",
+"Printed Scarf",
+"Wrap",
+"Custom Scarf"
+],
+
+"Hair Accessories":[
+"Hair Clip",
+"Hair Bow",
+"Headband",
+"Custom Hair Piece"
+],
+
+"Headwear Accessories":[
+"Decorative Hat",
+"Artistic Cap",
+"Bucket Hat",
+"Custom Headwear"
+],
+
+"Custom Accessories":[
+"Custom Accessory",
+"Occasion Accessory",
+"Statement Accessory",
+"Fully Custom Accessory"
+]
+
+};
+
+
+/* =========================================================
+DESIGN DIRECTIONS
+========================================================= */
+
+const categoryDirections={
+
+"Bags & Handbags":[
+"Shape & Form",
+"Artistic Detail",
+"Pattern & Surface",
+"Custom Concept"
+],
+
+"Jewelry":[
+"Shape & Form",
+"Decorative Detail",
+"Colour & Material",
+"Custom Concept"
+],
+
+"Belts":[
+"Shape & Form",
+"Decorative Detail",
+"Statement Styling",
+"Custom Concept"
+],
+
+"Scarves & Wraps":[
+"Pattern & Print",
+"Colour Story",
+"Artistic Theme",
+"Custom Concept"
+],
+
+"Hair Accessories":[
+"Shape & Form",
+"Decorative Detail",
+"Colour & Pattern",
+"Custom Concept"
+],
+
+"Headwear Accessories":[
+"Shape & Form",
+"Artistic Detail",
+"Pattern & Surface",
+"Custom Concept"
+],
+
+"Custom Accessories":[
+"Personal Style",
+"Occasion",
+"Statement Concept",
+"Fully Custom Concept"
+]
+
+};
+
+
+/* =========================================================
+SIZES BY ITEM
+========================================================= */
+
+const itemSizes={
+
+"Handbag":[
+"Small",
+"Medium",
+"Large",
+"Custom Size"
+],
+
+"Tote Bag":[
+"Small",
+"Medium",
+"Large",
+"Extra Large",
+"Custom Size"
+],
+
+"Crossbody Bag":[
+"Small",
+"Medium",
+"Large",
+"Custom Size"
+],
+
+"Custom Bag":[
+"Small",
+"Medium",
+"Large",
+"Custom Size"
+],
+
+"Necklace":[
+"Small",
+"Medium",
+"Large",
+"Adjustable",
+"Custom Size"
+],
+
+"Bracelet":[
+"Small",
+"Medium",
+"Large",
+"Adjustable",
+"Custom Size"
+],
+
+"Earrings":[
+"Small",
+"Medium",
+"Large",
+"One Size"
+],
+
+"Custom Jewelry":[
+"Small",
+"Medium",
+"Large",
+"Custom Size"
+],
+
+"Statement Belt":[
+"Small",
+"Medium",
+"Large",
+"Adjustable",
+"Custom Size"
+],
+
+"Decorative Belt":[
+"Small",
+"Medium",
+"Large",
+"Adjustable",
+"Custom Size"
+],
+
+"Waist Belt":[
+"Small",
+"Medium",
+"Large",
+"Adjustable",
+"Custom Size"
+],
+
+"Custom Belt":[
+"Small",
+"Medium",
+"Large",
+"Adjustable",
+"Custom Size"
+],
+
+"Scarf":[
+"Small",
+"Medium",
+"Large",
+"Extra Large",
+"Custom Size"
+],
+
+"Printed Scarf":[
+"Small",
+"Medium",
+"Large",
+"Extra Large",
+"Custom Size"
+],
+
+"Wrap":[
+"Medium",
+"Large",
+"Extra Large",
+"Custom Size"
+],
+
+"Custom Scarf":[
+"Small",
+"Medium",
+"Large",
+"Extra Large",
+"Custom Size"
+],
+
+"Hair Clip":[
+"Small",
+"Medium",
+"Large",
+"One Size"
+],
+
+"Hair Bow":[
+"Small",
+"Medium",
+"Large",
+"One Size"
+],
+
+"Headband":[
+"Small",
+"Medium",
+"Large",
+"Adjustable",
+"Custom Size"
+],
+
+"Custom Hair Piece":[
+"Small",
+"Medium",
+"Large",
+"Custom Size"
+],
+
+"Decorative Hat":[
+"Small",
+"Medium",
+"Large",
+"Custom Size"
+],
+
+"Artistic Cap":[
+"Small",
+"Medium",
+"Large",
+"Adjustable",
+"Custom Size"
+],
+
+"Bucket Hat":[
+"Small",
+"Medium",
+"Large",
+"Adjustable",
+"Custom Size"
+],
+
+"Custom Headwear":[
+"Small",
+"Medium",
+"Large",
+"Custom Size"
+],
+
+"Custom Accessory":[
+"Small",
+"Medium",
+"Large",
+"Custom Size"
+],
+
+"Occasion Accessory":[
+"Small",
+"Medium",
+"Large",
+"Custom Size"
+],
+
+"Statement Accessory":[
+"Small",
+"Medium",
+"Large",
+"Custom Size"
+],
+
+"Fully Custom Accessory":[
+"Small",
+"Medium",
+"Large",
+"Custom Size"
+]
+
+};
+
+
+/* =========================================================
+DESIGN OPTIONS
+========================================================= */
+
+const categoryOptions={
+
+"Bags & Handbags":[
+"Artistic Handbag",
+"Artistic Tote",
+"Artistic Crossbody",
+"Custom Bag Concept"
+],
+
+"Jewelry":[
+"Artistic Necklace",
+"Artistic Bracelet",
+"Artistic Earrings",
+"Custom Jewelry Concept"
+],
+
+"Belts":[
+"Statement Belt",
+"Decorative Belt",
+"Artistic Waist Belt",
+"Custom Belt Concept"
+],
+
+"Scarves & Wraps":[
+"Artistic Scarf",
+"Artistic Print Scarf",
+"Artistic Wrap",
+"Custom Scarf Concept"
+],
+
+"Hair Accessories":[
+"Artistic Hair Clip",
+"Artistic Hair Bow",
+"Artistic Headband",
+"Custom Hair Concept"
+],
+
+"Headwear Accessories":[
+"Artistic Hat",
+"Artistic Cap",
+"Artistic Bucket Hat",
+"Custom Headwear Concept"
+],
+
+"Custom Accessories":[
+"Personal Accessory",
+"Occasion Accessory",
+"Statement Accessory",
+"Fully Custom Accessory"
+]
+
+};
+
+
+/* =========================================================
+ELEMENTS
+========================================================= */
+
+const category=
+document.getElementById("accessoryCategory");
+
+const item=
+document.getElementById("accessoryItem");
+
+const direction=
+document.getElementById("designDirection");
+
+const design=
+document.getElementById("designOption");
+
+const size=
+document.getElementById("size");
+
+const colour=
+document.getElementById("colour");
+
+const material=
+document.getElementById("material");
+
+const finish=
+document.getElementById("finish");
+
+const quantity=
+document.getElementById("quantity");
+
+const total=
+document.getElementById("totalPrice");
+
+const preview=
+document.getElementById("orderPreview");
+
+let uploadedPhotoData="";
+
+
+/* =========================================================
+POPULATE SELECT
+========================================================= */
+
+function populate(select,values,placeholder){
+
+select.innerHTML="";
+
+const first=
+document.createElement("option");
+
+first.value="";
+first.textContent=placeholder;
+
+select.appendChild(first);
+
+values.forEach(value=>{
+
+const option=
+document.createElement("option");
+
+option.value=value;
+option.textContent=value;
+
+select.appendChild(option);
+
+});
+
+}
+
+
+/* =========================================================
+CATEGORY
+========================================================= */
+
+function loadCategory(){
+
+const selected=
+category.value;
+
+populate(
+item,
+categoryItems[selected] || [],
+"Select Accessory"
+);
+
+populate(
+direction,
+categoryDirections[selected] || [],
+"Select Design Direction"
+);
+
+populate(
+design,
+categoryOptions[selected] || [],
+"Select Design"
+);
+
+populate(
+size,
+[],
+"Select Size / Format"
+);
+
+updateTotal();
+
+}
+
+
+/* =========================================================
+ITEM
+========================================================= */
+
+function loadItem(){
+
+const selected=
+item.value;
+
+populate(
+size,
+itemSizes[selected] || [],
+"Select Size / Format"
+);
+
+updateTotal();
+
+}
+
+
+/* =========================================================
+TOTAL
+========================================================= */
+
+function updateTotal(){
+
+let amount=0;
+
+amount+=
+prices.accessoryItem[item.value] || 0;
+
+amount+=
+prices.designOption[category.value]?.[design.value] || 0;
+
+amount+=
+prices.size[size.value] || 0;
+
+amount+=
+prices.colour[colour.value] || 0;
+
+amount+=
+prices.material[material.value] || 0;
+
+amount+=
+prices.finish[finish.value] || 0;
+
+let qty=
+parseInt(quantity.value) || 1;
+
+if(qty<1){
+
+qty=1;
+quantity.value=1;
+
+}
+
+amount*=qty;
+
+total.textContent=
+"J$"+amount.toLocaleString();
+
+updatePreview();
+
+}
+
+
+/* =========================================================
+PREVIEW
+========================================================= */
+
+function updatePreview(){
+
+const instructions=
+document.getElementById("instructions").value;
+
+const name=
+document.getElementById("fullName").value;
+
+const email=
+document.getElementById("email").value;
+
+const phone=
+document.getElementById("phone").value;
+
+const address=
+document.getElementById("address").value;
+
+
+preview.innerHTML=`
+
+<div class="preview-line">
+<strong>Category:</strong>
+${category.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Accessory:</strong>
+${item.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Design Direction:</strong>
+${direction.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Specific Design:</strong>
+${design.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Size:</strong>
+${size.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Colour:</strong>
+${colour.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Material:</strong>
+${material.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Finish:</strong>
+${finish.value||"Not selected"}
+</div>
+
+<div class="preview-line">
+<strong>Quantity:</strong>
+${quantity.value||1}
+</div>
+
+<div class="preview-line">
+<strong>Customer:</strong>
+${name||"Not provided"}
+</div>
+
+<div class="preview-line">
+<strong>Email:</strong>
+${email||"Not provided"}
+</div>
+
+<div class="preview-line">
+<strong>Phone / WhatsApp:</strong>
+${phone||"Not provided"}
+</div>
+
+<div class="preview-line">
+<strong>Delivery Address:</strong>
+${address||"Not provided"}
+</div>
+
+<div class="preview-line">
+<strong>Instructions:</strong>
+${instructions||"None"}
+</div>
+
+`;
+
+}
+
+
+/* =========================================================
+EVENTS
+========================================================= */
+
+category.addEventListener(
+"change",
+loadCategory
+);
+
+item.addEventListener(
+"change",
+loadItem
+);
+
+
+[
+direction,
+design,
+size,
+colour,
+material,
+finish,
+quantity
+].forEach(element=>{
+
+element.addEventListener(
+"change",
+updateTotal
+);
+
+element.addEventListener(
+"input",
+updateTotal
+);
+
+});
+
+
+[
+"instructions",
+"fullName",
+"email",
+"phone",
+"address"
+].forEach(id=>{
+
+document
+.getElementById(id)
+.addEventListener(
+"input",
+updatePreview
+);
+
+});
+
+
+/* =========================================================
+PHOTO
+========================================================= */
+
+document
+.getElementById("referenceImage")
+.addEventListener(
+"change",
+function(){
+
+const file=this.files[0];
+
+if(!file){
+
+uploadedPhotoData="";
+
+document
+.getElementById("photoPreview")
+.style.display="none";
+
+return;
+
+}
+
+const reader=
+new FileReader();
+
+reader.onload=function(event){
+
+uploadedPhotoData=
+event.target.result;
+
+const image=
+document.getElementById("photoPreview");
+
+image.src=
+uploadedPhotoData;
+
+image.style.display=
+"block";
+
+};
+
+reader.readAsDataURL(file);
+
+}
+);
+
+
+/* =========================================================
+EXPLORE BUTTONS
+========================================================= */
+
+document
+.querySelectorAll(".explore-btn")
+.forEach(button=>{
+
+button.addEventListener(
+"click",
+function(){
+
+category.value=
+this.dataset.category;
+
+loadCategory();
+
+item.value=
+this.dataset.item;
+
+loadItem();
+
+design.value=
+this.dataset.option;
+
+updateTotal();
+
+document
+.getElementById("accessory-builder")
+.scrollIntoView({
+behavior:"smooth"
+});
+
+}
+);
+
+});
+
+
+/* =========================================================
+COLLECT ORDER
+========================================================= */
+
+function collectOrder(){
+
+let unitPrice=0;
+
+unitPrice+=
+prices.accessoryItem[item.value] || 0;
+
+unitPrice+=
+prices.designOption[category.value]?.[design.value] || 0;
+
+unitPrice+=
+prices.size[size.value] || 0;
+
+unitPrice+=
+prices.colour[colour.value] || 0;
+
+unitPrice+=
+prices.material[material.value] || 0;
+
+unitPrice+=
+prices.finish[finish.value] || 0;
+
+const qty=
+parseInt(quantity.value)||1;
+
+
+return{
+
+category:
+category.value,
+
+accessory:
+item.value,
+
+designDirection:
+direction.value,
+
+designOption:
+design.value,
+
+size:
+size.value,
+
+colour:
+colour.value,
+
+material:
+material.value,
+
+finish:
+finish.value,
+
+quantity:
+qty,
+
+unitPrice:
+unitPrice,
+
+totalPrice:
+unitPrice*qty,
+
+instructions:
+document.getElementById(
+"instructions"
+).value,
+
+customer:{
+
+fullName:
+document.getElementById(
+"fullName"
+).value,
+
+email:
+document.getElementById(
+"email"
+).value,
+
+phone:
+document.getElementById(
+"phone"
+).value,
+
+address:
+document.getElementById(
+"address"
+).value
+
+},
+
+photoData:
+uploadedPhotoData,
+
+currency:
+"JMD",
+
+createdAt:
+new Date().toISOString()
+
+};
+
+}
+
+
+/* =========================================================
+SAVE ORDER
+========================================================= */
+
+document
+.getElementById("saveOrder")
+.addEventListener(
+"click",
+function(){
+
+const order=
+collectOrder();
+
+localStorage.setItem(
+"accessoryOrder",
+JSON.stringify(order)
+);
+
+alert(
+"Accessory order saved."
+);
+
+}
+);
+
+
+/* =========================================================
+PAYMENT
+========================================================= */
+
+document
+.getElementById("paymentButton")
+.addEventListener(
+"click",
+function(){
+
+const order=
+collectOrder();
+
+localStorage.setItem(
+"accessoryOrder",
+JSON.stringify(order)
+);
+
+window.location.href=
+"payment.html";
+
+}
+);
+
+
+/* =========================================================
+INITIALIZE
+========================================================= */
+
+populate(
+colour,
+Object.keys(prices.colour),
+"Select Colour"
+);
+
+populate(
+material,
+Object.keys(prices.material),
+"Select Material"
+);
+
+populate(
+finish,
+Object.keys(prices.finish),
+"Select Finish"
+);
+
+updatePreview();
+updateTotal();
+
+</script>
+
+</body>
+</html>

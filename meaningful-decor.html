@@ -1,0 +1,1944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Meaningful Décor | Alis Art & Aura Atelier</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #080808;
+            color: white;
+        }
+
+        nav {
+            background: #111;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .logo {
+            font-size: 20px;
+            font-weight: bold;
+            background: linear-gradient(90deg, #C90DEA, #33CEEF, #FF66C4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 12px;
+            font-size: 14px;
+        }
+
+        nav a:hover {
+            color: #FF66C4;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 75px 20px 50px;
+            background:
+                radial-gradient(circle at top, #3533CD55, transparent 60%),
+                #080808;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 15px;
+            background: linear-gradient(90deg, #C90DEA, #33CEEF, #FF66C4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 720px;
+            margin: auto;
+            line-height: 1.7;
+            color: #ddd;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: auto;
+            padding: 30px 20px 50px;
+            text-align: center;
+            line-height: 1.8;
+            color: #ccc;
+        }
+
+        .section {
+            padding: 35px 20px 50px;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #FF66C4;
+            font-size: 30px;
+            margin-bottom: 10px;
+        }
+
+        .section-description {
+            text-align: center;
+            color: #aaa;
+            max-width: 700px;
+            margin: 0 auto 28px;
+            line-height: 1.6;
+        }
+
+        .gallery {
+            display: flex;
+            overflow-x: auto;
+            gap: 20px;
+            padding: 10px 5px 25px;
+            scroll-behavior: smooth;
+        }
+
+        .gallery::-webkit-scrollbar {
+            height: 7px;
+        }
+
+        .gallery::-webkit-scrollbar-thumb {
+            background: linear-gradient(90deg, #C90DEA, #33CEEF);
+            border-radius: 20px;
+        }
+
+        .card {
+            min-width: 265px;
+            max-width: 265px;
+            flex-shrink: 0;
+            background: #141414;
+            border: 1px solid #333;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px #00000066;
+        }
+
+        .card img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-content {
+            padding: 18px;
+        }
+
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 18px;
+        }
+
+        .card p {
+            color: #aaa;
+            font-size: 14px;
+            line-height: 1.5;
+            min-height: 63px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            margin-top: 8px;
+            border: none;
+            border-radius: 8px;
+            background: linear-gradient(90deg, #C90DEA, #3533CD);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            opacity: .88;
+        }
+
+        .builder {
+            display: none;
+            max-width: 950px;
+            margin: 30px auto 70px;
+            padding: 30px 20px;
+            background: #111;
+            border: 1px solid #333;
+            border-radius: 18px;
+            box-shadow: 0 10px 40px #00000088;
+        }
+
+        .builder h2 {
+            text-align: center;
+            color: #33CEEF;
+            margin-bottom: 10px;
+        }
+
+        .selected-theme {
+            text-align: center;
+            color: #FF66C4;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 18px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .full {
+            grid-column: 1 / -1;
+        }
+
+        label {
+            margin-bottom: 7px;
+            font-weight: bold;
+            color: #eee;
+        }
+
+        select,
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px;
+            border-radius: 8px;
+            border: 1px solid #444;
+            background: #1c1c1c;
+            color: white;
+            outline: none;
+        }
+
+        select:focus,
+        input:focus,
+        textarea:focus {
+            border-color: #C90DEA;
+        }
+
+        textarea {
+            min-height: 115px;
+            resize: vertical;
+        }
+
+        .photo-preview-box {
+            margin-top: 15px;
+            padding: 15px;
+            background: #0c0c0c;
+            border: 1px solid #333;
+            border-radius: 12px;
+        }
+
+        .photo-preview-box img {
+            display: block;
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 8px;
+        }
+
+        .photo-preview-box p {
+            color: #999;
+            font-size: 13px;
+            margin: 0 0 10px;
+        }
+
+        .price-box {
+            margin-top: 28px;
+            padding: 20px;
+            border-radius: 12px;
+            background: linear-gradient(135deg, #181818, #25204a);
+            border: 1px solid #444;
+            text-align: center;
+        }
+
+        .price-box h3 {
+            margin: 0 0 8px;
+            color: #FF66C4;
+        }
+
+        .price {
+            font-size: 25px;
+            font-weight: bold;
+            color: #33CEEF;
+        }
+
+        .preview {
+            margin-top: 30px;
+            padding: 20px;
+            background: #0c0c0c;
+            border: 1px solid #333;
+            border-radius: 12px;
+        }
+
+        .preview h3 {
+            color: #C90DEA;
+            margin-top: 0;
+        }
+
+        .preview p {
+            color: #ddd;
+            line-height: 1.7;
+            margin: 5px 0;
+        }
+
+        .preview-photo {
+            margin-top: 15px;
+        }
+
+        .preview-photo img {
+            display: block;
+            width: 100%;
+            max-height: 300px;
+            object-fit: contain;
+            border-radius: 10px;
+            border: 1px solid #333;
+        }
+
+        .delivery-note {
+            margin-top: 20px;
+            padding: 15px;
+            border-left: 3px solid #33CEEF;
+            background: #171717;
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        .payment-section {
+            margin-top: 25px;
+            padding: 20px;
+            background: #161616;
+            border: 1px solid #333;
+            border-radius: 12px;
+        }
+
+        .payment-section h3 {
+            color: #33CEEF;
+            margin-top: 0;
+        }
+
+        .close-button {
+            background: #292929;
+            margin-bottom: 20px;
+        }
+
+        .note {
+            color: #999;
+            font-size: 13px;
+            line-height: 1.5;
+            margin-top: 7px;
+        }
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .full {
+                grid-column: auto;
+            }
+
+            nav {
+                justify-content: center;
+            }
+
+            .logo {
+                width: 100%;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- NAVIGATION -->
+
+    <nav>
+
+        <div class="logo">
+            Alis Art & Aura Atelier
+        </div>
+
+        <div>
+            <a href="index.html">Home</a>
+            <a href="what-we-create.html">Create</a>
+            <a href="custom-orders.html">Custom Orders</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h1>Meaningful Décor</h1>
+
+        <p>
+            Turn the people, memories, words, relationships and moments
+            that matter into décor you can keep.
+        </p>
+
+    </section>
+
+
+    <div class="intro">
+
+        Meaning can live in the smallest details.
+        Choose what your piece represents, explore the possibilities,
+        and create something that carries a story beyond its appearance.
+
+    </div>
+
+
+    <!-- LOVE -->
+
+    <section class="section">
+
+        <h2>Love & Relationships</h2>
+
+        <p class="section-description">
+            Create something that represents a relationship, connection,
+            shared memory or meaningful bond.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/meaning-love-1.png" alt="Love and relationship décor">
+
+                <div class="card-content">
+
+                    <h3>Couples</h3>
+
+                    <p>
+                        Personal décor celebrating two people and their connection.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Love & Relationships"
+                        data-purpose="Couples">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-love-2.png" alt="Anniversary décor">
+
+                <div class="card-content">
+
+                    <h3>Anniversaries</h3>
+
+                    <p>
+                        Turn a relationship milestone into something lasting.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Love & Relationships"
+                        data-purpose="Anniversaries">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-love-3.png" alt="Relationship memory décor">
+
+                <div class="card-content">
+
+                    <h3>Shared Memories</h3>
+
+                    <p>
+                        Preserve a meaningful moment between people.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Love & Relationships"
+                        data-purpose="Shared Memories">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-love-4.png" alt="Love message décor">
+
+                <div class="card-content">
+
+                    <h3>Words of Love</h3>
+
+                    <p>
+                        Turn a personal message or words into décor.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Love & Relationships"
+                        data-purpose="Words of Love">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FAMILY -->
+
+    <section class="section">
+
+        <h2>Family</h2>
+
+        <p class="section-description">
+            Celebrate the people, connections and memories that make a family meaningful.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/meaning-family-1.png" alt="Family décor">
+
+                <div class="card-content">
+
+                    <h3>Family Names</h3>
+
+                    <p>
+                        Create decorative pieces centred around family identity.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Family"
+                        data-purpose="Family Names">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-family-2.png" alt="Family memories">
+
+                <div class="card-content">
+
+                    <h3>Family Memories</h3>
+
+                    <p>
+                        Turn shared memories into something tangible.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Family"
+                        data-purpose="Family Memories">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-family-3.png" alt="Family messages">
+
+                <div class="card-content">
+
+                    <h3>Family Messages</h3>
+
+                    <p>
+                        Preserve words, sayings or messages connected to family.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Family"
+                        data-purpose="Family Messages">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-family-4.png" alt="Family celebration décor">
+
+                <div class="card-content">
+
+                    <h3>Family Celebrations</h3>
+
+                    <p>
+                        Create décor around important family occasions.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Family"
+                        data-purpose="Family Celebrations">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MILESTONES -->
+
+    <section class="section">
+
+        <h2>Milestones & Achievements</h2>
+
+        <p class="section-description">
+            Give important accomplishments and new chapters a physical place in your life.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/meaning-milestone-1.png" alt="Graduation décor">
+
+                <div class="card-content">
+
+                    <h3>Graduation</h3>
+
+                    <p>
+                        Preserve the achievement and the journey behind it.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Milestones & Achievements"
+                        data-purpose="Graduation">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-milestone-2.png" alt="Birthday milestone décor">
+
+                <div class="card-content">
+
+                    <h3>Birthdays</h3>
+
+                    <p>
+                        Create something personal for a meaningful birthday.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Milestones & Achievements"
+                        data-purpose="Birthdays">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-milestone-3.png" alt="Achievement décor">
+
+                <div class="card-content">
+
+                    <h3>Achievements</h3>
+
+                    <p>
+                        Mark an accomplishment with something worth keeping.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Milestones & Achievements"
+                        data-purpose="Achievements">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-milestone-4.png" alt="New beginning décor">
+
+                <div class="card-content">
+
+                    <h3>New Beginnings</h3>
+
+                    <p>
+                        Create décor representing a new chapter or direction.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Milestones & Achievements"
+                        data-purpose="New Beginnings">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- WORDS -->
+
+    <section class="section">
+
+        <h2>Words & Messages</h2>
+
+        <p class="section-description">
+            When the words themselves carry the meaning, let them become part of the décor.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/meaning-words-1.png" alt="Personal message décor">
+
+                <div class="card-content">
+
+                    <h3>Personal Messages</h3>
+
+                    <p>
+                        Turn your own words into a decorative piece.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Words & Messages"
+                        data-purpose="Personal Messages">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-words-2.png" alt="Quotes décor">
+
+                <div class="card-content">
+
+                    <h3>Quotes</h3>
+
+                    <p>
+                        Create décor around words that already mean something to you.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Words & Messages"
+                        data-purpose="Quotes">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-words-3.png" alt="Poetry décor">
+
+                <div class="card-content">
+
+                    <h3>Poetry & Literature</h3>
+
+                    <p>
+                        Transform meaningful literary words into decorative pieces.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Words & Messages"
+                        data-purpose="Poetry & Literature">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-words-4.png" alt="Inspirational words décor">
+
+                <div class="card-content">
+
+                    <h3>Words to Live By</h3>
+
+                    <p>
+                        Create something around words you want to see every day.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Words & Messages"
+                        data-purpose="Words to Live By">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- MEMORIES -->
+
+    <section class="section">
+
+        <h2>Memories</h2>
+
+        <p class="section-description">
+            Preserve moments that deserve to remain part of your environment.
+        </p>
+
+        <div class="gallery">
+
+            <div class="card">
+                <img src="images/meaning-memory-1.png" alt="Memory décor">
+
+                <div class="card-content">
+
+                    <h3>A Special Moment</h3>
+
+                    <p>
+                        Build décor around a moment you never want to forget.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Memories"
+                        data-purpose="A Special Moment">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-memory-2.png" alt="Place memory décor">
+
+                <div class="card-content">
+
+                    <h3>A Special Place</h3>
+
+                    <p>
+                        Preserve the feeling or memory connected to a place.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Memories"
+                        data-purpose="A Special Place">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-memory-3.png" alt="Memory photo décor">
+
+                <div class="card-content">
+
+                    <h3>A Photograph</h3>
+
+                    <p>
+                        Turn an important photograph into meaningful décor.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Memories"
+                        data-purpose="A Photograph">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+
+            <div class="card">
+                <img src="images/meaning-memory-4.png" alt="Memory collection décor">
+
+                <div class="card-content">
+
+                    <h3>A Collection of Memories</h3>
+
+                    <p>
+                        Bring several meaningful moments together.
+                    </p>
+
+                    <button
+                        type="button"
+                        class="meaning-option"
+                        data-theme="Memories"
+                        data-purpose="A Collection of Memories">
+                        Explore
+                    </button>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- BUILDER -->
+
+    <section class="builder" id="builder">
+
+        <button
+            type="button"
+            class="close-button"
+            id="closeBuilder">
+            Close
+        </button>
+
+
+        <h2>Create Your Meaningful Piece</h2>
+
+
+        <div
+            class="selected-theme"
+            id="selectedTheme">
+        </div>
+
+
+        <div class="form-grid">
+
+
+            <!-- PIECE TYPE -->
+
+            <div class="form-group full">
+
+                <label for="pieceType">
+                    What Would You Like To Create?
+                </label>
+
+                <select id="pieceType">
+
+                    <option value="">
+                        Select a piece
+                    </option>
+
+                    <option value="Decorative Artwork">
+                        Decorative Artwork
+                    </option>
+
+                    <option value="Framed Piece">
+                        Framed Piece
+                    </option>
+
+                    <option value="Canvas Piece">
+                        Canvas Piece
+                    </option>
+
+                    <option value="Acrylic Piece">
+                        Acrylic Piece
+                    </option>
+
+                    <option value="Decorative Keepsake">
+                        Decorative Keepsake
+                    </option>
+
+                    <option value="Personalised Decorative Piece">
+                        Personalised Decorative Piece
+                    </option>
+
+                    <option value="Custom Concept">
+                        Custom Concept
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PRESENTATION -->
+
+            <div class="form-group" id="presentationGroup">
+
+                <label for="presentation">
+                    Presentation / Finish
+                </label>
+
+                <select id="presentation">
+
+                    <option value="">
+                        Select presentation
+                    </option>
+
+                    <option value="Standard">
+                        Standard
+                    </option>
+
+                    <option value="Signature">
+                        Signature
+                    </option>
+
+                    <option value="Premium">
+                        Premium
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- SIZE -->
+
+            <div class="form-group">
+
+                <label for="size">
+                    Size / Format
+                </label>
+
+                <select id="size">
+
+                    <option value="">
+                        Select size or format
+                    </option>
+
+                    <option>
+                        Small
+                    </option>
+
+                    <option>
+                        Medium
+                    </option>
+
+                    <option>
+                        Large
+                    </option>
+
+                    <option>
+                        Custom Size
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- DESIGN DIRECTION -->
+
+            <div class="form-group">
+
+                <label for="designDirection">
+                    Design Direction
+                </label>
+
+                <select id="designDirection">
+
+                    <option value="">
+                        Select direction
+                    </option>
+
+                    <option>
+                        Personalised Words
+                    </option>
+
+                    <option>
+                        Personal Photo
+                    </option>
+
+                    <option>
+                        Artwork / Illustration
+                    </option>
+
+                    <option>
+                        Words + Photo
+                    </option>
+
+                    <option>
+                        Colour Palette
+                    </option>
+
+                    <option>
+                        Pattern / Theme
+                    </option>
+
+                    <option>
+                        Fully Custom Concept
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- PHOTO UPLOAD -->
+
+            <div
+                class="form-group full"
+                id="photoUploadGroup"
+                style="display:none;">
+
+                <label for="photoUpload">
+                    Upload Your Photo
+                </label>
+
+                <input
+                    type="file"
+                    id="photoUpload"
+                    accept="image/*">
+
+                <div class="note">
+                    Upload the photo you would like incorporated into your piece.
+                </div>
+
+                <div
+                    class="photo-preview-box"
+                    id="photoUploadPreview"
+                    style="display:none;">
+
+                    <p>
+                        Selected Photo
+                    </p>
+
+                    <img
+                        id="uploadedPhoto"
+                        src=""
+                        alt="Uploaded photo preview">
+
+                </div>
+
+            </div>
+
+
+            <!-- QUANTITY -->
+
+            <div class="form-group">
+
+                <label for="quantity">
+                    Quantity
+                </label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    value="1">
+
+            </div>
+
+
+            <!-- VISION -->
+
+            <div class="form-group full">
+
+                <label for="vision">
+                    Tell Us What Makes This Meaningful
+                </label>
+
+                <textarea
+                    id="vision"
+                    placeholder="Share the person, memory, words, occasion, feeling or idea behind your piece."></textarea>
+
+            </div>
+
+
+            <!-- CUSTOMER INFORMATION -->
+
+            <div class="form-group full">
+
+                <h3 style="color:#FF66C4;">
+                    Customer Information
+                </h3>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerName">
+                    Full Name
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Your full name">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerEmail">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="customerEmail"
+                    placeholder="Your email">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerPhone">
+                    Phone / WhatsApp
+                </label>
+
+                <input
+                    type="text"
+                    id="customerPhone"
+                    placeholder="Your phone or WhatsApp">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="customerAddress">
+                    Delivery Address
+                </label>
+
+                <input
+                    type="text"
+                    id="customerAddress"
+                    placeholder="Delivery address">
+
+            </div>
+
+
+            <div class="form-group full">
+
+                <label for="instructions">
+                    Special Instructions
+                </label>
+
+                <textarea
+                    id="instructions"
+                    placeholder="Anything else we should know about your order?"></textarea>
+
+            </div>
+
+        </div>
+
+
+        <!-- PRICE -->
+
+        <div class="price-box">
+
+            <h3>Estimated Total</h3>
+
+            <div
+                class="price"
+                id="totalPrice">
+                Price To Be Calculated
+            </div>
+
+            <div class="note">
+                Custom pricing can be updated as your Meaningful Décor
+                pricing is finalized.
+            </div>
+
+        </div>
+
+
+        <!-- ORDER PREVIEW -->
+
+        <div class="preview">
+
+            <h3>Order Preview</h3>
+
+            <p id="previewTheme">
+                Meaning: —
+            </p>
+
+            <p id="previewPurpose">
+                Purpose: —
+            </p>
+
+            <p id="previewPiece">
+                Piece: —
+            </p>
+
+            <p id="previewPresentation">
+                Presentation / Finish: —
+            </p>
+
+            <p id="previewSize">
+                Size / Format: —
+            </p>
+
+            <p id="previewDirection">
+                Design Direction: —
+            </p>
+
+            <p id="previewQuantity">
+                Quantity: 1
+            </p>
+
+            <p id="previewCustomer">
+                Customer: —
+            </p>
+
+            <p id="previewContact">
+                Contact: —
+            </p>
+
+            <div
+                class="preview-photo"
+                id="previewPhoto"
+                style="display:none;">
+
+                <p>
+                    <strong>Uploaded Photo:</strong>
+                </p>
+
+                <img
+                    id="previewPhotoImage"
+                    src=""
+                    alt="Uploaded photo">
+
+            </div>
+
+            <p id="previewTotal">
+                Total: Price To Be Calculated
+            </p>
+
+        </div>
+
+
+        <!-- DELIVERY -->
+
+        <div class="delivery-note">
+
+            Delivery is calculated separately according to the order,
+            location and delivery requirements.
+
+        </div>
+
+
+        <!-- PAYMENT -->
+
+        <div class="payment-section">
+
+            <h3>Payment</h3>
+
+            <p>
+                Review your selections above before continuing to payment.
+            </p>
+
+            <button
+                type="button"
+                id="paymentButton">
+                Continue To Payment
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <script>
+
+        /* =========================================
+           MEANINGFUL DÉCOR
+           PRICES CAN BE EDITED HERE LATER
+        ========================================= */
+
+        const prices = {
+
+            "Decorative Artwork": 0,
+            "Framed Piece": 0,
+            "Canvas Piece": 0,
+            "Acrylic Piece": 0,
+            "Decorative Keepsake": 0,
+            "Personalised Decorative Piece": 0,
+            "Custom Concept": 0
+
+        };
+
+
+        let currentTheme = "";
+        let currentPurpose = "";
+        let uploadedPhotoData = "";
+
+
+        const builder =
+            document.getElementById("builder");
+
+        const pieceType =
+            document.getElementById("pieceType");
+
+        const presentation =
+            document.getElementById("presentation");
+
+        const size =
+            document.getElementById("size");
+
+        const quantity =
+            document.getElementById("quantity");
+
+        const designDirection =
+            document.getElementById("designDirection");
+
+        const photoUploadGroup =
+            document.getElementById("photoUploadGroup");
+
+        const photoUpload =
+            document.getElementById("photoUpload");
+
+        const photoUploadPreview =
+            document.getElementById("photoUploadPreview");
+
+        const uploadedPhoto =
+            document.getElementById("uploadedPhoto");
+
+
+        /* =========================================
+           EXPLORE BUTTONS
+        ========================================= */
+
+        document
+            .querySelectorAll(".meaning-option")
+            .forEach(function(button) {
+
+                button.addEventListener("click", function() {
+
+                    currentTheme =
+                        this.dataset.theme;
+
+                    currentPurpose =
+                        this.dataset.purpose;
+
+
+                    document.getElementById(
+                        "selectedTheme"
+                    ).innerHTML =
+
+                        "<strong>Meaning:</strong> " +
+                        currentTheme +
+
+                        "<br>" +
+
+                        "<strong>Purpose:</strong> " +
+                        currentPurpose;
+
+
+                    builder.style.display =
+                        "block";
+
+
+                    builder.scrollIntoView({
+                        behavior: "smooth",
+                        block: "start"
+                    });
+
+
+                    updatePreview();
+
+                });
+
+            });
+
+
+        /* =========================================
+           CLOSE
+        ========================================= */
+
+        document
+            .getElementById("closeBuilder")
+            .addEventListener("click", function() {
+
+                builder.style.display = "none";
+
+            });
+
+
+        /* =========================================
+           PHOTO DISPLAY
+        ========================================= */
+
+        function updatePhotoUpload() {
+
+            if (
+                designDirection.value === "Personal Photo" ||
+                designDirection.value === "Words + Photo"
+            ) {
+
+                photoUploadGroup.style.display =
+                    "flex";
+
+            } else {
+
+                photoUploadGroup.style.display =
+                    "none";
+
+                photoUpload.value = "";
+
+                uploadedPhotoData = "";
+
+                photoUploadPreview.style.display =
+                    "none";
+
+                document.getElementById(
+                    "previewPhoto"
+                ).style.display = "none";
+
+            }
+
+        }
+
+
+        /* =========================================
+           PHOTO UPLOAD
+        ========================================= */
+
+        photoUpload.addEventListener(
+            "change",
+            function() {
+
+                const file =
+                    this.files[0];
+
+                if (!file) {
+
+                    uploadedPhotoData = "";
+
+                    photoUploadPreview.style.display =
+                        "none";
+
+                    document.getElementById(
+                        "previewPhoto"
+                    ).style.display = "none";
+
+                    updatePreview();
+
+                    return;
+
+                }
+
+
+                const reader =
+                    new FileReader();
+
+
+                reader.onload =
+                    function(event) {
+
+                        uploadedPhotoData =
+                            event.target.result;
+
+
+                        uploadedPhoto.src =
+                            uploadedPhotoData;
+
+
+                        document.getElementById(
+                            "previewPhotoImage"
+                        ).src =
+                            uploadedPhotoData;
+
+
+                        photoUploadPreview.style.display =
+                            "block";
+
+
+                        document.getElementById(
+                            "previewPhoto"
+                        ).style.display =
+                            "block";
+
+
+                        updatePreview();
+
+                    };
+
+
+                reader.readAsDataURL(file);
+
+            });
+
+
+        /* =========================================
+           PRICE
+        ========================================= */
+
+        function updatePrice() {
+
+            const selected =
+                pieceType.value;
+
+            const qty =
+                parseInt(quantity.value) || 1;
+
+            const basePrice =
+                prices[selected] || 0;
+
+
+            if (!selected || basePrice === 0) {
+
+                document.getElementById(
+                    "totalPrice"
+                ).textContent =
+                    "Price To Be Calculated";
+
+                return;
+
+            }
+
+
+            const total =
+                basePrice * qty;
+
+
+            document.getElementById(
+                "totalPrice"
+            ).textContent =
+                "J$" + total.toLocaleString();
+
+        }
+
+
+        /* =========================================
+           PREVIEW
+        ========================================= */
+
+        function updatePreview() {
+
+            updatePhotoUpload();
+
+
+            const selectedPiece =
+                pieceType.value || "—";
+
+            const selectedPresentation =
+                presentation.value || "—";
+
+            const selectedSize =
+                size.value || "—";
+
+            const selectedDirection =
+                designDirection.value || "—";
+
+            const qty =
+                parseInt(quantity.value) || 1;
+
+
+            const customerName =
+                document.getElementById(
+                    "customerName"
+                ).value || "—";
+
+
+            const customerPhone =
+                document.getElementById(
+                    "customerPhone"
+                ).value || "—";
+
+
+            document.getElementById(
+                "previewTheme"
+            ).innerHTML =
+
+                "<strong>Meaning:</strong> " +
+                (currentTheme || "—");
+
+
+            document.getElementById(
+                "previewPurpose"
+            ).innerHTML =
+
+                "<strong>Purpose:</strong> " +
+                (currentPurpose || "—");
+
+
+            document.getElementById(
+                "previewPiece"
+            ).innerHTML =
+
+                "<strong>Piece:</strong> " +
+                selectedPiece;
+
+
+            document.getElementById(
+                "previewPresentation"
+            ).innerHTML =
+
+                "<strong>Presentation / Finish:</strong> " +
+                selectedPresentation;
+
+
+            document.getElementById(
+                "previewSize"
+            ).innerHTML =
+
+                "<strong>Size / Format:</strong> " +
+                selectedSize;
+
+
+            document.getElementById(
+                "previewDirection"
+            ).innerHTML =
+
+                "<strong>Design Direction:</strong> " +
+                selectedDirection;
+
+
+            document.getElementById(
+                "previewQuantity"
+            ).innerHTML =
+
+                "<strong>Quantity:</strong> " +
+                qty;
+
+
+            document.getElementById(
+                "previewCustomer"
+            ).innerHTML =
+
+                "<strong>Customer:</strong> " +
+                customerName;
+
+
+            document.getElementById(
+                "previewContact"
+            ).innerHTML =
+
+                "<strong>Contact:</strong> " +
+                customerPhone;
+
+
+            const selectedPrice =
+                prices[pieceType.value] || 0;
+
+
+            if (
+                selectedPrice > 0 &&
+                pieceType.value
+            ) {
+
+                const total =
+                    selectedPrice * qty;
+
+                document.getElementById(
+                    "previewTotal"
+                ).innerHTML =
+
+                    "<strong>Total:</strong> J$" +
+                    total.toLocaleString();
+
+            } else {
+
+                document.getElementById(
+                    "previewTotal"
+                ).innerHTML =
+
+                    "<strong>Total:</strong> " +
+                    "Price To Be Calculated";
+
+            }
+
+
+            updatePrice();
+
+        }
+
+
+        /* =========================================
+           FORM CHANGES
+        ========================================= */
+
+        document
+            .querySelectorAll(
+                "#pieceType, #presentation, #size, #designDirection, #quantity, #vision, #customerName, #customerEmail, #customerPhone, #customerAddress, #instructions"
+            )
+            .forEach(function(element) {
+
+                element.addEventListener(
+                    "input",
+                    updatePreview
+                );
+
+                element.addEventListener(
+                    "change",
+                    updatePreview
+                );
+
+            });
+
+
+        /* =========================================
+           PAYMENT
+        ========================================= */
+
+        document
+            .getElementById("paymentButton")
+            .addEventListener("click", function() {
+
+
+                const selectedPrice =
+                    prices[pieceType.value] || 0;
+
+                const qty =
+                    parseInt(quantity.value) || 1;
+
+
+                const order = {
+
+                    category:
+                        "Meaningful Décor",
+
+                    meaning:
+                        currentTheme,
+
+                    purpose:
+                        currentPurpose,
+
+                    piece:
+                        pieceType.value,
+
+                    presentation:
+                        presentation.value,
+
+                    size:
+                        size.value,
+
+                    designDirection:
+                        designDirection.value,
+
+                    photoData:
+                        uploadedPhotoData,
+
+                    quantity:
+                        qty,
+
+                    vision:
+                        document.getElementById(
+                            "vision"
+                        ).value,
+
+                    customerName:
+                        document.getElementById(
+                            "customerName"
+                        ).value,
+
+                    customerEmail:
+                        document.getElementById(
+                            "customerEmail"
+                        ).value,
+
+                    customerPhone:
+                        document.getElementById(
+                            "customerPhone"
+                        ).value,
+
+                    customerAddress:
+                        document.getElementById(
+                            "customerAddress"
+                        ).value,
+
+                    instructions:
+                        document.getElementById(
+                            "instructions"
+                        ).value,
+
+                    unitPrice:
+                        selectedPrice,
+
+                    total:
+                        selectedPrice * qty
+
+                };
+
+
+                localStorage.setItem(
+                    "meaningfulDecorOrder",
+                    JSON.stringify(order)
+                );
+
+
+                window.location.href =
+                    "payment.html";
+
+            });
+
+
+        /* =========================================
+           INITIAL STATE
+        ========================================= */
+
+        updatePreview();
+
+    </script>
+
+</body>
+
+</html>

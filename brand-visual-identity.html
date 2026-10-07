@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Brand & Visual Identity | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 12% 18%, rgba(51, 206, 239, 0.15), transparent 28%),
+                radial-gradient(circle at 88% 72%, rgba(255, 102, 196, 0.13), transparent 30%),
+                #000000;
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 85px 30px;
+        }
+
+        /* HERO */
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 85px;
+        }
+
+        .brand {
+            color: #C90DEA;
+            font-size: 17px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 28px;
+        }
+
+        .intro p {
+            max-width: 780px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #dddddd;
+        }
+
+        /* SECTION */
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto 90px;
+        }
+
+        .section-label {
+            color: #33CEEF;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            max-width: 750px;
+            color: #cccccc;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* BRAND BUILDING */
+
+        .identity-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .identity-card {
+            padding: 32px;
+            background: #050505;
+            border: 1px solid #222222;
+            transition: 0.3s;
+        }
+
+        .identity-card:hover {
+            transform: translateY(-5px);
+            border-color: #C90DEA;
+        }
+
+        .identity-card h3 {
+            font-size: 24px;
+            margin-bottom: 14px;
+        }
+
+        .identity-card p {
+            color: #cccccc;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* SERVICE PACKAGES */
+
+        .package-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .package {
+            padding: 35px 30px;
+            background: #050505;
+            border: 1px solid #333333;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .package:nth-child(1) {
+            border-color: #C90DEA;
+        }
+
+        .package:nth-child(2) {
+            border-color: #33CEEF;
+        }
+
+        .package:nth-child(3) {
+            border-color: #FF66C4;
+        }
+
+        .package h3 {
+            font-size: 27px;
+            margin-bottom: 10px;
+        }
+
+        .package-subtitle {
+            color: #999999;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .price {
+            font-size: 28px;
+            color: white;
+            margin-bottom: 25px;
+        }
+
+        .package ul {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+
+        .package li {
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 12px;
+            padding-left: 18px;
+            position: relative;
+        }
+
+        .package li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #C90DEA;
+        }
+
+        .package-button {
+            margin-top: auto;
+            display: inline-block;
+            padding: 13px 20px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .package-button:hover {
+            background: white;
+            color: black;
+        }
+
+        /* ADD-ONS */
+
+        .addons {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .addon {
+            padding: 22px;
+            background: #050505;
+            border-left: 2px solid #33CEEF;
+        }
+
+        .addon h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .addon p {
+            color: #aaaaaa;
+            line-height: 1.6;
+            font-size: 14px;
+        }
+
+        /* PROCESS */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .process-step {
+            padding: 28px 22px;
+            border-top: 1px solid #3533CD;
+            background: #050505;
+        }
+
+        .step-number {
+            color: #FF66C4;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            color: #bbbbbb;
+            line-height: 1.65;
+            font-size: 14px;
+        }
+
+        /* ORDER FORM */
+
+        .order-section {
+            max-width: 900px;
+            margin: 0 auto 90px;
+            padding: 45px;
+            background: #050505;
+            border: 1px solid #3533CD;
+        }
+
+        .order-section h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .order-section > p {
+            color: #bbbbbb;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 9px;
+            font-size: 15px;
+            color: #eeeeee;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background: #000000;
+            border: 1px solid #444444;
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #C90DEA;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .check-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px;
+            border: 1px solid #333333;
+            background: #000000;
+            color: #cccccc;
+        }
+
+        .check-option input {
+            width: auto;
+        }
+
+        .estimate {
+            margin: 30px 0;
+            padding: 22px;
+            border-top: 1px solid #3533CD;
+            border-bottom: 1px solid #3533CD;
+        }
+
+        .estimate-title {
+            color: #33CEEF;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .estimate-price {
+            font-size: 32px;
+        }
+
+        .order-button {
+            width: 100%;
+            padding: 17px;
+            border: 1px solid white;
+            background: white;
+            color: black;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .order-button:hover {
+            background: #C90DEA;
+            border-color: #C90DEA;
+            color: white;
+        }
+
+        /* PAYMENT NOTICE */
+
+        .payment-box {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            padding: 35px;
+            border: 1px solid #FF66C4;
+            background: #050505;
+        }
+
+        .payment-box h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .payment-box p {
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .payment-note {
+            color: #FF66C4;
+            font-size: 14px;
+        }
+
+        /* STATEMENT */
+
+        .statement {
+            max-width: 850px;
+            margin: 0 auto 70px;
+            padding: 35px;
+            border-top: 1px solid #3533CD;
+            border-bottom: 1px solid #3533CD;
+            font-size: 28px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        /* BACK */
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 800px) {
+
+            .page {
+                padding: 60px 20px;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+
+            .identity-grid,
+            .addons,
+            .package-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .order-section {
+                padding: 28px 20px;
+            }
+
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .statement {
+                font-size: 23px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Brand & Visual Identity
+            </h1>
+
+            <p>
+                A visual identity gives an idea a recognizable presence.
+                We create thoughtful visual systems that help businesses,
+                creators and personal brands express who they are through
+                design, presentation and visual language.
+            </p>
+
+        </div>
+
+
+        <!-- WHAT WE CREATE -->
+
+        <section class="section">
+
+            <div class="section-label">
+                What We Create
+            </div>
+
+            <h2>
+                More Than A Logo
+            </h2>
+
+            <p class="section-intro">
+                A brand identity is the visual foundation of how an idea
+                is experienced. Depending on what you need, your project
+                can include a single visual element or an entire identity
+                system.
+            </p>
+
+
+            <div class="identity-grid">
+
+                <div class="identity-card">
+
+                    <h3>
+                        Logo Design
+                    </h3>
+
+                    <p>
+                        Primary logos, alternate logos, symbols,
+                        monograms and visual marks created around
+                        your brand concept.
+                    </p>
+
+                </div>
+
+
+                <div class="identity-card">
+
+                    <h3>
+                        Colour Direction
+                    </h3>
+
+                    <p>
+                        A considered colour palette that gives your
+                        brand consistency across digital and physical
+                        applications.
+                    </p>
+
+                </div>
+
+
+                <div class="identity-card">
+
+                    <h3>
+                        Typography
+                    </h3>
+
+                    <p>
+                        Font and lettering direction selected to help
+                        communicate your brand's personality and message.
+                    </p>
+
+                </div>
+
+
+                <div class="identity-card">
+
+                    <h3>
+                        Visual Language
+                    </h3>
+
+                    <p>
+                        Shapes, imagery, patterns, textures and other
+                        visual elements that make your identity recognizable.
+                    </p>
+
+                </div>
+
+
+                <div class="identity-card">
+
+                    <h3>
+                        Brand Materials
+                    </h3>
+
+                    <p>
+                        Business cards, social graphics, promotional
+                        materials, stationery and other branded pieces.
+                    </p>
+
+                </div>
+
+
+                <div class="identity-card">
+
+                    <h3>
+                        Brand Guidelines
+                    </h3>
+
+                    <p>
+                        A reference system showing how your visual identity
+                        should be used consistently across different materials.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PACKAGES -->
+
+        <section class="section">
+
+            <div class="section-label">
+                Identity Options
+            </div>
+
+            <h2>
+                Choose Your Starting Point
+            </h2>
+
+            <p class="section-intro">
+                Every project can be customized. These starting options
+                help you identify the level of creative development you need.
+            </p>
+
+
+            <div class="package-grid">
+
+
+                <div class="package">
+
+                    <h3>
+                        Essential
+                    </h3>
+
+                    <div class="package-subtitle">
+                        A focused visual beginning
+                    </div>
+
+                    <div class="price">
+                        From JMD $8,000
+                    </div>
+
+                    <ul>
+
+                        <li>Primary logo concept</li>
+
+                        <li>Colour palette</li>
+
+                        <li>Typography direction</li>
+
+                        <li>Basic brand presentation</li>
+
+                        <li>Digital logo files</li>
+
+                    </ul>
+
+                    <button
+                        class="package-button"
+                        onclick="selectPackage('Essential', 8000)">
+                        Select Essential
+                    </button>
+
+                </div>
+
+
+                <div class="package">
+
+                    <h3>
+                        Signature
+                    </h3>
+
+                    <div class="package-subtitle">
+                        A more developed identity
+                    </div>
+
+                    <div class="price">
+                        From JMD $15,000
+                    </div>
+
+                    <ul>
+
+                        <li>Logo system</li>
+
+                        <li>Primary and alternate marks</li>
+
+                        <li>Colour palette</li>
+
+                        <li>Typography system</li>
+
+                        <li>Visual direction</li>
+
+                        <li>Selected branded materials</li>
+
+                    </ul>
+
+                    <button
+                        class="package-button"
+                        onclick="selectPackage('Signature', 15000)">
+                        Select Signature
+                    </button>
+
+                </div>
+
+
+                <div class="package">
+
+                    <h3>
+                        Complete
+                    </h3>
+
+                    <div class="package-subtitle">
+                        A full visual identity system
+                    </div>
+
+                    <div class="price">
+                        From JMD $30,000
+                    </div>
+
+                    <ul>
+
+                        <li>Complete logo system</li>
+
+                        <li>Colour and typography system</li>
+
+                        <li>Visual language</li>
+
+                        <li>Brand applications</li>
+
+                        <li>Brand guidelines</li>
+
+                        <li>Extended presentation package</li>
+
+                    </ul>
+
+                    <button
+                        class="package-button"
+                        onclick="selectPackage('Complete', 30000)">
+                        Select Complete
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ADD ONS -->
+
+        <section class="section">
+
+            <div class="section-label">
+                Additional Creative Services
+            </div>
+
+            <h2>
+                Build Beyond The Core Identity
+            </h2>
+
+            <p class="section-intro">
+                Additional branded pieces can be added to your project
+                when your identity needs to extend into other areas.
+            </p>
+
+
+            <div class="addons">
+
+                <div class="addon">
+
+                    <h3>
+                        Business Cards
+                    </h3>
+
+                    <p>
+                        Branded business card design prepared for production.
+                    </p>
+
+                </div>
+
+
+                <div class="addon">
+
+                    <h3>
+                        Social Media Graphics
+                    </h3>
+
+                    <p>
+                        Branded templates and graphics for social platforms.
+                    </p>
+
+                </div>
+
+
+                <div class="addon">
+
+                    <h3>
+                        Promotional Materials
+                    </h3>
+
+                    <p>
+                        Flyers, posters, promotional graphics and campaign materials.
+                    </p>
+
+                </div>
+
+
+                <div class="addon">
+
+                    <h3>
+                        Digital Brand Assets
+                    </h3>
+
+                    <p>
+                        Profile images, banners, icons and other digital assets.
+                    </p>
+
+                </div>
+
+
+                <div class="addon">
+
+                    <h3>
+                        Packaging Direction
+                    </h3>
+
+                    <p>
+                        Visual direction for packaging and branded product presentation.
+                    </p>
+
+                </div>
+
+
+                <div class="addon">
+
+                    <h3>
+                        Presentation Materials
+                    </h3>
+
+                    <p>
+                        Branded documents, presentations and visual communication materials.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESS -->
+
+        <section class="section">
+
+            <div class="section-label">
+                The Atelier Process
+            </div>
+
+            <h2>
+                From Idea To Identity
+            </h2>
+
+
+            <div class="process">
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Discover
+                    </h3>
+
+                    <p>
+                        We learn about your brand, purpose, audience,
+                        personality and visual direction.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Develop
+                    </h3>
+
+                    <p>
+                        Your selected identity direction is developed
+                        into a cohesive visual system.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Refine
+                    </h3>
+
+                    <p>
+                        The selected direction is refined through the
+                        agreed revision process.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Deliver
+                    </h3>
+
+                    <p>
+                        Your completed brand assets are prepared and
+                        delivered in the agreed formats.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER -->
+
+        <section class="order-section" id="order">
+
+            <div class="section-label">
+                Start Your Project
+            </div>
+
+            <h2>
+                Brand Identity Order
+            </h2>
+
+            <p>
+                Tell us what you are building and what you need your
+                visual identity to accomplish. Your information helps
+                shape the project before creative development begins.
+            </p>
+
+
+            <form id="brandOrderForm">
+
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="businessName">
+                        Business / Brand Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="businessName"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="package">
+                        Identity Package
+                    </label>
+
+                    <select id="package" required>
+
+                        <option value="">
+                            Select a package
+                        </option>
+
+                        <option value="Essential">
+                            Essential — JMD $8,000
+                        </option>
+
+                        <option value="Signature">
+                            Signature — JMD $15,000
+                        </option>
+
+                        <option value="Complete">
+                            Complete — JMD $30,000
+                        </option>
+
+                        <option value="Custom">
+                            Custom Project — Quote Required
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        What would you like included?
+                    </label>
+
+                    <div class="checkbox-grid">
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Logo Design">
+                            Logo Design
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Colour Palette">
+                            Colour Palette
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Typography">
+                            Typography
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Brand Guidelines">
+                            Brand Guidelines
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Social Media Assets">
+                            Social Media Assets
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Business Cards">
+                            Business Cards
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Promotional Materials">
+                            Promotional Materials
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Packaging">
+                            Packaging
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="brandDescription">
+                        Tell us about your brand
+                    </label>
+
+                    <textarea
+                        id="brandDescription"
+                        placeholder="What do you do? What should your brand communicate?"></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="visualDirection">
+                        Visual Direction
+                    </label>
+
+                    <textarea
+                        id="visualDirection"
+                        placeholder="Describe colours, moods, styles or references you like."></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="deadline">
+                        Desired Completion Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="deadline">
+
+                </div>
+
+
+                <div class="estimate">
+
+                    <div class="estimate-title">
+                        Starting Project Total
+                    </div>
+
+                    <div
+                        class="estimate-price"
+                        id="estimatePrice">
+                        Select a package
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="order-button">
+                    CONTINUE TO ORDER
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- PAYMENT -->
+
+        <section class="payment-box">
+
+            <h2>
+                Payment & Project Confirmation
+            </h2>
+
+            <p>
+                After submitting your project request, your order details
+                are saved and you will be taken to the Atelier payment
+                page to continue the order process.
+            </p>
+
+            <p>
+                Custom projects or projects requiring additional services
+                may receive a revised quotation before payment is completed.
+            </p>
+
+            <div class="payment-note">
+                Payment confirms your project slot and begins the agreed
+                creative development process.
+            </div>
+
+        </section>
+
+
+        <!-- STATEMENT -->
+
+        <div class="statement">
+
+            Your brand is more than what people see.
+
+            <br>
+
+            We create the visual language that helps them recognize it.
+
+        </div>
+
+
+        <a
+            href="creative-services.html"
+            class="back-button">
+
+            Back To Creative Services
+
+        </a>
+
+    </main>
+
+
+    <script>
+
+        const packagePrices = {
+            Essential: 8000,
+            Signature: 15000,
+            Complete: 30000
+        };
+
+
+        function selectPackage(packageName, price) {
+
+            const packageSelect =
+                document.getElementById("package");
+
+            const estimate =
+                document.getElementById("estimatePrice");
+
+            packageSelect.value = packageName;
+
+            estimate.textContent =
+                "JMD $" + price.toLocaleString();
+
+            document
+                .getElementById("order")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
+
+        }
+
+
+        document
+            .getElementById("package")
+            .addEventListener("change", function () {
+
+                const selected =
+                    this.value;
+
+                const estimate =
+                    document.getElementById("estimatePrice");
+
+                if (packagePrices[selected]) {
+
+                    estimate.textContent =
+                        "JMD $" +
+                        packagePrices[selected].toLocaleString();
+
+                } else {
+
+                    estimate.textContent =
+                        "Custom quotation";
+
+                }
+
+            });
+
+
+        document
+            .getElementById("brandOrderForm")
+            .addEventListener("submit", function (event) {
+
+                event.preventDefault();
+
+
+                const selectedPackage =
+                    document.getElementById("package").value;
+
+
+                const selectedServices =
+                    Array.from(
+                        document.querySelectorAll(
+                            '.check-option input:checked'
+                        )
+                    ).map(function (checkbox) {
+
+                        return checkbox.value;
+
+                    });
+
+
+                let total = 0;
+
+                if (packagePrices[selectedPackage]) {
+
+                    total =
+                        packagePrices[selectedPackage];
+
+                }
+
+
+                const order = {
+
+                    type: "Creative Service",
+
+                    service: "Brand & Visual Identity",
+
+                    customerName:
+                        document.getElementById(
+                            "customerName"
+                        ).value,
+
+                    customerEmail:
+                        document.getElementById(
+                            "customerEmail"
+                        ).value,
+
+                    businessName:
+                        document.getElementById(
+                            "businessName"
+                        ).value,
+
+                    package:
+                        selectedPackage,
+
+                    services:
+                        selectedServices,
+
+                    brandDescription:
+                        document.getElementById(
+                            "brandDescription"
+                        ).value,
+
+                    visualDirection:
+                        document.getElementById(
+                            "visualDirection"
+                        ).value,
+
+                    deadline:
+                        document.getElementById(
+                            "deadline"
+                        ).value,
+
+                    total:
+                        total,
+
+                    status:
+                        "Awaiting Payment",
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+                localStorage.setItem(
+                    "currentOrder",
+                    JSON.stringify(order)
+                );
+
+
+                window.location.href =
+                    "payment.html";
+
+            });
+
+    </script>
+
+</body>
+
+</html>

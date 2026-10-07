@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Keepsakes | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(51, 206, 239, 0.25), transparent 32%),
+                radial-gradient(circle at 15% 75%, rgba(201, 13, 234, 0.15), transparent 30%),
+                linear-gradient(135deg, #000000, #3533CD);
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 80px 30px;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 65px;
+            text-align: center;
+        }
+
+        .brand {
+            color: #33CEEF;
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #eeeeee;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto 70px;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 18px;
+        }
+
+        .section-intro {
+            max-width: 760px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: #dddddd;
+            font-size: 17px;
+            line-height: 1.7;
+        }
+
+        .memory-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .memory-card {
+            padding: 28px;
+            min-height: 195px;
+            background: rgba(0, 0, 0, 0.65);
+            border: 1px solid #33CEEF;
+            transition: 0.3s;
+        }
+
+        .memory-card:nth-child(2) {
+            border-color: #C90DEA;
+        }
+
+        .memory-card:nth-child(3) {
+            border-color: #FF66C4;
+        }
+
+        .memory-card:nth-child(4) {
+            border-color: #33CEEF;
+        }
+
+        .memory-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 0 18px rgba(51, 206, 239, 0.2);
+        }
+
+        .memory-card h2 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .memory-card p {
+            color: #dddddd;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .process {
+            max-width: 900px;
+            margin: 0 auto 70px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .process-card {
+            text-align: center;
+            padding: 25px;
+            background: rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid #33CEEF;
+        }
+
+        .process-number {
+            display: block;
+            color: #FF66C4;
+            font-size: 14px;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .process-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .form-container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px;
+            background: rgba(0, 0, 0, 0.72);
+            border: 1px solid rgba(51, 206, 239, 0.55);
+        }
+
+        .form-group {
+            margin-bottom: 28px;
+        }
+
+        label,
+        .field-title {
+            display: block;
+            margin-bottom: 10px;
+            font-size: 16px;
+            color: #ffffff;
+        }
+
+        input,
+        select,
+        textarea {
+            width: 100%;
+            padding: 14px 15px;
+            background: rgba(255, 255, 255, 0.06);
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            outline: none;
+        }
+
+        select {
+            cursor: pointer;
+        }
+
+        select option {
+            background: #111111;
+            color: white;
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            border-color: #33CEEF;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 22px;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .checkbox-item input {
+            width: auto;
+            accent-color: #33CEEF;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-size: 14px;
+            color: #dddddd;
+        }
+
+        .upload-box {
+            padding: 25px;
+            border: 1px dashed #33CEEF;
+            background: rgba(51, 206, 239, 0.04);
+        }
+
+        .upload-box p {
+            color: #cccccc;
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .quotation {
+            padding: 25px;
+            margin-top: 10px;
+            border-left: 3px solid #C90DEA;
+            background: rgba(201, 13, 234, 0.06);
+        }
+
+        .quotation h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .quotation p {
+            color: #dddddd;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 16px;
+            margin-top: 10px;
+            border: 1px solid #33CEEF;
+            background: transparent;
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 16px;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .submit-button:hover {
+            background: #33CEEF;
+            color: #000000;
+        }
+
+        .statement {
+            max-width: 760px;
+            margin: 70px auto 0;
+            text-align: center;
+            font-size: 25px;
+            line-height: 1.6;
+            color: #f5f5f5;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 55px auto 0;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 900px) {
+            .memory-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 700px) {
+            .two-column,
+            .checkbox-grid,
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+            .form-container {
+                padding: 25px;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .memory-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .page {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- KEEPSAKES -->
+
+    <main class="page">
+
+
+        <!-- HERO -->
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Keepsakes
+            </h1>
+
+            <p>
+                Some moments deserve more than a photograph in a gallery.
+                Keepsakes transform memories, milestones, relationships
+                and meaningful pieces of life into something you can
+                hold, display and return to.
+            </p>
+
+        </div>
+
+
+        <!-- MEMORY TYPES -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                What Do You Want To Remember?
+            </h2>
+
+            <p class="section-intro">
+                A keepsake can begin with almost anything that carries
+                meaning. Tell us about the memory first — the final
+                creation can be shaped around it.
+            </p>
+
+
+            <div class="memory-grid">
+
+
+                <article class="memory-card">
+
+                    <h2>
+                        A Person
+                    </h2>
+
+                    <p>
+                        Preserve the presence, words, personality or
+                        memory of someone important to you.
+                    </p>
+
+                </article>
+
+
+                <article class="memory-card">
+
+                    <h2>
+                        A Moment
+                    </h2>
+
+                    <p>
+                        Capture a special day, experience, achievement,
+                        celebration or chapter of life.
+                    </p>
+
+                </article>
+
+
+                <article class="memory-card">
+
+                    <h2>
+                        A Relationship
+                    </h2>
+
+                    <p>
+                        Turn the story between two or more people into
+                        something meaningful to keep.
+                    </p>
+
+                </article>
+
+
+                <article class="memory-card">
+
+                    <h2>
+                        A Place
+                    </h2>
+
+                    <p>
+                        Preserve a home, destination, landmark or
+                        location connected to an important memory.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESS -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                From Memory To Keepsake
+            </h2>
+
+            <p class="section-intro">
+                You bring the meaning. The Atelier explores how that
+                meaning can become a physical or artistic keepsake.
+            </p>
+
+
+            <div class="process">
+
+
+                <article class="process-card">
+
+                    <span class="process-number">
+                        01
+                    </span>
+
+                    <h3>
+                        You Share
+                    </h3>
+
+                    <p>
+                        Tell us the story and provide photographs,
+                        words, dates or other meaningful references.
+                    </p>
+
+                </article>
+
+
+                <article class="process-card">
+
+                    <span class="process-number">
+                        02
+                    </span>
+
+                    <h3>
+                        We Explore
+                    </h3>
+
+                    <p>
+                        We consider the best artistic direction,
+                        materials, presentation and personalization.
+                    </p>
+
+                </article>
+
+
+                <article class="process-card">
+
+                    <span class="process-number">
+                        03
+                    </span>
+
+                    <h3>
+                        We Create
+                    </h3>
+
+                    <p>
+                        Your memory becomes a finished keepsake
+                        designed to be treasured.
+                    </p>
+
+                </article>
+
+
+            </div>
+
+        </section>
+
+
+        <!-- FORM -->
+
+        <section class="section">
+
+            <h2 class="section-title">
+                Tell Us The Memory
+            </h2>
+
+            <p class="section-intro">
+                You do not need to know exactly what the keepsake should
+                look like. Start by telling us what you want to preserve.
+            </p>
+
+
+            <div class="form-container">
+
+                <form id="keepsakeForm">
+
+
+                    <!-- CUSTOMER -->
+
+                    <div class="two-column">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- MEMORY TITLE -->
+
+                    <div class="form-group">
+
+                        <label for="memoryTitle">
+                            What Would You Call This Memory?
+                        </label>
+
+                        <input
+                            type="text"
+                            id="memoryTitle"
+                            name="memoryTitle"
+                            placeholder="A short name for the memory"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- MEMORY TYPE -->
+
+                    <div class="form-group">
+
+                        <label for="memoryType">
+                            What Are You Preserving?
+                        </label>
+
+                        <select
+                            id="memoryType"
+                            name="memoryType"
+                        >
+
+                            <option value="">
+                                Select one
+                            </option>
+
+                            <option>A Person</option>
+                            <option>A Moment</option>
+                            <option>A Relationship</option>
+                            <option>A Place</option>
+                            <option>A Family Memory</option>
+                            <option>An Achievement</option>
+                            <option>A Life Chapter</option>
+                            <option>Something Else</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- STORY -->
+
+                    <div class="form-group">
+
+                        <label for="story">
+                            Tell Us The Story
+                        </label>
+
+                        <textarea
+                            id="story"
+                            name="story"
+                            placeholder="Tell us what happened, why this memory matters, who was involved, and what you want to remember about it."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- INCLUDED ELEMENTS -->
+
+                    <div class="form-group">
+
+                        <span class="field-title">
+                            What Would You Like Preserved?
+                        </span>
+
+
+                        <div class="checkbox-grid">
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="photographs"
+                                    name="elements"
+                                    value="Photographs"
+                                >
+
+                                <label for="photographs">
+                                    Photographs
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="words"
+                                    name="elements"
+                                    value="Words or Messages"
+                                >
+
+                                <label for="words">
+                                    Words / Messages
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="names"
+                                    name="elements"
+                                    value="Names"
+                                >
+
+                                <label for="names">
+                                    Names
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="dates"
+                                    name="elements"
+                                    value="Important Dates"
+                                >
+
+                                <label for="dates">
+                                    Important Dates
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="location"
+                                    name="elements"
+                                    value="Location or Place"
+                                >
+
+                                <label for="location">
+                                    Location / Place
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="symbols"
+                                    name="elements"
+                                    value="Symbols"
+                                >
+
+                                <label for="symbols">
+                                    Symbols
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="handwriting"
+                                    name="elements"
+                                    value="Handwriting"
+                                >
+
+                                <label for="handwriting">
+                                    Handwriting
+                                </label>
+
+                            </div>
+
+
+                            <div class="checkbox-item">
+
+                                <input
+                                    type="checkbox"
+                                    id="other"
+                                    name="elements"
+                                    value="Other"
+                                >
+
+                                <label for="other">
+                                    Something Else
+                                </label>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- POSSIBLE FORM -->
+
+                    <div class="form-group">
+
+                        <label for="format">
+                            Do You Have An Idea Of What It Should Become?
+                        </label>
+
+                        <select
+                            id="format"
+                            name="format"
+                        >
+
+                            <option>Not Sure — Help Me Decide</option>
+                            <option>Artwork</option>
+                            <option>Framed Keepsake</option>
+                            <option>Home Décor</option>
+                            <option>Printed Keepsake</option>
+                            <option>Wearable / Fashion</option>
+                            <option>Gift Set</option>
+                            <option>Digital Keepsake</option>
+                            <option>Something Else</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- STYLE -->
+
+                    <div class="two-column">
+
+
+                        <div class="form-group">
+
+                            <label for="style">
+                                Preferred Style
+                            </label>
+
+                            <select
+                                id="style"
+                                name="style"
+                            >
+
+                                <option>Not Sure — Interpret It</option>
+                                <option>Minimal & Elegant</option>
+                                <option>Romantic</option>
+                                <option>Classic</option>
+                                <option>Bold</option>
+                                <option>Dark & Dramatic</option>
+                                <option>Soft & Emotional</option>
+                                <option>Luxury</option>
+                                <option>Artistic</option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="colours">
+                                Preferred Colours
+                            </label>
+
+                            <input
+                                type="text"
+                                id="colours"
+                                name="colours"
+                                placeholder="Colours connected to the memory"
+                            >
+
+                        </div>
+
+
+                    </div>
+
+
+                    <!-- REFERENCE FILES -->
+
+                    <div class="form-group">
+
+                        <label>
+                            Memory & Reference Files
+                        </label>
+
+                        <div class="upload-box">
+
+                            <p>
+                                Upload photographs, screenshots,
+                                handwritten notes, documents, sketches
+                                or other materials connected to the memory.
+                            </p>
+
+                            <input
+                                type="file"
+                                id="files"
+                                name="files"
+                                accept="image/*,.pdf"
+                                multiple
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- BUDGET -->
+
+                    <div class="form-group">
+
+                        <label for="budget">
+                            Approximate Budget
+                        </label>
+
+                        <select
+                            id="budget"
+                            name="budget"
+                        >
+
+                            <option>I'm not sure yet</option>
+                            <option>Under JMD $3,000</option>
+                            <option>JMD $3,000 – $5,000</option>
+                            <option>JMD $5,000 – $10,000</option>
+                            <option>JMD $10,000 – $20,000</option>
+                            <option>JMD $20,000+</option>
+                            <option>I'd like recommendations</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- DEADLINE -->
+
+                    <div class="two-column">
+
+                        <div class="form-group">
+
+                            <label for="deadline">
+                                Desired Completion Date
+                            </label>
+
+                            <input
+                                type="date"
+                                id="deadline"
+                                name="deadline"
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="quantity">
+                                Quantity
+                            </label>
+
+                            <input
+                                type="number"
+                                id="quantity"
+                                name="quantity"
+                                min="1"
+                                value="1"
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- NOTES -->
+
+                    <div class="form-group">
+
+                        <label for="additionalNotes">
+                            Anything Else We Should Know?
+                        </label>
+
+                        <textarea
+                            id="additionalNotes"
+                            name="additionalNotes"
+                            placeholder="Anything else that would help us understand the memory or your vision."
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- QUOTATION -->
+
+                    <div class="quotation">
+
+                        <h3>
+                            Custom Quotation
+                        </h3>
+
+                        <p>
+                            Keepsakes vary depending on the design,
+                            materials, size, number of elements,
+                            personalization and presentation.
+                            After reviewing your request, the Atelier
+                            will provide suitable options and a quotation.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        class="submit-button"
+                    >
+                        Submit Keepsake Request
+                    </button>
+
+
+                </form>
+
+            </div>
+
+        </section>
+
+
+        <!-- STATEMENT -->
+
+        <p class="statement">
+
+            A memory lives in the mind.
+
+            <br>
+
+            A keepsake gives it somewhere to live in the world.
+
+        </p>
+
+
+        <a
+            href="gifts-keepsakes.html"
+            class="back-button"
+        >
+            Back To Gifts & Keepsakes
+        </a>
+
+
+    </main>
+
+
+    <script>
+
+        document
+            .getElementById("keepsakeForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const elements = Array.from(
+                    document.querySelectorAll(
+                        'input[name="elements"]:checked'
+                    )
+                ).map(function(item) {
+                    return item.value;
+                });
+
+
+                const files = Array.from(
+                    document.getElementById("files").files
+                ).map(function(file) {
+                    return {
+                        name: file.name,
+                        type: file.type,
+                        size: file.size
+                    };
+                });
+
+
+                const order = {
+
+                    serviceCategory: "Gifts & Keepsakes",
+
+                    service: "Keepsakes",
+
+                    name:
+                        document.getElementById("name").value,
+
+                    email:
+                        document.getElementById("email").value,
+
+                    memoryTitle:
+                        document.getElementById("memoryTitle").value,
+
+                    memoryType:
+                        document.getElementById("memoryType").value,
+
+                    story:
+                        document.getElementById("story").value,
+
+                    preservedElements:
+                        elements,
+
+                    possibleFormat:
+                        document.getElementById("format").value,
+
+                    style:
+                        document.getElementById("style").value,
+
+                    colours:
+                        document.getElementById("colours").value,
+
+                    uploadedFiles:
+                        files,
+
+                    budget:
+                        document.getElementById("budget").value,
+
+                    deadline:
+                        document.getElementById("deadline").value,
+
+                    quantity:
+                        document.getElementById("quantity").value,
+
+                    additionalNotes:
+                        document.getElementById("additionalNotes").value,
+
+                    pricingType:
+                        "Custom Quotation",
+
+                    status:
+                        "Awaiting Keepsake Review",
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+                localStorage.setItem(
+                    "currentOrder",
+                    JSON.stringify(order)
+                );
+
+
+                window.location.href = "payment.html";
+
+            });
+
+    </script>
+
+</body>
+
+</html>

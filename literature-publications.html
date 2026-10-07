@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Literature & Publications | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 85% 20%, rgba(201, 13, 234, 0.12), transparent 30%),
+                #000000;
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 85px 30px;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: 0 auto 70px;
+            text-align: center;
+        }
+
+        .brand {
+            color: #FF66C4;
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #dddddd;
+        }
+
+        .literature-list {
+            max-width: 950px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .literature-card {
+            padding: 32px 38px;
+            background: #050505;
+            border-left: 2px solid #C90DEA;
+            transition: 0.3s;
+        }
+
+        .literature-card:nth-child(2) {
+            border-left-color: #33CEEF;
+        }
+
+        .literature-card:nth-child(3) {
+            border-left-color: #FF66C4;
+        }
+
+        .literature-card:nth-child(4) {
+            border-left-color: #C90DEA;
+        }
+
+        .literature-card:hover {
+            transform: translateX(6px);
+        }
+
+        .literature-card h2 {
+            font-size: 25px;
+            margin-bottom: 12px;
+        }
+
+        .literature-card p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #cccccc;
+        }
+
+        .literature-link {
+            display: inline-block;
+            margin-top: 18px;
+            color: #33CEEF;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .literature-link:hover {
+            color: #FF66C4;
+        }
+
+        .quote {
+            max-width: 700px;
+            margin: 75px auto 0;
+            padding: 35px;
+            text-align: center;
+            border-top: 1px solid #3533CD;
+            border-bottom: 1px solid #3533CD;
+            font-size: 24px;
+            line-height: 1.7;
+            font-style: italic;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 55px auto 0;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 600px) {
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .page {
+                padding: 60px 20px;
+            }
+
+            .literature-card {
+                padding: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- LITERATURE & PUBLICATIONS -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Literature & Publications
+            </h1>
+
+            <p>
+                Where words become keepsakes, stories become experiences
+                and literature becomes another form of art.
+            </p>
+
+        </div>
+
+
+        <div class="literature-list">
+
+            <article class="literature-card">
+
+                <h2>
+                    Books & Written Works
+                </h2>
+
+                <p>
+                    Original stories, written works and creative
+                    publications created to be read, shared and kept.
+                </p>
+
+                <a href="books-written-works.html" class="literature-link">
+                    Explore →
+                </a>
+
+            </article>
+
+
+            <article class="literature-card">
+
+                <h2>
+                    Literary Art
+                </h2>
+
+                <p>
+                    Where meaningful language meets visual creativity,
+                    turning words, poetry and ideas into artwork.
+                </p>
+
+                <a href="literary-art.html" class="literature-link">
+                    Explore →
+                </a>
+
+            </article>
+
+
+            <article class="literature-card">
+
+                <h2>
+                    Creative Publications
+                </h2>
+
+                <p>
+                    Artistic publications, collections and creative
+                    projects developed around ideas worth experiencing.
+                </p>
+
+                <a href="publication.html" class="literature-link">
+                    Explore →
+                </a>
+
+            </article>
+
+
+            <article class="literature-card">
+
+                <h2>
+                    Personalized Words
+                </h2>
+
+                <p>
+                    Personal messages, poems, quotes and written
+                    expressions transformed into something tangible.
+                </p>
+
+                <a href="personalize-words.html" class="literature-link">
+                    Explore →
+                </a>
+
+            </article>
+
+        </div>
+
+
+        <div class="quote">
+            Sometimes the right words become more than words.
+            They become something you can keep.
+        </div>
+
+
+        <a href="what-we-create.html" class="back-button">
+            Back To What We Create
+        </a>
+
+    </main>
+
+</body>
+
+</html>
+             
+

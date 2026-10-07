@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Books & Written Works | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        .hero {
+            text-align: center;
+            padding: 35px 20px;
+            margin: 25px auto 35px;
+            max-width: 800px;
+            box-sizing: border-box;
+        }
+
+        .hero h1 {
+            margin: 0 0 10px;
+            font-size: 32px;
+            line-height: 1.2;
+            color: #ffffff;
+        }
+
+        .hero-description {
+            margin: 0 auto !important;
+            max-width: 600px !important;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #cccccc;
+        }
+
+        .works-gallery {
+            display: flex;
+            gap: 20px;
+            overflow-x: auto;
+            padding: 10px 5px 25px;
+            scroll-behavior: smooth;
+        }
+
+        .work-card {
+            flex: 0 0 240px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(201, 13, 234, 0.25);
+            border-radius: 14px;
+            padding: 15px;
+            box-sizing: border-box;
+        }
+
+        .work-card img {
+            width: 100%;
+            height: 280px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .work-card h3 {
+            margin: 15px 0 7px;
+        }
+
+        .work-card p {
+            margin: 0 0 12px;
+            color: #cccccc;
+        }
+
+        .explore-work {
+            display: inline-block;
+            color: #33CEEF;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .builder {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 25px;
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(51, 206, 239, 0.2);
+            box-sizing: border-box;
+        }
+
+        .builder h2 {
+            margin-top: 0;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: #111111;
+            color: #ffffff;
+            box-sizing: border-box;
+        }
+
+        .total-box {
+            margin-top: 20px;
+            padding: 18px;
+            border-radius: 10px;
+            background: rgba(201, 13, 234, 0.08);
+            text-align: center;
+        }
+
+        .total-box strong {
+            font-size: 22px;
+            color: #33CEEF;
+        }
+
+        .order-preview {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            color: #cccccc;
+        }
+
+        .payment-button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: linear-gradient(90deg, #C90DEA, #3533CD);
+            color: white;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        .payment-button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+            <a href="index.html">Home</a>
+            <a href="who-we-are.html">Who We Are</a>
+            <a href="what-we-create.html">What We Create</a>
+            <a href="custom-orders.html">Custom Orders</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <section class="hero">
+
+            <h1>Books &amp; Written Works</h1>
+
+            <p class="hero-description">
+                Original stories, books and written works<br>
+                created to be read, shared and kept.
+            </p>
+
+        </section>
+
+
+        <section class="content-section">
+
+            <h2>Written Works</h2>
+
+            <div class="works-gallery">
+
+                <article class="work-card">
+                    <img src="images/book-work-1.png" alt="Written Work I">
+
+                    <h3>Written Work I</h3>
+
+                    <p>From J$3,500</p>
+
+                    <a href="#order-builder"
+                       class="explore-work"
+                       data-work="Written Work I">
+                        Explore →
+                    </a>
+                </article>
+
+
+                <article class="work-card">
+                    <img src="images/book-work-2.png" alt="Written Work II">
+
+                    <h3>Written Work II</h3>
+
+                    <p>From J$4,000</p>
+
+                    <a href="#order-builder"
+                       class="explore-work"
+                       data-work="Written Work II">
+                        Explore →
+                    </a>
+                </article>
+
+
+                <article class="work-card">
+                    <img src="images/book-work-3.png" alt="Written Work III">
+
+                    <h3>Written Work III</h3>
+
+                    <p>From J$4,500</p>
+
+                    <a href="#order-builder"
+                       class="explore-work"
+                       data-work="Written Work III">
+                        Explore →
+                    </a>
+                </article>
+
+
+                <article class="work-card">
+                    <img src="images/book-work-4.png" alt="Written Work IV">
+
+                    <h3>Written Work IV</h3>
+
+                    <p>From J$5,000</p>
+
+                    <a href="#order-builder"
+                       class="explore-work"
+                       data-work="Written Work IV">
+                        Explore →
+                    </a>
+                </article>
+
+
+                <article class="work-card">
+                    <img src="images/book-work-5.png" alt="Written Work V">
+
+                    <h3>Written Work V</h3>
+
+                    <p>From J$5,500</p>
+
+                    <a href="#order-builder"
+                       class="explore-work"
+                       data-work="Written Work V">
+                        Explore →
+                    </a>
+                </article>
+
+
+                <article class="work-card">
+                    <img src="images/book-work-6.png" alt="Written Work VI">
+
+                    <h3>Written Work VI</h3>
+
+                    <p>From J$6,000</p>
+
+                    <a href="#order-builder"
+                       class="explore-work"
+                       data-work="Written Work VI">
+                        Explore →
+                    </a>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="builder" id="order-builder">
+
+            <h2>Order Your Written Work</h2>
+
+            <div class="form-group">
+                <label for="work">Written Work</label>
+
+                <select id="work">
+                    <option value="">Select a written work</option>
+                    <option value="Written Work I">Written Work I</option>
+                    <option value="Written Work II">Written Work II</option>
+                    <option value="Written Work III">Written Work III</option>
+                    <option value="Written Work IV">Written Work IV</option>
+                    <option value="Written Work V">Written Work V</option>
+                    <option value="Written Work VI">Written Work VI</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="format">Format</label>
+
+                <select id="format">
+                    <option value="">Select a format</option>
+                    <option value="Digital">Digital</option>
+                    <option value="Paperback">Paperback</option>
+                    <option value="Hardcover">Hardcover</option>
+                </select>
+            </div>
+
+
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    min="1"
+                    value="1"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+
+                <input
+                    type="text"
+                    id="fullName"
+                    placeholder="Your full name"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="email">Email</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your email address"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="phone">Phone / WhatsApp</label>
+
+                <input
+                    type="tel"
+                    id="phone"
+                    placeholder="Your phone or WhatsApp number"
+                >
+            </div>
+
+
+            <div class="form-group">
+                <label for="address">Delivery Address</label>
+
+                <textarea
+                    id="address"
+                    rows="3"
+                    placeholder="Your delivery address"
+                ></textarea>
+            </div>
+
+
+            <div class="total-box">
+                Estimated Total:
+                <br>
+                <strong id="total">J$0</strong>
+            </div>
+
+
+            <div class="order-preview" id="orderPreview">
+                Select a written work and format to see your order.
+            </div>
+
+
+            <button
+                type="button"
+                class="payment-button"
+                id="paymentButton"
+            >
+                Continue to Payment →
+            </button>
+
+        </section>
+
+    </main>
+
+
+    <script>
+
+        const prices = {
+
+            "Written Work I": {
+                "Digital": 3500,
+                "Paperback": 4500,
+                "Hardcover": 6000
+            },
+
+            "Written Work II": {
+                "Digital": 4000,
+                "Paperback": 5000,
+                "Hardcover": 6500
+            },
+
+            "Written Work III": {
+                "Digital": 4500,
+                "Paperback": 5500,
+                "Hardcover": 7000
+            },
+
+            "Written Work IV": {
+                "Digital": 5000,
+                "Paperback": 6000,
+                "Hardcover": 7500
+            },
+
+            "Written Work V": {
+                "Digital": 5500,
+                "Paperback": 6500,
+                "Hardcover": 8000
+            },
+
+            "Written Work VI": {
+                "Digital": 6000,
+                "Paperback": 7000,
+                "Hardcover": 8500
+            }
+
+        };
+
+
+        const workSelect = document.getElementById("work");
+        const formatSelect = document.getElementById("format");
+        const quantityInput = document.getElementById("quantity");
+
+        const fullNameInput = document.getElementById("fullName");
+        const emailInput = document.getElementById("email");
+        const phoneInput = document.getElementById("phone");
+        const addressInput = document.getElementById("address");
+
+        const totalDisplay = document.getElementById("total");
+        const orderPreview = document.getElementById("orderPreview");
+        const paymentButton = document.getElementById("paymentButton");
+
+
+        function updateOrder() {
+
+            const work = workSelect.value;
+            const format = formatSelect.value;
+
+            let quantity = parseInt(quantityInput.value) || 1;
+
+            if (quantity < 1) {
+                quantity = 1;
+                quantityInput.value = 1;
+            }
+
+            if (!work || !format) {
+
+                totalDisplay.textContent = "J$0";
+
+                orderPreview.textContent =
+                    "Select a written work and format to see your order.";
+
+                return;
+            }
+
+
+            const unitPrice = prices[work][format];
+
+            const total = unitPrice * quantity;
+
+
+            totalDisplay.textContent =
+                "J$" + total.toLocaleString();
+
+
+            orderPreview.innerHTML = `
+                <strong>${work}</strong><br>
+                Format: ${format}<br>
+                Quantity: ${quantity}<br>
+                Unit Price: J$${unitPrice.toLocaleString()}<br>
+                Estimated Total: J$${total.toLocaleString()}
+            `;
+        }
+
+
+        workSelect.addEventListener("change", updateOrder);
+
+        formatSelect.addEventListener("change", updateOrder);
+
+        quantityInput.addEventListener("input", updateOrder);
+
+
+        document.querySelectorAll(".explore-work").forEach(button => {
+
+            button.addEventListener("click", function () {
+
+                const selectedWork =
+                    this.dataset.work;
+
+                workSelect.value = selectedWork;
+
+                updateOrder();
+
+            });
+
+        });
+
+
+        paymentButton.addEventListener("click", function () {
+
+            const work = workSelect.value;
+            const format = formatSelect.value;
+            const quantity = parseInt(quantityInput.value) || 1;
+
+            const fullName = fullNameInput.value.trim();
+            const email = emailInput.value.trim();
+            const phone = phoneInput.value.trim();
+            const address = addressInput.value.trim();
+
+
+            if (!work) {
+                alert("Please select a written work.");
+                return;
+            }
+
+
+            if (!format) {
+                alert("Please select a format.");
+                return;
+            }
+
+
+            if (!fullName) {
+                alert("Please enter your full name.");
+                return;
+            }
+
+
+            if (!email) {
+                alert("Please enter your email.");
+                return;
+            }
+
+
+            const unitPrice = prices[work][format];
+
+            const total = unitPrice * quantity;
+
+
+            const order = {
+
+                category: "Books & Written Works",
+
+                work: work,
+
+                format: format,
+
+                quantity: quantity,
+
+                unitPrice: unitPrice,
+
+                total: total,
+
+                fullName: fullName,
+
+                email: email,
+
+                phone: phone,
+
+                address: address
+
+            };
+
+
+            localStorage.setItem(
+                "booksWrittenWorksOrder",
+                JSON.stringify(order)
+            );
+
+
+            window.location.href = "payment.html";
+
+        });
+
+
+        updateOrder();
+
+    </script>
+
+</body>
+
+</html>

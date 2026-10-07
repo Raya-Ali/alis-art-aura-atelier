@@ -1,0 +1,301 @@
+/* =========================================================
+   ALIS ART & AURA ATELIER
+   MASTER WEBSITE STYLESHEET
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #000000;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.navbar {
+    width: 100%;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #000000;
+    border-bottom: 1px solid #3533CD;
+    position: relative;
+    z-index: 100;
+}
+
+.nav-brand {
+    color: #C90DEA;
+    text-decoration: none;
+    font-size: 18px;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    letter-spacing: 1px;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #33CEEF;
+}
+
+
+/* =========================================================
+   GENERAL PAGE STRUCTURE
+========================================================= */
+
+main {
+    min-height: 70vh;
+}
+
+.page-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 80px 30px;
+}
+
+.section {
+    padding: 80px 30px;
+}
+
+.section-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADINGS
+========================================================= */
+
+h1,
+h2,
+h3,
+h4 {
+    margin-top: 0;
+}
+
+h1 {
+    font-size: 48px;
+    line-height: 1.15;
+}
+
+h2 {
+    font-size: 34px;
+    line-height: 1.2;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+p {
+    color: #dddddd;
+}
+
+
+/* =========================================================
+   BRAND COLOURS
+========================================================= */
+
+.purple {
+    color: #C90DEA;
+}
+
+.blue {
+    color: #33CEEF;
+}
+
+.pink {
+    color: #FF66C4;
+}
+
+.deep-blue {
+    color: #3533CD;
+}
+
+
+/* =========================================================
+   HERO SECTIONS
+========================================================= */
+
+.hero {
+    min-height: 85vh;
+    padding: 100px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+    background:
+        linear-gradient(
+            135deg,
+            #000000,
+            #3533CD
+        );
+}
+
+.hero-content {
+    max-width: 850px;
+}
+
+.hero h1 {
+    color: #C90DEA;
+    letter-spacing: 3px;
+}
+
+.hero p {
+    max-width: 700px;
+    margin: 25px auto;
+    font-size: 18px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+    display: inline-block;
+    padding: 14px 28px;
+    border-radius: 7px;
+    text-decoration: none;
+    color: white;
+    background: #C90DEA;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.btn:hover {
+    background: #FF66C4;
+    transform: translateY(-2px);
+}
+
+.btn-blue {
+    background: #33CEEF;
+    color: #000000;
+}
+
+.btn-blue:hover {
+    background: #C90DEA;
+    color: white;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.card {
+    background: #080808;
+    border: 1px solid #3533CD;
+    border-radius: 10px;
+    padding: 30px;
+    transition:
+        transform 0.3s ease,
+        border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: #C90DEA;
+}
+
+.card h3 {
+    color: #C90DEA;
+}
+
+.card p {
+    color: #cccccc;
+}
+
+
+/* =========================================================
+   GRID SYSTEMS
+========================================================= */
+
+.grid {
+    display: grid;
+    gap: 25px;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.grid-4 {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+
+/* =========================================================
+   CATEGORY SECTIONS
+========================================================= */
+
+.category-section {
+    padding: 90px 30px;
+    background:
+        linear-gradient(
+            135deg,
+            #000000,
+            #3533CD
+        );
+}
+
+.category-section h1 {
+    color: #C90DEA;
+    text-align: center;
+}
+
+.category-section > p {
+    max-width: 700px;
+    margin: 20px auto 50px;
+    text-align: center;
+}
+
+

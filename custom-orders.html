@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Custom Orders | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(255, 102, 196, 0.16), transparent 30%),
+                radial-gradient(circle at 15% 80%, rgba(51, 206, 239, 0.14), transparent 30%),
+                #000000;
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 85px 30px;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: 0 auto 70px;
+            text-align: center;
+        }
+
+        .brand {
+            color: #FF66C4;
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #dddddd;
+        }
+
+        .section {
+            max-width: 1000px;
+            margin: 0 auto 65px;
+        }
+
+        .section-title {
+            font-size: 32px;
+            margin-bottom: 30px;
+        }
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .step {
+            padding: 30px 25px;
+            min-height: 230px;
+            background: #050505;
+            border-top: 2px solid #C90DEA;
+        }
+
+        .step:nth-child(2) {
+            border-top-color: #33CEEF;
+        }
+
+        .step:nth-child(3) {
+            border-top-color: #FF66C4;
+        }
+
+        .step:nth-child(4) {
+            border-top-color: #C90DEA;
+        }
+
+        .number {
+            font-size: 14px;
+            letter-spacing: 2px;
+            color: #33CEEF;
+            margin-bottom: 25px;
+        }
+
+        .step h2 {
+            font-size: 23px;
+            margin-bottom: 15px;
+        }
+
+        .step p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #cccccc;
+        }
+
+        .bring-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .bring-item {
+            padding: 25px;
+            background: #050505;
+            border-left: 1px solid #3533CD;
+        }
+
+        .bring-item:nth-child(2),
+        .bring-item:nth-child(5) {
+            border-left-color: #FF66C4;
+        }
+
+        .bring-item:nth-child(3),
+        .bring-item:nth-child(6) {
+            border-left-color: #33CEEF;
+        }
+
+        .bring-item h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .bring-item p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #bbbbbb;
+        }
+
+        .cta {
+            max-width: 800px;
+            margin: 80px auto 0;
+            padding: 45px 30px;
+            text-align: center;
+            border: 1px solid #FF66C4;
+            background: rgba(255, 102, 196, 0.04);
+        }
+
+        .cta h2 {
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            font-size: 17px;
+            line-height: 1.7;
+            color: #dddddd;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 30px;
+            background: #FF66C4;
+            color: #000000;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #33CEEF;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 55px auto 0;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 800px) {
+
+            .process {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .bring-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+
+            .process,
+            .bring-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .page {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- CUSTOM ORDERS -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Custom Orders
+            </h1>
+
+            <p>
+                You do not have to know exactly what you want.
+                Bring us the idea, feeling, story or vision —
+                and we can begin from there.
+            </p>
+
+        </div>
+
+
+        <section class="section">
+
+            <h2 class="section-title">
+                Start With The Idea.
+            </h2>
+
+            <div class="process">
+
+                <article class="step">
+
+                    <div class="number">
+                        01
+                    </div>
+
+                    <h2>
+                        Tell Us
+                    </h2>
+
+                    <p>
+                        Share your idea, occasion, story, person or
+                        feeling behind the creation.
+                    </p>
+
+                </article>
+
+
+                <article class="step">
+
+                    <div class="number">
+                        02
+                    </div>
+
+                    <h2>
+                        Explore
+                    </h2>
+
+                    <p>
+                        We explore possible materials, formats,
+                        styles, colours and creative directions.
+                    </p>
+
+                </article>
+
+
+                <article class="step">
+
+                    <div class="number">
+                        03
+                    </div>
+
+                    <h2>
+                        Create
+                    </h2>
+
+                    <p>
+                        Your chosen concept is developed into a
+                        personalized creation.
+                    </p>
+
+                </article>
+
+
+                <article class="step">
+
+                    <div class="number">
+                        04
+                    </div>
+
+                    <h2>
+                        Receive
+                    </h2>
+
+                    <p>
+                        Your finished creation is prepared and
+                        presented for you to enjoy or gift.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="section">
+
+            <h2 class="section-title">
+                What Can You Bring?
+            </h2>
+
+            <div class="bring-grid">
+
+                <article class="bring-item">
+                    <h3>Idea or Concept</h3>
+                    <p>
+                        Even if it is only a rough thought.
+                    </p>
+                </article>
+
+
+                <article class="bring-item">
+                    <h3>Person or Occasion</h3>
+                    <p>
+                        Tell us who or what the creation is for.
+                    </p>
+                </article>
+
+
+                <article class="bring-item">
+                    <h3>Colours & Style</h3>
+                    <p>
+                        Share the aesthetic you already have in mind.
+                    </p>
+                </article>
+
+
+                <article class="bring-item">
+                    <h3>Photos & Inspiration</h3>
+                    <p>
+                        References can help communicate your vision.
+                    </p>
+                </article>
+
+
+                <article class="bring-item">
+                    <h3>Size or Format</h3>
+                    <p>
+                        Let us know how and where you want it used.
+                    </p>
+                </article>
+
+
+                <article class="bring-item">
+                    <h3>Preferred Deadline</h3>
+                    <p>
+                        Tell us when you would ideally need it.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <section class="cta">
+
+            <h2>
+                Have Something In Mind?
+            </h2>
+
+            <p>
+                Start with the idea. The Atelier can help shape
+                the rest.
+            </p>
+
+            <a href="#" class="cta-button">
+                Start Your Custom Order →
+            </a>
+
+        </section>
+
+
+        <a href="index.html" class="back-button">
+            Back Home
+        </a>
+
+    </main>
+
+</body>
+
+</html>

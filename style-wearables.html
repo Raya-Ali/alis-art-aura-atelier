@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Style & Wearables | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 75% 20%, rgba(51, 206, 239, 0.16), transparent 30%),
+                radial-gradient(circle at 20% 80%, rgba(255, 102, 196, 0.13), transparent 30%),
+                #000000;
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 80px 30px;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: 0 auto 70px;
+            text-align: center;
+        }
+
+        .brand {
+            color: #C90DEA;
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 20px;
+        }
+
+        .intro-line {
+            width: 100px;
+            height: 2px;
+            margin: 0 auto 25px;
+            background: linear-gradient(
+                90deg,
+                #C90DEA,
+                #33CEEF,
+                #FF66C4
+            );
+        }
+
+        .intro p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #eeeeee;
+        }
+
+        .style-grid {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 25px;
+        }
+
+        .style-card {
+            padding: 38px;
+            min-height: 320px;
+            background: #050505;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: 0.3s;
+        }
+
+        .style-card:nth-child(1) {
+            min-height: 390px;
+            border: 1px solid #33CEEF;
+        }
+
+        .style-card:nth-child(2) {
+            border: 1px solid #C90DEA;
+        }
+
+        .style-card:nth-child(3) {
+            border: 1px solid #FF66C4;
+        }
+
+        .style-card:nth-child(4) {
+            min-height: 390px;
+            border: 1px solid #33CEEF;
+        }
+
+        .style-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .style-card h2 {
+            font-size: 29px;
+            margin-bottom: 15px;
+        }
+
+        .style-card p {
+            font-size: 16px;
+            line-height: 1.75;
+            color: #dddddd;
+        }
+
+        .style-link {
+            margin-top: 24px;
+            color: #33CEEF;
+            text-decoration: none;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+
+        .style-link:hover {
+            color: #FF66C4;
+        }
+
+        .statement {
+            max-width: 750px;
+            margin: 80px auto 0;
+            text-align: center;
+            font-size: 27px;
+            line-height: 1.6;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 55px auto 0;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 700px) {
+
+            .style-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .style-card,
+            .style-card:nth-child(1),
+            .style-card:nth-child(4) {
+                min-height: 290px;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .page {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- STYLE & WEARABLES -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Style & Wearables
+            </h1>
+
+            <div class="intro-line"></div>
+
+            <p>
+                Art does not have to stay on a wall. Wear it, carry it
+                and let it become part of how you express yourself.
+            </p>
+
+        </div>
+
+
+        <div class="style-grid">
+
+            <article class="style-card">
+
+                <div>
+                    <h2>Wearable Art</h2>
+
+                    <p>
+                        Artistic pieces created to bring imagination,
+                        expression and individuality into what you wear.
+                    </p>
+
+                    <a href="wearable-art.html" class="style-link">
+                        Explore →
+                    </a>
+                </div>
+
+            </article>
+
+
+            <article class="style-card">
+
+                <div>
+                    <h2>Fashion Designs</h2>
+
+                    <p>
+                        Creative fashion concepts shaped around
+                        originality, personality and visual expression.
+                    </p>
+
+                    <a href="fashion-design.html" class="style-link">
+                        Explore →
+                    </a>
+                </div>
+
+            </article>
+
+
+            <article class="style-card">
+
+                <div>
+                    <h2>Accessories</h2>
+
+                    <p>
+                        Artistic accessories designed to complement
+                        your style while carrying their own character.
+                    </p>
+
+                    <a href="accessories.html" class="style-link">
+                        Explore →
+                    </a>
+                </div>
+
+            </article>
+
+
+            <article class="style-card">
+
+                <div>
+                    <h2>Custom Style</h2>
+
+                    <p>
+                        Personalized style concepts created around
+                        your colours, preferences, ideas and identity.
+                    </p>
+
+                    <a href="custom-style.html" class="style-link">
+                        Explore →
+                    </a>
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <p class="statement">
+            Style is more than what you wear.
+            <br>
+            It is one of the ways you tell the world who you are.
+        </p>
+
+
+        <a href="what-we-create.html" class="back-button">
+            Back To What We Create
+        </a>
+
+    </main>
+
+</body>
+
+</html>

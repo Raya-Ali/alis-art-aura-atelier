@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home & Décor | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 15% 25%, rgba(201, 13, 234, 0.18), transparent 32%),
+                radial-gradient(circle at 85% 75%, rgba(51, 206, 239, 0.18), transparent 32%),
+                linear-gradient(135deg, #000000, #3533CD);
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 80px 30px;
+        }
+
+        .intro {
+            max-width: 850px;
+            margin: 0 auto 65px;
+            text-align: center;
+        }
+
+        .brand {
+            color: #C90DEA;
+            font-size: 18px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 55px;
+            margin-bottom: 25px;
+        }
+
+        .intro p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #eeeeee;
+        }
+
+        .decor-grid {
+            max-width: 1050px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 25px;
+        }
+
+        .decor-card {
+            min-height: 300px;
+            padding: 35px;
+            background: rgba(0, 0, 0, 0.72);
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            transition: 0.3s;
+        }
+
+        .decor-card:nth-child(1) {
+            border: 1px solid #C90DEA;
+            min-height: 380px;
+        }
+
+        .decor-card:nth-child(2) {
+            border: 1px solid #33CEEF;
+        }
+
+        .decor-card:nth-child(3) {
+            border: 1px solid #FF66C4;
+        }
+
+        .decor-card:nth-child(4) {
+            border: 1px solid #33CEEF;
+            min-height: 380px;
+        }
+
+        .decor-card:hover {
+            transform: translateY(-6px);
+        }
+
+        .decor-card h2 {
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .decor-card p {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #dddddd;
+        }
+
+        .decor-link {
+            margin-top: 22px;
+            color: #33CEEF;
+            text-decoration: none;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .decor-link:hover {
+            color: #FF66C4;
+        }
+
+        .wall-art-thumb {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .statement {
+            max-width: 750px;
+            margin: 75px auto 0;
+            text-align: center;
+            font-size: 27px;
+            line-height: 1.6;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 55px auto 0;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 700px) {
+
+            .decor-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .decor-card,
+            .decor-card:nth-child(1),
+            .decor-card:nth-child(4) {
+                min-height: 280px;
+            }
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .page {
+                padding: 60px 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HOME & DÉCOR -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Home & Décor
+            </h1>
+
+            <p>
+                Art should not only hang in a room. It can shape the
+                atmosphere, tell a story and make a space feel like yours.
+            </p>
+
+        </div>
+
+
+        <div class="decor-grid">
+
+            <!-- WALL ART -->
+
+            <article class="decor-card">
+
+                <img
+                    src="images/wall-art-thumb.png"
+                    alt="Wall Art"
+                    class="wall-art-thumb"
+                >
+
+                <div>
+
+                    <h2>
+                        Wall Art
+                    </h2>
+
+                    <p>
+                        Artwork created to bring personality, emotion
+                        and visual character to your walls.
+                    </p>
+
+                    <a
+                        href="wall-art-original.html"
+                        class="decor-link"
+                    >
+                        Explore →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTISTIC DISPLAYS -->
+
+            <article class="decor-card">
+
+                <div>
+
+                    <h2>
+                        Artistic Displays
+                    </h2>
+
+                    <p>
+                        Creative pieces designed to become
+                        eye-catching focal points within a space.
+                    </p>
+
+                    <a
+                        href="artistic-displays.html"
+                        class="decor-link"
+                    >
+                        Explore →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- MEANINGFUL DÉCOR -->
+
+            <article class="decor-card">
+
+                <div>
+
+                    <h2>
+                        Meaningful Décor
+                    </h2>
+
+                    <p>
+                        Decorative pieces that carry a message,
+                        memory, feeling or personal significance.
+                    </p>
+
+                    <a
+                        href="meaningful-decor.html"
+                        class="decor-link"
+                    >
+                        Explore →
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- CUSTOM SPACES -->
+
+            <article class="decor-card">
+
+                <div>
+
+                    <h2>
+                        Custom Spaces
+                    </h2>
+
+                    <p>
+                        Creative décor concepts shaped around your
+                        space, aesthetic, personality and vision.
+                    </p>
+
+                    <a
+                        href="custom-spaces.html"
+                        class="decor-link"
+                    >
+                        Explore →
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <p class="statement">
+
+            Your space should not simply look beautiful.
+
+            <br>
+
+            It should feel like you.
+
+        </p>
+
+
+        <a
+            href="what-we-create.html"
+            class="back-button"
+        >
+            Back to What We Create
+        </a>
+
+    </main>
+
+</body>
+
+</html>

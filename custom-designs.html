@@ -1,0 +1,1145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Custom Designs | Alis Art & Aura Atelier</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #000;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: #000;
+            border-bottom: 1px solid rgba(201, 13, 234, 0.25);
+            position: relative;
+            z-index: 10;
+        }
+
+        .nav-brand {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #C90DEA;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 80px 7%;
+            background:
+                radial-gradient(
+                    circle at 20% 30%,
+                    rgba(201, 13, 234, 0.18),
+                    transparent 35%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(51, 206, 239, 0.15),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    135deg,
+                    #000000,
+                    #080812,
+                    #000000
+                );
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .brand {
+            color: #FF66C4;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 7vw, 5rem);
+            margin-bottom: 25px;
+            background: linear-gradient(
+                90deg,
+                #FF66C4,
+                #C90DEA,
+                #33CEEF
+            );
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: auto;
+            color: #ddd;
+            font-size: 1.1rem;
+        }
+
+        /* INTRO */
+        .intro {
+            padding: 80px 7%;
+            text-align: center;
+        }
+
+        .intro h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .intro p {
+            max-width: 760px;
+            margin: auto;
+            color: #bbb;
+        }
+
+        /* DESIGN DIRECTIONS */
+        .design-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            padding: 20px 7% 80px;
+        }
+
+        .design-card {
+            padding: 30px 22px;
+            border: 1px solid rgba(201, 13, 234, 0.35);
+            border-radius: 18px;
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(201, 13, 234, 0.08),
+                    rgba(51, 206, 239, 0.04)
+                );
+        }
+
+        .design-card h3 {
+            color: #FF66C4;
+            margin-bottom: 12px;
+        }
+
+        .design-card p {
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        /* ORDER */
+        .order-section {
+            padding: 90px 7%;
+            background: #050509;
+        }
+
+        .order-container {
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .order-container h2 {
+            text-align: center;
+            font-size: 2.4rem;
+            margin-bottom: 15px;
+        }
+
+        .order-intro {
+            text-align: center;
+            color: #aaa;
+            margin-bottom: 45px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #eee;
+            font-weight: bold;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #101014;
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #C90DEA;
+        }
+
+        textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px;
+            background: #101014;
+            border-radius: 10px;
+            border: 1px solid #292929;
+        }
+
+        .checkbox-item input {
+            width: auto;
+        }
+
+        .checkbox-item label {
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .upload-box {
+            border: 1px dashed #C90DEA;
+            padding: 25px;
+            border-radius: 14px;
+            background: rgba(201, 13, 234, 0.05);
+        }
+
+        .upload-box p {
+            color: #aaa;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 16px;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(
+                90deg,
+                #C90DEA,
+                #33CEEF
+            );
+            color: #fff;
+            font-size: 1rem;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            opacity: 0.9;
+        }
+
+        .quote-note {
+            margin-top: 25px;
+            padding: 20px;
+            border-left: 3px solid #FF66C4;
+            background: rgba(255, 102, 196, 0.05);
+            color: #bbb;
+        }
+
+        /* BACK */
+        .back-section {
+            text-align: center;
+            padding: 50px 7%;
+        }
+
+        .back-btn {
+            display: inline-block;
+            color: #33CEEF;
+            text-decoration: none;
+            border: 1px solid #33CEEF;
+            padding: 12px 25px;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .back-btn:hover {
+            background: #33CEEF;
+            color: #000;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 850px) {
+
+            .navbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            .design-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 550px) {
+
+            .design-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero {
+                min-height: 60vh;
+                padding: 60px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">
+        Alis Art & Aura Atelier
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="who-we-are.html">Who We Are</a>
+        <a href="what-we-create.html">What We Create</a>
+        <a href="custom-orders.html">Custom Orders</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="brand">
+            Alis Art & Aura Atelier
+        </div>
+
+        <h1>Custom Designs</h1>
+
+        <p>
+            Start with an idea, a visual, a concept, or simply
+            something you wish existed. We develop the design around you.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- INTRO -->
+<section class="intro">
+
+    <h2>Designed From The Beginning</h2>
+
+    <p>
+        Custom Designs is for when you already know the kind of
+        creation you want — but need the Atelier to turn that idea
+        into an actual design.
+    </p>
+
+</section>
+
+
+<!-- DESIGN DIRECTIONS -->
+<section class="design-grid">
+
+    <div class="design-card">
+
+        <h3>Start With An Idea</h3>
+
+        <p>
+            You can bring us a simple concept, description,
+            sketch, thought, or unfinished idea.
+        </p>
+
+    </div>
+
+
+    <div class="design-card">
+
+        <h3>Start With A Reference</h3>
+
+        <p>
+            Share images, screenshots, artwork, examples,
+            colours, layouts, or visual inspiration.
+        </p>
+
+    </div>
+
+
+    <div class="design-card">
+
+        <h3>Build Something New</h3>
+
+        <p>
+            Combine different ideas and references into a
+            new design created specifically for your project.
+        </p>
+
+    </div>
+
+
+    <div class="design-card">
+
+        <h3>Refine Your Vision</h3>
+
+        <p>
+            Already have a design but want it developed,
+            transformed, personalized, or elevated?
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- CUSTOM DESIGN FORM -->
+<section class="order-section">
+
+    <div class="order-container">
+
+        <h2>Start Your Custom Design</h2>
+
+        <p class="order-intro">
+            Give us enough to understand the direction.
+            The Atelier will develop the project from there.
+        </p>
+
+
+        <form id="customDesignForm">
+
+            <div class="form-group">
+
+                <label for="name">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="email">
+                    Email Address
+                </label>
+
+                <input
+                    type="email"
+                    id="email"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="projectName">
+                    Project Name
+                </label>
+
+                <input
+                    type="text"
+                    id="projectName"
+                    placeholder="Give your project a name"
+                    required
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="designType">
+                    What Are You Designing?
+                </label>
+
+                <select id="designType" required>
+
+                    <option value="">
+                        Choose one
+                    </option>
+
+                    <option>
+                        Artwork
+                    </option>
+
+                    <option>
+                        Gift
+                    </option>
+
+                    <option>
+                        Home Décor
+                    </option>
+
+                    <option>
+                        Fashion / Wearable
+                    </option>
+
+                    <option>
+                        Brand Material
+                    </option>
+
+                    <option>
+                        Digital Design
+                    </option>
+
+                    <option>
+                        Printed Design
+                    </option>
+
+                    <option>
+                        Event Design
+                    </option>
+
+                    <option>
+                        Other
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="concept">
+                    Describe Your Idea
+                </label>
+
+                <textarea
+                    id="concept"
+                    placeholder="What are you imagining? What should the design communicate?"
+                    required
+                ></textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Where Are You Starting From?
+                </label>
+
+                <div class="checkbox-grid">
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="startingPoint"
+                            value="Idea"
+                            id="idea"
+                        >
+
+                        <label for="idea">
+                            Just An Idea
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="startingPoint"
+                            value="Sketch"
+                            id="sketch"
+                        >
+
+                        <label for="sketch">
+                            Sketch
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="startingPoint"
+                            value="Existing Design"
+                            id="existingDesign"
+                        >
+
+                        <label for="existingDesign">
+                            Existing Design
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="startingPoint"
+                            value="Reference Images"
+                            id="references"
+                        >
+
+                        <label for="references">
+                            Reference Images
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="startingPoint"
+                            value="Written Description"
+                            id="written"
+                        >
+
+                        <label for="written">
+                            Written Description
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="startingPoint"
+                            value="Not Sure"
+                            id="notSure"
+                        >
+
+                        <label for="notSure">
+                            Not Sure
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    What Should The Design Include?
+                </label>
+
+                <div class="checkbox-grid">
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="elements"
+                            value="Text"
+                            id="text"
+                        >
+
+                        <label for="text">
+                            Text / Words
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="elements"
+                            value="Photography"
+                            id="photography"
+                        >
+
+                        <label for="photography">
+                            Photography
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="elements"
+                            value="Illustration"
+                            id="illustration"
+                        >
+
+                        <label for="illustration">
+                            Illustration
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="elements"
+                            value="Patterns"
+                            id="patterns"
+                        >
+
+                        <label for="patterns">
+                            Patterns
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="elements"
+                            value="Symbols"
+                            id="symbols"
+                        >
+
+                        <label for="symbols">
+                            Symbols
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="elements"
+                            value="Logo / Branding"
+                            id="branding"
+                        >
+
+                        <label for="branding">
+                            Logo / Branding
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="elements"
+                            value="Custom Artwork"
+                            id="customArtwork"
+                        >
+
+                        <label for="customArtwork">
+                            Custom Artwork
+                        </label>
+
+                    </div>
+
+
+                    <div class="checkbox-item">
+
+                        <input
+                            type="checkbox"
+                            name="elements"
+                            value="Other"
+                            id="other"
+                        >
+
+                        <label for="other">
+                            Other
+                        </label>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="style">
+                    Preferred Visual Style
+                </label>
+
+                <select id="style">
+
+                    <option value="">
+                        Choose one
+                    </option>
+
+                    <option>
+                        Minimal
+                    </option>
+
+                    <option>
+                        Elegant
+                    </option>
+
+                    <option>
+                        Bold
+                    </option>
+
+                    <option>
+                        Luxury
+                    </option>
+
+                    <option>
+                        Romantic
+                    </option>
+
+                    <option>
+                        Dark & Dramatic
+                    </option>
+
+                    <option>
+                        Colourful
+                    </option>
+
+                    <option>
+                        Artistic
+                    </option>
+
+                    <option>
+                        Modern
+                    </option>
+
+                    <option>
+                        Vintage
+                    </option>
+
+                    <option>
+                        Not Sure
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="colours">
+                    Preferred Colours
+                </label>
+
+                <input
+                    type="text"
+                    id="colours"
+                    placeholder="Example: Black, purple, blue and pink"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="size">
+                    Preferred Size / Dimensions
+                </label>
+
+                <input
+                    type="text"
+                    id="size"
+                    placeholder="Example: 8x10, square, banner, unknown"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                    Reference Files
+                </label>
+
+                <div class="upload-box">
+
+                    <p>
+                        Upload sketches, photographs, screenshots,
+                        existing designs, inspiration, PDFs,
+                        logos, or other files related to your idea.
+                    </p>
+
+                    <input
+                        type="file"
+                        id="referenceFiles"
+                        multiple
+                        accept="image/*,.pdf,.svg,.ai,.psd"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="deadline">
+                    Desired Completion Date
+                </label>
+
+                <input
+                    type="date"
+                    id="deadline"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="notes">
+                    Additional Details
+                </label>
+
+                <textarea
+                    id="notes"
+                    placeholder="Anything else you want the Atelier to know..."
+                ></textarea>
+
+            </div>
+
+
+            <div class="quote-note">
+
+                <strong>Custom Quotation</strong>
+
+                <p>
+                    Every custom design is quoted according to the
+                    complexity of the project, creative development,
+                    materials, dimensions, revisions, production,
+                    and final presentation.
+                </p>
+
+            </div>
+
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Submit Custom Design Request
+            </button>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+<!-- BACK -->
+<section class="back-section">
+
+    <a
+        href="custom-creations.html"
+        class="back-btn"
+    >
+        ← Back To Custom Creations
+    </a>
+
+</section>
+
+
+<script>
+
+document
+    .getElementById("customDesignForm")
+    .addEventListener("submit", function(event) {
+
+        event.preventDefault();
+
+
+        const startingPoints = [];
+
+        document
+            .querySelectorAll(
+                'input[name="startingPoint"]:checked'
+            )
+            .forEach(item => {
+                startingPoints.push(item.value);
+            });
+
+
+        const elements = [];
+
+        document
+            .querySelectorAll(
+                'input[name="elements"]:checked'
+            )
+            .forEach(item => {
+                elements.push(item.value);
+            });
+
+
+        const files =
+            document.getElementById("referenceFiles").files;
+
+
+        const uploadedFiles = [];
+
+
+        for (
+            let i = 0;
+            i < files.length;
+            i++
+        ) {
+
+            uploadedFiles.push({
+
+                name: files[i].name,
+
+                type: files[i].type,
+
+                size: files[i].size
+
+            });
+
+        }
+
+
+        const order = {
+
+            serviceCategory:
+                "Custom Creations",
+
+            service:
+                "Custom Designs",
+
+            name:
+                document.getElementById("name").value,
+
+            email:
+                document.getElementById("email").value,
+
+            projectName:
+                document.getElementById("projectName").value,
+
+            designType:
+                document.getElementById("designType").value,
+
+            concept:
+                document.getElementById("concept").value,
+
+            startingPoints:
+                startingPoints,
+
+            elements:
+                elements,
+
+            visualStyle:
+                document.getElementById("style").value,
+
+            preferredColours:
+                document.getElementById("colours").value,
+
+            dimensions:
+                document.getElementById("size").value,
+
+            deadline:
+                document.getElementById("deadline").value,
+
+            additionalNotes:
+                document.getElementById("notes").value,
+
+            uploadedFiles:
+                uploadedFiles,
+
+            pricingType:
+                "Custom Quotation",
+
+            status:
+                "Awaiting Project Review",
+
+            createdAt:
+                new Date().toISOString()
+
+        };
+
+
+        localStorage.setItem(
+            "currentOrder",
+            JSON.stringify(order)
+        );
+
+
+        window.location.href =
+            "payment.html";
+
+    });
+
+</script>
+
+</body>
+</html>

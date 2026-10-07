@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restoration & Aftercare | Alis Art & Aura Atelier</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background: #000;
+            color: #fff;
+        }
+
+        .intro {
+            text-align: center;
+            padding: 80px 20px 55px;
+        }
+
+        .intro .brand {
+            color: #FF66C4;
+            font-size: 0.95rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+        }
+
+        .intro h1 {
+            font-size: clamp(2.2rem, 7vw, 4.5rem);
+            margin: 0 auto 20px;
+            background: linear-gradient(90deg, #FF66C4, #C90DEA, #33CEEF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .intro p {
+            max-width: 780px;
+            margin: auto;
+            line-height: 1.8;
+            color: #ddd;
+            font-size: 1.05rem;
+        }
+
+        .section {
+            max-width: 1100px;
+            margin: auto;
+            padding: 45px 20px;
+        }
+
+        .section h2 {
+            text-align: center;
+            color: #33CEEF;
+            margin-bottom: 15px;
+            font-size: 2rem;
+        }
+
+        .section-intro {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 35px;
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 20px;
+        }
+
+        .service-card {
+            background: linear-gradient(
+                145deg,
+                rgba(201, 13, 234, 0.12),
+                rgba(51, 206, 239, 0.07)
+            );
+            border: 1px solid rgba(201, 13, 234, 0.35);
+            border-radius: 18px;
+            padding: 28px 22px;
+            transition: 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: #FF66C4;
+            box-shadow: 0 0 25px rgba(201, 13, 234, 0.2);
+        }
+
+        .service-card h3 {
+            color: #FF66C4;
+            margin-top: 0;
+        }
+
+        .service-card p {
+            color: #ccc;
+            line-height: 1.7;
+        }
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            counter-reset: step;
+        }
+
+        .process-card {
+            position: relative;
+            padding: 28px 22px;
+            border-radius: 18px;
+            background: #090909;
+            border: 1px solid rgba(51, 206, 239, 0.3);
+        }
+
+        .process-number {
+            color: #33CEEF;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 12px;
+        }
+
+        .process-card h3 {
+            margin-top: 0;
+            color: #fff;
+        }
+
+        .process-card p {
+            color: #bbb;
+            line-height: 1.7;
+        }
+
+        .upload-box {
+            border: 1px dashed #C90DEA;
+            border-radius: 18px;
+            padding: 28px;
+            text-align: center;
+            background: rgba(201, 13, 234, 0.05);
+            margin-top: 20px;
+        }
+
+        .upload-box h3 {
+            color: #FF66C4;
+            margin-top: 0;
+        }
+
+        .upload-box p {
+            color: #bbb;
+            line-height: 1.6;
+        }
+
+        .upload-box input[type="file"] {
+            width: 100%;
+            max-width: 500px;
+            margin-top: 15px;
+            color: #ddd;
+        }
+
+        .care-box {
+            background: linear-gradient(
+                135deg,
+                rgba(51, 206, 239, 0.08),
+                rgba(201, 13, 234, 0.08)
+            );
+            border: 1px solid rgba(51, 206, 239, 0.25);
+            border-radius: 20px;
+            padding: 30px;
+        }
+
+        .care-box ul {
+            padding-left: 20px;
+            color: #ccc;
+            line-height: 1.9;
+        }
+
+        .form-container {
+            max-width: 800px;
+            margin: auto;
+            background: #080808;
+            border: 1px solid rgba(201, 13, 234, 0.35);
+            border-radius: 22px;
+            padding: 30px 22px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            color: #FF66C4;
+            font-weight: 600;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 13px;
+            border-radius: 10px;
+            border: 1px solid #333;
+            background: #111;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #33CEEF;
+            box-shadow: 0 0 10px rgba(51, 206, 239, 0.15);
+        }
+
+        .quotation {
+            margin-top: 25px;
+            padding: 22px;
+            border-radius: 16px;
+            background: linear-gradient(
+                90deg,
+                rgba(201, 13, 234, 0.12),
+                rgba(51, 206, 239, 0.08)
+            );
+            border: 1px solid rgba(255, 102, 196, 0.3);
+        }
+
+        .quotation h3 {
+            color: #33CEEF;
+            margin-top: 0;
+        }
+
+        .quotation p {
+            color: #ccc;
+            line-height: 1.7;
+            margin-bottom: 0;
+        }
+
+        .submit-btn,
+        .back-btn {
+            display: inline-block;
+            border: none;
+            border-radius: 12px;
+            padding: 14px 25px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            text-decoration: none;
+            transition: 0.3s ease;
+        }
+
+        .submit-btn {
+            width: 100%;
+            color: #fff;
+            background: linear-gradient(90deg, #C90DEA, #33CEEF);
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(201, 13, 234, 0.3);
+        }
+
+        .back-wrapper {
+            text-align: center;
+            padding: 30px 20px 70px;
+        }
+
+        .back-btn {
+            color: #fff;
+            border: 1px solid #33CEEF;
+            background: transparent;
+        }
+
+        .back-btn:hover {
+            background: #33CEEF;
+            color: #000;
+        }
+
+        .note {
+            font-size: 0.9rem;
+            color: #888;
+            line-height: 1.6;
+            margin-top: 12px;
+        }
+
+        @media (max-width: 600px) {
+            .intro {
+                padding-top: 55px;
+            }
+
+            .section {
+                padding: 35px 16px;
+            }
+
+            .form-container {
+                padding: 25px 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<nav class="navbar">
+    <a href="index.html" class="nav-brand">
+        Alis Art & Aura Atelier
+    </a>
+
+    <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="who-we-are.html">Who We Are</a>
+        <a href="what-we-create.html">What We Create</a>
+        <a href="custom-orders.html">Custom Orders</a>
+        <a href="contact.html">Contact</a>
+    </div>
+</nav>
+
+
+<section class="intro">
+    <div class="brand">Alis Art & Aura Atelier</div>
+
+    <h1>Restoration & Aftercare</h1>
+
+    <p>
+        Preserve the artwork, memories and meaningful pieces you already own.
+        From restoration and repair to preservation, presentation and ongoing care,
+        we help give treasured pieces a chance to be appreciated again.
+    </p>
+</section>
+
+
+<section class="section">
+
+    <h2>What We Can Help With</h2>
+
+    <p class="section-intro">
+        Restoration begins with understanding what the piece needs. Every artwork,
+        frame and object can respond differently to cleaning, repair and restoration,
+        so projects are assessed individually.
+    </p>
+
+    <div class="service-grid">
+
+        <div class="service-card">
+            <h3>Artwork Restoration</h3>
+            <p>
+                Assistance with damaged, aged or worn artwork, including assessment
+                of visible deterioration and possible restoration approaches.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Frame Restoration</h3>
+            <p>
+                Refreshing, repairing or improving the presentation of frames that
+                have become worn, damaged or unsuitable for the artwork.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Surface & Finish Care</h3>
+            <p>
+                Care and preservation considerations for artwork surfaces, finishes,
+                decorative elements and presentation materials.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Damage Assessment</h3>
+            <p>
+                A closer review of visible damage to help determine whether restoration,
+                preservation, repair or recreation is the most appropriate direction.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Preservation</h3>
+            <p>
+                Guidance and presentation choices designed to help reduce unnecessary
+                exposure to damaging environmental conditions.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Recreation</h3>
+            <p>
+                When an original piece cannot reasonably be restored, recreation or
+                artistic reproduction may provide another way to preserve its meaning.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Presentation Protection</h3>
+            <p>
+                Advice on framing, display and protective presentation for pieces
+                that need additional care after restoration.
+            </p>
+        </div>
+
+        <div class="service-card">
+            <h3>Aftercare Guidance</h3>
+            <p>
+                Practical guidance for caring for your artwork or restored piece
+                after the project is completed.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section">
+
+    <h2>The Restoration Process</h2>
+
+    <p class="section-intro">
+        Because restoration can involve different materials and levels of damage,
+        the project begins with assessment before any major work is recommended.
+    </p>
+
+    <div class="process">
+
+        <div class="process-card">
+            <div class="process-number">STEP 01</div>
+            <h3>Review</h3>
+            <p>
+                We review the piece, its condition, materials and the concerns you
+                have about its current appearance or structure.
+            </p>
+        </div>
+
+        <div class="process-card">
+            <div class="process-number">STEP 02</div>
+            <h3>Assessment</h3>
+            <p>
+                Visible damage and restoration requirements are considered before
+                determining what work may be appropriate.
+            </p>
+        </div>
+
+        <div class="process-card">
+            <div class="process-number">STEP 03</div>
+            <h3>Recommendation</h3>
+            <p>
+                You receive a recommended direction, which may involve restoration,
+                repair, preservation, recreation or a combination.
+            </p>
+        </div>
+
+        <div class="process-card">
+            <div class="process-number">STEP 04</div>
+            <h3>Quotation</h3>
+            <p>
+                A custom quotation is prepared based on the piece, materials,
+                complexity and requested work.
+            </p>
+        </div>
+
+        <div class="process-card">
+            <div class="process-number">STEP 05</div>
+            <h3>Restoration</h3>
+            <p>
+                Once the project is approved, the agreed work can begin according
+                to the confirmed scope.
+            </p>
+        </div>
+
+        <div class="process-card">
+            <div class="process-number">STEP 06</div>
+            <h3>Aftercare</h3>
+            <p>
+                Final care and presentation guidance help you understand how to
+                maintain the piece after completion.
+            </p>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="section">
+
+    <h2>Send Us Photos for Assessment</h2>
+
+    <p class="section-intro">
+        If you are asking about restoration or damage, photographs can help us
+        understand the condition before an in-person assessment.
+    </p>
+
+    <div class="upload-box">
+
+        <h3>Upload Images of Your Piece</h3>
+
+        <p>
+            If possible, include clear photos of the full piece, damaged areas,
+            frame, back of the piece, labels, signatures and any other details
+            that may help with assessment.
+        </p>
+
+        <input
+            type="file"
+            id="referenceImages"
+            name="referenceImages"
+            accept="image/*"
+            multiple
+        >
+
+        <p class="note">
+            Photos are for initial assessment only. Final restoration suitability
+            and quotation may require physical inspection.
+        </p>
+
+    </div>
+
+</section>
+
+
+<section class="section">
+
+    <h2>Aftercare & Preservation</h2>
+
+    <div class="care-box">
+
+        <ul>
+            <li>Keep artwork away from prolonged direct sunlight when possible.</li>
+            <li>Avoid excessive moisture and environments with persistent humidity.</li>
+            <li>Keep pieces away from direct heat sources.</li>
+            <li>Handle artwork with clean, dry hands when appropriate.</li>
+            <li>Avoid using household cleaning products directly on artwork.</li>
+            <li>Do not attempt aggressive cleaning or repair without understanding the materials involved.</li>
+            <li>Use appropriate framing and protective presentation for valuable or delicate pieces.</li>
+            <li>Seek professional assessment when damage, mold, staining or structural problems are present.</li>
+        </ul>
+
+    </div>
+</section>
+
+
+<section class="section">
+
+    <h2>Request Restoration or Aftercare</h2>
+
+    <p class="section-intro">
+        Tell us about the piece and what you would like help with. We will use
+        the information provided to understand the project before preparing a quotation.
+    </p>
+
+    <div class="form-container">
+
+        <form id="restorationForm">
+
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email Address</label>
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="projectName">Project / Piece Name</label>
+                <input
+                    type="text"
+                    id="projectName"
+                    name="projectName"
+                    placeholder="Example: Family Portrait"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="pieceType">What Are You Bringing In?</label>
+
+                <select id="pieceType" name="pieceType" required>
+                    <option value="">Select one</option>
+                    <option value="Painting">Painting</option>
+                    <option value="Drawing">Drawing</option>
+                    <option value="Photograph">Photograph</option>
+                    <option value="Print">Print</option>
+                    <option value="Framed Artwork">Framed Artwork</option>
+                    <option value="Decorative Piece">Decorative Piece</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="serviceNeeded">What Do You Need?</label>
+
+                <select id="serviceNeeded" name="serviceNeeded" required>
+                    <option value="">Select one</option>
+                    <option value="Artwork Restoration">Artwork Restoration</option>
+                    <option value="Frame Restoration">Frame Restoration</option>
+                    <option value="Damage Assessment">Damage Assessment</option>
+                    <option value="Preservation">Preservation</option>
+                    <option value="Recreation">Recreation</option>
+                    <option value="Aftercare Guidance">Aftercare Guidance</option>
+                    <option value="Multiple Services">Multiple Services</option>
+                    <option value="Not Sure">I'm Not Sure</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="damage">What Is Happening With The Piece?</label>
+
+                <textarea
+                    id="damage"
+                    name="damage"
+                    placeholder="Describe the damage, wear, age, stains, scratches, fading, broken frame, etc."
+                    required
+                ></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="piecePossession">Where Is The Piece Currently?</label>
+
+                <select
+                    id="piecePossession"
+                    name="piecePossession"
+                    required
+                >
+                    <option value="">Select one</option>
+                    <option value="I have the piece">I have the piece</option>
+                    <option value="Someone else has the piece">Someone else has the piece</option>
+                    <option value="The piece is stored elsewhere">The piece is stored elsewhere</option>
+                    <option value="I only have photographs">I only have photographs</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">Quantity</label>
+
+                <input
+                    type="number"
+                    id="quantity"
+                    name="quantity"
+                    min="1"
+                    value="1"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="deadline">Desired Completion Date</label>
+
+                <input
+                    type="date"
+                    id="deadline"
+                    name="deadline"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="additionalNotes">Additional Information</label>
+
+                <textarea
+                    id="additionalNotes"
+                    name="additionalNotes"
+                    placeholder="Anything else we should know?"
+                ></textarea>
+            </div>
+
+            <div class="quotation">
+
+                <h3>Custom Quotation</h3>
+
+                <p>
+                    Restoration and preservation projects are quoted individually.
+                    The final price can depend on the condition, size, materials,
+                    complexity, required repairs, replacement materials and whether
+                    physical assessment is necessary.
+                </p>
+
+            </div>
+
+            <button
+                type="submit"
+                class="submit-btn"
+            >
+                Continue to Project Confirmation
+            </button>
+
+        </form>
+
+    </div>
+</section>
+
+
+<div class="back-wrapper">
+
+    <a
+        href="creative-services.html"
+        class="back-btn"
+    >
+        ← Back to Creative Services
+    </a>
+
+</div>
+
+
+<script>
+document.getElementById("restorationForm").addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const fileInput = document.getElementById("referenceImages");
+
+    const files = Array.from(fileInput.files).map(file => ({
+        name: file.name,
+        type: file.type,
+        size: file.size
+    }));
+
+    const order = {
+
+        serviceCategory: "Creative Services",
+
+        service: "Restoration & Aftercare",
+
+        name: document.getElementById("name").value,
+
+        email: document.getElementById("email").value,
+
+        projectName: document.getElementById("projectName").value,
+
+        pieceType: document.getElementById("pieceType").value,
+
+        serviceNeeded: document.getElementById("serviceNeeded").value,
+
+        damage: document.getElementById("damage").value,
+
+        piecePossession: document.getElementById("piecePossession").value,
+
+        quantity: document.getElementById("quantity").value,
+
+        deadline: document.getElementById("deadline").value,
+
+        additionalNotes: document.getElementById("additionalNotes").value,
+
+        uploadedFiles: files,
+
+        pricingType: "Custom Quotation",
+
+        status: "Awaiting Project Review",
+
+        createdAt: new Date().toISOString()
+
+    };
+
+    localStorage.setItem(
+        "currentOrder",
+        JSON.stringify(order)
+    );
+
+    window.location.href = "payment.html";
+});
+</script>
+
+</body>
+</html>

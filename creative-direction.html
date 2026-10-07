@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Creative Direction | Alis Art & Aura Atelier</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            min-height: 100vh;
+            background:
+                radial-gradient(circle at 12% 18%, rgba(51, 206, 239, 0.15), transparent 28%),
+                radial-gradient(circle at 88% 72%, rgba(255, 102, 196, 0.13), transparent 30%),
+                #000000;
+            color: white;
+            font-family: Georgia, serif;
+        }
+
+        .page {
+            padding: 85px 30px;
+        }
+
+        /* HERO */
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto 85px;
+        }
+
+        .brand {
+            color: #C90DEA;
+            font-size: 17px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            margin-bottom: 25px;
+        }
+
+        h1 {
+            font-size: 58px;
+            line-height: 1.1;
+            margin-bottom: 28px;
+        }
+
+        .intro p {
+            max-width: 780px;
+            font-size: 20px;
+            line-height: 1.8;
+            color: #dddddd;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            max-width: 1100px;
+            margin: 0 auto 90px;
+        }
+
+        .section-label {
+            color: #33CEEF;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 13px;
+            margin-bottom: 15px;
+        }
+
+        .section h2 {
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        .section-intro {
+            max-width: 760px;
+            color: #cccccc;
+            font-size: 17px;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        /* DIRECTION AREAS */
+
+        .direction-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .direction-card {
+            padding: 32px;
+            background: #050505;
+            border: 1px solid #222222;
+            transition: 0.3s;
+        }
+
+        .direction-card:hover {
+            transform: translateY(-5px);
+            border-color: #C90DEA;
+        }
+
+        .direction-card:nth-child(2n) {
+            border-color: #33CEEF;
+        }
+
+        .direction-card h3 {
+            font-size: 24px;
+            margin-bottom: 14px;
+        }
+
+        .direction-card p {
+            color: #cccccc;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        /* PROJECT TYPES */
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            padding: 30px;
+            min-height: 220px;
+            background: #050505;
+            border: 1px solid #333333;
+        }
+
+        .project-card:nth-child(1) {
+            border-color: #C90DEA;
+        }
+
+        .project-card:nth-child(2) {
+            border-color: #33CEEF;
+        }
+
+        .project-card:nth-child(3) {
+            border-color: #FF66C4;
+        }
+
+        .project-card h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+        }
+
+        .project-card p {
+            color: #bbbbbb;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        /* OUTCOMES */
+
+        .outcomes {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 14px;
+        }
+
+        .outcome {
+            padding: 20px;
+            background: #050505;
+            border-left: 2px solid #3533CD;
+            color: #cccccc;
+            line-height: 1.6;
+        }
+
+        /* PROCESS */
+
+        .process {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .process-step {
+            padding: 28px 22px;
+            background: #050505;
+            border-top: 1px solid #3533CD;
+        }
+
+        .step-number {
+            color: #FF66C4;
+            font-size: 13px;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .process-step h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .process-step p {
+            color: #bbbbbb;
+            line-height: 1.65;
+            font-size: 14px;
+        }
+
+        /* ORDER */
+
+        .order-section {
+            max-width: 900px;
+            margin: 0 auto 90px;
+            padding: 45px;
+            background: #050505;
+            border: 1px solid #3533CD;
+        }
+
+        .order-section h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .order-section > p {
+            color: #bbbbbb;
+            line-height: 1.7;
+            margin-bottom: 35px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 9px;
+            font-size: 15px;
+            color: #eeeeee;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 14px;
+            background: #000000;
+            border: 1px solid #444444;
+            color: white;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            border-color: #C90DEA;
+        }
+
+        .form-group textarea {
+            min-height: 130px;
+            resize: vertical;
+        }
+
+        .checkbox-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .check-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 13px;
+            border: 1px solid #333333;
+            background: #000000;
+            color: #cccccc;
+        }
+
+        .check-option input {
+            width: auto;
+        }
+
+        .estimate {
+            margin: 30px 0;
+            padding: 22px;
+            border-top: 1px solid #3533CD;
+            border-bottom: 1px solid #3533CD;
+        }
+
+        .estimate-title {
+            color: #33CEEF;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .estimate-price {
+            font-size: 30px;
+        }
+
+        .order-button {
+            width: 100%;
+            padding: 17px;
+            border: 1px solid white;
+            background: white;
+            color: black;
+            font-family: Georgia, serif;
+            font-size: 15px;
+            letter-spacing: 2px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .order-button:hover {
+            background: #C90DEA;
+            border-color: #C90DEA;
+            color: white;
+        }
+
+        /* PAYMENT */
+
+        .payment-box {
+            max-width: 900px;
+            margin: 0 auto 80px;
+            padding: 35px;
+            border: 1px solid #FF66C4;
+            background: #050505;
+        }
+
+        .payment-box h2 {
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .payment-box p {
+            color: #cccccc;
+            line-height: 1.7;
+            margin-bottom: 15px;
+        }
+
+        .payment-note {
+            color: #FF66C4;
+            font-size: 14px;
+        }
+
+        /* STATEMENT */
+
+        .statement {
+            max-width: 850px;
+            margin: 0 auto 70px;
+            padding: 35px;
+            border-top: 1px solid #3533CD;
+            border-bottom: 1px solid #3533CD;
+            font-size: 28px;
+            line-height: 1.6;
+            text-align: center;
+        }
+
+        .back-button {
+            display: block;
+            width: fit-content;
+            margin: 0 auto;
+            padding: 14px 28px;
+            border: 1px solid white;
+            color: white;
+            text-decoration: none;
+            letter-spacing: 2px;
+            transition: 0.3s;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #000000;
+        }
+
+        @media (max-width: 800px) {
+
+            .page {
+                padding: 60px 20px;
+            }
+
+            h1 {
+                font-size: 44px;
+            }
+
+            .direction-grid,
+            .outcomes,
+            .project-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .order-section {
+                padding: 28px 20px;
+            }
+
+            .checkbox-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .statement {
+                font-size: 23px;
+            }
+        }
+
+        @media (max-width: 500px) {
+
+            .process {
+                grid-template-columns: 1fr;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+    <!-- WEBSITE NAVIGATION -->
+
+    <nav class="navbar">
+
+        <a href="index.html" class="nav-brand">
+            Alis Art & Aura Atelier
+        </a>
+
+        <div class="nav-links">
+
+            <a href="index.html">Home</a>
+
+            <a href="who-we-are.html">Who We Are</a>
+
+            <a href="what-we-create.html">What We Create</a>
+
+            <a href="custom-orders.html">Custom Orders</a>
+
+            <a href="contact.html">Contact</a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- HERO -->
+
+    <main class="page">
+
+        <div class="intro">
+
+            <div class="brand">
+                Alis Art & Aura Atelier
+            </div>
+
+            <h1>
+                Creative Direction
+            </h1>
+
+            <p>
+                When an idea has potential but needs a clear creative
+                direction, we help shape the concept, visual language,
+                mood and presentation into one cohesive experience.
+            </p>
+
+        </div>
+
+
+        <!-- WHAT WE DIRECT -->
+
+        <section class="section">
+
+            <div class="section-label">
+                What We Shape
+            </div>
+
+            <h2>
+                Giving The Idea A Direction
+            </h2>
+
+            <p class="section-intro">
+                Creative direction brings the different parts of a
+                project together. We help establish what the project
+                should feel like, look like and communicate.
+            </p>
+
+
+            <div class="direction-grid">
+
+                <div class="direction-card">
+
+                    <h3>
+                        Creative Concept
+                    </h3>
+
+                    <p>
+                        Developing the central creative idea and finding
+                        the visual concept that gives the project its identity.
+                    </p>
+
+                </div>
+
+
+                <div class="direction-card">
+
+                    <h3>
+                        Mood & Atmosphere
+                    </h3>
+
+                    <p>
+                        Establishing the emotional tone, atmosphere,
+                        energy and overall feeling of the project.
+                    </p>
+
+                </div>
+
+
+                <div class="direction-card">
+
+                    <h3>
+                        Visual Direction
+                    </h3>
+
+                    <p>
+                        Defining colour, typography, imagery, composition,
+                        styling and other visual decisions.
+                    </p>
+
+                </div>
+
+
+                <div class="direction-card">
+
+                    <h3>
+                        Art Direction
+                    </h3>
+
+                    <p>
+                        Guiding the artistic choices behind imagery,
+                        artwork, photography, styling and visual presentation.
+                    </p>
+
+                </div>
+
+
+                <div class="direction-card">
+
+                    <h3>
+                        Content Presentation
+                    </h3>
+
+                    <p>
+                        Helping determine how information, products,
+                        stories and ideas should be presented visually.
+                    </p>
+
+                </div>
+
+
+                <div class="direction-card">
+
+                    <h3>
+                        Creative Consistency
+                    </h3>
+
+                    <p>
+                        Making sure the different pieces of a project
+                        feel connected rather than visually disconnected.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROJECT TYPES -->
+
+        <section class="section">
+
+            <div class="section-label">
+                Creative Projects
+            </div>
+
+            <h2>
+                What Can We Direct?
+            </h2>
+
+
+            <div class="project-grid">
+
+                <div class="project-card">
+
+                    <h3>
+                        Brand Projects
+                    </h3>
+
+                    <p>
+                        Creative concepts and visual direction for brands,
+                        launches, campaigns and identity development.
+                    </p>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>
+                        Digital Projects
+                    </h3>
+
+                    <p>
+                        Creative direction for websites, digital experiences,
+                        online campaigns and visual platforms.
+                    </p>
+
+                </div>
+
+
+                <div class="project-card">
+
+                    <h3>
+                        Artistic Projects
+                    </h3>
+
+                    <p>
+                        Direction for artwork, photography, publications,
+                        collections, campaigns and other creative work.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OUTCOMES -->
+
+        <section class="section">
+
+            <div class="section-label">
+                Creative Direction Can Establish
+            </div>
+
+            <h2>
+                The Bigger Picture
+            </h2>
+
+            <p class="section-intro">
+                Depending on the project, creative direction can help
+                establish any combination of these elements.
+            </p>
+
+
+            <div class="outcomes">
+
+                <div class="outcome">
+                    Creative concept
+                </div>
+
+                <div class="outcome">
+                    Visual identity
+                </div>
+
+                <div class="outcome">
+                    Moodboard
+                </div>
+
+                <div class="outcome">
+                    Colour direction
+                </div>
+
+                <div class="outcome">
+                    Typography direction
+                </div>
+
+                <div class="outcome">
+                    Photography direction
+                </div>
+
+                <div class="outcome">
+                    Art direction
+                </div>
+
+                <div class="outcome">
+                    Styling direction
+                </div>
+
+                <div class="outcome">
+                    Content presentation
+                </div>
+
+                <div class="outcome">
+                    Campaign direction
+                </div>
+
+                <div class="outcome">
+                    Collection direction
+                </div>
+
+                <div class="outcome">
+                    Overall visual consistency
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PROCESS -->
+
+        <section class="section">
+
+            <div class="section-label">
+                The Atelier Process
+            </div>
+
+            <h2>
+                From Vision To Direction
+            </h2>
+
+
+            <div class="process">
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Discover
+                    </h3>
+
+                    <p>
+                        We understand the idea, purpose, audience,
+                        references and desired outcome.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        02
+                    </div>
+
+                    <h3>
+                        Concept
+                    </h3>
+
+                    <p>
+                        We establish the creative concept and the
+                        direction that will guide the project.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        03
+                    </div>
+
+                    <h3>
+                        Develop
+                    </h3>
+
+                    <p>
+                        The visual language, mood and presentation
+                        direction are developed around the concept.
+                    </p>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="step-number">
+                        04
+                    </div>
+
+                    <h3>
+                        Deliver
+                    </h3>
+
+                    <p>
+                        The agreed creative direction is presented as
+                        a usable guide for the project.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ORDER -->
+
+        <section class="order-section" id="order">
+
+            <div class="section-label">
+                Start Your Project
+            </div>
+
+            <h2>
+                Creative Direction Order
+            </h2>
+
+            <p>
+                Tell us about the idea, project and creative challenge.
+                The more we understand the vision, the more precisely
+                we can shape the direction.
+            </p>
+
+
+            <form id="creativeDirectionForm">
+
+
+                <div class="form-group">
+
+                    <label for="customerName">
+                        Your Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="customerName"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="customerEmail">
+                        Email Address
+                    </label>
+
+                    <input
+                        type="email"
+                        id="customerEmail"
+                        required>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="projectName">
+                        Business / Project Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="projectName">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="projectType">
+                        Project Type
+                    </label>
+
+                    <select id="projectType" required>
+
+                        <option value="">
+                            Select a project type
+                        </option>
+
+                        <option value="Brand">
+                            Brand
+                        </option>
+
+                        <option value="Digital">
+                            Digital
+                        </option>
+
+                        <option value="Artistic">
+                            Artistic
+                        </option>
+
+                        <option value="Campaign">
+                            Campaign
+                        </option>
+
+                        <option value="Publication">
+                            Publication
+                        </option>
+
+                        <option value="Event">
+                            Event
+                        </option>
+
+                        <option value="Other">
+                            Other
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                        What kind of direction do you need?
+                    </label>
+
+                    <div class="checkbox-grid">
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Creative Concept">
+                            Creative Concept
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Mood & Atmosphere">
+                            Mood & Atmosphere
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Visual Direction">
+                            Visual Direction
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Art Direction">
+                            Art Direction
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Brand Direction">
+                            Brand Direction
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Campaign Direction">
+                            Campaign Direction
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Photography Direction">
+                            Photography Direction
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Styling Direction">
+                            Styling Direction
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Content Presentation">
+                            Content Presentation
+                        </label>
+
+                        <label class="check-option">
+                            <input type="checkbox" value="Collection Direction">
+                            Collection Direction
+                        </label>
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="stage">
+                        Where are you in the project?
+                    </label>
+
+                    <select id="stage">
+
+                        <option value="">
+                            Select
+                        </option>
+
+                        <option value="Idea">
+                            I have an idea
+                        </option>
+
+                        <option value="Early Development">
+                            Early development
+                        </option>
+
+                        <option value="Existing Project">
+                            Existing project
+                        </option>
+
+                        <option value="Repositioning">
+                            Repositioning / new direction
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="projectDescription">
+                        Tell us about the idea
+                    </label>
+
+                    <textarea
+                        id="projectDescription"
+                        placeholder="What are you creating, and what do you want it to feel like?"></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="references">
+                        Visual References
+                    </label>
+
+                    <textarea
+                        id="references"
+                        placeholder="Describe styles, colours, artists, brands or references you like."></textarea>
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="deadline">
+                        Desired Completion Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="deadline">
+
+                </div>
+
+
+                <div class="estimate">
+
+                    <div class="estimate-title">
+                        Project Estimate
+                    </div>
+
+                    <div class="estimate-price">
+                        Custom Quotation
+                    </div>
+
+                </div>
+
+
+                <button
+                    type="submit"
+                    class="order-button">
+
+                    CONTINUE TO ORDER
+
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- PAYMENT -->
+
+        <section class="payment-box">
+
+            <h2>
+                Payment & Project Confirmation
+            </h2>
+
+            <p>
+                Creative direction projects are quoted according to
+                scope, complexity, project length and the level of
+                creative development required.
+            </p>
+
+            <p>
+                After your request is submitted, the project details
+                are saved and you will be taken to the Atelier payment
+                page when your quotation is ready.
+            </p>
+
+            <div class="payment-note">
+                Custom quotations are confirmed before payment is completed.
+            </div>
+
+        </section>
+
+
+        <!-- STATEMENT -->
+
+        <div class="statement">
+
+            A strong idea needs a direction.
+
+            <br>
+
+            We help shape the vision before it becomes the experience.
+
+        </div>
+
+
+        <a
+            href="creative-services.html"
+            class="back-button">
+
+            Back To Creative Services
+
+        </a>
+
+    </main>
+
+
+    <script>
+
+        document
+            .getElementById("creativeDirectionForm")
+            .addEventListener("submit", function(event) {
+
+                event.preventDefault();
+
+
+                const selectedServices =
+                    Array.from(
+                        document.querySelectorAll(
+                            '.check-option input:checked'
+                        )
+                    ).map(function(checkbox) {
+
+                        return checkbox.value;
+
+                    });
+
+
+                const order = {
+
+                    type: "Creative Service",
+
+                    service: "Creative Direction",
+
+                    customerName:
+                        document.getElementById(
+                            "customerName"
+                        ).value,
+
+                    customerEmail:
+                        document.getElementById(
+                            "customerEmail"
+                        ).value,
+
+                    projectName:
+                        document.getElementById(
+                            "projectName"
+                        ).value,
+
+                    projectType:
+                        document.getElementById(
+                            "projectType"
+                        ).value,
+
+                    directionNeeded:
+                        selectedServices,
+
+                    projectStage:
+                        document.getElementById(
+                            "stage"
+                        ).value,
+
+                    projectDescription:
+                        document.getElementById(
+                            "projectDescription"
+                        ).value,
+
+                    visualReferences:
+                        document.getElementById(
+                            "references"
+                        ).value,
+
+                    deadline:
+                        document.getElementById(
+                            "deadline"
+                        ).value,
+
+                    total:
+                        null,
+
+                    status:
+                        "Awaiting Quotation",
+
+                    createdAt:
+                        new Date().toISOString()
+
+                };
+
+
+                localStorage.setItem(
+                    "currentOrder",
+                    JSON.stringify(order)
+                );
+
+
+                window.location.href =
+                    "payment.html";
+
+            });
+
+    </script>
+
+</body>
+
+</html>
