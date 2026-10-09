@@ -3,10 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#000000">
 
 <title>My Account | Alis Art & Aura Atelier</title>
 
 <style>
+:root {
+    --purple: #C90DEA;
+    --cyan: #33CEEF;
+    --pink: #FF66C4;
+    --blue: #3533CD;
+    --black: #000;
+    --panel: #090909;
+    --muted: #aaa;
+    --border: #292929;
+}
 
 * {
     box-sizing: border-box;
@@ -16,10 +27,18 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #000;
+    background: var(--black);
     color: #fff;
     min-height: 100vh;
     padding: 20px;
+}
+
+button, input {
+    font: inherit;
+}
+
+button, a {
+    -webkit-tap-highlight-color: transparent;
 }
 
 .container {
@@ -28,8 +47,6 @@ body {
     margin: auto;
 }
 
-/* HEADER */
-
 .header {
     text-align: center;
     padding: 30px 15px;
@@ -37,13 +54,10 @@ body {
 }
 
 .header h1 {
-    color: #C90DEA;
-    font-size: 2rem;
+    color: var(--purple);
+    font-size: clamp(1.7rem, 5vw, 2.2rem);
     margin-bottom: 10px;
-
-    text-shadow:
-        0 0 8px #C90DEA,
-        0 0 18px #33CEEF;
+    text-shadow: 0 0 8px var(--purple), 0 0 18px var(--cyan);
 }
 
 .header p {
@@ -51,28 +65,20 @@ body {
     line-height: 1.6;
 }
 
-
-/* CARDS */
-
 .card {
-    background: #090909;
-    border: 1px solid #3533CD;
+    background: var(--panel);
+    border: 1px solid var(--blue);
     border-radius: 18px;
-    padding: 25px;
+    padding: clamp(18px, 4vw, 25px);
     margin-bottom: 20px;
-
-    box-shadow:
-        0 0 15px rgba(201, 13, 234, 0.12);
+    box-shadow: 0 0 15px rgba(201, 13, 234, .12);
 }
 
 .card h2 {
-    color: #33CEEF;
+    color: var(--cyan);
     margin-bottom: 20px;
     font-size: 1.3rem;
 }
-
-
-/* FORMS */
 
 .form {
     display: grid;
@@ -80,136 +86,106 @@ body {
 }
 
 label {
+    display: block;
     color: #ccc;
-    font-size: 0.9rem;
+    font-size: .9rem;
+    line-height: 1.5;
 }
 
 input {
+    display: block;
     width: 100%;
     margin-top: 7px;
     padding: 14px;
-
     border-radius: 10px;
-    border: 1px solid #3533CD;
-
+    border: 1px solid var(--blue);
     background: #050505;
     color: #fff;
-
-    outline: none;
 }
 
 input:focus {
-    border-color: #C90DEA;
-
-    box-shadow:
-        0 0 8px rgba(201, 13, 234, 0.25);
+    outline: 2px solid var(--purple);
+    outline-offset: 2px;
 }
 
-
-/* BUTTONS */
-
-button,
-.back-btn {
+button, .back-btn {
     width: 100%;
-    border: none;
+    border: 0;
     border-radius: 12px;
-
     padding: 15px;
-
     font-size: 1rem;
     font-weight: bold;
-
     cursor: pointer;
     text-decoration: none;
     text-align: center;
 }
 
-.primary-btn {
-    background:
-        linear-gradient(90deg, #C90DEA, #3533CD);
+button:focus-visible, a:focus-visible {
+    outline: 2px solid var(--cyan);
+    outline-offset: 3px;
+}
 
+button:disabled {
+    opacity: .6;
+    cursor: wait;
+}
+
+.primary-btn {
+    background: linear-gradient(90deg, var(--purple), var(--blue));
     color: #fff;
 }
 
-.primary-btn:hover {
-    box-shadow:
-        0 0 18px rgba(201, 13, 234, 0.4);
+.primary-btn:hover:not(:disabled) {
+    box-shadow: 0 0 18px rgba(201, 13, 234, .4);
 }
 
-.secondary-btn {
+.secondary-btn, .back-btn {
     background: #080808;
-
-    border: 1px solid #3533CD;
-
-    color: #ccc;
+    border: 1px solid var(--blue);
+    color: #ddd;
 }
 
-.secondary-btn:hover {
-    border-color: #C90DEA;
+.secondary-btn:hover, .back-btn:hover {
+    border-color: var(--purple);
 }
 
 .back-btn {
     display: block;
-
-    background: #080808;
-
-    border: 1px solid #3533CD;
-
-    color: #ccc;
+    margin-top: 12px;
 }
-
-.back-btn:hover {
-    border-color: #C90DEA;
-}
-
-
-/* MESSAGES */
 
 .message {
     margin-top: 15px;
-
-    color: #FF66C4;
-
     line-height: 1.6;
+    overflow-wrap: anywhere;
 }
 
 .success {
-    color: #33CEEF;
+    color: var(--cyan);
 }
 
 .error {
-    color: #FF66C4;
+    color: var(--pink);
 }
 
 .note {
     color: #999;
-
-    font-size: 0.88rem;
-
+    font-size: .88rem;
     line-height: 1.6;
-
     margin-top: 12px;
 }
-
-
-/* ACCOUNT INFORMATION */
 
 .account-info {
     display: grid;
     gap: 12px;
-
     margin-bottom: 20px;
 }
 
 .info-row {
     display: flex;
-
     justify-content: space-between;
-
     gap: 15px;
-
     padding: 12px 0;
-
     border-bottom: 1px solid #222;
 }
 
@@ -219,1099 +195,695 @@ button,
 
 .info-value {
     color: #fff;
-
     text-align: right;
-
-    word-break: break-word;
+    overflow-wrap: anywhere;
 }
-
-
-/* ACCOUNT STATUS */
 
 .account-status {
     padding: 15px;
-
     margin-bottom: 20px;
-
     border-radius: 12px;
-
-    border: 1px solid #3533CD;
-
-    background: rgba(51, 51, 205, 0.08);
-
-    color: #33CEEF;
-
+    border: 1px solid var(--blue);
+    background: rgba(51, 51, 205, .08);
+    color: var(--cyan);
     line-height: 1.6;
 }
 
-
-/* BUTTON GROUP */
-
 .buttons {
     display: grid;
-
     gap: 12px;
-
     margin-top: 20px;
 }
 
-
-/* HIDDEN */
+.text-btn {
+    display: inline-block;
+    width: auto;
+    padding: 8px 0;
+    margin-top: 10px;
+    background: transparent;
+    color: var(--pink);
+    text-align: left;
+    font-size: .92rem;
+}
 
 .hidden {
     display: none !important;
 }
 
-
-/* MOBILE */
-
 @media (max-width: 600px) {
+    body {
+        padding: 12px;
+    }
 
     .info-row {
         flex-direction: column;
+        gap: 5px;
     }
 
     .info-value {
         text-align: left;
     }
-
 }
-
 </style>
 </head>
 
-
 <body>
-
-
 <div class="container">
 
-
-<!-- HEADER -->
-
 <header class="header">
-
-    <h1>
-        My Account
-    </h1>
-
-    <p>
-        Manage your Alis Art & Aura Atelier account and orders.
-    </p>
-
+    <h1>My Account</h1>
+    <p>Manage your Alis Art & Aura Atelier account and orders.</p>
 </header>
 
+<section class="card" id="createAccountCard">
+    <h2>Create Account</h2>
 
-<!-- CREATE ACCOUNT -->
-
-<section
-    class="card"
-    id="createAccountCard"
->
-
-    <h2>
-        Create Account
-    </h2>
-
-
-    <div class="form">
-
-
+    <form class="form" id="signupForm">
         <label>
-
             Full Name
-
-            <input
-                type="text"
-                id="signupName"
-                autocomplete="name"
-                placeholder="Your full name"
-            >
-
+            <input id="signupName" type="text" autocomplete="name"
+                   maxlength="120" required placeholder="Your full name">
         </label>
 
-
         <label>
-
             Email
-
-            <input
-                type="email"
-                id="signupEmail"
-                autocomplete="email"
-                placeholder="Your email address"
-            >
-
+            <input id="signupEmail" type="email" autocomplete="email"
+                   maxlength="254" required placeholder="Your email address">
         </label>
 
-
         <label>
-
             Phone / WhatsApp
-
-            <input
-                type="tel"
-                id="signupPhone"
-                autocomplete="tel"
-                placeholder="Your phone number"
-            >
-
+            <input id="signupPhone" type="tel" autocomplete="tel"
+                   maxlength="40" placeholder="Your phone number">
         </label>
 
-
         <label>
-
             Password
-
-            <input
-                type="password"
-                id="signupPassword"
-                autocomplete="new-password"
-                placeholder="Create a password"
-            >
-
+            <input id="signupPassword" type="password"
+                   autocomplete="new-password" minlength="8"
+                   required placeholder="Create a password">
         </label>
 
-
         <label>
-
             Confirm Password
-
-            <input
-                type="password"
-                id="signupConfirmPassword"
-                autocomplete="new-password"
-                placeholder="Confirm your password"
-            >
-
+            <input id="signupConfirmPassword" type="password"
+                   autocomplete="new-password" minlength="8"
+                   required placeholder="Confirm your password">
         </label>
 
-
         <label>
-
             Address
-
-            <input
-                type="text"
-                id="signupAddress"
-                autocomplete="street-address"
-                placeholder="Delivery address"
-            >
-
+            <input id="signupAddress" type="text"
+                   autocomplete="street-address" maxlength="250"
+                   placeholder="Delivery address">
         </label>
-
 
         <label>
-
             Parish
-
-            <input
-                type="text"
-                id="signupParish"
-                autocomplete="address-level1"
-                placeholder="Parish"
-            >
-
+            <input id="signupParish" type="text"
+                   autocomplete="address-level1" maxlength="100"
+                   placeholder="Parish">
         </label>
 
-
-        <button
-            type="button"
-            class="primary-btn"
-            onclick="createAccount()"
-        >
+        <button class="primary-btn" id="signupButton" type="submit">
             Create Account
         </button>
+    </form>
 
-
-    </div>
-
-
-    <p
-        id="signupMessage"
-        class="message"
-    ></p>
-
-
+    <p id="signupMessage" class="message" role="status" aria-live="polite"></p>
     <p class="note">
-
-        Your account information is stored on this device for
-        the current test-site version. Real Supabase authentication
-        will replace this local test account before live customer use.
-
+        Your password is handled by Supabase Authentication. This page does
+        not save your password in localStorage.
     </p>
-
 </section>
 
+<section class="card" id="loginCard">
+    <h2>Log In</h2>
 
-
-<!-- LOGIN -->
-
-<section
-    class="card"
-    id="loginCard"
->
-
-    <h2>
-        Log In
-    </h2>
-
-
-    <div class="form">
-
-
+    <form class="form" id="loginForm">
         <label>
-
             Email
-
-            <input
-                type="email"
-                id="loginEmail"
-                autocomplete="email"
-                placeholder="Your email address"
-            >
-
+            <input id="loginEmail" type="email" autocomplete="username"
+                   maxlength="254" required placeholder="Your email address">
         </label>
-
 
         <label>
-
             Password
-
-            <input
-                type="password"
-                id="loginPassword"
-                autocomplete="current-password"
-                placeholder="Your password"
-            >
-
+            <input id="loginPassword" type="password"
+                   autocomplete="current-password" required
+                   placeholder="Your password">
         </label>
 
-
-        <button
-            type="button"
-            class="primary-btn"
-            onclick="login()"
-        >
+        <button class="primary-btn" id="loginButton" type="submit">
             Log In
         </button>
+    </form>
 
+    <button type="button" class="text-btn" id="forgotPasswordButton">
+        Forgot your password?
+    </button>
 
-    </div>
-
-
-    <p
-        id="loginMessage"
-        class="message"
-    ></p>
-
+    <p id="loginMessage" class="message" role="status" aria-live="polite"></p>
+    <p id="resetMessage" class="message" role="status" aria-live="polite"></p>
 </section>
 
+<section class="card hidden" id="accountCard">
+    <h2>Welcome to Your Atelier Account</h2>
 
-
-<!-- CUSTOMER ACCOUNT -->
-
-<section
-    class="card hidden"
-    id="accountCard"
->
-
-    <h2>
-        Welcome to Your Atelier Account
-    </h2>
-
-
-    <div class="account-status">
-
-        You are currently signed in on this device.
-
+    <div class="account-status" id="accountStatus" role="status">
+        Checking your account…
     </div>
-
 
     <div class="account-info">
-
-
         <div class="info-row">
-
-            <span class="info-label">
-                Full Name
-            </span>
-
-            <span
-                class="info-value"
-                id="accountName"
-            ></span>
-
+            <span class="info-label">Full Name</span>
+            <span class="info-value" id="accountName">—</span>
         </div>
-
-
         <div class="info-row">
-
-            <span class="info-label">
-                Email
-            </span>
-
-            <span
-                class="info-value"
-                id="accountEmail"
-            ></span>
-
+            <span class="info-label">Email</span>
+            <span class="info-value" id="accountEmail">—</span>
         </div>
-
-
         <div class="info-row">
-
-            <span class="info-label">
-                Phone
-            </span>
-
-            <span
-                class="info-value"
-                id="accountPhone"
-            ></span>
-
+            <span class="info-label">Phone</span>
+            <span class="info-value" id="accountPhone">—</span>
         </div>
-
-
         <div class="info-row">
-
-            <span class="info-label">
-                Address
-            </span>
-
-            <span
-                class="info-value"
-                id="accountAddress"
-            ></span>
-
+            <span class="info-label">Address</span>
+            <span class="info-value" id="accountAddress">—</span>
         </div>
-
-
         <div class="info-row">
-
-            <span class="info-label">
-                Parish
-            </span>
-
-            <span
-                class="info-value"
-                id="accountParish"
-            ></span>
-
+            <span class="info-label">Parish</span>
+            <span class="info-value" id="accountParish">—</span>
         </div>
-
-
     </div>
 
+    <p class="note">
+        Your profile details are shown here. If a detail is missing, you
+        can update it through the profile support process; this page will
+        not claim a change was saved unless the backend confirms it.
+    </p>
 
     <div class="buttons">
-
-
-        <button
-            type="button"
-            class="primary-btn"
-            onclick="goToPayment()"
-        >
+        <button type="button" class="primary-btn" id="paymentButton">
             Continue to Payment
         </button>
 
-
-        <button
-            type="button"
-            class="secondary-btn"
-            onclick="goToHome()"
-        >
+        <button type="button" class="secondary-btn" id="homeButton">
             Return to Atelier
         </button>
 
-
-        <button
-            type="button"
-            class="secondary-btn"
-            onclick="logout()"
-        >
+        <button type="button" class="secondary-btn" id="logoutButton">
             Log Out
         </button>
-
-
     </div>
 
-
-    <p
-        id="accountMessage"
-        class="message"
-    ></p>
-
+    <p id="accountMessage" class="message" role="status" aria-live="polite"></p>
 </section>
 
-
+<a class="back-btn" href="index.html">Back to Atelier Home</a>
 
 </div>
 
-
+<!-- Supabase browser library. The public anon/publishable key is intended
+     for browser use; never put a service-role key in this file. -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
 <script>
+"use strict";
 
-/*
-=========================================================
-ALIS ART & AURA ATELIER
-CUSTOMER ACCOUNT — TEST VERSION
-=========================================================
+/* =========================================================
+   CONFIGURATION — REPLACE THESE TWO PLACEHOLDERS
+========================================================= */
 
-IMPORTANT:
+const SUPABASE_URL = "https://ezgdttaumbiqkrvgwayj.supabase.co";
+const SUPABASE_PUBLIC_KEY = "sb_publishable_CuerRewgh7DYEKLb84A1ng_utUZrxo9";
 
-This is the complete front-end account system for the
-current test website.
+const BACKEND_URL = "https://alis-art-aura-backend.onrender.com";
 
-It uses localStorage temporarily.
+const CUSTOMER_ID_KEY = "alisAtelierCustomerId";
 
-It does NOT claim that Supabase authentication has happened.
+/* =========================================================
+   INITIALIZATION
+========================================================= */
 
-The real Supabase authentication connection will be
-connected after this page is confirmed working.
-*/
+const $ = id => document.getElementById(id);
 
+let supabaseClient = null;
+let currentUser = null;
+let currentCustomer = null;
 
-const ACCOUNT_STORAGE_KEY =
-    "alisAtelierCustomerAccount";
-
-
-const SESSION_STORAGE_KEY =
-    "alisAtelierCustomerSession";
-
-
-
-/* ======================================================
-   PAGE START
-====================================================== */
-
-document.addEventListener(
-    "DOMContentLoaded",
-    function () {
-
-        loadExistingSession();
-
-    }
-);
-
-
-
-/* ======================================================
-   CREATE ACCOUNT
-====================================================== */
-
-function createAccount() {
-
-
-    const name =
-        document
-            .getElementById("signupName")
-            .value
-            .trim();
-
-
-    const email =
-        document
-            .getElementById("signupEmail")
-            .value
-            .trim()
-            .toLowerCase();
-
-
-    const phone =
-        document
-            .getElementById("signupPhone")
-            .value
-            .trim();
-
-
-    const password =
-        document
-            .getElementById("signupPassword")
-            .value;
-
-
-    const confirmPassword =
-        document
-            .getElementById("signupConfirmPassword")
-            .value;
-
-
-    const address =
-        document
-            .getElementById("signupAddress")
-            .value
-            .trim();
-
-
-    const parish =
-        document
-            .getElementById("signupParish")
-            .value
-            .trim();
-
-
-    const message =
-        document.getElementById(
-            "signupMessage"
-        );
-
-
-    clearMessage(message);
-
-
-
-    /* REQUIRED FIELDS */
-
-    if (!name) {
-
-        showError(
-            message,
-            "Please enter your full name."
-        );
-
-        return;
-
-    }
-
-
-    if (!email) {
-
-        showError(
-            message,
-            "Please enter your email address."
-        );
-
-        return;
-
-    }
-
-
-    if (!isValidEmail(email)) {
-
-        showError(
-            message,
-            "Please enter a valid email address."
-        );
-
-        return;
-
-    }
-
-
-    if (!password) {
-
-        showError(
-            message,
-            "Please create a password."
-        );
-
-        return;
-
-    }
-
-
-    if (password.length < 6) {
-
-        showError(
-            message,
-            "Password must be at least 6 characters."
-        );
-
-        return;
-
-    }
-
-
-    if (password !== confirmPassword) {
-
-        showError(
-            message,
-            "Passwords do not match."
-        );
-
-        return;
-
-    }
-
-
-
-    /* CHECK EXISTING ACCOUNT */
-
-    const existingAccount =
-        getStoredAccount();
-
-
+function initializeSupabase() {
     if (
-        existingAccount &&
-        existingAccount.email === email
+        !window.supabase ||
+        !SUPABASE_URL.startsWith("https://") ||
+        SUPABASE_PUBLIC_KEY.startsWith("PASTE_")
     ) {
-
-        showError(
-            message,
-            "An account with this email already exists. Please log in."
+        setMessage(
+            "loginMessage",
+            "Supabase is not configured yet. Add your project URL and public key in this file.",
+            "error"
         );
-
-        return;
-
+        $("accountStatus").textContent =
+            "Supabase configuration is required before account sign-in can work.";
+        return false;
     }
-
-
-
-    /* CREATE TEST ACCOUNT */
-
-    const account = {
-
-        full_name: name,
-
-        email: email,
-
-        phone: phone,
-
-        address: address,
-
-        parish: parish,
-
-        /*
-           This password is only for the temporary
-           local test account.
-
-           Do not use this version for real customers.
-        */
-
-        password: password,
-
-        created_at:
-            new Date().toISOString()
-
-    };
-
-
-    localStorage.setItem(
-        ACCOUNT_STORAGE_KEY,
-        JSON.stringify(account)
-    );
-
-
-    localStorage.setItem(
-        SESSION_STORAGE_KEY,
-        "true"
-    );
-
-
-    showSuccess(
-        message,
-        "Account created successfully."
-    );
-
-
-    showAccount(account);
-
-
-}
-
-
-
-/* ======================================================
-   LOGIN
-====================================================== */
-
-function login() {
-
-
-    const email =
-        document
-            .getElementById("loginEmail")
-            .value
-            .trim()
-            .toLowerCase();
-
-
-    const password =
-        document
-            .getElementById("loginPassword")
-            .value;
-
-
-    const message =
-        document.getElementById(
-            "loginMessage"
-        );
-
-
-    clearMessage(message);
-
-
-
-    if (!email) {
-
-        showError(
-            message,
-            "Please enter your email address."
-        );
-
-        return;
-
-    }
-
-
-    if (!password) {
-
-        showError(
-            message,
-            "Please enter your password."
-        );
-
-        return;
-
-    }
-
-
-
-    const account =
-        getStoredAccount();
-
-
-    if (!account) {
-
-        showError(
-            message,
-            "No account exists on this device. Please create an account first."
-        );
-
-        return;
-
-    }
-
-
-    if (account.email !== email) {
-
-        showError(
-            message,
-            "Email or password is incorrect."
-        );
-
-        return;
-
-    }
-
-
-    if (account.password !== password) {
-
-        showError(
-            message,
-            "Email or password is incorrect."
-        );
-
-        return;
-
-    }
-
-
-
-    localStorage.setItem(
-        SESSION_STORAGE_KEY,
-        "true"
-    );
-
-
-    showSuccess(
-        message,
-        "Login successful."
-    );
-
-
-    showAccount(account);
-
-}
-
-
-
-/* ======================================================
-   LOAD EXISTING SESSION
-====================================================== */
-
-function loadExistingSession() {
-
-
-    const session =
-        localStorage.getItem(
-            SESSION_STORAGE_KEY
-        );
-
-
-    const account =
-        getStoredAccount();
-
-
-    if (
-        session === "true" &&
-        account
-    ) {
-
-        showAccount(account);
-
-    }
-
-}
-
-
-
-/* ======================================================
-   SHOW ACCOUNT
-====================================================== */
-
-function showAccount(account) {
-
-
-    document
-        .getElementById("createAccountCard")
-        .classList
-        .add("hidden");
-
-
-    document
-        .getElementById("loginCard")
-        .classList
-        .add("hidden");
-
-
-    document
-        .getElementById("accountCard")
-        .classList
-        .remove("hidden");
-
-
-
-    document
-        .getElementById("accountName")
-        .textContent =
-            account.full_name || "—";
-
-
-    document
-        .getElementById("accountEmail")
-        .textContent =
-            account.email || "—";
-
-
-    document
-        .getElementById("accountPhone")
-        .textContent =
-            account.phone || "—";
-
-
-    document
-        .getElementById("accountAddress")
-        .textContent =
-            account.address || "—";
-
-
-    document
-        .getElementById("accountParish")
-        .textContent =
-            account.parish || "—";
-
-}
-
-
-
-/* ======================================================
-   LOG OUT
-====================================================== */
-
-function logout() {
-
-
-    localStorage.removeItem(
-        SESSION_STORAGE_KEY
-    );
-
-
-    document
-        .getElementById("accountCard")
-        .classList
-        .add("hidden");
-
-
-    document
-        .getElementById("createAccountCard")
-        .classList
-        .remove("hidden");
-
-
-    document
-        .getElementById("loginCard")
-        .classList
-        .remove("hidden");
-
-
-    document
-        .getElementById("loginEmail")
-        .value = "";
-
-
-    document
-        .getElementById("loginPassword")
-        .value = "";
-
-
-    const message =
-        document.getElementById(
-            "accountMessage"
-        );
-
-
-    showSuccess(
-        message,
-        "You have been logged out."
-    );
-
-}
-
-
-
-/* ======================================================
-   NAVIGATION
-====================================================== */
-
-function goToPayment() {
-
-    window.location.href =
-        "payment.html";
-
-}
-
-
-function goToHome() {
-
-    window.location.href =
-        "index.html";
-
-}
-
-
-
-/* ======================================================
-   GET STORED ACCOUNT
-====================================================== */
-
-function getStoredAccount() {
-
-
-    const saved =
-        localStorage.getItem(
-            ACCOUNT_STORAGE_KEY
-        );
-
-
-    if (!saved) {
-
-        return null;
-
-    }
-
 
     try {
-
-        const account =
-            JSON.parse(saved);
-
-
-        if (
-            account &&
-            typeof account === "object"
-        ) {
-
-            return account;
-
-        }
-
-
-    } catch (error) {
-
-        console.error(
-            "Could not read stored account:",
-            error
+        supabaseClient = window.supabase.createClient(
+            SUPABASE_URL,
+            SUPABASE_PUBLIC_KEY,
+            {
+                auth: {
+                    persistSession: true,
+                    autoRefreshToken: true,
+                    detectSessionInUrl: true
+                }
+            }
         );
+        return true;
+    } catch (error) {
+        console.error("Supabase initialization failed:", error);
+        setMessage("loginMessage", "Unable to initialize account services.", "error");
+        return false;
+    }
+}
 
+document.addEventListener("DOMContentLoaded", async () => {
+    $("signupForm").addEventListener("submit", handleSignup);
+    $("loginForm").addEventListener("submit", handleLogin);
+    $("forgotPasswordButton").addEventListener("click", handlePasswordReset);
+    $("logoutButton").addEventListener("click", handleLogout);
+    $("paymentButton").addEventListener("click", goToPayment);
+    $("homeButton").addEventListener("click", goToHome);
+
+    if (!initializeSupabase()) return;
+
+    const { data, error } = await supabaseClient.auth.getSession();
+
+    if (error) {
+        console.error("Session lookup failed:", error);
+        setMessage("loginMessage", "Unable to check your sign-in session. Please log in again.", "error");
+        return;
     }
 
+    if (data.session?.user) {
+        await showSignedInAccount(data.session.user);
+    }
 
-    return null;
+    supabaseClient.auth.onAuthStateChange((event, session) => {
+        if (event === "SIGNED_OUT") {
+            currentUser = null;
+            currentCustomer = null;
+            showAuthForms();
+        }
+    });
+});
 
+/* =========================================================
+   SIGN UP
+========================================================= */
+
+async function handleSignup(event) {
+    event.preventDefault();
+
+    clearMessage("signupMessage");
+
+    const full_name = $("signupName").value.trim();
+    const email = $("signupEmail").value.trim().toLowerCase();
+    const phone = $("signupPhone").value.trim();
+    const password = $("signupPassword").value;
+    const confirmPassword = $("signupConfirmPassword").value;
+    const address = $("signupAddress").value.trim();
+    const parish = $("signupParish").value.trim();
+
+    if (!full_name || !email || !password) {
+        return setMessage("signupMessage", "Please complete your name, email, and password.", "error");
+    }
+
+    if (password.length < 8) {
+        return setMessage("signupMessage", "Use a password with at least 8 characters.", "error");
+    }
+
+    if (password !== confirmPassword) {
+        return setMessage("signupMessage", "Your passwords do not match.", "error");
+    }
+
+    setBusy("signupButton", true, "Creating account…");
+
+    try {
+        const { data, error } = await supabaseClient.auth.signUp({
+            email,
+            password,
+            options: {
+                data: {
+                    full_name,
+                    phone,
+                    address,
+                    parish
+                }
+            }
+        });
+
+        if (error) throw error;
+
+        $("signupPassword").value = "";
+        $("signupConfirmPassword").value = "";
+
+        if (data.session && data.user) {
+            await showSignedInAccount(data.user, {
+                full_name, email, phone, address, parish
+            });
+
+            setMessage(
+                "accountMessage",
+                "Your account was created. Check the profile details below.",
+                "success"
+            );
+        } else {
+            setMessage(
+                "signupMessage",
+                "Your sign-up request was accepted. Check your email for the Supabase confirmation link, then return here to log in.",
+                "success"
+            );
+        }
+    } catch (error) {
+        console.error("Sign-up error:", error);
+        setMessage("signupMessage", friendlyAuthError(error), "error");
+    } finally {
+        setBusy("signupButton", false, "Create Account");
+    }
 }
 
+/* =========================================================
+   LOG IN
+========================================================= */
 
+async function handleLogin(event) {
+    event.preventDefault();
 
-/* ======================================================
-   EMAIL VALIDATION
-====================================================== */
+    clearMessage("loginMessage");
 
-function isValidEmail(email) {
+    const email = $("loginEmail").value.trim().toLowerCase();
+    const password = $("loginPassword").value;
 
-    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-        .test(email);
+    if (!email || !password) {
+        return setMessage("loginMessage", "Enter your email and password.", "error");
+    }
 
+    setBusy("loginButton", true, "Signing in…");
+
+    try {
+        const { data, error } = await supabaseClient.auth.signInWithPassword({
+            email,
+            password
+        });
+
+        if (error) throw error;
+
+        if (!data.user) {
+            throw new Error("Supabase did not return a signed-in user.");
+        }
+
+        $("loginPassword").value = "";
+        await showSignedInAccount(data.user);
+        setMessage("accountMessage", "You are signed in.", "success");
+    } catch (error) {
+        console.error("Login error:", error);
+        setMessage("loginMessage", friendlyAuthError(error), "error");
+    } finally {
+        setBusy("loginButton", false, "Log In");
+    }
 }
 
+/* =========================================================
+   PASSWORD RESET
+========================================================= */
 
+async function handlePasswordReset() {
+    clearMessage("resetMessage");
 
-/* ======================================================
-   MESSAGE HELPERS
-====================================================== */
+    const email = $("loginEmail").value.trim().toLowerCase();
 
-function clearMessage(element) {
+    if (!email) {
+        return setMessage(
+            "resetMessage",
+            "Enter your email address in the Log In field first.",
+            "error"
+        );
+    }
 
-    element.textContent = "";
+    try {
+        const redirectTo = new URL("account.html", window.location.href).href;
 
-    element.classList.remove(
-        "success",
-        "error"
-    );
+        const { error } = await supabaseClient.auth.resetPasswordForEmail(email, {
+            redirectTo
+        });
 
+        if (error) throw error;
+
+        setMessage(
+            "resetMessage",
+            "If this address is registered, Supabase will send password-reset instructions. Check your inbox and spam folder.",
+            "success"
+        );
+    } catch (error) {
+        console.error("Password reset error:", error);
+        setMessage("resetMessage", friendlyAuthError(error), "error");
+    }
 }
 
+/* =========================================================
+   LOAD CUSTOMER PROFILE
+========================================================= */
 
-function showError(
-    element,
-    message
-) {
+async function showSignedInAccount(user, signupDetails = null) {
+    currentUser = user;
+    currentCustomer = null;
 
-    element.textContent =
-        message;
+    $("createAccountCard").classList.add("hidden");
+    $("loginCard").classList.add("hidden");
+    $("accountCard").classList.remove("hidden");
 
-    element.classList.remove(
-        "success"
-    );
+    $("accountStatus").textContent = "Signed in with Supabase Authentication. Loading your customer profile…";
 
-    element.classList.add(
-        "error"
-    );
+    const metadata = user.user_metadata || {};
 
+    let profile = {
+        full_name: signupDetails?.full_name || metadata.full_name || "",
+        email: user.email || signupDetails?.email || "",
+        phone: signupDetails?.phone || metadata.phone || "",
+        address: signupDetails?.address || metadata.address || "",
+        parish: signupDetails?.parish || metadata.parish || ""
+    };
+
+    /*
+      Try to retrieve the profile directly through Supabase.
+      This requires a suitable SELECT policy for the signed-in
+      user on public.customers. If that policy is absent, the
+      metadata fallback is displayed and we report the limitation.
+    */
+
+    let profileLookupWorked = false;
+
+    try {
+        const { data, error } = await supabaseClient
+            .from("customers")
+            .select('Id, full_name, email, phone, address, parish, auth_user_id')
+            .eq("auth_user_id", user.id)
+            .maybeSingle();
+
+        if (error) {
+            console.warn("Customer profile lookup was not available:", error.message);
+        } else {
+            profileLookupWorked = true;
+
+            if (data) {
+                currentCustomer = data;
+                profile = {
+                    full_name: data.full_name || profile.full_name,
+                    email: data.email || profile.email,
+                    phone: data.phone || profile.phone,
+                    address: data.address || profile.address,
+                    parish: data.parish || profile.parish
+                };
+
+                if (data.Id) {
+                    localStorage.setItem(CUSTOMER_ID_KEY, String(data.Id));
+                }
+            }
+        }
+    } catch (error) {
+        console.warn("Profile lookup failed:", error);
+    }
+
+    /*
+      For a new sign-up with an active session, attempt to create
+      a customer row using the existing authenticated backend route.
+      Do not blindly create a new row during every login.
+    */
+
+    if (signupDetails && !currentCustomer) {
+        try {
+            const { data: sessionData } = await supabaseClient.auth.getSession();
+            const token = sessionData.session?.access_token;
+
+            if (token) {
+                const response = await fetch(`${BACKEND_URL}/api/customers`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                        "Authorization": `Bearer ${token}`
+                    },
+                    body: JSON.stringify({
+                        full_name: signupDetails.full_name,
+                        email: signupDetails.email,
+                        phone: signupDetails.phone || null,
+                        address: signupDetails.address || null,
+                        parish: signupDetails.parish || null
+                    })
+                });
+
+                const result = await response.json().catch(() => ({}));
+
+                if (response.ok && result.success && result.customer) {
+                    currentCustomer = result.customer;
+
+                    profile = {
+                        full_name: result.customer.full_name || profile.full_name,
+                        email: result.customer.email || profile.email,
+                        phone: result.customer.phone || profile.phone,
+                        address: result.customer.address || profile.address,
+                        parish: result.customer.parish || profile.parish
+                    };
+
+                    if (result.customer.Id) {
+                        localStorage.setItem(CUSTOMER_ID_KEY, String(result.customer.Id));
+                    }
+                } else {
+                    console.warn("Customer profile creation was not confirmed:", result.error || response.status);
+                    $("accountStatus").textContent =
+                        "You're signed in, but your customer profile could not be confirmed. Contact Atelier support before using registered checkout.";
+                }
+            }
+        } catch (error) {
+            console.error("Customer profile creation failed:", error);
+            $("accountStatus").textContent =
+                "You're signed in, but the backend could not confirm your customer profile. Check your connection before checkout.";
+        }
+    }
+
+    $("accountName").textContent = profile.full_name || "Not provided";
+    $("accountEmail").textContent = profile.email || "Not provided";
+    $("accountPhone").textContent = profile.phone || "Not provided";
+    $("accountAddress").textContent = profile.address || "Not provided";
+    $("accountParish").textContent = profile.parish || "Not provided";
+
+    if (currentCustomer) {
+        $("accountStatus").textContent = "You are signed in, and your customer profile was found.";
+    } else if (!signupDetails && !profileLookupWorked) {
+        $("accountStatus").textContent =
+            "You are signed in, but your customer profile could not be verified. Registered checkout may not work until the profile lookup is configured.";
+    } else if (!signupDetails && profileLookupWorked) {
+        $("accountStatus").textContent =
+            "You are signed in. No customer profile was found yet. Contact Atelier support before using registered checkout.";
+    }
 }
 
+/* =========================================================
+   LOG OUT
+========================================================= */
 
-function showSuccess(
-    element,
-    message
-) {
+async function handleLogout() {
+    $("logoutButton").disabled = true;
 
-    element.textContent =
-        message;
+    try {
+        const { error } = await supabaseClient.auth.signOut();
 
-    element.classList.remove(
-        "error"
-    );
+        if (error) throw error;
 
-    element.classList.add(
-        "success"
-    );
-
+        currentUser = null;
+        currentCustomer = null;
+        showAuthForms();
+        setMessage("loginMessage", "You have been signed out.", "success");
+    } catch (error) {
+        console.error("Sign-out error:", error);
+        setMessage("accountMessage", "Sign-out could not be confirmed. Please try again.", "error");
+    } finally {
+        $("logoutButton").disabled = false;
+    }
 }
 
+function showAuthForms() {
+    $("accountCard").classList.add("hidden");
+    $("createAccountCard").classList.remove("hidden");
+    $("loginCard").classList.remove("hidden");
+    $("accountMessage").textContent = "";
+    $("loginPassword").value = "";
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+function goToPayment() {
+    if (!currentUser) {
+        setMessage("accountMessage", "Please sign in before continuing.", "error");
+        return;
+    }
+
+    window.location.href = "payment.html";
+}
+
+function goToHome() {
+    window.location.href = "index.html";
+}
+
+/* =========================================================
+   HELPERS
+========================================================= */
+
+function setMessage(id, text, type) {
+    const element = $(id);
+    element.textContent = text;
+    element.classList.remove("success", "error");
+    if (type) element.classList.add(type);
+}
+
+function clearMessage(id) {
+    setMessage(id, "", "");
+}
+
+function setBusy(id, busy, label) {
+    const button = $(id);
+    button.disabled = busy;
+    button.textContent = label;
+}
+
+function friendlyAuthError(error) {
+    const message = String(error?.message || "");
+
+    if (/invalid login credentials/i.test(message)) {
+        return "Email or password is incorrect.";
+    }
+
+    if (/email not confirmed/i.test(message)) {
+        return "Please confirm your email address before logging in.";
+    }
+
+    if (/already registered|already exists/i.test(message)) {
+        return "An account may already exist with this email. Try logging in instead.";
+    }
+
+    if (/password should be at least/i.test(message)) {
+        return "Your password does not meet the configured minimum length.";
+    }
+
+    if (/fetch|network/i.test(message)) {
+        return "Connection problem. Check your internet connection and try again.";
+    }
+
+    return message || "Something went wrong. Please try again.";
+}
 </script>
-
-
 </body>
 </html>
